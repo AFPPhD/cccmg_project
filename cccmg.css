@@ -1,0 +1,199 @@
+		body {
+			font: 80% verdana, arial, helvetica, sans-serif;
+			background: #036; /* dark blue */
+			margin: 0;
+			color: #FFFFFF; /* white */
+		}
+		
+		h1 {
+			font-size: 2.5em;
+			text-align: center;
+			color: #000000; /* black */
+		}
+							
+		h2, h3 {
+			border-bottom: 2px solid #FFD700; /* gold */
+			color: #036;
+			padding-top: 1%; /* Compensates for pushing up effect of border-bottom */
+			margin: 0 1%;
+		}
+
+		h2 {
+			font-size: 2em;
+			text-align: center;
+		}
+		
+		h3 {
+			font-size: 1.5em;
+			padding-left: 1%;
+		}
+
+		h4 {
+			font-size: 1.25em;
+			padding-left: 1%;
+		}
+
+		h5 {
+			font-size: 1em;
+			color: #000000;
+			padding-left: 1%;
+		}
+
+		p  {
+			text-align: justify;
+			padding: 0 1%;
+		}
+		
+		#update {
+			font-family: georgia, "Times New Roman", arial, helvetica, sans-serif;
+			color: #FFD700; /* gold */
+			font-size: 1.5em;
+			text-align: center;
+		}
+		
+		#nojavascript {
+			text-align: center;
+			font-size: 2em;
+			color: #000000;
+		}
+
+		#Composers {
+			color: #FFD700; /* gold */
+			font-family: arial, helvetica, sans-serif; 
+			font-size: 2em;
+			text-align: center;
+		}
+
+		#Key {
+			font-family: arial, helvetica, sans-serif;
+			font-weight: bold;
+			padding: 0.5%;
+		}
+
+		/*#Key2 {
+			font-family: monospace, sans-serif;
+			font-size: 0.9em;
+			padding: 1%;
+		}*/
+
+		#Complab {
+			color: #FFD700; /* gold */
+		}
+
+		#container {
+			position: relative;
+			width: 686px;        /* width + padding for IE 5.x */
+			w\idth: 680px;       /* real width */
+			margin: auto;
+			background: #4F94CD; /* light blue */
+		}
+		
+		#clickbandtext {
+			display: none;      /* Hide click band for info text. Text readers do not need to see this */
+		}
+		
+		
+		* {
+			border: none;  /* Gets rid of border around valid XHTML image for Firefox and also <hr/>! */
+		}
+
+		hr {
+			border: 2px solid #036; /* Change border but leave width and height at default, will look same in IE, Firefox and Opera */
+		}
+
+
+/* Basic element styles */
+
+/* a:link {
+  color: #C0C0FF;
+}
+
+a:visited {
+  color: #A0A0FF;
+} */ /* Colours standard links */
+
+/* Accordion styles (static) */
+
+ul.accordion {
+  /* background-color: #CCC; */ /* grey */                     /* Colour for box that encomposes bands */
+  /* border: 1px solid #000; */                    	         /* Black 1px border for expanded box */
+  /* border-top: none; */                                      /* Top header pushed down below box border if commented out */
+  display: block;
+  list-style-type: none;                                      /* This stops bullet points appearing left of written underlined header links */
+  margin: 1%;   /* 0; */                                       /* Shrinks box width wise */
+  padding: 0 0; /* 0 1em; */ 				               /* Shrinks bands width wise */
+  position: relative; /* Forces the bottom border of the h2 to display in IE */ /* If change position to absolute box shrinks */
+}
+
+ul.accordion li {
+  clear: left;
+  position: relative;              /* If change position to absolute box shrinks vertically */
+}
+
+ul.accordion h3 {
+  margin: 0 0;  /*Push in yellow underline */            /* margin-left: -1 % Was needed to line up left hand side of composer name with left hand side of band */
+  /* background-color: #4F94CD; */ /* light blue */      /* To keep header background from changing to box colour if different */
+}
+
+ul.accordion h4 {
+  background-color: #FFD700; /* gold */                /* Band colour */
+  border: solid #FFF;        /* white */
+  border-width: 5px 0.35em;  /* 1px 0; */              /* Border effect for band */
+  margin: 10px 0;             /* 1% 0; */               /* 0 -0.667em -1px */     /* Separation between bands */
+}
+
+ul.accordion h4 a:link,
+ul.accordion h4 a:visited {
+  color: #000;              	/* Colour of band link words */
+  display: block;
+  margin: 0 -0.1em 0 -0.40em; /* To get highlighted colour covering band colour */
+  padding: 0;               	/* 0 0.667em; 0.667em pushing band link words to right */
+  text-decoration: none;    	/* Prevents underlining for header links */
+}
+
+ul.accordion p {
+  margin: 1em 0;
+}
+
+/* Accordion styles (dynamic) */
+
+ul.accordion li.collapsed * {
+  position: absolute;                    /* Don't want to use display: none to hide collapsed fold (li element of class collapsed) because screen readers don't read         */ 
+  left: -10000px; /*Offleft positioning*//* content hidden with display: none even when it is later revealed. Hide content instead with offleft positioning. Screen readers  */
+}                                        /* will be able to read the hidden content. But, keyboard users will be forced to tab through content they cannot see!              */
+                                         /* Can also use text-indent: -10000px;. Can also use zero height i.e position: absolute; height: 0; overflow: hidden;               */
+ul.accordion li.collapsed h4,
+ul.accordion li.expanded h4,
+ul.accordion li.collapsed h4 a:link,
+ul.accordion li.collapsed h4 a:visited,
+ul.accordion li.expanded h4 a:link,
+ul.accordion li.expanded h4 a:visited,
+ul.accordion li.collapsed h3 {
+  position: static;                        /* Keeps band (header) (h4) and Composer name (h3) from being shifted -10000px to left */ 
+}
+
+ul.accordion li.collapsed h4 a:hover,          
+ul.accordion li.collapsed h4 a:focus, 
+ul.accordion li.collapsed h4 a:active,                                      
+ul.accordion li.expanded h4 a:link,
+ul.accordion li.expanded h4 a:visited {
+  background-color: #CCC; /* grey */      /* Change background colour for header of fold (band) that is expanded, just been collapsed, has the cursor over it, */
+}                                         /* or has keyboard focus */
+
+
+/* ul.accordion div.links {
+  margin: 1em 0 1em 50%;
+}
+
+div.links ul {
+  list-style: none;
+  margin: 1em 0 0 0;
+  padding: 0;
+}
+
+div.links li {
+  clear: none;
+  display: inline;
+  margin: 0 3em 0 0;
+  position: static;
+} */ 
