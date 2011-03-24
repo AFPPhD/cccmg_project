@@ -101,7 +101,7 @@ online at their website classicfm.com. They also have a play list of what has be
 <h3>Radio Times Magazine (UK)</h3>
 <p>It includes schedule lists and approximate timings for Classical Collection and Through the
 Night, as well as telling you what the Building a Library featured work is. The schedule
-for the Classic FM Full Works programmes are also given.</p>
+for the Classic FM Full Works programmes is also given.</p>
 
 <br/>
 
