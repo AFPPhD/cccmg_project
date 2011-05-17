@@ -65,7 +65,7 @@
 
 <?php
 require_once("lastmodified.php");
-$lastmodified = date("l dS F Y", getHighestFileTimestamp("../"));
+$lastmodified = date("l dS F Y", getHighestFileTimestamp("./"));           // Changed from ../ as should only be looking in current directory
 echo "<div id=\"update\">Last Update on: ".$lastmodified."</div>\n";
 ?>
 
