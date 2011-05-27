@@ -35,8 +35,8 @@
 
 <div id="navigation">
 
-		<h3>Shortcuts</h3>
-        <ul>
+		<h3 class="hidden">Shortcuts</h3>  <!-- Hide Navigation bar when javascript disabled -->
+        <ul class="hidden">
           <li id="top"><a href="#">Top of Page</a></li>
 		  <li><a href="#introduction">Introduction</a></li>
 		  <li><a href="#keydesc">Key</a></li>
@@ -252,12 +252,14 @@ recording is available in combination with different pieces on other CDs.
 Another example being, it is available as a single CD release or part of
 a box set. A recording could also be found under more than one record label
 release or even CD format e.g SACD.</p>
+
 <p>Because this site is not aimed at serious collectors, the least recording
 quality I will recommend is good mono. All recordings are stereo, except where 
 mentioned i.e MONO. Any live recordings I have recommended will have at most minimal 
 background noises e.g coughs. Considering that studio recordings, including some 
 I have recommended, can be prone to the occasional unwanted noises, this should not 
 be a problem.</p>
+
 <p id="clickbandtext">Just click on a band to reveal the relevant information. Click the band
 again to hide the information.</p>
 <br/>

@@ -158,10 +158,13 @@ ul.accordion p {
 /* Accordion styles (dynamic) */
 
 ul.accordion li.collapsed * {
-  position: absolute;                    /* Don't want to use display: none to hide collapsed fold (li element of class collapsed) because screen readers don't read         */ 
-  left: -10000px; /*Offleft positioning*//* content hidden with display: none even when it is later revealed. Hide content instead with offleft positioning. Screen readers  */
-}                                        /* will be able to read the hidden content. But, keyboard users will be forced to tab through content they cannot see!              */
-                                         /* Can also use text-indent: -10000px;. Can also use zero height i.e position: absolute; height: 0; overflow: hidden;               */
+  position: absolute;                    /* Don't want to use display: none to hide collapsed fold (li element of class collapsed) because screen readers don't read */ 
+  left: -10000px; /*Offleft positioning*//* content hidden with display: none even when it is later revealed. Hide content instead with offleft positioning. */
+										 /* Screen readers - */
+}                                        /* will be able to read the hidden content. But, keyboard users will be forced to tab through content they cannot see! */
+                                         /* Can also use text-indent: -10000px; (Doesn't work if direction of language right to left). Can also use zero height i.e */
+										 /* position: absolute; height: 0; overflow: hidden; (Voice Over screen reader will not read content within element with 0 */
+										 /* height) */
 ul.accordion li.collapsed h4,
 ul.accordion li.expanded h4,
 ul.accordion li.collapsed h4 a:link,
