@@ -35,7 +35,7 @@
 
 <div id="navigation">
 
-		<h3 class="hidden">Shortcuts</h3>  <!-- Hide Navigation bar when javascript disabled -->
+		<h3 class="hidden">Shortcuts</h3>  <!-- Hide Navigation bar when javascript disabled 270511 -->
         <ul class="hidden">
           <li id="top"><a href="#">Top of Page</a></li>
 		  <li><a href="#introduction">Introduction</a></li>
