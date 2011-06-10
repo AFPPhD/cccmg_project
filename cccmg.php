@@ -11,7 +11,7 @@
 <link rel="stylesheet"  type="text/css" href="800.css" media="only screen and (max-width: 800px)"/>  <!-- No navigation bar for 800px or less -->
 <!-- <link rel="stylesheet"  type="text/css" href="sIFR-screen.css"/> -->             <!-- Hides h1 text replaced by Flash -->
 <link rel="Shortcut Icon" href="http://cccmg.freehostingcloud.com/favicon.ico"/>
-<script type="text/javascript" src="core.js"></script>
+<script type="text/javascript" src="core.js"></script>                        <!-- Needed for accordion_mod -->
 <script type="text/javascript" src="jquery-1.5.min.js"></script>
 <script type="text/javascript" src="jquery-ui-1.8.10.custom.min.js"></script>  <!-- Allows animation of floating menu -->
 <script type="text/javascript" src="accordion_mod.js"></script>                        
@@ -59,7 +59,7 @@
 
 <div id="container">
 
-<h1>Casual Collectors Classical Music Guide</h1>
+<h1>Casual Collector's Classical Music Guide</h1>
 <br/>
 <br/>
 
