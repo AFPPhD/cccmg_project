@@ -11,6 +11,7 @@
 <link rel="stylesheet"  type="text/css" href="800.css" media="only screen and (max-width: 800px)"/>  <!-- No navigation bar for 800px or less -->
 <!-- <link rel="stylesheet"  type="text/css" href="sIFR-screen.css"/> -->             <!-- Hides h1 text replaced by Flash -->
 <link rel="Shortcut Icon" href="http://cccmg.freehostingcloud.com/favicon.ico"/>
+<script type="text/javascript" src="respond.min.js"></script>                 <!-- Polyfill for browsers not recognising min-width, max-width and media types -->
 <script type="text/javascript" src="core.js"></script>                        <!-- Needed for accordion_mod -->
 <script type="text/javascript" src="jquery-1.5.min.js"></script>
 <script type="text/javascript" src="jquery-ui-1.8.10.custom.min.js"></script>  <!-- Allows animation of floating menu -->
@@ -463,7 +464,7 @@ Gardiner/V.P.O (DG)</p>
 <h4><a href="#mozPC">Piano Concerti (27)</a></h4>
 
 <h5>Piano Concerto No. 10</h5>
-<p>Emil & Elena Gilels/B&ouml;hm/V.P.O (MULTCOMB) (DG)</p>
+<p>Emil &amp; Elena Gilels/B&ouml;hm/V.P.O (MULTCOMB) (DG)</p>
 
 <h5>Piano Concerto No. 17</h5>
 <p>Barenboim/B.P.O (L.A) (TELDEC)</p>
