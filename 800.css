@@ -1,3 +1,0 @@
-﻿#navigation {
-	display: none;  /* With javascript enabled, IE8 or below, still showing navigation bar because doesn't understand css media queries properly */
-}
