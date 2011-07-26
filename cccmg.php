@@ -9,7 +9,6 @@
 <link rel="stylesheet"  type="text/css" href="css/cccmg.css"/>
 <link rel="stylesheet"  type="text/css" href="css/print.css" media="print"/>     <!-- Creates print version of website -->
 <link rel="stylesheet"  type="text/css" href="css/800.css" media="only screen and (max-width: 800px)"/>  <!-- No navigation bar for 800px or less -->
-<!-- <link rel="stylesheet"  type="text/css" href="css/sIFR-screen2.css"/> -->             <!-- Hides h1 text replaced by Flash -->
 <link rel="Shortcut Icon" href="http://cccmg.freehostingcloud.com/favicon.ico"/>
 
 
@@ -45,8 +44,7 @@
 
 <div id="container">
 
-<h1>Casual Collectors' Classical Music Guide</h1>
-<br/>
+<h1 id="flash_header">Casual Collectors' Classical Music Guide</h1>    <!-- Eras Bold ITC header shows if javascript enabled -->
 <br/>
 
 <?php
@@ -636,7 +634,9 @@ Bean/Boult/New Philharmonic (EMI)</p>
 <script type="text/javascript" src="js/floating_nav_menu.js"></script>
 <script type="text/javascript" src="js/jquery.scrollTo.js"></script>             <!-- Script for scrollTo() -->
 <script type="text/javascript" src="js/scroll_to_link.js"></script>
+<script type="text/javascript" src="js/jquery.swfobject.1-1-1.js"></script>
+<script type="text/javascript" src="js/flash_header.js"></script>                 <!-- Embeds Eras Bold ITC header swobject -->
 <script type="text/javascript" src="js/animatetext.js"></script>
-<!-- <script type="text/javascript" src="js/sifr.js"></script> -->                     <!-- Script for Flash Object replacement -->
 
-</body></html>
+</body>
+</html>
