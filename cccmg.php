@@ -69,7 +69,7 @@ you to better informed and more detailed discussions on the internet.</p>
 
 <h3>BBC Radio 3</h3>
 <p>A good place to listen to mainly complete recordings of pieces that might interest you 
-is Classical Collection 10.00 am - 1200pm (All times mentioned UK) weekdays. The Building
+is Essential Classics 9.00am - 1200pm (All times mentioned UK) weekdays. The Building
 a Library section (approximately 9.30 - 10.30am) on CD review (usually 9.00am - 12.15pm)
 Saturday morning, involves an expert sifting through the available recordings of a particular
 piece to recommend their top recording. Through the Night, 1.00am - 7.00 am, mainly consists
@@ -83,7 +83,7 @@ played in full. (Any particular movements are generally played at any other time
 online at their website classicfm.com. They also have a play list of what has been played.</p>
 
 <h3>Radio Times Magazine (UK)</h3>
-<p>It includes schedule lists and approximate timings for Classical Collection and Through the
+<p>It includes schedule lists and approximate timings for Essential Classics and Through the
 Night, as well as telling you what the Building a Library featured work is. The schedule
 for the Classic FM Full Works programmes is also given.</p>
 
