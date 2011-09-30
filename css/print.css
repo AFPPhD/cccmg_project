@@ -1,3 +1,5 @@
+@media print { /* media type moved here from cccmg.php file 300911 */
+
 		#navigation {
 			display: none;     /* Navigation menu no use for print out */
 		}
@@ -84,3 +86,4 @@
 		p a img {
 			display: none;                 /* Strict HTML compliance logo useless for printout */
 		}
+}

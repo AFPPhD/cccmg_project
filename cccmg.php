@@ -7,8 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet"  type="text/css" href="css/navigation.css"/>
 <link rel="stylesheet"  type="text/css" href="css/cccmg.css"/>
-<link rel="stylesheet"  type="text/css" href="css/print.css" media="print"/>     <!-- Creates print version of website -->
-<link rel="stylesheet"  type="text/css" href="css/800.css" media="only screen and (max-width: 800px)"/>  <!-- No navigation bar for 800px or less -->
+<link rel="stylesheet"  type="text/css" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
+<link rel="stylesheet"  type="text/css" href="css/800.css"/>  <!-- No navigation bar for 800px or less -->
 <link rel="Shortcut Icon" href="http://cccmg.freehostingcloud.com/favicon.ico"/>
 
 
