@@ -26,6 +26,7 @@
 		  <li><a href="#introduction">Introduction</a></li>
 		  <li><a href="#keydesc">Key</a></li>
 		  <li><a href="#compilation">Compilations</a></li>
+		  <li><a href="#complete_pieces">Complete Pieces</a></li>  <!-- Add Complete Pieces to Navigation menu 071011 -->
           <li><a href="#bach">J.S.Bach</a></li>
           <li><a href="#beethoven">Beethoven</a></li>
           <li><a href="#bruch">Bruch</a></li>
@@ -229,7 +230,7 @@ The Essential Vaughan Williams (2cds) (EMI)</p>
 
 <br/>
 
-<h2>Complete Pieces</h2>
+<h2 id="complete_pieces">Complete Pieces</h2>   <!-- Add Complete Pieces to Navigation menu 071011 -->
 
 <p>Some recordings are given the label (MULTCOMB). This is because the
 recording is available in combination with different pieces on other CDs. 
@@ -261,7 +262,7 @@ again to hide the information.</p>
 <h4><a href="#bacBC">Brandenburg Concertos</a></h4>
 <p>OTHER RECORDINGS:<br/>
 Alessandrini/Concerto Italiano (NA&Iuml;VE)<br/>
-Swiss Baroque Solists (NAXOS)</p>
+Swiss Baroque Soloists (NAXOS)</p>
 </li>
 
 <li id="beeSy">

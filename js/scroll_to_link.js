@@ -19,6 +19,11 @@ $(document).ready(function(){
     return false;
   });
   
+  $('a[href=#complete_pieces]').click(function(){  /* Add Complete Pieces to Navigation menu 071011 */
+    $.scrollTo('#complete_pieces','slow');        
+    return false;
+  });
+  
   $('a[href=#bach]').click(function(){
     $.scrollTo('#JSB','slow');        
     return false;
