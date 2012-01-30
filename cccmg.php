@@ -79,9 +79,10 @@ bbc.co.uk/radio3. You can also listen online.</p>
 
 <h3>Classic FM</h3>
 <p>If you want to listen to slow/quiet movements of pieces try Smooth Classics 10.00pm - 
-2.00am. From 8.00 - 10.00pm Mon - Fri is The Full Works, where recordings of pieces are mostly 
-played in full. (Any particular movements are generally played at any other time.)  You can listen 
-online at their website classicfm.com. They also have a play list of what has been played.</p>
+2.00am weekdays and 10.00pm - 12.00am weekends. From 8.00 - 10.00pm Mon - Fri is The Full Works, 
+where recordings of pieces are mostly played in full. (Any particular movements are generally played 
+at any other time.)  You can listen online at their website classicfm.com. They also have a play list 
+of what has been played.</p>
 
 <h3>Radio Times Magazine (UK)</h3>
 <p>It includes schedule lists and approximate timings for Essential Classics and Through the
@@ -90,13 +91,13 @@ for the Classic FM Full Works programmes is also given.</p>
 
 <br/>
 
-<h2>Major Composer Anniversaries in 2011</h2>
+<h2>Major Composer Anniversaries in 2012</h2>
 
 <br/>
 <br/>
 
-<p id="Composers">Liszt 200 years since his birth<br/><br/>
-Mahler 100 years since his death</p>
+<p id="Composers">Delius 150 years since his birth<br/><br/>
+Debussy 150 years since his birth</p>
 
 <br/>
 
