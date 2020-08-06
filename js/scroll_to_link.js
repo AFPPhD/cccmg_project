@@ -34,8 +34,18 @@ $(document).ready(function(){
     return false;
   });
   
+  $('a[href=#brahms]').click(function(){
+    $.scrollTo('#LVB','slow');        
+    return false;
+  });
+  
   $('a[href=#bruch]').click(function(){
     $.scrollTo('#MB','slow');        
+    return false;
+  });
+  
+  $('a[href=#bruckner]').click(function(){
+    $.scrollTo('#AB','slow');        
     return false;
   });
   
@@ -48,6 +58,12 @@ $(document).ready(function(){
     $.scrollTo('#AD','slow');        
     return false;
   });
+  
+  $('a[href=#haydn]').click(function(){
+    $.scrollTo('#AD','slow');        
+    return false;
+  });
+  
   $('a[href=#mendelssohn]').click(function(){
     $.scrollTo('#FM','slow');        
     return false;
@@ -65,6 +81,11 @@ $(document).ready(function(){
   
   $('a[href=#schubert]').click(function(){
     $.scrollTo('#FS','slow');        
+    return false;
+  });
+
+  $('a[href=#sibelius]').click(function(){
+    $.scrollTo('#JS','slow');        
     return false;
   });
   
