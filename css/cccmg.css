@@ -4,13 +4,13 @@
 			margin: 0;
 			color: #FFFFFF; /* white */
 		}
-		
+
 		h1 {
 			font-size: 2.5em;
 			text-align: center;
 			color: #000000; /* black */
 		}
-							
+
 		h2, h3 {
 			border-bottom: 2px solid #FFD700; /* gold */
 			color: #036;
@@ -22,7 +22,7 @@
 			font-size: 2em;
 			text-align: center;
 		}
-		
+
 		h3 {
 			font-size: 1.5em;
 			padding-left: 1%;
@@ -43,17 +43,17 @@
 			text-align: justify;
 			padding: 0 1%;
 		}
-		
+
 		#Complab, #update, #Composers {
 			color: #FFD700; /* gold */
 		}
-		
+
 		#update {
 			font-family: georgia, "Times New Roman", arial, helvetica, sans-serif;
 			font-size: 1.5em;
 			text-align: center;
 		}
-		
+
 		#nojavascript {
 			text-align: center;
 			font-size: 2em;
@@ -61,7 +61,7 @@
 		}
 
 		#Composers {
-			font-family: arial, helvetica, sans-serif; 
+			font-family: arial, helvetica, sans-serif;
 			font-size: 2em;
 			text-align: center;
 		}
@@ -84,13 +84,14 @@
 			w\idth: 680px;       /* real width */
 			margin: auto;
 			background: #4F94CD; /* light blue */
+			border-radius: 9px;	 /* Added rounded corners effect via css instead of javascript 130820 */
 		}
-		
+
 		#clickbandtext {
 			display: none;      /* Hide click band for info text. Text readers do not need to see this */
 		}
-		
-		
+
+
 		* {
 			border: none;  /* Gets rid of border around valid XHTML image for Firefox and also <hr/>! */
 		}
@@ -156,7 +157,7 @@ ul.accordion p {
 /* Accordion styles (dynamic) */
 
 ul.accordion li.collapsed * {
-  position: absolute;                    /* Don't want to use display: none to hide collapsed fold (li element of class collapsed) because screen readers don't read */ 
+  position: absolute;                    /* Don't want to use display: none to hide collapsed fold (li element of class collapsed) because screen readers don't read */
   left: -10000px; /*Offleft positioning*//* content hidden with display: none even when it is later revealed. Hide content instead with off left positioning. */
 										 /* Screen readers - */
 }                                        /* will be able to read the hidden content. But, keyboard users will be forced to tab through content they cannot see! */
@@ -170,12 +171,12 @@ ul.accordion li.collapsed h4 a:visited,
 ul.accordion li.expanded h4 a:link,
 ul.accordion li.expanded h4 a:visited,
 ul.accordion li.collapsed h3 {
-  position: static;                        /* Keeps band (header) (h4) and Composer name (h3) from being shifted -10000px to left */ 
+  position: static;                        /* Keeps band (header) (h4) and Composer name (h3) from being shifted -10000px to left */
 }
 
-ul.accordion li.collapsed h4 a:hover,          
-ul.accordion li.collapsed h4 a:focus, 
-ul.accordion li.collapsed h4 a:active,                                      
+ul.accordion li.collapsed h4 a:hover,
+ul.accordion li.collapsed h4 a:focus,
+ul.accordion li.collapsed h4 a:active,
 ul.accordion li.expanded h4 a:link,
 ul.accordion li.expanded h4 a:visited {
   background-color: #CCC; /* grey */      /* Change background colour for header of fold (band) that is expanded, just been collapsed, has the cursor over it, */
@@ -197,4 +198,4 @@ div.links li {
   display: inline;
   margin: 0 3em 0 0;
   position: static;
-} */ 
+} */

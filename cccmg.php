@@ -1,4 +1,4 @@
-<!DOCTYPE html>														<!-- Updated DOCTYPE, <html>, <head> and <script> from XHTML Strict to HTML5 compliant. Also removed trailing spaces. 130820 -->
+<!DOCTYPE html>														<!-- Updated DOCTYPE, <html>, <head> and <script> from XHTML Strict to HTML5 compliant. Also removed trailing spaces 130820 -->
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -979,8 +979,8 @@ Bean/Boult/New Philharmonic (EMI)</p>
 <!-- <script type="text/javascript" src="js/datemodified.js"></script>           Routine to format date document cccmg.html last modified if available and return -->
 <!-- <script type="text/javascript" src="js/safari_modified_date.js"></script> -->
 <!-- <script type="text/javascript" src="js/dateupdate.js"></script>                   Script for "Last Update on: " using datemodified.js -->
-<script src="js/jquery.corner.js"></script>               <!-- Script for applying corners -->
-<script src="js/pagecorners.js"></script>                 <!-- Applies corners to specified elements -->
+<!-- <script src="js/jquery.corner.js"></script>                Script for applying corners -->
+<!-- <script src="js/pagecorners.js"></script>                  Applies corners to specified elements. Now done via css 130820 -->
 <script src="js/hide_no_javascript_mes.js"></script>
 <script src="js/floating_nav_menu.js"></script>
 <script src="js/jquery.scrollTo.js"></script>             <!-- Script for scrollTo() -->
