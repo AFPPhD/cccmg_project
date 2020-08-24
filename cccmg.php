@@ -12,8 +12,7 @@
 	<link rel="stylesheet" href="css/cccmg.css"/>
 	<link rel="stylesheet" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
 	<link rel="stylesheet" href="css/800.css"/>  <!-- No navigation bar for 800px or less -->
-	<link rel="stylesheet" href="http://cccmg.epizy.com/favicon.ico"/>
-
+	<link rel="icon" type="image/x-icon" href="favicon.ico"/>
 </head>
 
 <body>
@@ -961,13 +960,13 @@ Bean/Boult/New Philharmonic (EMI)</p>
 <br/>
 
 <p>
-    <p>
-    	<a href="http://jigsaw.w3.org/css-validator/check/referer">
-        	<img style="border:0;width:88px;height:31px"
-            	src="http://jigsaw.w3.org/css-validator/images/vcss"
-            	alt="Valid CSS!" />
-    	</a>
-	</p>
+
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!"/>
+    </a>
+
 </p>
 
 
@@ -988,6 +987,6 @@ Bean/Boult/New Philharmonic (EMI)</p>
 <script src="js/jquery.swfobject.1-1-1.js"></script>
 <script src="js/flash_header.js"></script>                 <!-- Embeds Eras Bold ITC header swobject -->
 <script src="js/animatetext.js"></script>
-
+</div>
 </body>
 </html>
