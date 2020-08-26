@@ -1,4 +1,4 @@
-﻿@media only screen and (max-width: 800px) { /* media type moved here from cccmg.php file 300911 */
+﻿@media only screen and (max-width: 1024px) { /* media type moved here from cccmg.php file 300911 */
 	#navigation {
 		display: none;  /* With javascript enabled, IE8 or below, still showing navigation bar because doesn't understand css media queries properly */
 	}

@@ -6,8 +6,10 @@
 	<title>Classical Collectors' Classical Music Guide</title>
 	<meta name="Description" content="Classical Collectors' Classical Music Guide"/>
 	<meta name="Keywords" content="Classical Music Recommendations, Compilations, Recordings"/>
-
-
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>		<!-- width=device-width allows the page to reflow content to match different physical screen widths (portrait orentation) -->
+	<!-- initial-scale controls the zoom level when the page is first loaded -->
+	<!-- iPhone exhibits zooming behaviour when rotating to landscape (but not when loading first in landscape). initial-scale stops that -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>  <!-- IE=edge: specifies that IE should run in the highest mode available to that version of IE as opposed to a compatability mode; IE8 can support up to IE8 modes, IE9 can support up to IE9 modes, and so on -->
 	<link rel="stylesheet" href="css/navigation.css"/>
 	<link rel="stylesheet" href="css/cccmg.css"/>
 	<link rel="stylesheet" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
@@ -74,7 +76,7 @@ you to better informed and more detailed discussions on the internet.</p>
 
 <h3>BBC Radio 3</h3>
 <p>A good place to listen to mainly complete recordings of pieces that might interest you
-is Essential Classics 9.00am - 12.00pm weekdays. The Buildinga Library section (approximately
+is Essential Classics 9.00am - 12.00pm weekdays. The Building a Library section (approximately
 9.30 - 10.30am) on CD review (usually 9.00am - 12.15pm) Saturday morning, involves an expert
 sifting through the available recordings of a particular piece to recommend their top recording.
 Through the Night, mainly consistsof complete pieces taken from live performances. The schedules
