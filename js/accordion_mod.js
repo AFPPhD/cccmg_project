@@ -15,21 +15,21 @@ var Accordion =
           var foldLinks = folds[j].getElementsByTagName("a");
           var foldTitleLink = foldLinks[0];  // Reference to first link in fold e.g <directory>#picard
 	    Core.addEventListener(foldTitleLink, "click", Accordion.clickListener); // Add event listener to heading link e.g "Jean-Luc Picard"
-          
-          for (var k = 1; k < foldLinks.length; k++)               // focus events do not bubble. So, must attach a focus event listener to every element within our 
+
+          for (var k = 1; k < foldLinks.length; k++)               // focus events do not bubble. So, must attach a focus event listener to every element within our
           {                                                        // our accordian which might receive keyboard focus i.e Memory Alpha and Wikipedia links
             Core.addEventListener(foldLinks[k], "focus", Accordion.focusListener);
           }
         }
       }
-      
+
       if (location.hash.length > 1)                          // Since each fold has a unique ID, can link to specific fold from another page e.g <a href="accordion.html#pike">
       {                                                      // To expand this fold when the page is loaded, just add code to left
         var activeFold = document.getElementById(location.hash.substring(1));
         if (activeFold && activeFold.parentNode == accordions[i])
         {
           Accordion.expand(activeFold);
-        }                                                   // location is the global variable that contains info on the URL of the current page. Its hash property gives the 
+        }                                                   // location is the global variable that contains info on the URL of the current page. Its hash property gives the
       }                                                     // fragment identifier portion (e.g #pike). Using the substring method, we can obtain the id by starting at the
     }                                                       // second character
   },
@@ -58,7 +58,7 @@ var Accordion =
     Core.removeClass(fold, "collapsed");
     Core.addClass(fold, "expanded");
   },
-  
+
   clickListener: function(event)
   {
     var fold = this.parentNode.parentNode; // Listener obtains reference to fold that is parent node <li id=> of the parent node <h2> of the link
@@ -70,9 +70,9 @@ var Accordion =
     {
       Accordion.collapse(fold);
     }
-    Core.preventDefault(event);          // The browser following the link would not really be a problem, as just causes page to scroll to fold. But we want slick, seamless 
+    Core.preventDefault(event);          // The browser following the link would not really be a problem, as just causes page to scroll to fold. But we want slick, seamless
   },                                     // effect
-  
+
   focusListener: function(event)
   {
     var element = this;                                      // this refers to an element somewhere inside a fold. Use loop to climb up through tree until you find parent node
