@@ -1,12 +1,14 @@
 		body {
-			font: 80% verdana, arial, helvetica, sans-serif;
+			font-size: 14px;
+			font-family: verdana, helvetica, arial, sans-serif;
 			background: #036; /* dark blue */
 			margin: 0;
+			padding: 0;
 			color: #FFFFFF; /* white */
 		}
 
 		h1 {
-			font-size: 2.5em;
+			font-size: 2.5rem;
 			text-align: center;
 			color: #000000; /* black */
 		}
@@ -19,29 +21,41 @@
 		}
 
 		h2 {
-			font-size: 2em;
+			font-size: 2rem;
 			text-align: center;
 		}
 
 		h3 {
-			font-size: 1.5em;
+			font-size: 1.5rem;
 			padding-left: 1%;
 		}
 
 		h4 {
-			font-size: 1.25em;
+			font-size: 1.1rem;
 			padding-left: 1%;
 		}
 
 		h5 {
-			font-size: 1em;
+			font-size: 1rem;
 			color: #000000;
 			padding-left: 1%;
 		}
 
 		p  {
+			font-size: 1rem;
 			text-align: justify;
 			padding: 0 1%;
+		}
+
+		hr {
+			border: 2px solid #036; /* Change border but leave width and height at default, will look same in IE, Firefox and Opera */
+		}
+
+		#pngtitle {
+			max-width: 100%;	/* Image will not stretch larger than its natural size */
+			max-height: 100%;	/* By setting the height as well as the width, CSS will shrink the image, maintaining it's aspect ratio */
+			/* height:	auto; */
+			margin-left: 2.5%;
 		}
 
 		#Complab, #update, #Composers {
@@ -50,19 +64,19 @@
 
 		#update {
 			font-family: georgia, "Times New Roman", arial, helvetica, sans-serif;
-			font-size: 1.5em;
+			font-size: 1.25rem;
 			text-align: center;
 		}
 
 		#nojavascript {
 			text-align: center;
-			font-size: 2em;
+			font-size: 2rem;
 			color: #000000;
 		}
 
 		#Composers {
 			font-family: arial, helvetica, sans-serif;
-			font-size: 2em;
+			font-size: 1.5rem;
 			text-align: center;
 		}
 
@@ -82,7 +96,7 @@
 			position: relative;
 			width: 686px;        /* width + padding for IE 5.x */
 			w\idth: 680px;       /* real width */
-			margin: auto;
+			margin: 20px auto 0 auto;
 			background: #4F94CD; /* light blue */
 			border-radius: 9px;	 /* Added rounded corners effect via css instead of javascript 130820 */
 		}
@@ -91,32 +105,9 @@
 			display: none;      /* Hide click band for info text. Text readers do not need to see this */
 		}
 
-
-		* {
-			border: none;  /* Gets rid of border around valid XHTML image for Firefox and also <hr/>! */
-		}
-
-		hr {
-			border: 2px solid #036; /* Change border but leave width and height at default, will look same in IE, Firefox and Opera */
-		}
-
-
-/* Basic element styles */
-
-/* a:link {
-  color: #C0C0FF;
-}
-
-a:visited {
-  color: #A0A0FF;
-} */ /* Colours standard links */
-
 /* Accordion styles (static) */
 
 ul.accordion {
-  /* background-color: #CCC; */ /* grey */                     /* Colour for box that encomposes bands */
-  /* border: 1px solid #000; */                    	         /* Black 1px border for expanded box */
-  /* border-top: none; */                                      /* Top header pushed down below box border if commented out */
   display: block;
   list-style-type: none;                                      /* This stops bullet points appearing left of written underlined header links */
   margin: 1%;   /* 0; */                                       /* Shrinks box width wise */
@@ -181,21 +172,3 @@ ul.accordion li.expanded h4 a:link,
 ul.accordion li.expanded h4 a:visited {
   background-color: #CCC; /* grey */      /* Change background colour for header of fold (band) that is expanded, just been collapsed, has the cursor over it, */
 }                                         /* or has keyboard focus */
-
-
-/* ul.accordion div.links {
-  margin: 1em 0 1em 50%;
-}
-
-div.links ul {
-  list-style: none;
-  margin: 1em 0 0 0;
-  padding: 0;
-}
-
-div.links li {
-  clear: none;
-  display: inline;
-  margin: 0 3em 0 0;
-  position: static;
-} */
