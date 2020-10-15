@@ -1,5 +1,6 @@
 		body {
-			font-size: 14px;
+			font-size: 24px;	/* Font size used in browsers that don’t support fluid units */
+			font-size: 150%;	/* A percentage baseline font size offers more consistent cross browser support */
 			font-family: verdana, helvetica, arial, sans-serif;
 			background: #036; /* dark blue */
 			margin: 0;
@@ -8,8 +9,8 @@
 		}
 
 		h1 {
-			font-size: 2.5rem;
-			text-align: center;
+			font-size: 2.5rem;	/* Text in pixels doesn’t scale up (or down) when you resize it in Old Internet Explorer browsers */
+			text-align: center;	/* Using rem/em to size text, gets rids of this problem */
 			color: #000000; /* black */
 		}
 
@@ -26,23 +27,25 @@
 		}
 
 		h3 {
-			font-size: 1.5rem;
+			font-size: 1.75rem;
 			padding-left: 1%;
 		}
 
 		h4 {
-			font-size: 1.1rem;
+			font-size: 1.22rem; /* Too big and it will expand out of gold region */
 			padding-left: 1%;
 		}
 
 		h5 {
-			font-size: 1rem;
+			font-size: 1.1rem;
 			color: #000000;
 			padding-left: 1%;
 		}
 
 		p  {
-			font-size: 1rem;
+			line-height: 1.5;	/* 150% line height usually best */
+			/*👉max-width: 75ch; TODO:max-width: calc(30em * 0.5);👈*/
+			/* word-wrap: break-word; */
 			text-align: justify;
 			padding: 0 1%;
 		}
@@ -51,48 +54,54 @@
 			border: 2px solid #036; /* Change border but leave width and height at default, will look same in IE, Firefox and Opera */
 		}
 
-		#pngtitle {
-			max-width: 100%;	/* Image will not stretch larger than its natural size */
-			max-height: 100%;	/* By setting the height as well as the width, CSS will shrink the image, maintaining it's aspect ratio */
-			/* height:	auto; */
-			margin-left: 2.5%;
+		table {
+			border-collapse: separate;
+			border-spacing: 0.7rem 1rem;
 		}
 
-		#Complab, #update, #Composers {
+		.pngtitle img {
+			max-width: 100%;	/* Image will not stretch larger than its natural size */
+			max-height: 100%;	/* By setting the height as well as the width, CSS will shrink the image, maintaining it's aspect ratio */
+			margin: auto;
+			display: block;	/* Image is inline by default so need to convert to block for margin to have an effect */
+		}
+
+		.Complab, .update, .Composers {
 			color: #FFD700; /* gold */
 		}
 
-		#update {
+		.update {
 			font-family: georgia, "Times New Roman", arial, helvetica, sans-serif;
-			font-size: 1.25rem;
+			font-size: 1.35rem;
 			text-align: center;
 		}
 
-		#nojavascript {
+		.nojavascript {
 			text-align: center;
 			font-size: 2rem;
 			color: #000000;
 		}
 
-		#Composers {
+		.Composers {
 			font-family: arial, helvetica, sans-serif;
 			font-size: 1.5rem;
 			text-align: center;
 		}
 
-		#Key {
+		.Key {
 			font-family: arial, helvetica, sans-serif;
+			font-size: 1.2rem;
 			font-weight: bold;
 			padding: 0.6%;
 		}
 
-		/*#Key2 {
+		/*.Key2 {
 			font-family: monospace, sans-serif;
 			font-size: 0.9em;
 			padding: 1%;
 		}*/
 
-		#container {
+		.container {
 			position: relative;
 			width: 686px;        /* width + padding for IE 5.x */
 			w\idth: 680px;       /* real width */
@@ -101,7 +110,7 @@
 			border-radius: 9px;	 /* Added rounded corners effect via css instead of javascript 130820 */
 		}
 
-		#clickbandtext {
+		.clickbandtext {
 			display: none;      /* Hide click band for info text. Text readers do not need to see this */
 		}
 
@@ -142,7 +151,8 @@ ul.accordion h4 a:visited {
 }
 
 ul.accordion p {
-  margin: 1em 0;
+	font-size: 1rem;
+	margin: 1em 0;
 }
 
 /* Accordion styles (dynamic) */
