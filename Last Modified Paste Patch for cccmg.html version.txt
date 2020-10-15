@@ -1,7 +1,7 @@
-<script 
-  type="text/JavaScript" 
+<script
+  type="text/JavaScript"
   language="JavaScript">
-<!-- 
+<!--
 //
 // format date as dd-mmm-yy
 // example: 12-Jan-99
@@ -12,8 +12,8 @@ function date_ddmmmyy(date)
   var m = date.getMonth() + 1;
   var y = date.getYear();
 
-  // handle different year values 
-  // returned by IE and NS in 
+  // handle different year values
+  // returned by IE and NS in
   // the year 2000.
   if(y >= 2000)
   {
@@ -24,10 +24,10 @@ function date_ddmmmyy(date)
     y -= 100;
   }
 
-  // could use splitString() here 
-  // but the following method is 
+  // could use splitString() here
+  // but the following method is
   // more compatible
-  var mmm = 
+  var mmm =
     ( 1==m)?'Jan':( 2==m)?'Feb':(3==m)?'Mar':
     ( 4==m)?'Apr':( 5==m)?'May':(6==m)?'Jun':
     ( 7==m)?'Jul':( 8==m)?'Aug':(9==m)?'Sep':
@@ -41,7 +41,7 @@ function date_ddmmmyy(date)
 
 
 //
-// get last modified date of the 
+// get last modified date of the
 // current document.
 //
 function date_lastmodified()
@@ -64,8 +64,8 @@ function date_lastmodified()
 // finally display the last modified date
 // as DD-MMM-YY
 //
-document.write( 
-  "<div id=\"update\">Last Update on: " + 
+document.write(
+  "<div id=\"update\">Last Update on: " +
   date_lastmodified() + "</div><br/><br/>");
 // -->
 </script>
