@@ -1,19 +1,19 @@
 @media print { /* media type moved here from cccmg.php file 300911 */
 
-		#navigation {
+		.navigation {
 			display: none;     /* Navigation menu no use for print out */
 		}
-		
+
 		body {
 			font: 100% verdana, arial, helvetica, sans-serif;
 			margin: 0;
 		}
-		
+
 		h1 {
 			font-size: 30pt; /*2.5em;*/
 			text-align: center;
 		}
-							
+
 		h2, h3 {
 			border-bottom: 2pt solid #4B4B4B;
 			color: #4B4B4B;                                        /* Make any coloured text greyscale if possible */
@@ -23,7 +23,7 @@
 			font-size: 24pt; /*2em;*/
 			text-align: center;
 		}
-		
+
 		h3 {
 			font-size: 18pt; /*1.5em;*/
 			padding-left: 4pt; /*1%;*/
@@ -38,47 +38,47 @@
 			font-size: 12pt; /*1em;*/
 			padding-left: 4pt; /*1%;*/
 		}
-		
-		#nojavascript {
+
+		.nojavascript {
 			display: none;   /* Works better with javascript message. No use for print out */
 		}
-		
-		#update {
+
+		.update {
 			font-family: georgia, "Times New Roman", arial, helvetica, sans-serif;
 			color: #4B4B4B;
 			font-size: 18pt; /*1.5em;*/
 			text-align: center;
 		}
-		
-		#Composers {
+
+		.Composers {
 			color: #4B4B4B;
-			font-family: arial, helvetica, sans-serif; 
+			font-family: arial, helvetica, sans-serif;
 			font-size: 24pt; /*2em;*/
 			text-align: center;
 		}
 
-		#Key {
+		.Key {
 			font-family: arial, helvetica, sans-serif;
 			font-weight: bold;
 			padding-left: 4pt; /*1%;*/
 		}
 
-		#Key2 {
+		/*👉.Key2 {
 			font-family: monospace, sans-serif;
-			font-size: 12pt; /*0.9em;*/
-			padding: 4pt; /*1%;*/
-		}
+			font-size: 12pt; ➡0.9em;⬅
+			padding: 4pt; ➡1%;⬅
+		}👈*/
 
-		#Complab {
+		.Complab {
 			color: #4B4B4B;
 		}
 
-		#container {
+		.container {
 			position: relative;
-			width: 686pt;        
+			width: 686pt;
 			w\idth: 680pt;
 		}
-		
+
 		hr {
 			border: 2pt solid #4B4B4B;
 		}
