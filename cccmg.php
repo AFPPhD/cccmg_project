@@ -6,21 +6,23 @@
 	<title>Classical Collectors' Classical Music Guide</title>
 	<meta name="Description" content="Classical Collectors' Classical Music Guide"/>
 	<meta name="Keywords" content="Classical Music Recommendations, Compilations, Recordings"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>		<!-- width=device-width allows the page to reflow content to match different physical screen widths (portrait orentation) -->
-	<!-- initial-scale controls the zoom level when the page is first loaded -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>		<!-- width=device-width allows the page to reflow content to match different screen widths, where device-width (screen resolution width) is the width of the screen in CSS pixels (logical pixels) set at a scale of 100% -->
+	<!-- Many high dpi mobile browsers can display their pages in a smaller physical size by translating multiple hardware pixels for each CSS "pixel" -->
+	<!-- Native Screen Resolution/Device Pixel Ratio (DPR) = Logical Pixels. i.e for most devices, screen resolution will be the default viewport width -->
+	<!-- But, for scaled resolutions, the viewport width will have a screen resolution not equal to Native Screen Resolution/Device Pixel Ratio (DPR) -->
+	<!-- initial-scale controls the zoom level when the page is first loaded i.e on high dpi screens, pages with initial-scale=1 will effectively be zoomed by browsers, preventing usability and readability problems on many touch-optimized web sites -->
 	<!-- iPhone exhibits zooming behaviour when rotating to landscape (but not when loading first in landscape). initial-scale stops that -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>  <!-- IE=edge: specifies that IE should run in the highest mode available to that version of IE as opposed to a compatability mode; IE8 can support up to IE8 modes, IE9 can support up to IE9 modes, and so on -->
-	<link rel="stylesheet" href="css/navigation.css"/>
 	<link rel="stylesheet" href="css/cccmg.css"/>
+	<link rel="stylesheet" href="css/navigation.css"/>
+	<link rel="stylesheet" href="css/main.css"/>
 	<link rel="stylesheet" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
-	<link rel="stylesheet" href="css/800.css"/>  <!-- No navigation bar for 800px or less -->
-	<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
 </head>
 
 <body>
 
-<div id="navigation">
-
+<div class="navigation">
 		<h3 class="hidden">Shortcuts</h3>  <!-- Hide Navigation bar when javascript disabled 270511 -->
         <ul class="hidden">
           <li id="top"><a href="#">Top of Page</a></li>
@@ -48,19 +50,22 @@
 </div>
 
 
-<div id="container">
+<div class="container">
+<!-- <h1 class="flash_header">Casual Collectors' Classical Music Guide</h1>     Eras Bold ITC header shows if javascript enabled -->
+<!-- <h1 class="png_header">Casual Collectors' Classical Music Guide</h1> -->
+<div class="pngtitle">
+	<img src="images/Eras_Bold_ITC.png" alt="Casual Collectors' Classical Music Guide"width="488" height="105" />
+</div>
 
-<h1 id="flash_header">Casual Collectors' Classical Music Guide</h1>    <!-- Eras Bold ITC header shows if javascript enabled -->
 <br/>
 
 <?php
 require_once("lastmodified.php");
 $lastmodified = date("l dS F Y", getHighestFileTimestamp("./"));           // Changed from ../ as should only be looking in current directory
-echo "<div id=\"update\">Last Update on: ".$lastmodified."</div>\n";
+echo "<div class=\"update\">Last Update on: ".$lastmodified."</div>\n";
 ?>
 
-
-<p id="nojavascript"><strong>This Web Site works better with Javascript enabled</strong></p>
+<p class="nojavascript"><strong>This Web Site works better with Javascript enabled</strong></p>
 
 <br/>
 <br/>
@@ -79,7 +84,7 @@ you to better informed and more detailed discussions on the internet.</p>
 is Essential Classics 9.00am - 12.00pm weekdays. The Building a Library section (approximately
 9.30 - 10.30am) on CD review (usually 9.00am - 12.15pm) Saturday morning, involves an expert
 sifting through the available recordings of a particular piece to recommend their top recording.
-Through the Night, mainly consistsof complete pieces taken from live performances. The schedules
+Through the Night, mainly consists of complete pieces taken from live performances. The schedules
 can be found at bbc.co.uk/radio3. You can also listen online.</p>
 
 <h3>Classic FM</h3>
@@ -97,39 +102,39 @@ is also given.</p>
 
 <br/>
 
-<h2>Major Composer Anniversaries in 2020</h2>
+<h2><span style="font-size: 1.75rem">Major Composer Anniversaries in 2020</span></h2>
 
 <br/>
 <br/>
 
-<p id="Composers">Ludwig van Beethoven 250 years since his birth<br/><br/>
+<p class="Composers">Ludwig van Beethoven 250 years since his birth<br/><br/>
 Gabriel Faur&eacute; 175 years since his birth<br/><br/>
 Max Bruch 100 years since his death<br/><br/>
 John Rutter 75 years since his birth</p>
 
 <br/>
 
-<h3 id="key">KEY for common abbreviations:</h3>
+<h3 class="key">KEY for common abbreviations:</h3>
 <br/>
 
-<table id="Key">
+<table class="Key">
 <tbody>
-<tr><td>DG</td><td>= DEUTSCHE GRAMMOPHON</td></tr>
-<tr><td>EMI</td><td>= WARNER/EMI CLASSICS (WARNER BECAME OWNERS OF EMI'S BACK CATALOGUE IN 2013)</td></tr>
-<tr><td>SONY</td><td>= SONY MUSIC ENTERTAINMENT (SONY ABSORBED BMG IN 2008. RCA IS A SONY SUBSIDIARY)</td></tr>
-<tr><td>B.P.O</td><td>= BERLIN PHILHARMONIC ORCHESTRA</td></tr>
-<tr><td>V.P.O</td><td>= VIENNA PHILHARMONIC ORCHESTRA</td></tr>
-<tr><td>L.S.O</td><td>= LONDON SYMPHONY ORCHESTRA</td></tr>
-<tr><td>C.O.E</td><td>= CHAMBER ORCHESTRA OF EUROPE</td></tr>
-<tr><td>L.P.O</td><td>= LONDON PHILHARMONIC ORCHESTRA</td></tr>
-<tr><td>C.O</td><td>= CONCERTGEBOUW ORCHESTRA (BECAME ROYAL CONCERTGEBOUW ORCHESTRA IN 1988)</td></tr>
-<tr><td>B.R.S.O</td><td>= BAVARIAN RADIO SYMPHONY ORCHESTRA</td></tr>
-<tr><td>P</td><td>= PERIOD INSTRUMENTS</td></tr>
-<tr><td>L.A</td><td>= LIMITED AVAILABILITY (TRY SECOND HAND. MAY STILL BE AVAILABLE AS PART OF BOX SET)</td></tr>
+<tr><td>DG</td><td>DEUTSCHE GRAMMOPHON</td></tr>
+<tr><td>EMI</td><td>WARNER/EMI CLASSICS (WARNER BECAME OWNERS OF EMI'S BACK CATALOGUE IN 2013)</td></tr>
+<tr><td>SONY</td><td>SONY MUSIC ENTERTAINMENT (SONY ABSORBED BMG IN 2008. RCA IS A SONY SUBSIDIARY)</td></tr>
+<tr><td>B.P.O</td><td>BERLIN PHILHARMONIC ORCHESTRA</td></tr>
+<tr><td>V.P.O</td><td>VIENNA PHILHARMONIC ORCHESTRA</td></tr>
+<tr><td>L.S.O</td><td>LONDON SYMPHONY ORCHESTRA</td></tr>
+<tr><td>C.O.E</td><td>CHAMBER ORCHESTRA OF EUROPE</td></tr>
+<tr><td>L.P.O</td><td>LONDON PHILHARMONIC ORCHESTRA</td></tr>
+<tr><td>C.O</td><td>CONCERTGEBOUW ORCHESTRA (BECAME ROYAL CONCERTGEBOUW ORCHESTRA IN 1988)</td></tr>
+<tr><td>B.R.S.O</td><td>BAVARIAN RADIO SYMPHONY ORCHESTRA</td></tr>
+<tr><td>P</td><td>PERIOD INSTRUMENTS</td></tr>
+<tr><td>L.A</td><td>LIMITED AVAILABILITY (TRY SECOND HAND. MAY STILL BE AVAILABLE AS PART OF BOX SET)</td></tr>
 </tbody>
 </table>
 
-<!-- <pre id="Key2">    Used this method because screen readers appear to read down each column for a table layout. Here the key is read across
+<!-- <pre class="Key2">    Used this method because screen readers appear to read down each column for a table layout. Here the key is read across
 DG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = DEUTSCHE GRAMMOPHON
 EMI&nbsp;&nbsp;&nbsp;&nbsp; = EMI CLASSICS
 SONY&nbsp;&nbsp;&nbsp; = SONY CLASSICAL
@@ -150,12 +155,12 @@ L.A&nbsp;&nbsp;&nbsp;&nbsp; = LIMITED AVAILABILITY (TRY SECOND HAND. MAY STILL B
 
 <br/>
 
-<h2 id="comp">Compilations</h2>
+<h2 class="comp">Compilations</h2>
 <p>I will restrict my selection here from within the UNIVERSAL CLASSICS labels (DECCA,
 PHILIPS and DEUTSCHE GRAMMOPHON) and EMI (VIRGIN), since they generally provide good recordings
 and sound quality of movement/extracts from complete pieces. Series worth examining are:</p>
 
-<p id="Complab">Essential.. (2cds) (DECCA)<br/><br/>
+<p class="Complab">Essential.. (2cds) (DECCA)<br/><br/>
 
 Panorama (2cds) (Tend to have complete pieces) (DG)<br/><br/>
 
@@ -239,7 +244,7 @@ The Essential Vaughan Williams (2cds) (EMI)</p>
 
 <br/>
 
-<h2 id="complete_pieces">Complete Pieces</h2>   <!-- Add Complete Pieces to Navigation menu 071011 -->
+<h2 class="complete_pieces">Complete Pieces</h2>   <!-- Add Complete Pieces to Navigation menu 071011 -->
 
 <p>Some recordings are given the label (MULTCOMB). This is because the
 recording is available in combination with different pieces on other CDs.
@@ -254,7 +259,7 @@ background noises e.g coughs. Considering that studio recordings, including some
 I have recommended, can be prone to the occasional unwanted noises, this should not
 be a problem.</p>
 
-<p id="clickbandtext">Just click on a band to reveal the relevant information. Click the band
+<p class="clickbandtext">Just click on a band to reveal the relevant information. Click the band
 again to hide the information.</p>
 <br/>
 
@@ -962,32 +967,25 @@ Bean/Boult/New Philharmonic (EMI)</p>
 <br/>
 
 <p>
-
     <a href="http://jigsaw.w3.org/css-validator/check/referer">
         <img style="border:0;width:88px;height:31px"
             src="http://jigsaw.w3.org/css-validator/images/vcss"
             alt="Valid CSS!"/>
     </a>
-
 </p>
 
 
-<script src="js/respond.min.js"></script>                 <!-- Polyfill for browsers not recognising min-width, max-width and media types -->
-<script src="js/core.js"></script>                        <!-- Needed for accordion_mod -->
-<script src="js/jquery-1.5.min.js"></script>
-<script src="js/jquery-ui-1.8.10.custom.min.js"></script>  <!-- Allows animation of floating menu -->
+<script src="js/respond.min.js"></script>	<!-- TODO: Replace possibly -->	<!-- Polyfill for browsers not recognising min-width, max-width and media types -->
+<script src="js/core.js"></script>	        <!-- TODO: Reference from online -->	<!-- Needed for accordion_mod -->
+<script src="js/jquery-1.5.min.js"></script>	<!-- TODO: Reference from online -->
+<script src="js/jquery-ui-1.8.10.custom.min.js"></script>  <!-- TODO: Reference from online --> <!-- Allows animation of floating menu -->
 <script src="js/accordion_mod.js"></script>
-<!-- <script type="text/javascript" src="js/datemodified.js"></script>           Routine to format date document cccmg.html last modified if available and return -->
-<!-- <script type="text/javascript" src="js/safari_modified_date.js"></script> -->
-<!-- <script type="text/javascript" src="js/dateupdate.js"></script>                   Script for "Last Update on: " using datemodified.js -->
-<!-- <script src="js/jquery.corner.js"></script>                Script for applying corners -->
-<!-- <script src="js/pagecorners.js"></script>                  Applies corners to specified elements. Now done via css 130820 -->
 <script src="js/hide_no_javascript_mes.js"></script>
 <script src="js/floating_nav_menu.js"></script>
 <script src="js/jquery.scrollTo.js"></script>             <!-- Script for scrollTo() -->
 <script src="js/scroll_to_link.js"></script>
-<script src="js/jquery.swfobject.1-1-1.js"></script>
-<script src="js/flash_header.js"></script>                 <!-- Embeds Eras Bold ITC header swobject -->
+<!-- <script src="js/jquery.swfobject.1-1-1.js"></script> Was for incorporating flash header image, which is now a png -->
+<!-- <script src="js/flash_header.js"></script>                  Embeds Eras Bold ITC header swobject -->
 <script src="js/animatetext.js"></script>
 </div>
 </body>
