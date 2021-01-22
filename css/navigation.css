@@ -38,6 +38,7 @@
 			/* color: #FFFFFF; */          /* move the cursor over it, giving the same effect you'd see if you used an image for the navigation */
 			color: black;
 			box-sizing: border-box;
+			/* TODO: *behavior: url(/scripts/boxsizing.htc); Need HTC path relative to HTML not CSS */
 			max-width: 96%;
 			margin: 2% auto;
 			border: 2px solid white;
