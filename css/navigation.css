@@ -1,11 +1,13 @@
 		.navigation {
 			text-align: center;
-			position: relative; /* Set offset with respect to entire document's top position. This is so we can easily move the navigation bar using its top property */
+			position: fixed;	/* Fallback */
+			position: sticky; /* sticky and top fix the navbar in position. No jittery movement on page scrolling using jQuery anymore */
+			top: 20px;
 			float: left; /* Puts menu left of page */
 			background-color: #4F94CD; /* light blue */
 			margin-left: 1%;    /* Moves floating menu box to right, relative to window */
 			width: 150px;		/* Needs to be absolute, otherwise change size on window resize */
-			height: 100%;
+			height: 535px;		/* Holds shape for just position: fixed working. Otherwise get menu extending to bottom with height: 100% */
 			border-radius: 9px;	/* Added rounded corners effect via css instead of javascript 130820 */
 		}
 
@@ -25,19 +27,58 @@
 			text-decoration: none; /* No underlining */
 		}
 
-		.navigation li a:link, .navigation li a:visited{
+		/* .navigation h3.hidden, .navigation ul.hidden {		TODO: Smoothscroll?
+			display: none;			Leave navigation bar visible if javascript disabled
+		} */
+
+		.navigation a:link, .navigation a:visited{
 			font-weight: bold;
-			padding: 0.25em;
-			display: block;          /* block causes the link to display as a block element, meaning that the whole area of each navigation �button� is active when you */
-			color: #FFFFFF;          /* move the cursor over it � the same effect you�d see if you used an image for the navigation */
+			/* padding: 0.25em; */
+			display: block;          /* block causes the link to display as a block element, meaning that the whole area of each navigation link is active when you */
+			/* color: #FFFFFF; */          /* move the cursor over it, giving the same effect you'd see if you used an image for the navigation */
+			color: black;
+			box-sizing: border-box;
+			max-width: 96%;
+			margin: 2% auto;
+			border: 2px solid white;
+			background-color: #FFD700; /* gold */
 		}
 
-		.navigation a:hover {
-			margin: -2px 0;             /* Compensates for push down effect on item and items below it because of border application  border: 2px solid #4F94CD */
-			background-color: #036;
-			border: 2px solid #4F94CD;
+		/* Order of styles - :hover then :focus then :active */
+
+	@media (hover: hover) and (pointer: fine) {	/* Non-touch type device only. hover just causes problems otherwise */
+		.navigation ul li a:hover, ul.accordion h4 a:hover {
+			/* margin: -2px 0; */        /* Compensates for push down effect on item and items below it because of border application  border: 2px solid #4F94CD */
+			background-color:#A22BE7 ; /* Used higher selector specificity instead of !important (last resort) to override background-color: #FFD700; */
+			/* border: 2px solid #4F94CD; */
+			/* cursor: hand;
+			cursor: pointer;	 To get hand. cursor: hand; backwards compatibility for IE4 through 6 */
+		}
+	}
+
+		/*
+  			Provide basic, default focus styles for fallback.
+		*/
+
+		a:focus {
+			outline: 3px solid black;
+  		}
+
+  		/*
+			Remove default focus styles for mouse users ONLY if
+			:focus-visible is supported on this platform.
+		*/
+
+		.js-focus-visible a:focus:not(.focus-visible) {		/* Adds a focus-visible class to all focused elements in situations in which otherwise the :focus-visible pseudo-selector would match */
+			outline: 0;										/* i.e Just use polyfill until all browsers support :focus-visible */
 		}
 
-		.navigation h3.hidden, .navigation ul.hidden { /* Hide Navigation bar when javascript disabled 270511 */
-			display: none;
+  		/*
+			Optionally: If :focus-visible is supported on this
+			platform, provide enhanced focus styles for keyboard
+			focus.
+  		*/
+
+  		.js-focus-visible .focus-visible {
+			outline: 3px solid black;
 		}
