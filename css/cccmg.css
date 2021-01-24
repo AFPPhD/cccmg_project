@@ -1,22 +1,20 @@
 		body {
 			font-size: 24px;	/* Font size used in browsers that don’t support fluid units */
-			font-size: 150%;	/* A percentage baseline font size offers more consistent cross browser support */
+			font-size: 150%;	/* A percentage baseline font size offers more consistency for browser support */
 			font-family: verdana, helvetica, arial, sans-serif;
-			background: #036; /* dark blue */
+			color: #000000; /* black for text colour */
+			background-color: #204c75; /* dark blue */
 			margin: 0;
 			padding: 0;
-			color: #FFFFFF; /* white */
 		}
 
 		h1 {
 			font-size: 2.5rem;	/* Text in pixels doesn’t scale up (or down) when you resize it in Old Internet Explorer browsers */
 			text-align: center;	/* Using rem/em to size text, gets rids of this problem */
-			color: #000000; /* black */
 		}
 
 		h2, h3 {
 			border-bottom: 2px solid #FFD700; /* gold */
-			color: #036;
 			padding-top: 1%; /* Compensates for pushing up effect of border-bottom */
 			margin: 0 1%;
 		}
@@ -26,19 +24,26 @@
 			text-align: center;
 		}
 
+		h2 span {
+			font-size: 1.75rem;		/* Styling for Title: Major Composer Anniversaries in 2020 */
+		}
+
 		h3 {
 			font-size: 1.75rem;
 			padding-left: 1%;
 		}
 
+		h3#key {
+			text-align: center;		/* Styling for Title: KEY for common abbreviations: */
+		}
+
 		h4 {
-			font-size: 1.22rem; /* Too big and it will expand out of gold region */
+			font-size: 1.22rem; /* Too big and words will expand out of gold region */
 			padding-left: 1%;
 		}
 
 		h5 {
 			font-size: 1.1rem;
-			color: #000000;
 			padding-left: 1%;
 		}
 
@@ -48,15 +53,21 @@
 			/* word-wrap: break-word; */
 			text-align: justify;
 			padding: 0 1%;
+			color: #FFFFFF; /* white */
 		}
 
 		hr {
-			border: 2px solid #036; /* Change border but leave width and height at default, will look same in IE, Firefox and Opera */
+			border: 2px solid; /* Change border but leave width and height at default, will look same in IE, Firefox and Opera */
+			color: #204c75 ; /* dark blue */
 		}
 
 		table {
 			border-collapse: separate;
-			border-spacing: 0.7rem 1rem;
+			border-spacing: 5rem 1rem;
+		}
+
+		table td {
+			vertical-align: top;
 		}
 
 		.pngtitle img {
@@ -66,7 +77,7 @@
 			display: block;	/* Image is inline by default so need to convert to block for margin to have an effect */
 		}
 
-		.Complab, .update, .Composers {
+		.complab, .update, .composers {
 			color: #FFD700; /* gold */
 		}
 
@@ -82,20 +93,20 @@
 			color: #000000;
 		}
 
-		.Composers {
+		.composers {
 			font-family: arial, helvetica, sans-serif;
 			font-size: 1.5rem;
 			text-align: center;
 		}
 
-		.Key {
+		.tablekey {
 			font-family: arial, helvetica, sans-serif;
-			font-size: 1.2rem;
+			font-size: 1.25rem;
 			font-weight: bold;
 			padding: 0.6%;
 		}
 
-		/*.Key2 {
+		/*.tableKey2 {
 			font-family: monospace, sans-serif;
 			font-size: 0.9em;
 			padding: 1%;
@@ -106,7 +117,7 @@
 			width: 686px;        /* width + padding for IE 5.x */
 			w\idth: 680px;       /* real width */
 			margin: 20px auto 0 auto;
-			background: #4F94CD; /* light blue */
+			background-color: #4F94CD; /* light blue */
 			border-radius: 9px;	 /* Added rounded corners effect via css instead of javascript 130820 */
 		}
 
@@ -117,20 +128,20 @@
 /* Accordion styles (static) */
 
 ul.accordion {
-  display: block;
+  /* display: block; */
   list-style-type: none;                                      /* This stops bullet points appearing left of written underlined header links */
   margin: 1%;   /* 0; */                                       /* Shrinks box width wise */
-  padding: 0 0; /* 0 1em; */ 				               /* Shrinks bands width wise */
-  position: relative; /* Forces the bottom border of the h2 to display in IE */ /* If change position to absolute box shrinks */
+  padding: 0; /* 0 1em; */ 				               /* Shrinks bands width wise */
+  position: relative; /* Forces the bottom border of the h2 to display in IE. If change position to absolute box shrinks */
 }
 
 ul.accordion li {
   clear: left;
-  position: relative;              /* If change position to absolute box shrinks vertically */
+  position: relative;              /* If change position to absolute, box shrinks vertically */
 }
 
 ul.accordion h3 {
-  margin: 0 0;  /*Push in yellow underline */            /* margin-left: -1 % Was needed to line up left hand side of composer name with left hand side of band */
+  margin: 0;  /*Push in yellow underline */            /* margin-left: -1% Was needed to line up left hand side of composer name with left hand side of band */
   /* background-color: #4F94CD; */ /* light blue */      /* To keep header background from changing to box colour if different */
 }
 
@@ -144,7 +155,7 @@ ul.accordion h4 {
 ul.accordion h4 a:link,
 ul.accordion h4 a:visited {
   color: #000;              	/* Colour of band link words */
-  display: block;
+  display: block;	/* block causes the link to display as a block element, as for navigation links */
   margin: 0 -0.1em 0 -0.40em; /* To get highlighted colour covering band colour */
   padding: 0;               	/* 0 0.667em; 0.667em pushing band link words to right */
   text-decoration: none;    	/* Prevents underlining for header links */
@@ -165,20 +176,33 @@ ul.accordion li.collapsed * {
                                          /* Can also use text-indent: -10000px; (Doesn't work if direction of language right to left). Can also use zero height i.e */
 										 /* position: absolute; height: 0; overflow: hidden; (Voice Over screen reader will not read content within element with 0 */
 										 /* height) */
+
+ul.accordion li.collapsed h3,
 ul.accordion li.collapsed h4,
-ul.accordion li.expanded h4,
 ul.accordion li.collapsed h4 a:link,
 ul.accordion li.collapsed h4 a:visited,
+ul.accordion li.expanded h4,
 ul.accordion li.expanded h4 a:link,
-ul.accordion li.expanded h4 a:visited,
-ul.accordion li.collapsed h3 {
+ul.accordion li.expanded h4 a:visited {
   position: static;                        /* Keeps band (header) (h4) and Composer name (h3) from being shifted -10000px to left */
 }
 
-ul.accordion li.collapsed h4 a:hover,
-ul.accordion li.collapsed h4 a:focus,
-ul.accordion li.collapsed h4 a:active,
-ul.accordion li.expanded h4 a:link,
-ul.accordion li.expanded h4 a:visited {
-  background-color: #CCC; /* grey */      /* Change background colour for header of fold (band) that is expanded, just been collapsed, has the cursor over it, */
-}                                         /* or has keyboard focus */
+ul.accordion li.expanded h4 a {
+	background-color: grey;		/* Band colour for expanded section */
+}
+
+/* Change background colour for header of fold (band) that is expanded, has the cursor over it, */
+                                        /* or has keyboard focus */
+
+
+/* ul.accordion li.collapsed h4 a:hover {
+	background-color: #204c75;
+}
+
+ul.accordion li.collapsed h4 a:focus {
+	background-color: #CCC;
+}
+
+ul.accordion li.collapsed h4 a:active {
+  background-color: purple;
+} */
