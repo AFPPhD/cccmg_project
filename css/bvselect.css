@@ -5,39 +5,48 @@ Developed by: Bruno Vieira
 
 **************************** */
 .bv_mainselect {
-	color: #fff;
+	color: #FFD700; /* #fff */
 	padding: 7px 5px 7px 5px;
 	border-radius: 6px;
-	font-family: Arial;
-	font-size: 10pt
+	font-family: verdana, helvetica, arial, sans-serif;
+	font-size: 1rem;
+	/* Used following 2 lines to centre Change Colour Box and colour options list horizontally, since reduced width to 55% */
+	display: flex; /* Need to define in order for justify-content to work */
+	justify-content: center; /* To centre children under navbar using flex, .bv_atual.bv_background and .bv_ul_inner.bv_background */
+							/* Also have to give .bv_ul_inner.bv_background (colour options list) a margin-top of 64px, because */
+							/* of fixed property of elements, to push it below the Change Colour Box to make it visible */
+	/* font-family: Arial;
+	font-size: 10pt; */
 }
 .bv_atual {
-	color: #535353;
-	font-size: 11pt;
+	color: black; /* #535353 */
+	font-size: 1rem;
+	/* font-size: 11pt; */
 	padding: 10px;
-	border: 2px solid #e1e1e1;
+	border: 2px solid #ffffff; /* #e1e1e1 */
 	border-radius: 6px;
 	cursor: pointer
 }
 .bv_disabled {
-	background-color: #e6e6e6!important;
-	cursor: default!important;
+	background-color: #e6e6e6 !important;
+	cursor: default !important;
 }
 .bv_separator {
 	font-weight: 700;
-	color: #282828!important;
-	cursor:default!important;
-	background-color:transparent!important;
+	color: #282828 !important;
+	cursor: default !important;
+	background-color: transparent !important;
 }
 .bv_background {
-	background-color: #fff
+	background-color: #FFD700; /* #fff */
 }
+
 .arrow {
-	border: solid grey;
+	border: solid black; /* grey */ /* Colour of arrow */
 	border-width: 0 3px 3px 0;
 	display: inline-block;
 	padding: 3px;
-	float: right;
+	/* float: right; */
 	pointer-events: none;
 }
 .up {
@@ -63,7 +72,7 @@ Developed by: Bruno Vieira
 	margin: 0px !important;
 	overflow-y: scroll;
 	z-index: 10 !important;
-	max-height:100%!important;
+	max-height: 100% !important;
 }
 
 .bv_ul_bg
@@ -78,7 +87,7 @@ Developed by: Bruno Vieira
 
 .bv_ul_mobile li
 {
-	padding:20px!important;
+	padding: 20px !important;
 }
 
 
@@ -92,7 +101,7 @@ Developed by: Bruno Vieira
 	margin-top: 10px;
 	padding: 0;
 	display: none;
-	border: 2px solid #e1e1e1;
+	border: 2px solid #ffffff; /* #e1e1e1 */
 	border-radius: 8px;
 	display: none;
 	z-index: 1;
@@ -103,16 +112,16 @@ Developed by: Bruno Vieira
 .bv_ul_inner li {
     cursor: pointer;
     list-style: none;
-    color: #353535;
+    color: black; /* #353535 */
     padding: 5px 0 5px 9px;
     font-family: arial;
-    font-size: 10pt;
+	font-size: 1rem; /* font-size: 10pt; */
 	padding: 12px 28px 10px 10px;
 }
 
 .bv_ul_inner i {
     color: #464646;
-    font-size: 17pt;
+    font-size: 1rem; /* font-size: 17pt; */
     margin-right: 10px;
     float: left;
     margin-top: -1px;
@@ -141,11 +150,11 @@ Developed by: Bruno Vieira
 	height: 38px;
 	width: 100%;
 	background-color: transparent;
-	font-size: 10pt;
+	font-size: 1rem; /* font-size: 10pt; */
 	font-weight: bold;
 }
 .bv_ul_inner li:hover {
-	background-color: #eee
+	background-color: #A22BE7; /* #eee */
 }
 .nofocus
 {
@@ -157,6 +166,22 @@ Developed by: Bruno Vieira
 {
 	padding: 0px 9px 0px 10px;
 }
-*:focus {
-    outline: none!important;
-}
+
+/* @media (hover: hover) and (pointer: fine) {	 Non-touch type device only. hover just causes problems otherwise */
+
+
+	.bv_atual.bv_background:hover {
+		background-color:#A22BE7; /* Used higher selector specificity instead of !important (last resort) to override background-color: #FFD700; */
+	}
+
+	.bv_ul_inner.bv_background {
+		margin-top: 64px; /* Needed to push colour list options below Change Colour Button, because of fixed (sticky) position
+						  /* used to stop Navbar moving being inherited
+
+/* } */
+
+/* outline: none !important. Re-enabled outline to get black outline on selectable items. */
+/* Colour menu and selections not highlighting - Keyboard accessibility issue */
+/* *:focus {
+    outline: 3px solid black;
+} */
