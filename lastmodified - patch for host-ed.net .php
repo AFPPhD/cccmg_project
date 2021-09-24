@@ -3,7 +3,7 @@
 function getAllFiles($directory, $recursive = true) {
      $result = array();
      $handle =  opendir($directory);
-     while (false !== ($datei = readdir($handle))) // To guard against file called "0", which would result in readdir() returning false (as well as for no more 
+     while (false !== ($datei = readdir($handle))) // To guard against file called "0", which would result in readdir() returning false (as well as for no more
      {                                             // files to read), explicitly test return value not equal to false
           if (($datei != '.') && ($datei != '..')) // Ignore current and one level up directories for finding files to compare
           {
@@ -12,9 +12,9 @@ function getAllFiles($directory, $recursive = true) {
 						if ($recursive) {
 							$result = array_merge($result, getAllFiles($file.'/'));
 						}
-					
+
                } else {
-					if ($file == "cccmg.php") {   // PATCH FOR host-ed.net 
+					if ($file == "cccmg.php") {   // PATCH FOR host-ed.net
                     $result[] = $file;
 					}
                }
@@ -31,7 +31,7 @@ function getHighestFileTimestamp($directory, $recursive = true) {
           $currentValue = filemtime($val);
           if ($currentValue > $highestKnown) $highestKnown = $currentValue;
      }
-	 
+
      return $highestKnown;
 }
 
