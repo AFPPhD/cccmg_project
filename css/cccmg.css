@@ -1,5 +1,5 @@
 		body {
-			font-size: 24px;	/* Font size used in browsers that don’t support fluid units */
+			/* font-size: 24px; */	/* Font size used in browsers that don’t support fluid units */
 			font-size: 150%;	/* A percentage baseline font size offers more consistency for browser support */
 			font-family: verdana, helvetica, arial, sans-serif;
 			color: #000000; /* black for text colour */
@@ -38,7 +38,7 @@
 		}
 
 		h4 {
-			font-size: 1.22rem; /* Too big and words will expand out of gold region */
+			font-size: 1.15rem; /* Too big and words will expand out of gold region (Was 1.22rem) */
 			padding-left: 1%;
 		}
 
@@ -49,11 +49,9 @@
 
 		p  {
 			line-height: 1.5;	/* 150% line height usually best */
-			/*👉max-width: 75ch; TODO:max-width: calc(30em * 0.5);👈*/
-			/* word-wrap: break-word; */
 			text-align: justify;
 			padding: 0 1%;
-			color: #FFFFFF; /* white */
+			color: #e6e6e6; /* white */
 		}
 
 		hr {
@@ -83,7 +81,7 @@
 
 		.update {
 			font-family: georgia, "Times New Roman", arial, helvetica, sans-serif;
-			font-size: 1.35rem;
+			font-size: 1.4rem;
 			text-align: center;
 		}
 
@@ -95,7 +93,7 @@
 
 		.composers {
 			font-family: arial, helvetica, sans-serif;
-			font-size: 1.5rem;
+			font-size: 1.65rem;
 			text-align: center;
 		}
 
@@ -104,6 +102,7 @@
 			font-size: 1.25rem;
 			font-weight: bold;
 			padding: 0.6%;
+			color: #ffffff;
 		}
 
 		/*.tableKey2 {
@@ -125,13 +124,34 @@
 			display: none;      /* Hide click band for info text. Text readers do not need to see this */
 		}
 
+/*	Text highlight colour */
+
+		::selection { /* The selectors are not combined, even though the style blocks are doing the same thing. */
+					  /* It doesn’t work if you combine them because browsers ignore the entire selector if there */
+					  /* is a part of it they don’t understand or it is invalid */
+			/* css variable goes here */
+			background-color: #204c75;
+		}
+
+		  /* Safari & Chrome - Webkit Rendering */
+		::-webkit-selection {
+			/* css variable goes here */
+			background-color: #204c75;
+		}
+
+		  /* Mozilla based - Gecko Rendering */
+		::-moz-selection {
+			/* css variable goes here */
+			background-color: #204c75;
+		}
+
 /* Accordion styles (static) */
 
 ul.accordion {
   /* display: block; */
-  list-style-type: none;                                      /* This stops bullet points appearing left of written underlined header links */
-  margin: 1%;   /* 0; */                                       /* Shrinks box width wise */
-  padding: 0; /* 0 1em; */ 				               /* Shrinks bands width wise */
+  list-style-type: none;    /* This stops bullet points appearing left of written underlined header links */
+  margin: 1%;   /* 0; */    /* Shrinks box width wise */
+  padding: 0; /* 0 1em; */ 	/* Shrinks bands width wise */
   position: relative; /* Forces the bottom border of the h2 to display in IE. If change position to absolute box shrinks */
 }
 
@@ -154,7 +174,7 @@ ul.accordion h4 {
 
 ul.accordion h4 a:link,
 ul.accordion h4 a:visited {
-  color: #000;              	/* Colour of band link words */
+  color: #000;             	/* Colour of band link words */
   display: block;	/* block causes the link to display as a block element, as for navigation links */
   margin: 0 -0.1em 0 -0.40em; /* To get highlighted colour covering band colour */
   padding: 0;               	/* 0 0.667em; 0.667em pushing band link words to right */
