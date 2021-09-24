@@ -28,7 +28,6 @@ function getHighestFileTimestamp($directory, $recursive = true) {
           $currentValue = filemtime($val);
           if ($currentValue > $highestKnown) $highestKnown = $currentValue;
      }
-	 
      return $highestKnown;
 }
 
