@@ -4,18 +4,18 @@ $(document).ready(function(){
     return false;                  // as well as integers. return false - to cancel default link action. $ - means want to scroll entire window. Using $(div#scrolly) would
   });                              // scroll specified overflow element
 
-  $('a[href=#introduction]').click(function(){
+  $('a[href=#intro]').click(function(){
     $.scrollTo('#intro','slow');
     return false;
   });
 
-  $('a[href=#keydesc]').click(function(){
+  $('a[href=#key]').click(function(){
     $.scrollTo('#key','slow');
     return false;
   });
 
-  $('a[href=#compilation]').click(function(){
-    $.scrollTo('#comp','slow');
+  $('a[href=#compilations]').click(function(){
+    $.scrollTo('#compilations','slow');
     return false;
   });
 
