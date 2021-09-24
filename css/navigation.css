@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons'); /* Local fallback in material_icons.css */
+
 		.navigation {
 			text-align: center;
-			position: fixed;	/* Fallback */
+			position: fixed;	/* Fallback.  stickybits.js polyfill available */
 			position: sticky; /* sticky and top fix the navbar in position. No jittery movement on page scrolling using jQuery anymore */
 			top: 20px;
 			float: left; /* Puts menu left of page */
 			background-color: #4F94CD; /* light blue */
 			margin-left: 1%;    /* Moves floating menu box to right, relative to window */
 			width: 150px;		/* Needs to be absolute, otherwise change size on window resize */
-			height: 535px;		/* Holds shape for just position: fixed working. Otherwise get menu extending to bottom with height: 100% */
+			height: 536px;		/* height value - Holds shape for just position: fixed working. Otherwise get menu extending to bottom with height: 100% */
 			border-radius: 9px;	/* Added rounded corners effect via css instead of javascript 130820 */
 		}
 
@@ -28,10 +30,10 @@
 		}
 
 		/* .navigation h3.hidden, .navigation ul.hidden {		TODO: Smoothscroll?
-			display: none;			Leave navigation bar visible if javascript disabled
-		} */
+			display: none;			Need to leave navigation bar visible if javascript disabled, allowing one click functionality
+		}  (Screen Reader issues ?)	*/
 
-		.navigation a:link, .navigation a:visited{
+		.navigation a:link, .navigation a:visited {
 			font-weight: bold;
 			/* padding: 0.25em; */
 			display: block;          /* block causes the link to display as a block element, meaning that the whole area of each navigation link is active when you */
@@ -45,17 +47,69 @@
 			background-color: #FFD700; /* gold */
 		}
 
+		/* .no_highlights {  Disable this if highlight change does not work
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			-webkit-tap-highlight-color: transparent;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		} */
+
+
+		.select-option select {
+				/* box-sizing: border-box; */
+			-webkit-appearance: none; /* appearance - To apply/remove platform-specific styling to an element that doesn’t/does have it by default */
+				-moz-appearance: none;
+					appearance: none; /* A reset of styles, including removing the default dropdown arrow and border */
+				/* position: relative; */
+
+			outline: none; /*  Outline for keyboard focus included below */
+			font-weight: bold;
+			font-family: verdana, helvetica, arial, sans-serif;
+			width: 100%;
+			max-width: 96%;
+			padding: 3px 7px; /* Changed from 1% 10% because box height bigger in Firefox compared to Edge and Chrome */
+			border: 2px solid white;
+			background: #4F94CD;  /*Colour of box with text */
+			/* display: inline-block;  Disable this if highlight change does not work */
+		}
+
+		select::-ms-expand {	/* For IE <= 11. Remove default arrow */
+			display: none;
+		}
+
+		.select-option:after {
+			content: 'keyboard_arrow_down';
+			font-family: 'material icons';
+			position: absolute; /* So arrow doesn't push change colour box to left */
+			bottom: 1%;  /* Move arrow element up 1% from bottom of parent element. Better consistency than top: 94% */
+			right: 0.75%;
+			/* transform: translateY(-50%); */ /* To centre element move back up 50% of it's own height */
+			pointer-events: none; /* The element does not react to pointer events, such as :hover and click */
+		}
+
+		/* TODO: Disabled default dropdown until can utilise css variables */
+		.select-option > select, .select-option:after {
+			display: none /* Disabled by default without javascript for now. Will be just disabled with javascript to utilise third party dropdown. When dropdown displayed navigation container height 574px at least needed */
+		}
 		/* Order of styles - :hover then :focus then :active */
 
-	@media (hover: hover) and (pointer: fine) {	/* Non-touch type device only. hover just causes problems otherwise */
-		.navigation ul li a:hover, ul.accordion h4 a:hover {
-			/* margin: -2px 0; */        /* Compensates for push down effect on item and items below it because of border application  border: 2px solid #4F94CD */
-			background-color:#A22BE7 ; /* Used higher selector specificity instead of !important (last resort) to override background-color: #FFD700; */
-			/* border: 2px solid #4F94CD; */
-			/* cursor: hand;
-			cursor: pointer;	 To get hand. cursor: hand; backwards compatibility for IE4 through 6 */
+		@media (hover: hover) and (pointer: fine) {	/* Non-touch type device only. hover just causes problems otherwise */
+			.navigation ul li a:hover, ul.accordion h4 a:hover { /* TODO: .select-option select:hover */
+				/* margin: -2px 0; */        /* Compensates for push down effect on item and items below it because of border application  border: 2px solid #4F94CD */
+				background-color:#A22BE7; /* Used higher selector specificity instead of !important (last resort) to override background-color: #FFD700; */
+				/* border: 2px solid #4F94CD; */
+				/* cursor: hand; To get hand. cursor: hand; backwards compatibility for IE4 through 6. W3C validator error flags for hand */
+				cursor: pointer; /* default -  keep as simple arrow and not change to hand. TODO: pointer - changing to hand icon, can have effect of causing */
+			}					 /* blue highlight in chrome ? */
 		}
-	}
+
+		/* .select-option select:hover, select:focus {
+			background-color:#A22BE7;
+		} */
 
 		/*
   			Provide basic, default focus styles for fallback.
