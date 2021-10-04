@@ -11,25 +11,30 @@ class BVSelect {
 
     constructor({
         selector = 'defaultId',
-        width = "100%",
+        width = "55%", // Was 100%
         searchbox = false,
         search_autofocus = false,
         offset = true,
         search_placeholder = "Search...",
         placeholder = "Select Option",
-        breakpoint = "600"
-    }) 
+        breakpoint = "600" // Breakpoint for mobile devices
+    })
     {
 
         // Random Number generated
-        var randomID = Math.floor(Math.random() * (9999 - 0 + 1)) + 0;
+        // var randomID = Math.floor(Math.random() * (9999 - 0 + 1)) + 0; // No reason this append needs to keep changing
+        var randomID = "CustomBuild";                                     // to maintain uniqueness for selectivity purposes
         var SearchPlaceholder = search_placeholder;
         var MainPlaceholder = placeholder;
-        var selectedIDFocus = 0; // Save wich dropdown is currently open
+        var selectedIDFocus = 0; // Save which dropdown is currently open
         var selectedMultiple = [];
         var selected_option_text = "";
         var first_option_text = "";
         var MDivSelector = selector.substring(1);
+        let selectedOption;
+        // var selectedOption = document.querySelectorAll('#ul_CustomBuild > li')[0]; // Default blue choice
+                            // Or querySelectorAll('#ul_CustomBuild > li')[0] or querySelectorAll('#ul_CustomBuild > li').firstchild;
+        // $('#ul_CustomBuild > li').first().attr('tabIndex', '0') in change_colour.js so default setting not needed here
 
         // Define Variables
         this.selector = selector.substring(1);
@@ -42,9 +47,13 @@ class BVSelect {
         this.search_autofocus = search_autofocus;
 
         // Hides native selector
-        document.getElementById(this.selector).style.display = "none";
+        // document.getElementsByClassName('.select-option').style.display = "none"; // Don't want original <select> hidden with css
+        // because if javascript disabled, will not see. TODO: Can disable default dropdown with javascript, when utilise css variables in default menu
+        // document.window.getComputedStyle( // .select-option > select, .select-option:after is disabled in navigation.css for now
+        //     document.querySelector('.select-option'), ':after'
+        // ).style.display = "none";
 
-        // ** ADD OPTIONS TO LIST ** 
+        // ** ADD OPTIONS TO LIST **
         this.SetupListOptions = function() {
             // Get All options inside Selectbox
             var x = document.getElementById(this.selector);
@@ -69,7 +78,7 @@ class BVSelect {
                 } else {
                     var is_separator = "";
                 }
-                // Check for Attachment  
+                // Check for Attachment
                 if (optionImg) {
                     var has_attachment = "<img src=" + optionImg + ">";
                 } else {
@@ -87,7 +96,7 @@ class BVSelect {
             document.querySelectorAll('#ul_' + randomID + ' li').forEach((item) => {
 
                 item.addEventListener('click', (e) => {
-                    const index = Array.from(item.parentNode.children).indexOf((item))
+                    const index = Array.from(item.parentNode.children).indexOf((item));
                     var selected_option = document.getElementById(this.selector);
 
                     if (this.searchbox == true) {
@@ -109,7 +118,7 @@ class BVSelect {
                             } else {
                                 selectedMultiple.push(index);
                                 item.style.backgroundColor = "#ececec";
-                            } // Adds to array 
+                            } // Adds to array
 
                             // Check if array is empty, if it is, gets the first option
                             if (selectedMultiple.length == 0) {
@@ -126,12 +135,13 @@ class BVSelect {
                                 SelectedNames = SelectedNames.substring(2);
                             }
 
-                            // Adds the texto o the main DIV
+                            // Adds the text to the main DIV
                             document.getElementById("main_" + randomID).innerHTML = SelectedNames + "<i id='arrow_" + randomID + "' class='arrows_bv arrow down'></i>";
 
                         } else {
                             // Get Index of option
-                            document.getElementById(this.selector).getElementsByTagName('option')[index + numberless].selected = 'selected';
+                           document.getElementById(this.selector).getElementsByTagName('option')[index + numberless].selected = 'selected';
+                           selectedOption = document.activeElement; // Get mouse clicked option reference
                             // Trigger onchange function
                             if (x.getAttribute("onchange") != null) {
                                 document.getElementById(this.selector).onchange();
@@ -139,6 +149,11 @@ class BVSelect {
                             // Updates main div
                             document.getElementById("main_" + randomID).innerHTML = item.textContent + "<i id='arrow_" + randomID + "' class='arrows_bv arrow down'></i>";
                             document.getElementById("ul_" + randomID).style.display = "none";
+                            const choices = document.querySelectorAll('#ul_CustomBuild > li'); // On closing menu all tabIndexes correctly reset
+                            for (i = 0; i < choices.length; i++) {
+                                choices[i].setAttribute('tabIndex', '-1');
+                            }
+                            selectedOption.setAttribute('tabIndex', '0');
 
                             // Remove class so Body has Scroll Again
                             document.body.classList.remove("stop-scrolling");
@@ -209,13 +224,20 @@ class BVSelect {
                 document.getElementById("ul_" + randomID).style.position = "absolute";
                 document.getElementById("ul_" + randomID).style.bottom = "";
 
+                // Reset tabIndexes
+                // const choices = document.querySelectorAll('#ul_CustomBuild > li'); // On closing menu all tabIndexes correctly reset
+                // for (i = 0; i < choices.length; i++) {
+                //     choices[i].setAttribute('tabIndex', '-1');
+                // }
+                // selectedOption.setAttribute('tabIndex', '0');
+
                 // Check Windows Width for Mobile
                 if(window.innerWidth < breakpoint)
                 {
                       document.getElementById("ul_" + randomID).classList.add("bv_ul_mobile");
                       document.getElementById(MDivSelector).insertAdjacentHTML('afterend', '<div id="deletebg" class="bv_ul_bg"></div>');
                       document.body.classList.add("stop-scrolling");
-                      
+
                 } else {
                      document.getElementById("ul_" + randomID).classList.remove("bv_ul_mobile");
                 }
@@ -254,8 +276,8 @@ class BVSelect {
 
                 // Check if autofocus and search is enabled
                 if(search_autofocus == true && searchbox == true) { document.getElementById("input_" + randomID).focus();}
-            
-               
+
+
             }, false);
 
             // ** SETUP LIST OPTIONS **
@@ -407,7 +429,7 @@ class BVSelect {
         }, true);
     }
 
-    // ** METHODS ** 
+    // ** METHODS **
     // DESTROY
     Destroy() {
         // Destroy main element and shows up native selectbox
@@ -416,7 +438,7 @@ class BVSelect {
     }
     // UPDATE
     Update() {
-        // Removes all Li that does not contain class "nofocus" - Its the search. 
+        // Removes all Li that does not contain class "nofocus" - Its the search.
         Array.from(document.querySelectorAll("#ul_" + this.randomID + " li"))
             .forEach(function(val) {
                 if (!val.classList.contains("nofocus")) {
@@ -436,11 +458,11 @@ class BVSelect {
         if(properties.placeholder)
         {
             document.getElementById("main_" + this.randomID).innerHTML = properties.placeholder + "<i id='arrow_" + this.randomID + "' class='arrows_bv arrow down'></i>";
-        } 
+        }
         if(properties.search_placeholder)
         {
             document.getElementById("input_" + this.randomID).placeholder = properties.search_placeholder;
-        } 
+        }
         if(properties.options && typeof(properties.options) === 'object')
         {
             // Clean every option inside the original selector
@@ -460,7 +482,7 @@ class BVSelect {
             }
 
         } else {
-            console.error("Options must be and Object. Read documentation."); 
+            console.error("Options must be and Object. Read documentation.");
         }
     }
     // Set option
@@ -471,7 +493,7 @@ class BVSelect {
         // If is set by index
         if(properties.type == "byIndex")
         {
-            selectorIndex.selectedIndex = properties.value; 
+            selectorIndex.selectedIndex = properties.value;
 
             // Trigger onchange function
             if (selectorIndex.getAttribute("onchange") != null) { document.getElementById(this.selector).onchange(); }
@@ -484,7 +506,7 @@ class BVSelect {
 
                  if(selectorIndex[i].value == properties.value)
                  {
-                    selectorIndex.selectedIndex = selectorIndex[i].index; 
+                    selectorIndex.selectedIndex = selectorIndex[i].index;
 
                     // Trigger onchange function
                     if (selectorIndex.getAttribute("onchange") != null) { document.getElementById(this.selector).onchange(); }
@@ -495,7 +517,7 @@ class BVSelect {
     }
     // Append/Prepend Option
     AppendOption(properties) {
-        
+
         console.log(properties);
 
         // Get position e check if position is undefined.
@@ -521,5 +543,5 @@ class BVSelect {
         } else {
             console.error("Options must be and Object. Read documentation.");
         }
-    } 
+    }
 }
