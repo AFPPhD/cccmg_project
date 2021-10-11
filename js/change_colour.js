@@ -16,6 +16,7 @@
 
         // $("body").find('#main_CustomBuild').each(function(){
             // var $colourMenuButton = $(this);
+            $(".navigation").height('605px'); // Extend default navbar height to hold bvselect Change Colour Button
             let $colourMenuButton = $('#main_CustomBuild');
             $colourMenuButton.attr('tabIndex', '0'); // Make custom button keyboard focusable
         // });
@@ -28,6 +29,7 @@
 
             let ourEvent;
             let $selectedOption;
+            let $tabbedChoice;
 
 
         function setTabIndexes() {
@@ -36,6 +38,12 @@
                 $(this).attr('tabIndex', '-1');
             });
         }
+
+        setTabIndexes(); // Sets all menu options to a tabIndex value of -1
+
+        // Given a jQuery object represents a set of DOM elements, the .first() method
+        // constructs a new jQuery object from the first element in that set.
+        $('#ul_CustomBuild > li').first().attr('tabIndex', '0'); // Make Blue default for option box
 
 
         // The way to handle dynamically added content, is to attach the event to the document and target the event and selector that you require.
@@ -56,8 +64,8 @@
                 }
             } else if (event.shiftKey && (event.which || event.keyCode) == '9') {
 
-                    // Closes menu options with Shift Tab (for situation where menu still open when shift tab from it to button)
-                    ourEvent = $.Event('closeEnterPress');
+                    // Closes menu options with Shift Tab (for situation where menu still open when shift tabbed from it to button and then Shift Tab again)
+                    ourEvent = $.Event('closeEnterPress'); //TODO: Remove this by adding as a focusout out event, and do same for  entering option ?
                     $colourMenuButton.trigger(ourEvent);
             }
         }));
@@ -78,11 +86,11 @@
         // }, true);
 
 
-        setTabIndexes(); // Sets all menu options to a tabIndex value of -1
+        // setTabIndexes(); // Sets all menu options to a tabIndex value of -1
 
-        // Given a jQuery object that represents a set of DOM elements, the .first() method
-        // constructs a new jQuery object from the first element in that set.
-        $('#ul_CustomBuild > li').first().attr('tabIndex', '0'); // Make Blue default for option box
+        // // Given a jQuery object represents a set of DOM elements, the .first() method
+        // // constructs a new jQuery object from the first element in that set.
+        // $('#ul_CustomBuild > li').first().attr('tabIndex', '0'); // Make Blue default for option box
 
 
         // window.onload = function() {
@@ -91,48 +99,68 @@
         //     var items = ul.getElementsByTagName('li');
         //     ul.addEventListener('keydown', event => {
         //         const { key } = event;
+
+
         // Process key presses on menu select
         $colourSelectionBox.on('keydown', '#ul_CustomBuild > li', function (event) {
-            var $selectedOption = $(this);
-            if ((event.which || event.keyCode) == '9') { // Leave menu if tab pressed
-                event.preventDefault();
-                ourEvent = $.Event('customFocusout');
-                $selectedOption.trigger(ourEvent);
-            }
-
-            if ((event.which || event.keyCode) == '13') { // Simulate mouse click functionality with enter
-                event.preventDefault();
-                setTabIndexes();
-                $selectedOption.attr('tabIndex', '0');
-                $selectedOption.trigger('click');
-            } else if ((event.which || event.keyCode) == '38')
-                {
-                event.preventDefault();
-                // $selectedOption = $(this);
-                ourEvent = $.Event('changeFocusUp');
-                $selectedOption.trigger(ourEvent);
-            } else if ((event.which || event.keyCode) == '40') {
-                event.preventDefault();
-                ourEvent = $.Event('changeFocusDown');
-                $selectedOption.trigger(ourEvent);
+            $tabbedChoice = $(document.activeElement); // Previously document.activeElement was this
+            if ((event.which || event.keyCode) == '9') { // Leave menu if tab pressed TODO: Add shift tab to here ?
+                    event.preventDefault();
+                    // setTabIndexes();
+                    // $selectedOption.attr('tabIndex', '0');
+                    ourEvent = $.Event('customFocusout');
+                    $selectedOption.trigger(ourEvent);
+            } else {
+                if ((event.which || event.keyCode) == '13') { // Simulate mouse click functionality with enter
+                    event.preventDefault();
+                    // setTabIndexes();
+                    // $selectedOption.attr('tabIndex', '0');
+                    $selectedOption = $tabbedChoice; // i.e pressing enter on already selected option
+                    // ourEvent = $.Event('customFocusout');
+                    // $selectedOption.on('customFocusout click', '#ul_CustomBuild > li', false);
+                    // $selectedOption.trigger(ourEvent);
+                    $selectedOption.trigger('click');
+                } else if ((event.which || event.keyCode) == '38') // Up arrow key
+                    {
+                    event.preventDefault();
+                    ourEvent = $.Event('changeFocusUp');
+                    // $selectedOption.trigger(ourEvent);
+                    $tabbedChoice.trigger(ourEvent);
+                } else if ((event.which || event.keyCode) == '40') { // Down arrow key
+                    event.preventDefault();
+                    ourEvent = $.Event('changeFocusDown');
+                    // $selectedOption.trigger(ourEvent);
+                    $tabbedChoice.trigger(ourEvent);
+                }
             }
         });
 
         $(document).on('customFocusout', '#ul_CustomBuild', function (ourEvent) {
-            $colourSelectionBox.css('display', 'none'); // When tab out of selection menu, shut menu
+            $colourSelectionBox.css('display', 'none'); // When tab out of selection menu, also shift tab or enter option and clicking elsewhere on page
+            if ($tabbedChoice.get(0).innerHTML != $selectedOption.get(0).innerHTML) { // Put focus back on selected option
+                setTabIndexes();
+                // $tabbedChoice.attr('autofocus', false);
+                $selectedOption.attr('tabIndex', '0');
+                // $selectedOption.attr('autofocus', true);
+            }
         }); // Had to customise focusout, since arrow keys also triggered this preventing focus going to next choice
 
+        // $(document).click(function(event) {
+        //     var $target = $(event.target);
+        //     if(!$target.closest('#menucontainer').length &&
+        //     $('#menucontainer').is(":visible")) {
+        //       $('#menucontainer').hide();
+        //     }
+        //   });
 
-        $(document).on('changeFocusUp changeFocusDown', '#ul_CustomBuild > li', function (ourEvent) { // TODO: Need mouse click to update where keyboard focus was
-            var $selectableOptions = $('#ul_CustomBuild > li');                                       // TODO: when no option was pressed
+
+        $(document).on('changeFocusUp changeFocusDown', '#ul_CustomBuild > li', function (ourEvent) {
+            var $selectableOptions = $('#ul_CustomBuild > li');
             var NoselectableOptions = $selectableOptions.length;
-            let $tabbedChoice;
-            // $(ourEvent.target);
-            // $(this).is(':focus');
-            // Get the focused element:
+            // let $tabbedChoice;
             var $focused = $(ourEvent.target);
-            $focused.attr('autofocus', false); // If element previously had autofocus remove it
             var index = $selectableOptions.index($focused);
+            // $focused.attr('autofocus', false); // autofocus removed, to allow for situation where there was a previously tabbed choice
             var nextIndex = 0;
             // let $tabbedChoice;
             if (ourEvent.type == 'changeFocusUp') {
@@ -152,11 +180,9 @@
             setTabIndexes();
             $tabbedChoice = $selectableOptions.eq(nextIndex);
             $tabbedChoice.attr('tabIndex', '0');
-            $tabbedChoice.attr('autofocus', true);
-            $tabbedChoice.get(0).focus(); // get() needed to get the DOM element inside the jQuery Object
-            // $(document).on('focusin', function () {
-            //     $selectableOptions.eq(nextIndex).get(0).focus();
-            // }, true);
+            // $tabbedChoice.attr('autofocus', true);
+            $tabbedChoice.get(0).focus(); // [] or get() needed to get the DOM element inside the jQuery Object
+                                          // Without this keyboard focus not working
         });
 
     });
