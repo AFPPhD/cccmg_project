@@ -28,10 +28,9 @@ class BVSelect {
         var MainPlaceholder = placeholder;
         var selectedIDFocus = 0; // Save which dropdown is currently open
         var selectedMultiple = [];
-        var selected_option_text = "";
         var first_option_text = "";
         var MDivSelector = selector.substring(1);
-        let selectedOption;
+        // let selectedOption;
         // var selectedOption = document.querySelectorAll('#ul_CustomBuild > li')[0]; // Default blue choice
                             // Or querySelectorAll('#ul_CustomBuild > li')[0] or querySelectorAll('#ul_CustomBuild > li').firstchild;
         // $('#ul_CustomBuild > li').first().attr('tabIndex', '0') in change_colour.js so default setting not needed here
@@ -141,7 +140,7 @@ class BVSelect {
                         } else {
                             // Get Index of option
                            document.getElementById(this.selector).getElementsByTagName('option')[index + numberless].selected = 'selected';
-                           selectedOption = document.activeElement; // Get mouse clicked option reference
+                           // selectedOption = document.activeElement; // Get mouse clicked option reference
                             // Trigger onchange function
                             if (x.getAttribute("onchange") != null) {
                                 document.getElementById(this.selector).onchange();
@@ -149,11 +148,11 @@ class BVSelect {
                             // Updates main div
                             document.getElementById("main_" + randomID).innerHTML = item.textContent + "<i id='arrow_" + randomID + "' class='arrows_bv arrow down'></i>";
                             document.getElementById("ul_" + randomID).style.display = "none";
-                            const choices = document.querySelectorAll('#ul_CustomBuild > li'); // On closing menu all tabIndexes correctly reset
-                            for (i = 0; i < choices.length; i++) {
-                                choices[i].setAttribute('tabIndex', '-1');
-                            }
-                            selectedOption.setAttribute('tabIndex', '0');
+                            // const choices = document.querySelectorAll('#ul_CustomBuild > li'); // On closing menu all tabIndexes correctly reset
+                            // for (i = 0; i < choices.length; i++) {
+                            //     choices[i].setAttribute('tabIndex', '-1');
+                            // }
+                            // selectedOption.setAttribute('tabIndex', '0');
 
                             // Remove class so Body has Scroll Again
                             document.body.classList.remove("stop-scrolling");
