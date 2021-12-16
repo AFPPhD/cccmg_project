@@ -14,8 +14,11 @@
 	<!-- iPhone exhibits zooming behaviour when rotating to landscape (but not when loading first in landscape). initial-scale stops that -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>  <!-- IE=edge: specifies that IE should run in the highest mode available to that version of IE as opposed to a compatability mode; IE8 can support up to IE8 modes, IE9 can support up to IE9 modes, and so on -->
 	<link rel="stylesheet" href="css/cccmg.css"/>
+	<link rel="stylesheet" href="css/material_icons.css"/>
 	<link rel="stylesheet" href="css/navigation.css"/>
-	<link rel="stylesheet" href="css/main.css"/>
+	<link rel="stylesheet" href="css/variables.css"/>	<!-- SASS created file using sass-json-export.scss -->
+	<link rel="stylesheet" href="css/bvselect.css"/> <!-- Style sheet for Custom dropdown menu using bvselect.js -->
+	<link rel="stylesheet" href="css/main.css"/>	<!-- SASS created file -->
 	<link rel="stylesheet" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
 </head>
@@ -23,30 +26,39 @@
 <body>
 
 <div class="navigation">
-		<h3 class="hidden">Shortcuts</h3>  <!-- Hide Navigation bar when javascript disabled 270511 -->
-        <ul class="hidden">
+		<h3>Shortcuts</h3>  <!-- TODO: Remove hidden class as this is removing one click jump to link functionality -->
+        <ul>
           <li id="top"><a href="#">Top of Page</a></li>
-		  <li><a href="#introduction">Introduction</a></li>
-		  <li><a href="#keydesc">Key</a></li>
-		  <li><a href="#compilation">Compilations</a></li>
+		  <li><a href="#intro">Introduction</a></li>
+		  <li><a href="#key">Key</a></li>
+		  <li><a href="#compilations">Compilations</a></li>
 		  <li><a href="#complete_pieces">Complete Pieces</a></li>  <!-- Add Complete Pieces to Navigation menu 071011 -->
-          <li><a href="#bach">J.S.Bach</a></li>
-          <li><a href="#beethoven">Beethoven</a></li>
-		  <li><a href="#brahms">Brahms</a></li>
-          <li><a href="#bruch">Bruch</a></li>
-		  <li><a href="#bruckner">Bruckner</a></li>
-		  <li><a href="#chopin">Chopin</a></li>
-		  <li><a href="#dvorak">Dvo&#x159;&aacute;k</a></li>
-		  <li><a href="#haydn">Haydn</a></li>
-		  <li><a href="#mendelssohn">Mendelssohn</a></li>
-		  <li><a href="#mozart">Mozart</a></li>
-		  <li><a href="#rachmaninov">Rachmaninov</a></li>
-		  <li><a href="#schubert">Schubert</a></li>
-		  <li><a href="#sibelius">Sibelius</a></li>
-		  <li><a href="#tchaikovsky">Tchaikovsky</a></li>
-		  <li><a href="#vivaldi">Vivaldi</a></li>
-		  <li><a href="#williams">Vaughan Williams</a></li>
-        </ul>
+          <li><a href="#JSB">J.S.Bach</a></li>
+          <li><a href="#LVB">Beethoven</a></li>
+		  <li><a href="#JB">Brahms</a></li>
+          <li><a href="#MB">Bruch</a></li>
+		  <li><a href="#AB">Bruckner</a></li>
+		  <li><a href="#FC">Chopin</a></li>
+		  <li><a href="#AD">Dvo&#x159;&aacute;k</a></li>
+		  <li><a href="#JH">Haydn</a></li>
+		  <li><a href="#FM">Mendelssohn</a></li>
+		  <li><a href="#WAM">Mozart</a></li>
+		  <li><a href="#SR">Rachmaninov</a></li>
+		  <li><a href="#FS">Schubert</a></li>
+		  <li><a href="#JS">Sibelius</a></li>
+		  <li><a href="#PIT">Tchaikovsky</a></li>
+		  <li><a href="#AV">Vivaldi</a></li>
+		  <li><a href="#VW">Vaughan Williams</a></li>
+		</ul>
+		  	<div class = "select-option"> <!-- id="selectbox" for bvselect.js -->
+		  		<select id="selectbox" autocomplete = "off" onchange = "changeColourScheme(this.options[this.selectedIndex].value)"> <!-- onchange event occurs when the value of an element has been changed -->
+				  <!-- <option hidden disabled selected>Change Colour</option> -->
+					<option value = "blue">Blue</option>	<!-- autocomplete="off" ensures default option appears in drop down menu by clearing cache of previously chosen value in firefox -->													 <!-- It allows you to make changes without reloading the page -->
+		  			<option value = "green">Green</option>
+		  			<option value = "red">Red</option>
+		  			<option value = "orange">Orange</option>
+		  		</select>
+		  	</div>
 </div>
 
 
@@ -54,15 +66,15 @@
 <!-- <h1 class="flash_header">Casual Collectors' Classical Music Guide</h1>     Eras Bold ITC header shows if javascript enabled -->
 <!-- <h1 class="png_header">Casual Collectors' Classical Music Guide</h1> -->
 <div class="pngtitle">
-	<img src="images/Eras_Bold_ITC.png" alt="Casual Collectors' Classical Music Guide"width="488" height="105" />
-</div>
+	<img src="images/Eras_Bold_ITC_transparent.png" alt="Casual Collectors' Classical Music Guide" width="700" height="151"/>
+</div> <!-- Was width="488" height="105" -->
 
 <br/>
 
 <?php
-require_once("lastmodified.php");
-$lastmodified = date("l dS F Y", getHighestFileTimestamp("./"));           // Changed from ../ as should only be looking in current directory
-echo "<div class=\"update\">Last Update on: ".$lastmodified."</div>\n";
+	require_once("lastmodified.php");
+	$lastmodified = date("l dS F Y", getHighestFileTimestamp("./"));           // Changed from ../ as should only be looking in current directory
+	echo "<div class=\"update\">Last Update on: ".$lastmodified."</div>\n";
 ?>
 
 <p class="nojavascript"><strong>This Web Site works better with Javascript enabled</strong></p>
@@ -94,6 +106,8 @@ can be found at bbc.co.uk/radio3. You can also listen online.</p>
  particular movements are generally played at any other time.)  You can listen online at their website
 classicfm.com. They also have a play list of what has been played.</p>
 
+<!-- TODO: Scala Radio -->
+
 <h3>Radio Times Magazine (UK)</h3>
 <p>It includes the schedule and approximate timings for BBC Radio 3's
  Through the Night, as well as telling you what the Building a Library
@@ -102,26 +116,25 @@ is also given.</p>
 
 <br/>
 
-<h2><span style="font-size: 1.75rem">Major Composer Anniversaries in 2020</span></h2>
+<h2><span>Major Composer Anniversaries in 2020</span></h2> <!-- span used to help overwrite h2 default style -->
 
 <br/>
-<br/>
 
-<p class="Composers">Ludwig van Beethoven 250 years since his birth<br/><br/>
+<p class="composers">Ludwig van Beethoven 250 years since his birth<br/><br/>
 Gabriel Faur&eacute; 175 years since his birth<br/><br/>
 Max Bruch 100 years since his death<br/><br/>
 John Rutter 75 years since his birth</p>
 
 <br/>
 
-<h3 class="key">KEY for common abbreviations:</h3>
+<h3 id = "key" class="key">KEY for common abbreviations:</h3>
 <br/>
 
-<table class="Key">
+<table class="tablekey">
 <tbody>
 <tr><td>DG</td><td>DEUTSCHE GRAMMOPHON</td></tr>
 <tr><td>EMI</td><td>WARNER/EMI CLASSICS (WARNER BECAME OWNERS OF EMI'S BACK CATALOGUE IN 2013)</td></tr>
-<tr><td>SONY</td><td>SONY MUSIC ENTERTAINMENT (SONY ABSORBED BMG IN 2008. RCA IS A SONY SUBSIDIARY)</td></tr>
+<tr><td>SONY/BMG/RCA</td><td>SONY MUSIC ENTERTAINMENT (SONY ABSORBED BMG IN 2008. RCA IS A SONY SUBSIDIARY)</td></tr>
 <tr><td>B.P.O</td><td>BERLIN PHILHARMONIC ORCHESTRA</td></tr>
 <tr><td>V.P.O</td><td>VIENNA PHILHARMONIC ORCHESTRA</td></tr>
 <tr><td>L.S.O</td><td>LONDON SYMPHONY ORCHESTRA</td></tr>
@@ -134,7 +147,7 @@ John Rutter 75 years since his birth</p>
 </tbody>
 </table>
 
-<!-- <pre class="Key2">    Used this method because screen readers appear to read down each column for a table layout. Here the key is read across
+<!-- <pre class="tablekey2">    Used this method because screen readers appear to read down each column for a table layout. Here the key is read across
 DG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = DEUTSCHE GRAMMOPHON
 EMI&nbsp;&nbsp;&nbsp;&nbsp; = EMI CLASSICS
 SONY&nbsp;&nbsp;&nbsp; = SONY CLASSICAL
@@ -155,12 +168,12 @@ L.A&nbsp;&nbsp;&nbsp;&nbsp; = LIMITED AVAILABILITY (TRY SECOND HAND. MAY STILL B
 
 <br/>
 
-<h2 class="comp">Compilations</h2>
+<h2 id="compilations" class="compilations">Compilations</h2>
 <p>I will restrict my selection here from within the UNIVERSAL CLASSICS labels (DECCA,
 PHILIPS and DEUTSCHE GRAMMOPHON) and EMI (VIRGIN), since they generally provide good recordings
 and sound quality of movement/extracts from complete pieces. Series worth examining are:</p>
 
-<p class="Complab">Essential.. (2cds) (DECCA)<br/><br/>
+<p class="complab">Essential.. (2cds) (DECCA)<br/><br/>
 
 Panorama (2cds) (Tend to have complete pieces) (DG)<br/><br/>
 
@@ -244,7 +257,7 @@ The Essential Vaughan Williams (2cds) (EMI)</p>
 
 <br/>
 
-<h2 class="complete_pieces">Complete Pieces</h2>   <!-- Add Complete Pieces to Navigation menu 071011 -->
+<h2 id = "complete_pieces" class="complete_pieces">Complete Pieces</h2>   <!-- Add Complete Pieces to Navigation menu 071011 -->
 
 <p>Some recordings are given the label (MULTCOMB). This is because the
 recording is available in combination with different pieces on other CDs.
@@ -974,19 +987,50 @@ Bean/Boult/New Philharmonic (EMI)</p>
     </a>
 </p>
 
+<!-- <script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"
+		integrity="sha512-pbfEkRtTC0tVCDj1DO2p2TgthqrXy0/xPIl8JpvH/zUMzwFIdTSILylHSbwZ8zmPCzOOHYsDrz26HvOCFo7Mng=="
+		crossorigin="anonymous">
+</script> -->
 
+	<script
+  		src="https://code.jquery.com/jquery-1.7.2.js"
+  		integrity="sha256-FxfqH96M63WENBok78hchTCDxmChGFlo+/lFIPcZPeI="
+  		crossorigin="anonymous">
+	</script>
+
+<script>
+		window.jQuery || document.write('<script src="./js/jquery-1.7.2.min.js"><\/script>');
+</script>
+
+
+
+<script
+		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"
+		integrity="sha512-P76gN7IRj67pGxPvgHAk33c/iiWfj1oXpAd/8Oz8KPq2+AvIjvJT3iIyuzk6Sk/PxSmR/y8XX78RzHX5G2NGDg=="
+		crossorigin="anonymous">
+</script>
+
+<script>
+		window.jQuery.ui || document.write('<script src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
+</script>
+<!-- < src="js/newcore.js"></> -->
+<!-- < src="js/jquery-1.5.min.js"></> -->
+<!-- < src="js/jquery-ui-1.8.10.custom.min.js"></> Allows animation of floating menu and text scroll -->
 <script src="js/respond.min.js"></script>	<!-- TODO: Replace possibly -->	<!-- Polyfill for browsers not recognising min-width, max-width and media types -->
-<script src="js/core.js"></script>	        <!-- TODO: Reference from online -->	<!-- Needed for accordion_mod -->
-<script src="js/jquery-1.5.min.js"></script>	<!-- TODO: Reference from online -->
-<script src="js/jquery-ui-1.8.10.custom.min.js"></script>  <!-- TODO: Reference from online --> <!-- Allows animation of floating menu -->
-<script src="js/accordion_mod.js"></script>
+<script src="js/core.js"></script>	<!-- Needed for accordion_mod -->
+<!-- <script src="js/show-dropdown.js"></script> Not working -->
 <script src="js/hide_no_javascript_mes.js"></script>
-<script src="js/floating_nav_menu.js"></script>
-<script src="js/jquery.scrollTo.js"></script>             <!-- Script for scrollTo() -->
-<script src="js/scroll_to_link.js"></script>
-<!-- <script src="js/jquery.swfobject.1-1-1.js"></script> Was for incorporating flash header image, which is now a png -->
-<!-- <script src="js/flash_header.js"></script>                  Embeds Eras Bold ITC header swobject -->
-<script src="js/animatetext.js"></script>
+<script src="js/bvselect.js"></script> <!-- Custom dropdown menu that allows for different highlight colour -->
+<script src="js/change_colour.js"></script>
+<script src="js/accordion_mod.js"></script>
+<!-- < src="js/floating_nav_menu.js"></> -->	<!-- Using position fixed/sticky better than this -->
+<!-- < src="js/jquery.scrollTo.js"></>             Script for scrollTo() -->
+<!-- < src="js/scroll_to_link.js"></> -->
+<!-- < src="js/jquery.swfobject.1-1-1.js"></> Was for incorporating flash header image, which is now a png -->
+<!-- < src="js/flash_header.js"></>                  Embeds Eras Bold ITC header swobject -->
+<script src="js/focus-visible.js"></script> <!-- Provides :focus-visible support for browsers that don't have it -->
+<script src="js/animatetext.js"></script>		<!-- Text downword scroll animation when page loads -->
 </div>
 </body>
 </html>
