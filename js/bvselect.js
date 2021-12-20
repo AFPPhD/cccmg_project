@@ -47,7 +47,7 @@ class BVSelect {
 
         // Hides native selector
         // document.getElementsByClassName('.select-option').style.display = "none"; // Don't want original <select> hidden with css
-        // because if javascript disabled, will not see. TODO: Can disable default dropdown with javascript, when utilise css variables in default menu
+        // because if javascript disabled, will not see. TODO: Can disable default dropdown until able to utilise css variables in default menu (so doesn't need javascript)
         // document.window.getComputedStyle( // .select-option > select, .select-option:after is disabled in navigation.css for now
         //     document.querySelector('.select-option'), ':after'
         // ).style.display = "none";
