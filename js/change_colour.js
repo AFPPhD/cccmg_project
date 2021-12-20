@@ -47,6 +47,7 @@
         $selectedOption = $('#ul_CustomBuild > li').first();
         $tabbedChoice = $selectedOption;
 
+
         // The way to handle dynamically added content, is to attach the event to the document and target the event and selector that you require.
         // You need something sitting at the document level which is aware of the event and the elements you want to apply it to, so that it can
         // watch for any new elements that match and apply that event to them as well
@@ -168,8 +169,11 @@
                     $target.trigger(ourEvent);
                 // }
             } else if ($target.parent().get(0).id == 'ul_CustomBuild') { // Pointer Click on colour option, excluding menu open/close button
-                // $selectedOption = $tabbedChoice;
-                $target.trigger('click');
+                setTabIndexes();
+                $selectedOption = $target; // Need to use $target to correctly set chosen option
+                $tabbedChoice = $selectedOption; // Make sure update the tabbed option
+                $selectedOption.attr('tabIndex', '0');
+                $selectedOption.trigger('click');
             }
         });
 
