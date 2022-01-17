@@ -129,20 +129,17 @@
 		::selection { /* The selectors are not combined, even though the style blocks are doing the same thing. */
 					  /* It doesn’t work if you combine them because browsers ignore the entire selector if there */
 					  /* is a part of it they don’t understand or it is invalid */
-			/* css variable goes here */
-			background-color: #204c75;
+			background-color: var(--highlight-color, #204c75); /* #204c75 Fallback/Default value when javascript disabled */
 		}
 
 		  /* Safari & Chrome - Webkit Rendering */
 		::-webkit-selection {
-			/* css variable goes here */
-			background-color: #204c75;
+			background-color: var(--highlight-color, #204c75);
 		}
 
-		  /* Mozilla based - Gecko Rendering */
+		  /* Mozilla based - Gecko Rendering. Legacy Firefox syntax (version 61 and below) */
 		::-moz-selection {
-			/* css variable goes here */
-			background-color: #204c75;
+			background-color: var(--highlight-color, #204c75);
 		}
 
 /* Accordion styles (static) */

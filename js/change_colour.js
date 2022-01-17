@@ -16,7 +16,7 @@
 
         // $("body").find('#main_CustomBuild').each(function(){
             // var $colourMenuButton = $(this);
-            $(".navigation").height('605px'); // Extend default navbar height to hold bvselect Change Colour Button
+            $(".navigation").height('605px'); // Extend navbar height to hold bvselect (or default menu 574px) Change Colour Button
             let $colourMenuButton = $('#main_CustomBuild');
             $colourMenuButton.attr('tabIndex', '0'); // Make custom button keyboard focusable
         // });
@@ -113,7 +113,7 @@
                     // setTabIndexes();
                     // $selectedOption.attr('tabIndex', '0');
                     ourEvent = $.Event('customFocusout');
-                    $tabbedChoice.trigger(ourEvent); // TODO: Shouldn't this be $tabbedChoice?
+                    $tabbedChoice.trigger(ourEvent);
             } else {
                 if ((event.which || event.keyCode) == '13') { // Simulate mouse click functionality with enter
                     event.preventDefault();
@@ -157,7 +157,7 @@
         }); // Had to customise focusout, since arrow keys also triggered focusout preventing focus going to next choice
 
 
-        $(document).on('mousedown', function (event) {  // Pointer Click elsewhere in the document. Call focusout, except for
+        $(document).on('mousedown', function (event) {  // Pointer Click elsewhere in the document.
             // Add touchend or tap ?
             // $target assigned to $(this), $(document.activeElement) or $(':focus') does not work!
             // var pointerType = e.which;        // Assign mouse or touch event
@@ -249,8 +249,9 @@
         document.body.style.backgroundColor = jsonObject[`${colour}bg`];
         document.querySelector('.container').style.backgroundColor = jsonObject[`${colour}fg`]; //IE 8 only supports CSS 2.1 selectors for querySelector
         document.querySelector('.navigation').style.backgroundColor = jsonObject[`${colour}fg`];
-        document.querySelector('.select-option select').style.backgroundColor = jsonObject[`${colour}fg`]; // Have to force colour change box to change colour.
-        var NodeList = document.querySelectorAll('hr');                                                    // It will not inherit
+        document.querySelector('.select-option select').style.backgroundColor = jsonObject[`${colour}fg`]; // Have to force colour change box to change colour. It will not inherit
+        document.documentElement.style.setProperty("--highlight-color", jsonObject[`${colour}bg`]);
+        var NodeList = document.querySelectorAll('hr');
         // Convert buttons NodeList to an array
         var Arr = Array.prototype.slice.call(NodeList); // This converts a NodeList to an array
         // Old method - Array.prototype.slice.call() or  const Arr = [].slice.call();- It works in all modern browsers, and back to at least IE6
