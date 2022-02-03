@@ -1,11 +1,12 @@
 		body {
-			/* font-size: 24px; */	/* Font size used in browsers that don’t support fluid units */
+			/* font-size: 24px; */ /* Font size used in browsers that don’t support fluid units */
 			font-size: 150%;	/* A percentage baseline font size offers more consistency for browser support */
 			font-family: verdana, helvetica, arial, sans-serif;
 			color: #000000; /* black for text colour */
 			background-color: #204c75; /* dark blue */
 			margin: 0;
 			padding: 0;
+			/* overflow-x: hidden; */  /* To allow container to break out of constrained width */
 		}
 
 		h1 {
@@ -101,8 +102,9 @@
 			font-family: arial, helvetica, sans-serif;
 			font-size: 1.25rem;
 			font-weight: bold;
+			letter-spacing: 0.05em; /* Make all uppercase more legible at smaller font sizes */
 			padding: 0.6%;
-			color: #ffffff;
+			color: #e6e6e6; /* Was #ffffff */
 		}
 
 		/*.tableKey2 {
@@ -113,8 +115,9 @@
 
 		.container {
 			position: relative;
-			width: 686px;        /* width + padding for IE 5.x */
-			w\idth: 680px;       /* real width */
+			/* width: 686px; */        /* width + padding for IE 5.x */
+			/* w\idth: 680px;*/      /* real width */
+			width: 680px;
 			margin: 20px auto 0 auto;
 			background-color: #4F94CD; /* light blue */
 			border-radius: 9px;	 /* Added rounded corners effect via css instead of javascript 130820 */
