@@ -1,11 +1,12 @@
 		body {
-			/* font-size: 24px; */ /* Font size used in browsers that don’t support fluid units */
+			font-size: 24px;	/* Font size used in browsers that don’t support fluid units */
 			font-size: 150%;	/* A percentage baseline font size offers more consistency for browser support */
 			font-family: verdana, helvetica, arial, sans-serif;
 			color: #000000; /* black for text colour */
 			background-color: #204c75; /* dark blue */
 			margin: 0;
 			padding: 0;
+			/* TODO: Apple Mac anti-alias css reset and no text size adjust for safari in HTML */
 			/* overflow-x: hidden; */  /* To allow container to break out of constrained width */
 		}
 
@@ -44,7 +45,7 @@
 		}
 
 		h5 {
-			font-size: 1.1rem;
+			font-size: 1.5rem;
 			padding-left: 1%;
 		}
 
@@ -102,7 +103,8 @@
 			font-family: arial, helvetica, sans-serif;
 			font-size: 1.25rem;
 			font-weight: bold;
-			letter-spacing: 0.05em; /* Make all uppercase more legible at smaller font sizes */
+			letter-spacing: 0.05em; /* Make all uppercase more legible, especially at smaller font sizes */
+			/* TODO: Make table shrink at lower widths */
 			padding: 0.6%;
 			color: #e6e6e6; /* Was #ffffff */
 		}
@@ -168,21 +170,21 @@ ul.accordion h3 {
 ul.accordion h4 {
   background-color: #FFD700; /* gold */                /* Band colour */
   border: solid #FFF;        /* white */
-  border-width: 5px 0.35em;  /* 1px 0; */              /* Border effect for band */
-  margin: 10px 0;             /* 1% 0; */               /* 0 -0.667em -1px */     /* Separation between bands */
+  border-width: 0.35em 0.35em;  /* 1px 0; */              /* Border effect for band */
+  margin: 0.625em 0;             /* 1% 0; */               /* 0 -0.667em -1px */     /* Separation between bands */
 }
 
 ul.accordion h4 a:link,
 ul.accordion h4 a:visited {
   color: #000;             	/* Colour of band link words */
   display: block;	/* block causes the link to display as a block element, as for navigation links */
-  margin: 0 -0.1em 0 -0.40em; /* To get highlighted colour covering band colour */
+  margin: 0 -0.1em 0 -0.40em; /* To get highlighted colour covering band colour TODO: Need highlight shifting 1px to left */
   padding: 0;               	/* 0 0.667em; 0.667em pushing band link words to right */
   text-decoration: none;    	/* Prevents underlining for header links */
 }
 
 ul.accordion p {
-	font-size: 1rem;
+	font-size: 1.3rem;
 	margin: 1em 0;
 }
 
