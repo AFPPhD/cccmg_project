@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons'); /* Local fallback in material_icons.css */
 
 		.navigation {
+			top: 20px;			/* Offset for navbar from top of screen and main section */
 			text-align: center;
 			position: fixed;	/* Fallback.  stickybits.js polyfill available */
 			position: sticky; /* sticky and top fix the navbar in position. No jittery movement on page scrolling using jQuery anymore */
-			top: 20px;
 			float: left; /* Puts menu left of page */
 			background-color: #4F94CD; /* light blue */
 			margin-left: 1%;    /* Moves floating menu box to right, relative to window */
@@ -29,7 +29,7 @@
 			text-decoration: none; /* No underlining */
 		}
 
-		/* .navigation h3.hidden, .navigation ul.hidden {		TODO: Smoothscroll?
+		/* .navigation h3.hidden, .navigation ul.hidden {
 			display: none;			Need to leave navigation bar visible if javascript disabled, allowing one click functionality
 		}  (Screen Reader issues ?)	*/
 
@@ -40,7 +40,7 @@
 			/* color: #FFFFFF; */          /* move the cursor over it, giving the same effect you'd see if you used an image for the navigation */
 			color: black;
 			box-sizing: border-box;
-			/* TODO: *behavior: url(/scripts/boxsizing.htc); Need HTC path relative to HTML not CSS */
+			/* TODO: *behavior: url(/scripts/boxsizing.htc); Need HTC path relative to HTML not CSS ? IE discontinued */
 			max-width: 96%;
 			margin: 2% auto;
 			border: 2px solid white;
@@ -91,14 +91,14 @@
 			pointer-events: none; /* The element does not react to pointer events, such as :hover and click */
 		}
 
-		/* TODO: Disabled default dropdown until can utilise css variables */
+		/* Disabled default dropdown */
 		.select-option > select, .select-option:after {
-			display: none /* Disabled by default without javascript for now. Will be just disabled with javascript to utilise third party dropdown. When dropdown displayed navigation container height 574px at least needed */
+			display: none /* Disabled to utilise third party dropdown bvselect. When default dropdown displayed navigation container height 574px at least needed */
 		}
 		/* Order of styles - :hover then :focus then :active */
 
 		@media (hover: hover) and (pointer: fine) {	/* Non-touch type device only. hover just causes problems otherwise */
-			.navigation ul li a:hover, ul.accordion h4 a:hover { /* TODO: .select-option select:hover */
+			.navigation ul li a:hover, ul.accordion h4 a:hover { /* TODO: .select-option select:hover  - To possibly get purple highlight on default menu */
 				/* margin: -2px 0; */        /* Compensates for push down effect on item and items below it because of border application  border: 2px solid #4F94CD */
 				background-color:#A22BE7; /* Used higher selector specificity instead of !important (last resort) to override background-color: #FFD700; */
 				/* border: 2px solid #4F94CD; */
