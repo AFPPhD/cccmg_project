@@ -13,7 +13,7 @@ Developed by: Bruno Vieira
 	/* Used following 2 lines to centre Change Colour Box and colour options list horizontally, since reduced width to 55% */
 	display: flex; /* Need to define in order for justify-content to work */
 	justify-content: center; /* To centre children under navbar using flex, .bv_atual.bv_background and .bv_ul_inner.bv_background */
-							/* Also have to give .bv_ul_inner.bv_background (colour options list) a margin-top of 64px, because */
+							/* Also have to give .bv_ul_inner.bv_background (colour options list) a margin-top of 70px, because */
 							/* of fixed property of elements, to push it below the Change Colour Box to make it visible */
 	/* font-family: Arial;
 	font-size: 10pt; */
@@ -170,18 +170,18 @@ Developed by: Bruno Vieira
 /* @media (hover: hover) and (pointer: fine) {	 Non-touch type device only. hover just causes problems otherwise */
 
 
-	.bv_atual.bv_background:hover {
+	.bv_atual.bv_background:hover { /* TODO: Cascade Layers Here? */
 		background-color:#A22BE7; /* Used higher selector specificity instead of !important (last resort) to override background-color: #FFD700; */
 	}
 
 	.bv_ul_inner.bv_background {
-		margin-top: 64px; /* Needed to push colour list options below Change Colour Button, because of fixed (sticky) position
-						  /* used to stop Navbar moving being inherited
+		margin-top: 70px; /* Needed to push colour list options below Change Colour Button, because of fixed (sticky) position
+						  used to stop Navbar moving, being inherited. (Weird: Had to increase from 64px (i.e clear of navbar).
+						  Otherwise, gap increases after first colour change?) */
+	}
 
 /* } */
 
 /* outline: none !important. Re-enabled outline to get black outline on selectable items. */
 /* Colour menu and selections not highlighting - Keyboard accessibility issue */
-/* *:focus {
-    outline: 3px solid black;
-} */
+/* :focus { outline: 3px solid black; } */
