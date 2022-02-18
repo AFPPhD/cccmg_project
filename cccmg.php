@@ -12,7 +12,7 @@
 	<!-- But, for scaled resolutions, the viewport width will have a screen resolution not equal to Native Screen Resolution/Device Pixel Ratio (DPR) -->
 	<!-- initial-scale controls the zoom level when the page is first loaded i.e on high dpi screens, pages with initial-scale=1 will effectively be zoomed by browsers, preventing usability and readability problems on many touch-optimized web sites -->
 	<!-- iPhone exhibits zooming behaviour when rotating to landscape (but not when loading first in landscape). initial-scale stops that -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>  <!-- IE=edge: specifies that IE should run in the highest mode available to that version of IE as opposed to a compatability mode; IE8 can support up to IE8 modes, IE9 can support up to IE9 modes, and so on -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>  <!-- IE=edge: specifies that IE should run in the highest mode available to that version of IE as opposed to a compatibility mode; IE8 can support up to IE8 modes, IE9 can support up to IE9 modes, and so on -->
 	<link rel="stylesheet" href="css/cccmg.css"/>
 	<link rel="stylesheet" href="css/material_icons.css"/>
 	<link rel="stylesheet" href="css/navigation.css"/>
@@ -116,20 +116,22 @@ is also given.</p>
 
 <br/>
 
-<h2><span>Major Composer Anniversaries in 2020</span></h2> <!-- span used to help overwrite h2 default style -->
+<h2><span>Major Composer Anniversaries in 2022</span></h2> <!-- span used to help overwrite h2 default style -->
 
 <br/>
 
-<p class="composers">Ludwig van Beethoven 250 years since his birth<br/><br/>
-Gabriel Faur&eacute; 175 years since his birth<br/><br/>
-Max Bruch 100 years since his death<br/><br/>
-John Rutter 75 years since his birth</p>
+<p class="composers">Joseph Haydn 290 years since his birth<br/><br/>
+Franz Schubert 225 years since his birth<br/><br/>
+Claude Debussy 160 years since his birth<br/><br/>
+Johannes Brahms 125 years since his death<br/><br/>
+John Williams 90 years since his birth</p>
 
 <br/>
 
-<h3 id = "key" class="key">KEY for common abbreviations:</h3>
+<h3 id = "key" class="key">KEY for Common Abbreviations</h3>
 <br/>
 
+<!-- TODO: ERATO and APEX - WARNER LABELS -->
 <table class="tablekey">
 <tbody>
 <tr><td>DG</td><td>DEUTSCHE GRAMMOPHON</td></tr>
@@ -170,7 +172,7 @@ L.A&nbsp;&nbsp;&nbsp;&nbsp; = LIMITED AVAILABILITY (TRY SECOND HAND. MAY STILL B
 
 <h2 id="compilations" class="compilations">Compilations</h2>
 <p>I will restrict my selection here from within the UNIVERSAL CLASSICS labels (DECCA,
-PHILIPS and DEUTSCHE GRAMMOPHON) and EMI (VIRGIN), since they generally provide good recordings
+PHILIPS (Retired) and DEUTSCHE GRAMMOPHON), VIRGIN CLASSICS/WARNER/ERATO and NAXOS, since they generally provide good recordings
 and sound quality of movement/extracts from complete pieces. Series worth examining are:</p>
 
 <p class="complab">Essential.. (2cds) (DECCA)<br/><br/>
@@ -181,7 +183,7 @@ Discovering.. (CLASSIC FM, DECCA - Actually recordings from any Universal Classi
 
 The Best of.. (2cds) (PHILIPS)<br/><br/>
 
-The Very Best of.. (2cds) (VIRGIN CLASSICS (EMI))<br/><br/>
+The Very Best of.. (2cds) (VIRGIN CLASSICS/WARNER/ERATO)<br/><br/>
 
 Classics for Pleasure (EMI)<br/><br/>
 
@@ -1030,7 +1032,7 @@ Bean/Boult/New Philharmonic (EMI)</p>
 <!-- < src="js/jquery.swfobject.1-1-1.js"></> Was for incorporating flash header image, which is now a png -->
 <!-- < src="js/flash_header.js"></>                  Embeds Eras Bold ITC header swobject -->
 <script src="js/focus-visible.js"></script> <!-- Provides :focus-visible support for browsers that don't have it -->
-<script src="js/animatetext.js"></script>		<!-- Text downword scroll animation when page loads -->
+<script src="js/animatetext.js"></script> <!-- TODO: Optionally switch off for motion reduce preference -->	<!-- Text downword scroll animation when page loads -->
 </div>
 </body>
 </html>
