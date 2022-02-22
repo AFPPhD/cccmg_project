@@ -11,12 +11,13 @@
 
 
 // The following routine allows keyboard only access for bvselect dropdown
-    $(window).load(function(){ // $(window).load - Make sure entire page content loaded (Plain Javascript: window.onload = function(event) {...)
+    $(window).load(function() { // $(window).load - Make sure entire page content loaded (Plain Javascript: window.onload = function(event) {...)
        // Best to use load event methods for jQuery and Pure JS, as this will work in any browser
 
         // $("body").find('#main_CustomBuild').each(function(){
             // var $colourMenuButton = $(this);
-            $(".navigation").height('605px'); // Extend navbar height to hold bvselect (or default menu 574px) Change Colour Button
+            $('.navigation').height('605px'); // Extend navbar height to hold bvselect (or default menu 574px) Change Colour Button
+            $('.select-option').css('display', 'block'); // Make visible colour change button. (Defaulted at no display so hidden from screen readers)
             let $colourMenuButton = $('#main_CustomBuild');
             $colourMenuButton.attr('tabIndex', '0'); // Make custom button keyboard focusable
         // });

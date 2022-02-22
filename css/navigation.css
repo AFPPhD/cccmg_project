@@ -58,7 +58,7 @@
 			user-select: none;
 		} */
 
-
+		
 		.select-option select {
 				/* box-sizing: border-box; */
 			-webkit-appearance: none; /* appearance - To apply/remove platform-specific styling to an element that doesn’t/does have it by default */
@@ -95,6 +95,12 @@
 		.select-option > select, .select-option:after {
 			display: none /* Disabled to utilise third party dropdown bvselect. When default dropdown displayed navigation container height 574px at least needed */
 		}
+
+		.select-option {
+			display: none; /* Want colour change button hidden from screen readers if javascript disabled (Not just navbar shorter) */
+		}
+
+
 		/* Order of styles - :hover then :focus then :active */
 
 		@media (hover: hover) and (pointer: fine) {	/* Non-touch type device only. hover just causes problems otherwise */
