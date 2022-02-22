@@ -94,7 +94,7 @@ you to better informed and more detailed discussions on the internet.</p>
 <h3>BBC Radio 3</h3>
 <p>A good place to listen to mainly complete recordings of pieces that might interest you
 is Essential Classics 9.00am - 12.00pm weekdays. The Building a Library section (approximately
-9.30 - 10.30am) on CD review (usually 9.00am - 12.15pm) Saturday morning, involves an expert
+9.30 - 10.30am) on Record Review (usually 9.00am - 11.45pm) Saturday morning, involves an expert
 sifting through the available recordings of a particular piece to recommend their top recording.
 Through the Night, mainly consists of complete pieces taken from live performances. The schedules
 can be found at bbc.co.uk/radio3. You can also listen online.</p>
