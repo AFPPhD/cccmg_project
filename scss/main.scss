@@ -55,8 +55,9 @@ $colour-scheme: (
 @mixin FontSizeRecalculation () {
 	p {
 		// font-size: min(max(1.375rem, 1.2697368421052633rem + 0.5263157894736842vw), 1.5rem); // Fallback
-		font-size: clamp(1.375rem, 1.2697rem + 0.5263vw, 1.5rem);
-		min-height: 0vw; // Safari Fix
+		// font-size: clamp(1.375rem, 1.2697rem + 0.5263vw, 1.5rem);
+		// font-size: clamp(1.375rem, 1.2426470588235294rem + 0.5882352941176471vw, 1.5rem);
+		// min-height: 0vw; // Safari Fix
 
 		// font-size: calc(22px + (24 - 22) * (100vw - 320px) / (700 - 320)); // Can't use @function inside @mixin
 		// font-size: calc(1.375rem + (1.5 - 1.375) * ((100vw - 20rem) / (43.75 - 20)));
@@ -105,70 +106,86 @@ $colour-scheme: (
 
 // @include FontSizeRecalculation();
 
-
-
-
-	@media screen and (max-width: 319px) {
-		.container {
-			// box-sizing: border-box;
-			// font-size: 0.7rem; // To get paragraph size to match up with above 319px for now!
-			// width: 319px; // min-width stops reflow
-			width: 200%;
-			// height: 5242px; // Maintains aspect ratio. Use instead of resize - makes text flow to next line as width decreases
-			// left: 0%;
-			// margin: auto;
-			// width: 100%;
-			// max-width: 100%; // Stops text shrink with fixed height 5242px - Flows to next line instead. Without or with min-width, no flow just shrinks
-			// height: 100%;
-			// aspect-ratio: 680/11174;
-			// min-width: 100vw;
-
-			// left: 0;
-			// margin-left: auto;
-			margin-left: -50%;
-			// right: 0;
-			// margin-right: -50vw;
-
-			// margin-right: auto;
-			// min-width: 319px;
-			// width: fit-content;
-			overflow: hidden; // Need a non-visible option for resize to work
-			// white-space: nowrap;
-			resize: none; // Allowing reflow, for 200% solution,  while browser size decreases
-			// overflow-x:scroll;
-			// text-overflow: ellipsis;
-			// margin-left: calc(-100vw / 2 + 319px / 2);
-  			// margin-right: calc(-100vw / 2 + 319px / 2);
-			//   margin-left:0%;
-			//   margin-right:0%;
-
-			  	// position: relative;
-				// left: 50%;
-				// right: 50%;
-				// margin-left: -50vw;
-				// margin-right: -50vw;
-				// max-width: 100vw;
-				// width: 100vw;
-
-		}
+@media screen and (max-height: 795px) { // Stop Colour Change button and therefore menu not fitting on for limited vertical height
+	#main_CustomBuild, .bv_ul_inner.bv_background {
+		display: none !important; // !important needed to hide left over menu (.bv_ul_inner.bv_background) - Bolts and Braces!
+	}
+	.navigation {
+		height: 536px !important; // TODO: Cases for Cascade Layers!
+	}
 }
-	// text-overflow: ellipsis;
-    // white-space: nowrap;  Will keep paragraph as one very long line!
-	// overflow: hidden;
-	// min-width: 0;
 
-	// word-wrap: break-word;
-	// overflow-wrap: break-word;
-	// -webkit-hyphens: none;
-	// 	-ms-hyphens: none;
-	// 	    hyphens: none;
+@media screen and (max-width: 275px) { // Trying to force horizontal scroll i.e Stop further shrinkage
+	body {
+		// display: block;
+		// width: 100% !important;
+		// overflow-x: scroll;
+		white-space: nowrap; // Force overlap - but on single line!
+		// text-overflow: ellipsis;
+		// width: 275px;
+		// width: 550px;
+		// width: 275px;
+		// height:13077px;
+	}
+	.container {
+		width: 550px;
+		.pngtitle img { 	// Stop Title shrinking
+			min-height: 118px;
+			min-width: 550px;
+		}
+		ul.accordion h4 {	// Stop bands shrinking
+			width:98%;
+		// overflow-wrap: break-word;
+		// text-overflow: ellipsis;
+		}
+	}
+}
+
+
+
+@media screen and (max-width: 359px) {
+	.container {
+		// width: 319px; // min-width stops reflow
+		// min-width: 45ch;
+		// h4 {
+		// 	font-size: 1rem; // Stop band text leaking out. TODO: Change default?
+		// }
+		// table {
+		// 	max-width: 100%;
+		// }
+		letter-spacing: 0.05em; // Make text more readable at lower font sizes
+		width: 200%;
+		// height: 5242px; // Maintains aspect ratio. Use instead of resize - makes text flow to next line as width decreases
+		// left: 0%;
+		// margin: auto;
+		// width: 100%;
+		// max-width: 100%; // Stops text shrink with fixed height 5242px - Flows to next line instead. Without or with min-width, no flow just shrinks
+		// height: 100%;
+		// min-width: 100vw;
+		// word-wrap: break-word;
+		// overflow-wrap: break-word;
+		// text-overflow: ellipsis;
+		max-width: 680px;
+
+		margin-left: -50%;
+
+		// width: fit-content;
+		overflow: hidden; // Need a non-visible option for resize to work
+		// white-space: nowrap;
+		resize: none; // Keeps container at 100% body width, for 200% solution,  while browser size decreases
+		// overflow-x:scroll;
+		// text-overflow: ellipsis;
+
+	}
+}
+
 
 
 @media only screen and (min-width: 320px) and (max-width: 419px) {
 
-	.container {
-		background: #af1818; // red
-	}
+	// .container {
+	// 	background: #af1818; // red
+	// }
 
 
 	//@include MediaQueryStyle (false, true);
@@ -205,9 +222,9 @@ $colour-scheme: (
 
 @media only screen and (min-width: 420px) { // min/max width is the Viewport width (innerwidth) not the window width (outerwidth)
 
-		.container {
-		 		background: #af4f18; // dark orange
-		}
+		// .container {
+		//  		background: #af4f18; // dark orange
+		// }
 
 // Media queries for h4, h5, ul.accordion.p and .update to resize back to normal proportions
 
@@ -227,18 +244,18 @@ $colour-scheme: (
 
 @media only screen and (min-width: 480px) {
 
-	.container {
-		background: #a70ed6; // purple
-	}
+	// .container {
+	// 	background: #a70ed6; // purple
+	// }
 
 	@include MediaQueryStyle (false, true);
 }
 
 @media only screen and (min-width: 700px) {	// Don't use both min and max width media queries to avoid No Man's Land ?
 
-	.container {
-		background: #328f1b; // green
-	}
+	// .container {
+	// 	background: #328f1b; // green
+	// }
 
 	@include MediaQueryStyle (false, false);
 
@@ -250,18 +267,18 @@ $colour-scheme: (
 
 @media only screen and (min-width: 1042px) {
 
-	.container {
-		background: #4F94CD; // light blue
-	}
+	// .container {
+	// 	background: #4F94CD; // light blue
+	// }
 
 	@include MediaQueryStyle (true, false);
 }
 
 @media only screen and (min-width: 1921px) {
 
-	.container {
-		background: #d43095; // pink
-	}
+	// .container {
+	// 	background: #d43095; // pink
+	// }
 
 	@include MediaQueryStyle (true, false);
 }
