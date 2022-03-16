@@ -1,0 +1,19 @@
+@import "variables";
+
+
+
+    // Export the color palette to make it accessible to JS
+
+    // Function for tidier version of nested map-get();
+        @function setcolour($map, $colour, $property) {
+	        @return map-get(map-get($map, $colour), $property);
+        }
+
+    // Create SASS variables list
+
+        :export {
+	        @each $colour, $property in $colour-scheme {
+		        #{'$'+$colour}-fg: #{setcolour($colour-scheme,$colour,PRIMARY-COLOUR)};
+		        #{'$'+$colour}-bg: #{setcolour($colour-scheme,$colour,BACKGROUND-COLOUR)};
+	        }
+        }
