@@ -6,7 +6,7 @@
 			position: fixed;	/* Fallback.  stickybits.js polyfill available */
 			position: sticky; /* sticky and top fix the navbar in position. No jittery movement on page scrolling using jQuery anymore */
 			float: left; /* Puts menu left of page */
-			background-color: #4F94CD; /* light blue */
+			background-color: #4F94CD; /* light blue Backup colour when javascript disabled */
 			margin-left: 1%;    /* Moves floating menu box to right, relative to window */
 			width: 150px;		/* Needs to be absolute, otherwise change size on window resize */
 			height: 536px;		/* height value - Holds shape for just position: fixed working. Otherwise get menu extending to bottom with height: 100% */
@@ -58,7 +58,7 @@
 			user-select: none;
 		} */
 
-		
+
 		.select-option select {
 				/* box-sizing: border-box; */
 			-webkit-appearance: none; /* appearance - To apply/remove platform-specific styling to an element that doesn’t/does have it by default */
@@ -73,7 +73,7 @@
 			max-width: 96%;
 			padding: 3px 7px; /* Changed from 1% 10% because box height bigger in Firefox compared to Edge and Chrome */
 			border: 2px solid white;
-			background: #4F94CD;  /*Colour of box with text */
+			/* background: #4F94CD;  Colour of box with text. Backup colour when javascript disabled */
 			/* display: inline-block;  Disable this if highlight change does not work */
 		}
 
