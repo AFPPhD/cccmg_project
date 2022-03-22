@@ -16,4 +16,9 @@
 		        #{'$'+$colour}-fg: #{setcolour($colour-scheme,$colour,PRIMARY-COLOUR)};
 		        #{'$'+$colour}-bg: #{setcolour($colour-scheme,$colour,BACKGROUND-COLOUR)};
 	        }
+
+            @each $colour, $property in $colour-scheme-higher-contrast {
+                #{'$'+$colour}-fg: #{setcolour($colour-scheme-higher-contrast,$colour,PRIMARY-COLOUR)};
+                #{'$'+$colour}-bg: #{setcolour($colour-scheme-higher-contrast,$colour,BACKGROUND-COLOUR)};
+            }
         }
