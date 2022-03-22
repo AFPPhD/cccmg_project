@@ -11,4 +11,17 @@ $colours: (
 	orangebg:  #f37f32 // #fa6908
 );
 
+$colour-higher-contrast: (
+	bluefg: #3279B3,
+	bluebg: #204c75,
+	greenfg: #35826B,
+	greenbg: #02443b,
+	redfg: #EC0404,
+	redbg: #b03532,
+	orangefg: #BE5A09,
+	orangebg:  #a95108
+);
+
 @include json-encode($colours, regular);
+
+@include json-encode($colour-higher-contrast, regular);
