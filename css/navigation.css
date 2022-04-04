@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons'); /* Local fallback in material_icons.css */
+/* @import url('https://fonts.googleapis.com/icon?family=Material+Icons'); */ /* Local fallback in material_icons.css */
+/* Best to use local fallback to speedup page load (especially as just using for small number of chars) */
 
 		.navigation {
 			top: 20px;			/* Offset for navbar from top of screen and main section */
@@ -6,7 +7,7 @@
 			position: fixed;	/* Fallback.  stickybits.js polyfill available */
 			position: sticky; /* sticky and top fix the navbar in position. No jittery movement on page scrolling using jQuery anymore */
 			float: left; /* Puts menu left of page */
-			background-color: #4F94CD; /* light blue Backup colour when javascript disabled */
+			background-color: #3279B3; /* light blue high contrast backup colour when javascript disabled */
 			margin-left: 1%;    /* Moves floating menu box to right, relative to window */
 			width: 150px;		/* Needs to be absolute, otherwise change size on window resize */
 			height: 536px;		/* height value - Holds shape for just position: fixed working. Otherwise get menu extending to bottom with height: 100% */
