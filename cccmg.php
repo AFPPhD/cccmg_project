@@ -25,7 +25,7 @@
 
 <body>
 
-<div class="navigation">
+<div class="navigation" role="navigation">
 		<h3>Shortcuts</h3>  <!-- TODO: Remove hidden class as this is removing one click jump to link functionality -->
         <ul>
           <li id="top"><a href="#">Top of Page</a></li>
@@ -56,17 +56,17 @@
 					<option value = "blue">Blue</option>	<!-- autocomplete="off" ensures default option appears in drop down menu by clearing cache of previously chosen value in firefox -->													 <!-- It allows you to make changes without reloading the page -->
 		  			<option value = "green">Green</option>
 		  			<option value = "red">Red</option>
-		  			<option value = "orange">Orange</option>
+		  			<option value = "orange">Brown</option>
 		  		</select>
 		  	</div>
 </div>
 
 
-<div class="container">
+<div class="container" role="main">
 <!-- <h1 class="flash_header">Casual Collectors' Classical Music Guide</h1>     Eras Bold ITC header shows if javascript enabled -->
-<!-- <h1 class="png_header">Casual Collectors' Classical Music Guide</h1> -->
+<!-- <h1 class="pngtitle">Casual Collectors' Classical Music Guide</h1> -->
 <div class="pngtitle">
-	<img src="images/Eras_Bold_ITC_transparent.png" alt="Casual Collectors' Classical Music Guide" width="700" height="151"/>
+	<h1><img src="images/Eras_Bold_ITC_transparent.png" alt="Casual Collectors' Classical Music Guide" width="700" height="151"/></h1>
 </div> <!-- Was width="488" height="105" -->
 
 <br/>
@@ -87,8 +87,8 @@
 might like if you are new to classical music up to and including the casual collector
 like myself (People who want at most to find about 2 or 3 good recordings of a particular
 piece). The OTHER RECORDINGS section includes recordings I have not heard in their entirety
-or at all. Although I cannot recommend them whole heartedly myself, they come recommended
-from plenty of credible sources. These recommendations along with my own should help guide
+or at all. Although I cannot endorse them whole heartedly myself, they come recommended
+from plenty of credible sources. These selections along with my own should help guide
 you to better informed and more detailed discussions on the internet.</p>
 
 <h3>BBC Radio 3</h3>
@@ -132,20 +132,21 @@ John Williams 90 years since his birth</p>
 <br/>
 
 <!-- TODO: ERATO and APEX - WARNER LABELS -->
-<table class="tablekey">
+<table class="tablekey" role="presentation">
 <tbody>
-<tr><td>DG</td><td>DEUTSCHE GRAMMOPHON</td></tr>
-<tr><td>EMI</td><td>WARNER/EMI CLASSICS (WARNER BECAME OWNERS OF EMI'S BACK CATALOGUE IN 2013)</td></tr>
-<tr><td>SONY/BMG/RCA</td><td>SONY MUSIC ENTERTAINMENT (SONY ABSORBED BMG IN 2008. RCA IS A SONY SUBSIDIARY)</td></tr>
-<tr><td>B.P.O</td><td>BERLIN PHILHARMONIC ORCHESTRA</td></tr>
-<tr><td>V.P.O</td><td>VIENNA PHILHARMONIC ORCHESTRA</td></tr>
-<tr><td>L.S.O</td><td>LONDON SYMPHONY ORCHESTRA</td></tr>
-<tr><td>C.O.E</td><td>CHAMBER ORCHESTRA OF EUROPE</td></tr>
-<tr><td>L.P.O</td><td>LONDON PHILHARMONIC ORCHESTRA</td></tr>
-<tr><td>C.O</td><td>CONCERTGEBOUW ORCHESTRA (BECAME ROYAL CONCERTGEBOUW ORCHESTRA IN 1988)</td></tr>
-<tr><td>B.R.S.O</td><td>BAVARIAN RADIO SYMPHONY ORCHESTRA</td></tr>
-<tr><td>P</td><td>PERIOD INSTRUMENTS</td></tr>
-<tr><td>L.A</td><td>LIMITED AVAILABILITY (TRY SECOND HAND. MAY STILL BE AVAILABLE AS PART OF BOX SET)</td></tr>
+<tr class="hideme"><th scope="col">Shorthand</th><th scope="col">Meaning</th></tr> <!-- Visibly hidden -->
+<tr><th scope="row">DG</th><td>DEUTSCHE GRAMMOPHON</td></tr>
+<tr><th scope="row">EMI</th><td>WARNER/EMI CLASSICS (WARNER BECAME OWNERS OF EMI'S BACK CATALOGUE IN 2013)</td></tr>
+<tr><th scope="row">SONY/BMG/RCA</th><td>SONY MUSIC ENTERTAINMENT (SONY ABSORBED BMG IN 2008. RCA IS A SONY SUBSIDIARY)</td></tr>
+<tr><th scope="row">B.P.O</th><td>BERLIN PHILHARMONIC ORCHESTRA</td></tr>
+<tr><th scope="row">V.P.O</th><td>VIENNA PHILHARMONIC ORCHESTRA</td></tr>
+<tr><th scope="row">L.S.O</th><td>LONDON SYMPHONY ORCHESTRA</td></tr>
+<tr><th scope="row">C.O.E</th><td>CHAMBER ORCHESTRA OF EUROPE</td></tr>
+<tr><th scope="row">L.P.O</th><td>LONDON PHILHARMONIC ORCHESTRA</td></tr>
+<tr><th scope="row">C.O</th><td>CONCERTGEBOUW ORCHESTRA (BECAME ROYAL CONCERTGEBOUW ORCHESTRA IN 1988)</td></tr>
+<tr><th scope="row">B.R.S.O</th><td>BAVARIAN RADIO SYMPHONY ORCHESTRA</td></tr>
+<tr><th scope="row">P</th><td>PERIOD INSTRUMENTS</td></tr>
+<tr><th scope="row">L.A</th><td>LIMITED AVAILABILITY (TRY SECOND HAND. MAY STILL BE AVAILABLE AS PART OF BOX SET)</td></tr>
 </tbody>
 </table>
 
@@ -989,17 +990,19 @@ Bean/Boult/New Philharmonic (EMI)</p>
     </a>
 </p>
 
+</div>
+
 <!-- <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"
 		integrity="sha512-pbfEkRtTC0tVCDj1DO2p2TgthqrXy0/xPIl8JpvH/zUMzwFIdTSILylHSbwZ8zmPCzOOHYsDrz26HvOCFo7Mng=="
 		crossorigin="anonymous">
 </script> -->
 
-	<script
-  		src="https://code.jquery.com/jquery-1.7.2.js"
-  		integrity="sha256-FxfqH96M63WENBok78hchTCDxmChGFlo+/lFIPcZPeI="
-  		crossorigin="anonymous">
-	</script>
+<script
+		src="https://code.jquery.com/jquery-1.7.2.min.js"
+		integrity="sha256-R7aNzoy2gFrVs+pNJ6+SokH04ppcEqJ0yFLkNGoFALQ="
+		crossorigin="anonymous">
+</script>
 
 <script>
 		window.jQuery || document.write('<script src="./js/jquery-1.7.2.min.js"><\/script>');
@@ -1011,11 +1014,13 @@ Bean/Boult/New Philharmonic (EMI)</p>
 		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"
 		integrity="sha512-P76gN7IRj67pGxPvgHAk33c/iiWfj1oXpAd/8Oz8KPq2+AvIjvJT3iIyuzk6Sk/PxSmR/y8XX78RzHX5G2NGDg=="
 		crossorigin="anonymous">
+		// Needed for animatetext.js
 </script>
 
 <script>
-		window.jQuery.ui || document.write('<script src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
+		window.jQuery.ui || document.write('<script defer src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
 </script>
+
 <!-- < src="js/newcore.js"></> -->
 <!-- < src="js/jquery-1.5.min.js"></> -->
 <!-- < src="js/jquery-ui-1.8.10.custom.min.js"></> Allows animation of floating menu and text scroll -->
@@ -1032,7 +1037,12 @@ Bean/Boult/New Philharmonic (EMI)</p>
 <!-- < src="js/jquery.swfobject.1-1-1.js"></> Was for incorporating flash header image, which is now a png -->
 <!-- < src="js/flash_header.js"></>                  Embeds Eras Bold ITC header swobject -->
 <script src="js/focus-visible.js"></script> <!-- Provides :focus-visible support for browsers that don't have it -->
-<script src="js/animatetext.js"></script> <!-- TODO: Optionally switch off for motion reduce preference -->	<!-- Text downword scroll animation when page loads -->
-</div>
+<!-- <script src="js/animatetext.js" defer></script> -->
+<script>
+	if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+	 	document.write('<script defer src="./js/animatetext.js"><\/script>');
+	}
+	// Optionally switch off, for motion reduce preference, text downword scroll animation when page loads
+</script>
 </body>
 </html>
