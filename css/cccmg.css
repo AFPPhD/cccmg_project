@@ -1,12 +1,18 @@
+		html{
+			-moz-text-size-adjust: none; 	/* Mobile Safari increases the default font-size when you switch a website from portrait to landscape */
+			-webkit-text-size-adjust: none; /* To stop this font-size inflation use the -webkit-text-size-adjust property */
+			text-size-adjust: none;
+		}
+
 		body {
 			font-size: 24px;	/* Font size used in browsers that don’t support fluid units */
 			font-size: 150%;	/* A percentage baseline font size offers more consistency for browser support */
 			font-family: verdana, helvetica, arial, sans-serif;
-			color: #000000; /* black for text colour */
-			background-color: #204c75; /* dark blue */
+			color: #000000; /* black for heading, link and menu text colour */
+			background-color: #204c75; /* dark blue backup text highlight colour when javascript disabled */
 			margin: 0;
 			padding: 0;
-			/* TODO: Apple Mac anti-alias css reset and no text size adjust for safari in HTML */
+			-webkit-font-smoothing: antialiased; /* Chrome and Safari still use subpixel anti-aliasing by default. We need to explicitly turn it off */
 			/* overflow-x: hidden; */  /* To allow container to break out of constrained width */
 		}
 
@@ -53,17 +59,21 @@
 			line-height: 1.5;	/* 150% line height usually best */
 			text-align: justify;
 			padding: 0 1%;
-			color: #e6e6e6; /* white */
+			/* color: #ffffff; */
 		}
 
 		hr {
 			border: 2px solid; /* Change border but leave width and height at default, will look same in IE, Firefox and Opera */
-			color: #204c75 ; /* dark blue */
+			color: #204c75 ; /* dark blue Backup border colour when javascript disabled */
 		}
 
 		table {
 			border-collapse: separate;
 			border-spacing: 5rem 1rem;
+		}
+
+		table tr.hideme {
+			Visibility: collapse;
 		}
 
 		table td {
@@ -77,9 +87,9 @@
 			display: block;	/* Image is inline by default so need to convert to block for margin to have an effect */
 		}
 
-		.complab, .update, .composers {
-			color: #FFD700; /* gold */
-		}
+		/* .complab, .update, .composers {
+			color: #FFD700 gold
+		} */
 
 		.update {
 			font-family: georgia, "Times New Roman", arial, helvetica, sans-serif;
@@ -90,7 +100,7 @@
 		.nojavascript {
 			text-align: center;
 			font-size: 2rem;
-			color: #000000;
+			/* color: #000000; */
 		}
 
 		.composers {
@@ -104,9 +114,8 @@
 			font-size: 1.25rem;
 			font-weight: bold;
 			letter-spacing: 0.05em; /* Make all uppercase more legible, especially at smaller font sizes */
-			/* TODO: Make table shrink at lower widths */
 			padding: 0.6%;
-			color: #e6e6e6; /* Was #ffffff */
+			/* color: #ffffff; */
 		}
 
 		/*.tableKey2 {
@@ -121,7 +130,7 @@
 			/* w\idth: 680px;*/      /* real width */
 			width: 680px;
 			margin: 20px auto 0 auto;
-			background-color: #4F94CD; /* light blue */
+			background-color: #3279B3; /* light blue high contrast backup text colour when javascript disabled */
 			border-radius: 9px;	 /* Added rounded corners effect via css instead of javascript 130820 */
 		}
 
