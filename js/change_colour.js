@@ -1,6 +1,17 @@
 'use strict';
 
+    const isSupported = window.matchMedia(
+        `(prefers-contrast(no-preference))`
+        ).matches;
+
     document.addEventListener("DOMContentLoaded", function() { // bvselect dropdown
+        // const query = window.matchMedia('(prefers-contrast: no-preference)').matches;
+
+        if (isSupported) {
+            var selected = document.getElementById('selectbox');// If want to change option for normal colour scheme, need to do
+            selected.options[3].innerHTML = "Orange";           // before third party menu takes info for options, after the DOM is loaded.
+        }                                                       // window load event (below) is too late!
+
         var demo1 = new BVSelect({  // document.addEventListener("DOMContentLoaded", function() {... - Handler when the DOM is fully loaded, not the whole page !
             selector: "#selectbox", // i.e this is equivalent to jQuery's $(document).ready()
             placeholder: "Change Colour",
@@ -10,9 +21,27 @@
     });
 
 
-// The following routine allows keyboard only access for bvselect dropdown
+    // The following routine allows keyboard only access for bvselect dropdown
     $(window).load(function() { // $(window).load - Make sure entire page content loaded (Plain Javascript: window.onload = function(event) {...)
        // Best to use load event methods for jQuery and Pure JS, as this will work in any browser
+       // jQuery event aliases like .load(), .unload() or .resize() that all are deprecated since
+       // jQuery 1.8. Lookup for these aliases in your code and replace them with the .on() method instead
+
+            // function getPrefersReducedMotion() {
+            //     const QUERY = '(prefers-reduced-motion: no-preference)'; // Double-negatives (no-preference and !mediaQueryList.matches)
+            //     const mediaQueryList = window.matchMedia(QUERY);         // to ensure animations are disabled for unsupported browsers/devices
+            //     const prefersReducedMotion = !mediaQueryList.matches;
+            //     return prefersReducedMotion;
+            // }
+
+            // if (getPrefersReducedMotion() === "false") {
+                // var scriptElement = document.createElement('script');
+
+                // scriptElement.src = "./js/animatetext.js";
+                // document.body.appendChild(scriptElement);
+                // document.write('<script src="./js/animatetext.js"><\/script>');
+            // }
+
 
         // $("body").find('#main_CustomBuild').each(function(){
             // var $colourMenuButton = $(this);
@@ -233,10 +262,27 @@
         // var foreground = `${colour}fg`; // "$" + `${colour}` + "-fg" another way of creating string `$${colour}-fg` (One $ too many actually and - a problem)
         // var background = `${colour}bg`; // IE does not support template strings `<string expression>`
 
-        var coloursdata = window.getComputedStyle(
-            document.querySelector('body'), ':before'
-        ).getPropertyValue('content'); // Gets values of content from pseudo element body:before
-        // var coloursdata = window.getComputedStyle(document.querySelector('head')).getPropertyValue('font-family');
+
+        //     // $.getJSON("localhost:3000/css/variables.css", function(data){
+        //     //     console.log(data);
+        //     // }).fail(function(){
+        //     //     console.log("An error has occurred.");
+        //     // });
+        //     // });
+        // const query = window.matchMedia('(prefers-contrast: no-preference)').matches;
+
+
+        if (!isSupported) {
+            var coloursdata = window.getComputedStyle(
+                document.querySelector('body'), ':after'
+            ).getPropertyValue('content'); // Gets values of content from pseudo element body:after
+        } else {
+            var coloursdata = window.getComputedStyle(
+                document.querySelector('body'), ':before'
+            ).getPropertyValue('content');
+            // // var coloursdata = window.getComputedStyle(document.querySelector('head')).getPropertyValue('font-family');
+        }
+
 
         // console.log(coloursdata);
 

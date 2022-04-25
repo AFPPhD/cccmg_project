@@ -20,6 +20,30 @@ $colour-scheme: (
 	)
 );
 
+$colour-scheme-higher-contrast: (
+	blue: (
+		PRIMARY-COLOUR: #3279B3,
+		BACKGROUND-COLOUR: #204c75
+	),
+
+	green: (
+		PRIMARY-COLOUR:	#35826B,
+		BACKGROUND-COLOUR: #02443b
+	),
+
+	red: (
+		PRIMARY-COLOUR: #EC0404,
+		BACKGROUND-COLOUR: #b03532
+	),
+
+	orange: (
+		PRIMARY-COLOUR: #BE5A09,
+		BACKGROUND-COLOUR: #a95108
+	)
+);
+
+// TODO: Other Colours need defining like text colour, plus need custom variables for colour schemes!
+
 
 // Function for tidier version of nested map-get();
 @function setcolour($map, $colour, $property) {
@@ -37,15 +61,69 @@ $colour-scheme: (
 
 
 // Create custom properties list version
-:root {
-	@each $colour, $property in $colour-scheme {
-		--#{$colour}-fg: #{setcolour($colour-scheme,$colour,PRIMARY-COLOUR)};
-		--#{$colour}-bg: #{setcolour($colour-scheme,$colour,BACKGROUND-COLOUR)};
+
+	:root {
+
+		// Non-text Colour Scheme
+
+		@each $colour, $property in $colour-scheme-higher-contrast {
+			--#{$colour}-fg: #{setcolour($colour-scheme-higher-contrast,$colour,PRIMARY-COLOUR)};
+			--#{$colour}-bg: #{setcolour($colour-scheme-higher-contrast,$colour,BACKGROUND-COLOUR)};
+		}
 	}
-}
+
+	// Default High Contrast Blue needs implementing to override normal default Blue
+
+	.navigation, .container {
+		background-color: #3279B3;
+	}
+
+	h2, h3 {
+		border-bottom: 2px solid #ffffff;
+	}
+
+	// Text colours
+
+	p, .complab, .update, .composers, .tablekey {
+		color: #ffffff;
+	}
 
 
-// @include var everywhere need the colour change
+
+		@supports (prefers-contrast(no-preference)) {
+
+		:root {
+
+			// Non-text Colour Scheme
+
+			@each $colour, $property in $colour-scheme {
+				--#{$colour}-fg: #{setcolour($colour-scheme,$colour,PRIMARY-COLOUR)};
+				--#{$colour}-bg: #{setcolour($colour-scheme,$colour,BACKGROUND-COLOUR)};
+			}
+		}
+
+		// Default High Contrast Blue needs implementing to override normal Blue.
+		// Have to re-apply normal Blue. Done this way so browsers/devices not understanding prefers-contrast
+		// will have colour schemes of high contrast as default
+
+		.navigation, .container {
+			background-color: #4F94CD;
+		}
+
+		// Text colours
+
+		p, .tablekey {
+			color: #e6e6e6;
+		}
+
+		.complab, .update, .composers {
+			color: #FFD700;
+		}
+
+	}
+
+
+// @include var everywhere need the colour change (i.e static colour such as gold for the bands)
 @mixin var ($property, $value) {
 	#{$property}: map-get($colours: $value);	// Fallback value
 	#{$property}: var(#{$value});
@@ -54,7 +132,7 @@ $colour-scheme: (
 
 @mixin FontSizeRecalculation () {
 	p {
-		// font-size: min(max(1.375rem, 1.2697368421052633rem + 0.5263157894736842vw), 1.5rem); // Fallback
+		// font-size: min(max(1.375rem, 1.2697rem + 0.5263vw), 1.5rem); // Fallback
 		// font-size: clamp(1.375rem, 1.2697rem + 0.5263vw, 1.5rem);
 		// font-size: clamp(1.375rem, 1.2426470588235294rem + 0.5882352941176471vw, 1.5rem);
 		// min-height: 0vw; // Safari Fix
@@ -102,7 +180,7 @@ $colour-scheme: (
 }
 
 @include MediaQueryStyle (false, true);		// Can't use @extend to include the code in a media query
-											// Need MediaQueryStyle here, before (min-width: 1px) or in (max-width: 319px) before
+											// TODO: Need MediaQueryStyle here, before (min-width: 1px) or in (max-width: 319px) before ?
 
 // @include FontSizeRecalculation();
 
@@ -115,7 +193,7 @@ $colour-scheme: (
 	}
 }
 
-@media screen and (max-width: 275px) { // Trying to force horizontal scroll i.e Stop further shrinkage
+@media only screen and (max-width: 275px) { // Trying to force horizontal scroll i.e Stop further shrinkage
 	body {
 		// display: block;
 		// width: 100% !important;
@@ -143,7 +221,7 @@ $colour-scheme: (
 
 
 
-@media screen and (max-width: 359px) {
+@media only screen and (max-width: 359px) {
 	.container {
 		// width: 319px; // min-width stops reflow
 		// min-width: 45ch;
@@ -181,7 +259,7 @@ $colour-scheme: (
 
 
 
-@media only screen and (min-width: 320px) and (max-width: 419px) {
+// @media only screen and (min-width: 320px) and (max-width: 419px) {
 
 	// .container {
 	// 	background: #af1818; // red
@@ -218,9 +296,9 @@ $colour-scheme: (
 	// .update {
 	// 	font-size: 1.4rem; /* Put 1.4rem size in cccmg.css */
 	// }
-}
+// }
 
-@media only screen and (min-width: 420px) { // min/max width is the Viewport width (innerwidth) not the window width (outerwidth)
+// @media only screen and (min-width: 420px) { // min/max width is the Viewport width (innerwidth) not the window width (outerwidth)
 
 		// .container {
 		//  		background: #af4f18; // dark orange
@@ -240,18 +318,18 @@ $colour-scheme: (
 	// 	// line-height: 1.7;
 	// 	font-size: 1rem; TODO: Increase until =<420px. Band text is too small!
 	// }
-}
+// }
 
-@media only screen and (min-width: 480px) {
+// @media only screen and (min-width: 480px) {
 
-	// .container {
-	// 	background: #a70ed6; // purple
-	// }
+// 	// .container {
+// 	// 	background: #a70ed6; // purple
+// 	// }
 
-	@include MediaQueryStyle (false, true);
-}
+// 	@include MediaQueryStyle (false, true); // TODO: Needed ?
+// }
 
-@media only screen and (min-width: 700px) {	// Don't use both min and max width media queries to avoid No Man's Land ?
+@media screen and (min-width: 700px) {	// Don't use both min and max width media queries to avoid No Man's Land ?
 
 	// .container {
 	// 	background: #328f1b; // green
@@ -265,7 +343,7 @@ $colour-scheme: (
 	// }
 }
 
-@media only screen and (min-width: 1042px) {
+@media screen and (min-width: 1042px) {
 
 	// .container {
 	// 	background: #4F94CD; // light blue
@@ -274,7 +352,7 @@ $colour-scheme: (
 	@include MediaQueryStyle (true, false);
 }
 
-@media only screen and (min-width: 1921px) {
+@media screen and (min-width: 1921px) {
 
 	// .container {
 	// 	background: #d43095; // pink
