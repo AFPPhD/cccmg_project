@@ -1,5 +1,10 @@
 <!DOCTYPE html>														<!-- Updated DOCTYPE, <html>, <head> and <script> from XHTML Strict to HTML5 compliant. Also removed trailing spaces 130820 -->
 <html lang="en">
+<?php
+// TODO: TEMPORARY - Remove and put directives in .htaccess
+header("Cache-Control: no-cache, must-revalidate");
+header("Pragma: no-cache");
+?>
 <head>
 	<meta charset="utf-8">
 
@@ -13,6 +18,7 @@
 	<!-- initial-scale controls the zoom level when the page is first loaded i.e on high dpi screens, pages with initial-scale=1 will effectively be zoomed by browsers, preventing usability and readability problems on many touch-optimized web sites -->
 	<!-- iPhone exhibits zooming behaviour when rotating to landscape (but not when loading first in landscape). initial-scale stops that -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>  <!-- IE=edge: specifies that IE should run in the highest mode available to that version of IE as opposed to a compatibility mode; IE8 can support up to IE8 modes, IE9 can support up to IE9 modes, and so on -->
+	<!-- <link rel="stylesheet" href="/path/to/my.css" media="print" onload="this.media='all'"> Remaining CSS can load asynchronously so it doesn’t delay page rendering -->
 	<link rel="stylesheet" href="css/cccmg.css"/>
 	<link rel="stylesheet" href="css/material_icons.css"/>
 	<link rel="stylesheet" href="css/navigation.css"/>
@@ -67,7 +73,7 @@
 <!-- <h1 class="pngtitle">Casual Collectors' Classical Music Guide</h1> -->
 <div class="pngtitle">
 	<h1><img src="images/Eras_Bold_ITC_transparent.png" alt="Casual Collectors' Classical Music Guide" width="700" height="151"/></h1>
-</div> <!-- Was width="488" height="105" -->
+</div> <!-- Was width="488" height="105" loading="eager" - Any images within the viewport should be loaded eagerly using the browser's defaults -->
 
 <br/>
 
@@ -123,6 +129,7 @@ is also given.</p>
 <p class="composers">Joseph Haydn 290 years since his birth<br/><br/>
 Franz Schubert 225 years since his birth<br/><br/>
 Claude Debussy 160 years since his birth<br/><br/>
+Ralph Vaughan Williams 150 years since his birth<br/><br/>
 Johannes Brahms 125 years since his death<br/><br/>
 John Williams 90 years since his birth</p>
 
@@ -1008,6 +1015,28 @@ Bean/Boult/New Philharmonic (EMI)</p>
 		window.jQuery || document.write('<script src="./js/jquery-1.7.2.min.js"><\/script>');
 </script>
 
+<!-- <script
+	src="https://code.jquery.com/jquery-migrate-1.4.1.min.js">
+</script> -->
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"
+integrity="sha512-lzilC+JFd6YV8+vQRNRtU7DOqv5Sa9Ek53lXt/k91HZTJpytHS1L6l1mMKR9K6VVoDt4LiEXaa6XBrYk1YhGTQ=="
+crossorigin="anonymous" referrerpolicy="no-referrer">
+</script> -->
+
+<!-- <script
+	src="https://code.jquery.com/jquery-migrate-3.3.0.min.js">
+</script> -->
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+crossorigin="anonymous" referrerpolicy="no-referrer">
+</script> -->
+
+<!-- <script>
+		window.jQuery || document.write('<script src="./js/jquery-3.6.0.min.js"><\/script>');
+</script> -->
+
 
 
 <script
@@ -1017,8 +1046,14 @@ Bean/Boult/New Philharmonic (EMI)</p>
 		// Needed for animatetext.js
 </script>
 
+<!-- <script
+			  src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+			  integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
+			  crossorigin="anonymous">
+</script> -->
+
 <script>
-		window.jQuery.ui || document.write('<script defer src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
+		window.jQuery.ui || document.write('<script src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
 </script>
 
 <!-- < src="js/newcore.js"></> -->
