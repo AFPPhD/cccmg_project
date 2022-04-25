@@ -68,4 +68,3 @@ document.write(
   date_lastmodified() + "</div>");
 
 </script>
-
