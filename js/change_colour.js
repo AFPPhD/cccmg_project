@@ -4,6 +4,7 @@
         `(prefers-contrast(no-preference))`
         ).matches;
 
+
     document.addEventListener("DOMContentLoaded", function() { // bvselect dropdown
         // const query = window.matchMedia('(prefers-contrast: no-preference)').matches;
 
@@ -14,7 +15,7 @@
 
         var demo1 = new BVSelect({  // document.addEventListener("DOMContentLoaded", function() {... - Handler when the DOM is fully loaded, not the whole page !
             selector: "#selectbox", // i.e this is equivalent to jQuery's $(document).ready()
-            placeholder: "Change Colour",
+            placeholder: "Colour",
             searchbox: false,
             offset: false
         });
@@ -45,8 +46,10 @@
 
         // $("body").find('#main_CustomBuild').each(function(){
             // var $colourMenuButton = $(this);
-            $('.navigation').height('605px'); // Extend navbar height to hold bvselect (or default menu 574px) Change Colour Button
+            $('.navigation').height('670px'); // Was 605px. Extend navbar height to hold bvselect (or default menu 574px) Change Colour Button
             $('.select-option').css('display', 'block'); // Make visible colour change button. (Defaulted at no display so hidden from screen readers)
+            //$('.topbar span', '.checkbtn').css('display', 'none');
+            // $('.topbar span, .checkbtn').css('display', 'inline-block'); // Need Event Handler so this only happens at =<1041px
             let $colourMenuButton = $('#main_CustomBuild');
             $colourMenuButton.attr('tabIndex', '0'); // Make custom button keyboard focusable
         // });
@@ -69,6 +72,7 @@
             });
         }
 
+
         setTabIndexes(); // Sets all menu options to a tabIndex value of -1
 
         // Given a jQuery object represents a set of DOM elements, the .first() method
@@ -76,6 +80,22 @@
         $('#ul_CustomBuild > li').first().attr('tabIndex', '0'); // Make Blue default for option box (i.e focusable)
         $selectedOption = $('#ul_CustomBuild > li').first();
         $tabbedChoice = $selectedOption;
+
+        // window.addEventListener('resize', function showHamburgerMenu() {
+            // function showHamburgerMenu() {
+            //     var wpw = window.matchMedia('(max-width: 1041px)').matches;
+            //         if (wpw) {
+            //             document.querySelector('.topbar span').style.display = 'inline-block';
+            //             document.querySelector('.checkbtn').style.display = 'inline-block';
+
+            //         } else {
+            //             document.querySelector('.topbar span').style.display = 'none';
+            //             document.querySelector('.checkbtn').style.display = 'none';
+            //         }
+            // }
+
+            // addEventListener("resize", showHamburgerMenu);
+
 
 
         // The way to handle dynamically added content, is to attach the event to the document and target the event and selector that you require.
@@ -231,6 +251,7 @@
                     nextIndex = index + 1;
                 }
             }
+
             setTabIndexes();
             $tabbedChoice = $selectableOptions.eq(nextIndex);
             $tabbedChoice.attr('tabIndex', '0');
@@ -296,7 +317,8 @@
         document.body.style.backgroundColor = jsonObject[`${colour}bg`];
         document.querySelector('.container').style.backgroundColor = jsonObject[`${colour}fg`]; //IE 8 only supports CSS 2.1 selectors for querySelector
         document.querySelector('.navigation').style.backgroundColor = jsonObject[`${colour}fg`];
-        document.querySelector('.select-option select').style.backgroundColor = jsonObject[`${colour}fg`]; // Have to force colour change box to change colour. It will not inherit
+        document.querySelector('.topbar').style.backgroundColor = jsonObject[`${colour}fg`];
+        document.querySelector('.select-option').style.backgroundColor = jsonObject[`${colour}fg`]; // Have to force colour change box to change colour. It will not inherit
         document.documentElement.style.setProperty("--highlight-color", jsonObject[`${colour}bg`]);
         var NodeList = document.querySelectorAll('hr');
         // Convert buttons NodeList to an array

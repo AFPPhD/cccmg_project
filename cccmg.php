@@ -7,7 +7,6 @@ header("Pragma: no-cache");
 ?>
 <head>
 	<meta charset="utf-8">
-
 	<title>Classical Collectors' Classical Music Guide</title>
 	<meta name="Description" content="Classical Collectors' Classical Music Guide"/>
 	<meta name="Keywords" content="Classical Music Recommendations, Compilations, Recordings"/>
@@ -30,7 +29,11 @@ header("Pragma: no-cache");
 </head>
 
 <body>
-
+<div class="topbar"><a href="#">CCCMG</a><!-- Or img type for logo -->
+<span>Shortcuts</span><!-- Text -->
+<input type="checkbox" id="toggle"/><!-- Checkbox, which will not be displayed -->
+<label for="toggle" role="button" tabindex="0" class="checkbtn">&#9776;</label><!-- Mobile Hamburger Menu Icon disabled aria-disabled="true" -->
+<div class="blurbackground"></div>
 <div class="navigation" role="navigation">
 		<h3>Shortcuts</h3>  <!-- TODO: Remove hidden class as this is removing one click jump to link functionality -->
         <ul>
@@ -66,6 +69,8 @@ header("Pragma: no-cache");
 		  		</select>
 		  	</div>
 </div>
+</div>
+
 
 
 <div class="container" role="main">
@@ -1063,7 +1068,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 <script src="js/core.js"></script>	<!-- Needed for accordion_mod -->
 <!-- <script src="js/show-dropdown.js"></script> Not working -->
 <script src="js/hide_no_javascript_mes.js"></script>
-<script src="js/bvselect.js"></script> <!-- Custom dropdown menu that allows for different highlight colour -->
+<script src="js/bvselect.js"></script> <!-- Custom dropdown menu that allows for different highlight colours -->
 <script src="js/change_colour.js"></script>
 <script src="js/accordion_mod.js"></script>
 <!-- < src="js/floating_nav_menu.js"></> -->	<!-- Using position fixed/sticky better than this -->

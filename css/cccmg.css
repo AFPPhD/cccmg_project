@@ -2,6 +2,8 @@
 			-moz-text-size-adjust: none; 	/* Mobile Safari increases the default font-size when you switch a website from portrait to landscape */
 			-webkit-text-size-adjust: none; /* To stop this font-size inflation use the -webkit-text-size-adjust property */
 			text-size-adjust: none;
+			scroll-padding-top: 55px; /* To stop scrolled to Composer heading being obscured by sticky header */
+			scroll-behavior: smooth;
 		}
 
 		body {
@@ -15,6 +17,24 @@
 			-webkit-font-smoothing: antialiased; /* Chrome and Safari still use subpixel anti-aliasing by default. We need to explicitly turn it off */
 			/* overflow-x: hidden; */  /* To allow container to break out of constrained width */
 		}
+
+		.topbar{
+			z-index: 1;
+			top: 0;
+			position: fixed;	/* Fallback.  stickybits.js polyfill available */
+			position: sticky; /* sticky and top fix the navbar in position. No jittery movement on page scrolling using jQuery anymore */
+			border-bottom-right-radius: 9px;
+			border-bottom-left-radius: 9px;
+			/*text-align: center;*/
+			/* min-width: 680px; */
+			/* width: fit-content; */
+			max-width: 1900px; /* Need to put brakes on this for higher widths */
+			line-height: 1.5;
+			height: 36px;
+			background-color: #3279B3;
+		}
+
+
 
 		h1 {
 			font-size: 2.5rem;	/* Text in pixels doesn’t scale up (or down) when you resize it in Old Internet Explorer browsers */
