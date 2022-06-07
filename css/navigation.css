@@ -2,15 +2,15 @@
 /* Best to use local fallback to speedup page load (especially as just using for small number of chars) */
 
 		.navigation {
-			top: 20px;			/* Offset for navbar from top of screen and main section */
+			top: 55px;			/* Offset for navbar from top of screen and main section */
 			text-align: center;
 			position: fixed;	/* Fallback.  stickybits.js polyfill available */
-			position: sticky; /* sticky and top fix the navbar in position. No jittery movement on page scrolling using jQuery anymore */
+			/*position: sticky;*/ /* sticky and top fix the navbar in position. No jittery movement on page scrolling using jQuery anymore */
 			float: left; /* Puts menu left of page */
 			background-color: #3279B3; /* light blue high contrast backup colour when javascript disabled */
 			margin-left: 1%;    /* Moves floating menu box to right, relative to window */
 			width: 150px;		/* Needs to be absolute, otherwise change size on window resize */
-			height: 536px;		/* height value - Holds shape for just position: fixed working. Otherwise get menu extending to bottom with height: 100% */
+			height: 610px; 		/*Was 536px;*/ /* height value - Holds shape for just position: fixed working. Otherwise get menu extending to bottom with height: 100% */
 			border-radius: 9px;	/* Added rounded corners effect via css instead of javascript 130820 */
 		}
 
@@ -82,6 +82,11 @@
 			display: none;
 		}
 
+		.select-option {
+			display: none; /* Want colour change button hidden from screen readers if javascript disabled (Not just navbar shorter) */
+			/* border-radius: 9px; */
+		}
+
 		.select-option:after {
 			content: 'keyboard_arrow_down';
 			font-family: 'material icons';
@@ -97,9 +102,6 @@
 			display: none /* Disabled to utilise third party dropdown bvselect. When default dropdown displayed navigation container height 574px at least needed */
 		}
 
-		.select-option {
-			display: none; /* Want colour change button hidden from screen readers if javascript disabled (Not just navbar shorter) */
-		}
 
 
 		/* Order of styles - :hover then :focus then :active */
