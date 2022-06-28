@@ -38,7 +38,7 @@
 			font-weight: bold;
 			/* padding: 0.25em; */
 			display: block;          /* block causes the link to display as a block element, meaning that the whole area of each navigation link is active when you */
-			/* color: #FFFFFF; */          /* move the cursor over it, giving the same effect you'd see if you used an image for the navigation */
+			/* color: #FFFFFF; */    /* move the cursor over it, giving the same effect you'd see if you used an image for the navigation */
 			color: black;
 			box-sizing: border-box;
 			/* TODO: *behavior: url(/scripts/boxsizing.htc); Need HTC path relative to HTML not CSS ? IE discontinued */
@@ -135,7 +135,7 @@
 
 		.js-focus-visible a:focus:not(.focus-visible) {		/* Adds a focus-visible class to all focused elements in situations in which otherwise the :focus-visible pseudo-selector would match */
 			outline: 0;										/* i.e Just use polyfill until all browsers support :focus-visible */
-		}
+		} /* Hide focus on mouse click */
 
   		/*
 			Optionally: If :focus-visible is supported on this
