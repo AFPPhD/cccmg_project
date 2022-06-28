@@ -3,7 +3,7 @@
 			-webkit-text-size-adjust: none; /* To stop this font-size inflation use the -webkit-text-size-adjust property */
 			text-size-adjust: none;
 			scroll-padding-top: 55px; /* To stop scrolled to Composer heading being obscured by sticky header */
-			scroll-behavior: smooth;
+			/* scroll-behavior: smooth; Not good for people wanting to avoid quick animations */
 		}
 
 		body {
@@ -19,7 +19,7 @@
 		}
 
 		.topbar{
-			z-index: 1;
+			z-index: 1; /* So main content scrolls underneath */
 			top: 0;
 			position: fixed;	/* Fallback.  stickybits.js polyfill available */
 			position: sticky; /* sticky and top fix the navbar in position. No jittery movement on page scrolling using jQuery anymore */
