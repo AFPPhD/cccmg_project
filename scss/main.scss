@@ -201,6 +201,7 @@ $colour-scheme-higher-contrast: (
 .topbar a {
 	text-decoration: none; // Stop link underline
 	display: inline-block;
+	border: 3px solid transparent; // So 3px black border will just overlay this, with no element shift
 	//margin-left: 1%;
 	position: relative;
 	//float: left;
@@ -209,7 +210,7 @@ $colour-scheme-higher-contrast: (
 
 .topbar span {
 	//display: none;
-	position:relative;
+	position: relative;
 	//right: 50%;
 	//margin-left: 40%;
 	//padding-left: 64%;
@@ -218,28 +219,36 @@ $colour-scheme-higher-contrast: (
 	//overflow: hidden;
 }
 
-#toggle {
-	display: none; // Remove checkbox
-}
+input[type="checkbox"] {
+	opacity: 0; // Can't use display:none or visibility: hidden because keyboard users will not able to interact with it via space bar
+} 			    // since the checkbox cannot now receive focus
 
-.checkbtn {
+
+/*Hide the checkmark by default*/
+// .checkbox input[type="checkbox"] + label::after {
+//     content: none;
+// }
+
+label.checkbtn {
 	//display: none;
-	position: relative;
+	//position: relative;
 	font-size: 1.5rem; // Made Hamburger icon same size as text and icon left
 	cursor: pointer;
+	border: 3px solid transparent; // So 3px black border will just overlay this, with no element shift
 	//line-height: 1.5;
 	//float: right;
 }
 
-.blurbackground {
+.background {
 	display:none;
 }
 
-@media screen and (max-width: 680px) { // Menu Bar for small devices
+@media screen and (max-width: 1041px) { // Menu Bar for small devices
 
 	.topbar {
 		//text-align: unset; // Stop centre align span text for larger devices
 		width: auto;
+		//width: 100%;
 		min-width: 680px;
 		// margin-left: 1%;
 		// margin-right: 1%;
@@ -252,15 +261,19 @@ $colour-scheme-higher-contrast: (
 	}
 
 	.topbar span {
-		left:62%;
+		//left:62%;
+		margin-left: 62%; //680px
+		//margin-left: 62.35%; //700px
 	}
 
 	// .topbar span, .checkbtn {
 	// 	display: inline-block; // Enable with javascript (BUT only for up to 1041px!), as otherwise won't work for keyboard users
 	// }
 
-	.checkbtn {
-		left: 62.25%;
+	label.checkbtn {
+		//left: 62.25%;
+		margin-left: 0.15%; //680px
+		//margin-left: 0.4% //700px
 	}
 
 	.navigation {
@@ -270,7 +283,7 @@ $colour-scheme-higher-contrast: (
 		// left: 50%;
 		// margin-left: -50%;
 		position: absolute; // Need to keep for background to remain blurred
-		//z-index: 1;
+		//z-index: 2;
    		left: 50%;
    		transform: translate(-50%, 0);
 		min-width: 275px;
@@ -298,14 +311,43 @@ $colour-scheme-higher-contrast: (
 		border: 4px solid white;
 	}
 
+	// .navigation:focus-within {
+	// 	display: block;
+	// 	border: 2px solid green;
+	// }
+
+	// .checkbtn:not(:focus) + .navigation {
+	// 	display: none;
+	// }
+
+	label.checkbtn::before {
+		content: "\2630"; // Hamburger Icon
+		//position: absolute;
+		display: inline-block;
+		height: 1em;//16px
+		width: 1em;//16px
+		//background: purple;
+	}
+
+	input[type="checkbox"]:focus + label.checkbtn { // Had to remove #toggle off front of selector, so that Hamburger menu highlighted
+		border: 3px solid black; // outline results in top line disappearing
+	}
+
+	.topbar a:focus {
+		outline: 0; // Remove outline style set in navigation.css
+		border: 3px solid black; // outline results in top line disappearing
+	}
+
+	// #toggle.input[type="checkbox"]:checked + label::after {
+	// 	background: orange;
+	// }
 
 	#toggle:checked ~ .navigation {  // Open nav menu for mouse click
 		display: block;
-		//z-index: 4;
-		//position: absolute;
-		// backdrop-filter: blur(5px);
+		//z-index: 5;
+		// background-color: rgba(0,0,0,0.5);
+		// backdrop-filter: blur(15px);
 		// opacity: 0.9;
-		// filter: blur(0px);
 		//position: relative;
 		//background-color: black;
 		//backdrop-filter: blur(10px);
@@ -314,14 +356,14 @@ $colour-scheme-higher-contrast: (
 
 	//@supports selector(:has(*)) {
 		//.dropdownbackground:has(div.topbar > input[type="checkbox"]:checked) {
-			.blurbackground {
-				opacity: 0.8;
-				background-color: purple;
+			#toggle:checked ~ .background {
+				//background: rgba(255,255,255,0.5);
+				//background-color: rgba(0,0,0,0.5);
 				display: block;
 				position: fixed;
-				//z-index: 1;
-				// -webkit-filter: blur(8px);
-				// filter: blur(8px);
+				// z-index: -1;
+				// filter: blur(15px);
+  				// -webkit-filter: blur(15px);
 				/* Center and scale the image nicely */
 				// left: 0;
   				// top: 0;
@@ -333,18 +375,26 @@ $colour-scheme-higher-contrast: (
 				// width: 100%;
 				//backdrop-filter: blur(10px);
 			}
+
+
+			.blur {
+				background: rgba(255, 255, 255, 0.2); // Make sure this color has an opacity of less than 1
+				backdrop-filter: blur(5px); // This be the blur
+				height: 100vh;
+				width: 100%;
+			}
 	//}
 
 }
 
-@media screen and (min-width: 681px) and (max-width: 1041px) {
+@media screen and (min-width: 700px) and (max-width: 1041px) {
 	.topbar a {
-		margin-left: 1%;
+		//margin-left: 1%;
 	}
 
 	.topbar span {
 		//position : fixed;
-		margin-left: 61.25%;
+		//margin-left: 61.25%;
 	}
 
 	// .topbar span, .checkbtn {
@@ -353,7 +403,7 @@ $colour-scheme-higher-contrast: (
 
 	.checkbtn {
 		//position: fixed;
-		margin-left: 1%;
+		//margin-left: 1%;
 	}
 }
 
@@ -361,6 +411,12 @@ $colour-scheme-higher-contrast: (
 
 	.topbar {
 		text-align:center; // Aligns span child
+	}
+
+	.topbar a:focus {
+		outline: 0; // Remove outline style set in navigation.css
+		border: 3px solid black; // outline results in top line disappearing
+		// margin-bottom: 10px;
 	}
 
 	.topbar span, .checkbtn {
@@ -432,7 +488,7 @@ $colour-scheme-higher-contrast: (
 		// text-overflow: ellipsis;
 		max-width: 680px;
 
-		margin-left: -50%;
+		//margin-left: -50%; ?
 
 		// width: fit-content;
 		overflow: hidden; // Need a non-visible option for resize to work
@@ -513,10 +569,10 @@ $colour-scheme-higher-contrast: (
 // 	// 	background: #a70ed6; // purple
 // 	// }
 
-// 	@include MediaQueryStyle (false, true); // TODO: Needed ?
+// 	@include MediaQueryStyle (false, true);
 // }
 
-@media screen and (min-width: 700px) {	// Don't use both min and max width media queries to avoid No Man's Land ?
+@media screen and (max-width: 1041px) {	// Don't use both min and max width media queries to avoid No Man's Land ?
 
 	// .container {
 	// 	background: #328f1b; // green
@@ -524,6 +580,9 @@ $colour-scheme-higher-contrast: (
 
 	@include MediaQueryStyle (false, false);
 
+	#toggle:checked ~ .navigation {
+		display: block; // Undo removal by MediaQueryStyle, meant for just .navigation as sidebar
+	}
 	// body {
 	// 	font-size: 24px;
 	// 	font-size: 150%;
@@ -545,7 +604,7 @@ $colour-scheme-higher-contrast: (
 	// 	background: #d43095; // pink
 	// }
 
-	@include MediaQueryStyle (true, false);
+	// @include MediaQueryStyle (true, false); Not needed, set at min-width: 1042px
 }
 
 * {
