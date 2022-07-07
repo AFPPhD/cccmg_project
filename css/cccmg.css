@@ -18,6 +18,13 @@
 			/* overflow-x: hidden; */  /* To allow container to break out of constrained width */
 		}
 
+		header {
+			z-index: 2; /* To put Skip to Main Content above small devices menu background blur */
+			position: fixed;
+			outline: 0;
+			border: 3px solid rgba(0,0,0,0); /* Removes black pixel in top left hand corner */
+		}
+
 		.topbar{
 			z-index: 1; /* So main content scrolls underneath */
 			top: 0;
@@ -30,11 +37,36 @@
 			/* width: fit-content; */
 			max-width: 1900px; /* Need to put brakes on this for higher widths */
 			line-height: 1.5;
-			height: 36px;
+			height: 39px; /* Was 36px. Changed to allow for transparent border on .topbar a */
 			background-color: #3279B3;
 		}
 
+		.skiplink {
+			position: absolute;
+			/* top: 0;
+			left: 0; */
+			background: white;
+			color: #A22BE7;
+			/* left: -10000px; */
+			transform: translateY(-105%);
+			transition: transform 0.3s ease-in;
 
+			/*additional properties if absolute positioning is deactivated */
+			/* width:1px;
+			height:1px;
+			overflow:hidden; */
+		}
+
+		  .skiplink:focus {
+			/* left: 5%; */
+			transform: translateY(0%);
+			transform: translateX(7%);
+			/* left: 0; */
+
+			/*additional properties if absolute positioning is deactivated */
+			/* width:auto;
+			height:auto; */
+		}
 
 		h1 {
 			font-size: 2.5rem;	/* Text in pixels doesn’t scale up (or down) when you resize it in Old Internet Explorer browsers */
