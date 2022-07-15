@@ -1,8 +1,18 @@
 'use strict';
 
     const isSupported = window.matchMedia(
-        `(prefers-contrast(no-preference))`
+        '(prefers-contrast(no-preference))'
         ).matches;
+
+    // let smallMenu = window.matchMedia(
+    //     '(max-width: 1041px)'
+    //     ).matches;
+
+        $(window).on('resize', function () {
+            // resize event fires when the document window is resized.
+            // Use the .resize(handler)(shorthand for .on('resize', handler)) to bind an event handler to the resize event
+            // The event listener fires when a change is detected
+        });
 
 
     document.addEventListener("DOMContentLoaded", function() { // bvselect dropdown
@@ -97,7 +107,6 @@
             // addEventListener("resize", showHamburgerMenu);
 
 
-
         // The way to handle dynamically added content, is to attach the event to the document and target the event and selector that you require.
         // You need something sitting at the document level which is aware of the event and the elements you want to apply it to, so that it can
         // watch for any new elements that match and apply that event to them as well
@@ -155,7 +164,7 @@
         //         const { key } = event;
 
 
-        // Process key presses on menu select
+        // Process key presses on colour menu select
         $colourSelectionBox.on('keydown', '#ul_CustomBuild > li', function (event) {
             $tabbedChoice = $(document.activeElement); // Previously document.activeElement was this
             if ((event.which || event.keyCode) == '9' || (event.shiftKey && (event.which || event.keyCode) == '9')) { // Leave menu if tab or shift tab pressed
@@ -193,7 +202,16 @@
             // var $target = $(event.target);
             // var $target = $(document.activeElement);
             // if (($target != '#main_CustomBuild')) {
-                $colourSelectionBox.css('display', 'none'); // When tab out of selection menu, also shift tab or enter option and clicking elsewhere on page
+                var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
+                if (smallMenu) {
+                    //$('.navigation').css('display', 'none'); // Remove small menu
+                    if ($('#toggle').is(':checked')) {
+                        $("#toggle").prop("checked", false); // Uncheck checkbox
+                    }
+                }
+                if ($colourSelectionBox.css('display') == 'block') {
+                    $colourSelectionBox.css('display', 'none'); // When tab out of selection menu, also shift tab or enter option and clicking elsewhere on page
+                }
                 if ($tabbedChoice.get(0).innerHTML != $selectedOption.get(0).innerHTML) { // Put focus back on selected option
                     setTabIndexes();
                     // $tabbedChoice.attr('autofocus', false);
@@ -207,12 +225,40 @@
         }); // Had to customise focusout, since arrow keys also triggered focusout preventing focus going to next choice
 
 
+        // $(document).on('keydown mousedown', 'li a', function (event) {
+        //     event.preventDefault();
+        // });
+
+        // $(document).off('keydown mousedown', 'a').on('keydown mousedown', 'a', function(e) {
+        //     e.preventDefault();
+        // });
+
+        $("a").click(function(event) {
+            var $target = $(event.target);
+            if ( $target.is("a")) {
+              $target.css( "background-color", "red" );
+            //   $('a').click(function() { var link = $(this).attr('href');
+            //   $('a').load(link);
+            ourEvent = $.Event('customFocusout');
+            $target.trigger(ourEvent);
+            }
+        });
+
+
         $(document).on('mousedown', function (event) {  // Pointer Click elsewhere in the document.
             // Add touchend or tap ?
             // $target assigned to $(this), $(document.activeElement) or $(':focus') does not work!
             // var pointerType = e.which;        // Assign mouse or touch event
             var $target = $(event.target);
-            if (($target.get(0).id != 'main_CustomBuild') && ($target.parent().get(0).id != 'ul_CustomBuild')) {
+            if (($target.get(0).id != 'main_CustomBuild')
+            && ($target.parent().get(0).id != 'ul_CustomBuild')
+            &&  !($('.navigation').has($target).length !== 0)
+            && !($('.navigation').is($target))
+            && !($target.is('.checkbtn'))) {
+            //if (!($target.is('.checkbtn')) && ($target.find('.navigation').length === 0) && !($target.is('.navigation'))) {
+                //     // $('.navigation').css('display', 'none'); // Remove small menu
+                //     $("#toggle").prop("checked", false); // Uncheck checkbox
+                // }
                 // if ( (jQuery.type(pType) === 'string' && pType.val() > 0) && jQuery.type(pType) !== 'undefined' && pType !== null) { // i,e pointer click and not a keyboard click (Can mouse click on colour and change with this)
                 // if (pointerType == 1) {
                     ourEvent = $.Event('customFocusout');
@@ -224,7 +270,20 @@
                 $tabbedChoice = $selectedOption; // Make sure update the tabbed option
                 $selectedOption.attr('tabIndex', '0');
                 $selectedOption.trigger('click');
+            // }
+            } else if ($target.is('a')) {
+                        event.preventDefault();
+            //          $('a').click(function() { var link = $(this).attr('href');
+            //          $('a').load(link);
             }
+            // else {
+            //     $('a').click(function(event) {
+            //         event.preventDefault();
+            //          $('a').click(function(){ var link = $(this).attr('href');
+            //          $('a').load(link);
+            //          });
+            //          });
+            // }
         });
 
 
