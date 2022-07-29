@@ -188,22 +188,23 @@ $colour-scheme-higher-contrast: (
 
 // Menu styles
 
-.topbar {
-	//text-align: unset; // Stop centre align span text for larger devices
-	//width: auto;
-	//min-width: 680px;
-	// margin-left: 1%;
-	// margin-right: 1%;
-	//width: fit-content;
-	//width: 100%;
-}
+// .topbar {
+// 	//text-align: unset; // Stop centre align span text for larger devices
+// 	//width: auto;
+// 	//min-width: 680px;
+// 	// margin-left: 1%;
+// 	// margin-right: 1%;
+// 	//width: fit-content;
+// 	//width: 100%;
+// }
 
 .topbar a {
 	text-decoration: none; // Stop link underline
 	display: inline-block;
 	border: 3px solid transparent; // So 3px black border will just overlay this, with no element shift
-	//margin-left: 1%;
+	margin-left: 1%;
 	position: relative;
+	color: black;
 	//float: left;
 	// margin-left: 20%;
 }
@@ -257,13 +258,15 @@ label.checkbtn {
 	}
 
 	.topbar a {
-		margin-left: 1%;
+		//margin-left: 1%;
 	}
 
 	.topbar span {
 		//left:62%;
-		margin-left: 62%; //680px
+		//margin-left: 59.75%; //680px
 		//margin-left: 62.35%; //700px
+		position: fixed;
+		right: 6.5%;
 	}
 
 	// .topbar span, .checkbtn {
@@ -272,8 +275,10 @@ label.checkbtn {
 
 	label.checkbtn {
 		//left: 62.25%;
-		margin-left: 0.15%; //680px
+		//margin-left: -3.85%; //680px
 		//margin-left: 0.4% //700px
+		position: fixed;
+		right: 1.15%;
 	}
 
 	.navigation {
@@ -387,25 +392,29 @@ label.checkbtn {
 
 }
 
-@media screen and (min-width: 700px) and (max-width: 1041px) {
-	.topbar a {
-		//margin-left: 1%;
-	}
+// @media screen and (min-width: 686px) and (max-width: 1041px) {
+// 	.topbar a {
+// 		//margin-left: 1%;
+// 	}
 
-	.topbar span {
-		//position : fixed;
-		//margin-left: 61.25%;
-	}
+// 	.topbar span {
+// 		position : fixed;
+// 		//margin-left: 59.75%;
+// 		//margin-left: 60.75%;
+// 		right: 6.5%;
+// 	}
 
-	// .topbar span, .checkbtn {
-	// 	display: inline-block; // Enable with javascript (BUT only for up to 1041px!), as otherwise won't work for keyboard users
-	// }
+// 	// .topbar span, .checkbtn {
+// 	// 	display: inline-block; // Enable with javascript (BUT only for up to 1041px!), as otherwise won't work for keyboard users
+// 	// }
 
-	.checkbtn {
-		//position: fixed;
-		//margin-left: 1%;
-	}
-}
+// 	.checkbtn {
+// 		position: fixed;
+// 		//margin-right: 1%;
+// 		//margin-right: 1%;
+// 		right: 1.15%;
+// 	}
+// }
 
 @media screen and (min-width: 1042px) {
 
@@ -488,7 +497,7 @@ label.checkbtn {
 		// text-overflow: ellipsis;
 		max-width: 680px;
 
-		//margin-left: -50%; ?
+		// margin-left: -50%; ?
 
 		// width: fit-content;
 		overflow: hidden; // Need a non-visible option for resize to work
@@ -606,7 +615,3 @@ label.checkbtn {
 
 	// @include MediaQueryStyle (true, false); Not needed, set at min-width: 1042px
 }
-
-* {
-	outline: 1px solid red;
-  }
