@@ -29,11 +29,12 @@ header("Pragma: no-cache");
 </head>
 
 <body>
-<div class="topbar"><a href="#">CCCMG</a><!-- Or img type for logo -->
+<header><a class="skiplink" href="#intro">Skip to main content</a></header>
+<div class="topbar"><a href="#CCCMG">CCCMG</a><!-- Or img type for logo -->
 <span>Shortcuts</span><!-- Text -->
-<input type="checkbox" id="toggle"/><!-- Checkbox, which will not be displayed -->
-<label for="toggle" role="button" tabindex="0" class="checkbtn">&#9776;</label><!-- Mobile Hamburger Menu Icon disabled aria-disabled="true" -->
-<div class="blurbackground"></div>
+<input type="checkbox" aria-label="hidden" id="toggle"/><!-- Checkbox, which will not be displayed -->
+<label for="toggle" aria-label="Toggle menu" role="checkbox" class="checkbtn"></label><!-- Mobile Hamburger Menu Icon disabled aria-disabled="true" &#9776; -->
+<div class="background"><div class="blur"></div></div>
 <div class="navigation" role="navigation">
 		<h3>Shortcuts</h3>  <!-- TODO: Remove hidden class as this is removing one click jump to link functionality -->
         <ul>
