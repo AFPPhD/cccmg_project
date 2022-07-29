@@ -131,7 +131,16 @@
                     ourEvent = $.Event('closeEnterPress'); // TODO: Remove this by adding as a focusout event, and do same for entering option ?
                     $colourMenuButton.trigger(ourEvent);
             }
-        }));
+            // else if (event.which || event.keyCode == "Escape") {
+            //         // event.preventDefault();
+            //         var $target = $(event.target);
+            // if ($target.get(0).id != 'main_CustomBuild') {
+            //         $(window).scrollTop(0);
+            // }
+            //         // var $target = $(event.target);
+            //         // $("#CCCMG").focus();
+            // }
+            }));
 
         $(document).on('openEnterPress closeEnterPress', '#main_CustomBuild', function (ourEvent) {
             // $colourSelectionBox.attr('tabIndex', '0');
@@ -233,15 +242,34 @@
         //     e.preventDefault();
         // });
 
-        $("a").click(function(event) {
+        $("a").click(function(event) { // For mouse/keyboard action on menu options
             var $target = $(event.target);
-            if ( $target.is("a")) {
-              $target.css( "background-color", "red" );
-            //   $('a').click(function() { var link = $(this).attr('href');
-            //   $('a').load(link);
-            ourEvent = $.Event('customFocusout');
-            $target.trigger(ourEvent);
+            if ($target.is("a")) {
+                // $target.css( "background-color", "red"); // Highlight which links have been clicked
+                ourEvent = $.Event('customFocusout');
+                $target.trigger(ourEvent);
             }
+        });
+
+        $(document).on('keyup',function(event) {
+        // var $target = $(event.target);
+        // Get scroll to top of page when release shift key
+
+        //  && !((event.which || event.keyCode) == '13')
+        //  && !((event.which || event.keyCode) == '38')
+        //  && !((event.which || event.keyCode) == '40')
+        //  && !((event.which || event.keyCode) == '9')
+        //  && !(event.shiftKey))
+         if ((event.which || event.keyCode) == "27")
+        {
+                    // event.preventDefault();
+            // if ($target.get(0).id != 'main_CustomBuild') {
+                    // ourEvent = $.Event('customFocusout');
+                    // $target.trigger(ourEvent);
+                    $(window).scrollTop(0); // If Esc pressed, jump (scroll) to top of page
+            // }
+                    // $("#CCCMG").focus();
+        }
         });
 
 
@@ -271,8 +299,8 @@
                 $selectedOption.attr('tabIndex', '0');
                 $selectedOption.trigger('click');
             // }
-            } else if ($target.is('a')) {
-                        event.preventDefault();
+            // } else if ($target.is('a')) {
+                        //event.preventDefault();
             //          $('a').click(function() { var link = $(this).attr('href');
             //          $('a').load(link);
             }
