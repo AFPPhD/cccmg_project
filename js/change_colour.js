@@ -262,13 +262,39 @@
         //  && !(event.shiftKey))
          if ((event.which || event.keyCode) == "27")
         {
-                    // event.preventDefault();
+                    event.preventDefault();
+                    //let $target = $('#intro');
+                    //$('#intro').trigger('click');
+                    //$('#intro').click();
             // if ($target.get(0).id != 'main_CustomBuild') {
                     // ourEvent = $.Event('customFocusout');
                     // $target.trigger(ourEvent);
+                    // $.scrollTo('#top', 800, {easing:'easeOutCirc'});
+                    ourEvent = $.Event('customFocusout');
+                    $tabbedChoice.trigger(ourEvent);
                     $(window).scrollTop(0); // If Esc pressed, jump (scroll) to top of page
+                    $("#top").focus();
+                    //$('#top').triggerHandler('focus');
+                    //$("#CCCMG").animate({scrollTop:0}, "smooth");
+                    //$.scrollTo('#CCCMG','slow');
+                    //window.scrollTo({top: 0, behavior: 'smooth'});
+                    // $('a[href=#]').click(function(event) {
+                    //     event.preventDefault();
+                    //     return false;
+                    // });
+                    //$('a[href=#intro]').click();
+                    //$("html").animate({ scrollTop: 0 }, 6000, 'easeOutCubic');
             // }
-                    // $("#CCCMG").focus();
+                    //$("#CCCMG").focus();
+                    //$('#CCCMG').animate({scrollTop:target}, 500);
+                    // $('html, body').animate({
+                    //     scrollTop: $('#CCCMG').offset().top
+                    //   }, 800, function(){
+
+                    //     // Add hash (#) to URL when done scrolling (default click behavior)
+                    //     window.location.hash = hash;
+                    //   });
+
         }
         });
 

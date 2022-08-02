@@ -30,7 +30,7 @@ header("Pragma: no-cache");
 
 <body>
 <header><a class="skiplink" href="#intro">Skip to main content</a></header>
-<div class="topbar"><a href="#CCCMG">CCCMG</a><!-- Or img type for logo -->
+<div class="topbar"><a tabindex = "0" id ="top">CCCMG</a><!-- Or img type for logo -->
 <span>Shortcuts</span><!-- Text -->
 <input type="checkbox" aria-label="hidden" id="toggle"/><!-- Checkbox, which will not be displayed -->
 <label for="toggle" aria-label="Toggle menu" role="checkbox" class="checkbtn"></label><!-- Mobile Hamburger Menu Icon disabled aria-disabled="true" &#9776; -->
@@ -38,7 +38,7 @@ header("Pragma: no-cache");
 <div class="navigation" role="navigation">
 		<h3>Shortcuts</h3>  <!-- TODO: Remove hidden class as this is removing one click jump to link functionality -->
         <ul>
-          <li id="top"><a href="#">Top of Page</a></li>
+          <li><a href="#">Top of Page</a></li>
 		  <li><a href="#intro">Introduction</a></li>
 		  <li><a href="#key">Key</a></li>
 		  <li><a href="#compilations">Compilations</a></li>
@@ -289,7 +289,8 @@ I have recommended, can be prone to the occasional unwanted noises, this should 
 be a problem.</p>
 
 <p class="clickbandtext">Just click on a band to reveal the relevant information. Click the band
-again to hide the information.</p>
+again to hide the information.</br></br>
+Press Esc to jump to CCCMG in the header.</p>
 <br/>
 
 
@@ -1073,8 +1074,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 <script src="js/change_colour.js"></script>
 <script src="js/accordion_mod.js"></script>
 <!-- < src="js/floating_nav_menu.js"></> -->	<!-- Using position fixed/sticky better than this -->
-<!-- < src="js/jquery.scrollTo.js"></>             Script for scrollTo() -->
-<!-- < src="js/scroll_to_link.js"></> -->
+<!-- <script src="js/jquery.scrollTo.js"></script>             Script for scrollTo() -->
+<!-- <script src="js/scroll_to_link.js"></script> -->
 <!-- < src="js/jquery.swfobject.1-1-1.js"></> Was for incorporating flash header image, which is now a png -->
 <!-- < src="js/flash_header.js"></>                  Embeds Eras Bold ITC header swobject -->
 <script src="js/focus-visible.js"></script> <!-- Provides :focus-visible support for browsers that don't have it -->
