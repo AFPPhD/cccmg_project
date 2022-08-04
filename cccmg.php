@@ -30,7 +30,7 @@ header("Pragma: no-cache");
 
 <body>
 <header><a class="skiplink" href="#intro">Skip to main content</a></header>
-<div class="topbar"><a tabindex = "0" id ="top">CCCMG</a><!-- Or img type for logo -->
+<div class="topbar"><a href="#" id ="top">CCCMG</a><!-- href added to get rid of crawlable complaint in SEO check--><!-- Could use img type for logo -->
 <span>Shortcuts</span><!-- Text -->
 <input type="checkbox" aria-label="hidden" id="toggle"/><!-- Checkbox, which will not be displayed -->
 <label for="toggle" aria-label="Toggle menu" role="checkbox" class="checkbtn"></label><!-- Mobile Hamburger Menu Icon disabled aria-disabled="true" &#9776; -->
