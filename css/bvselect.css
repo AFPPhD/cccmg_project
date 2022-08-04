@@ -170,9 +170,6 @@ Developed by: Bruno Vieira
 /* @media (hover: hover) and (pointer: fine) {	 Non-touch type device only. hover just causes problems otherwise */
 
 
-	.bv_atual.bv_background:hover { /* TODO: Cascade Layers Here? */
-		background-color:#A22BE7; /* Used higher selector specificity instead of !important (last resort) to override background-color: #FFD700; */
-	}
 
 	.bv_ul_inner.bv_background {
 		margin-top: 70px; /* Needed to push colour list options below Change Colour Button, because of fixed (sticky) position

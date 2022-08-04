@@ -107,14 +107,15 @@
 		/* Order of styles - :hover then :focus then :active */
 
 		@media (hover: hover) and (pointer: fine) {	/* Non-touch type device only. hover just causes problems otherwise */
-			.navigation ul li a:hover, ul.accordion h4 a:hover { /* TODO: .select-option select:hover  - To possibly get purple highlight on default menu */
+			.navigation ul li a:hover, ul.accordion h4 a:hover, .bv_atual.bv_background:hover { /* TODO: .select-option select:hover  - To possibly get purple highlight on default menu */
 				/* margin: -2px 0; */        /* Compensates for push down effect on item and items below it because of border application  border: 2px solid #4F94CD */
 				background-color:#A22BE7; /* Used higher selector specificity instead of !important (last resort) to override background-color: #FFD700; */
 				/* border: 2px solid #4F94CD; */
 				/* cursor: hand; To get hand. cursor: hand; backwards compatibility for IE4 through 6. W3C validator error flags for hand */
 				cursor: pointer; /* default -  keep as simple arrow and not change to hand. TODO: pointer - changing to hand icon, can have effect of causing */
 			}					 /* blue highlight in chrome ? */
-		}
+		} /* .navigation ul li a:hover - for menu hover,  ul.accordion h4 a:hover - for band hover
+		  and .bv_atual.bv_background:hover - for colour menu option button hover */
 
 		/* .select-option select:hover, select:focus {
 			background-color:#A22BE7;
