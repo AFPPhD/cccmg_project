@@ -2,7 +2,7 @@
 /* Best to use local fallback to speedup page load (especially as just using for small number of chars) */
 
 		.navigation {
-			top: 55px;			/* Offset for navbar from top of screen and main section */
+			top: 68px;			/* Offset for navbar from top of screen and main section */
 			text-align: center;
 			position: fixed;	/* Fallback.  stickybits.js polyfill available */
 			/*position: sticky;*/ /* sticky and top fix the navbar in position. No jittery movement on page scrolling using jQuery anymore */
