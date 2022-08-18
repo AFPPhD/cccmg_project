@@ -89,7 +89,7 @@ header("Pragma: no-cache");
 	echo "<div class=\"update\">Last Update on: ".$lastmodified."</div>\n";
 ?>
 
-<p class="nojavascript"><strong>This Web Site works better with Javascript enabled</strong></p>
+<p class="nojavascript"><strong>This Website works better with Javascript enabled</strong></p>
 
 <br/>
 <br/>
