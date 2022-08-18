@@ -6,7 +6,7 @@ Developed by: Bruno Vieira
 **************************** */
 .bv_mainselect {
 	color: #FFD700; /* #fff */
-	padding: 7px 5px 7px 5px;
+	padding: 4px 3px 4px 3px;
 	border-radius: 6px;
 	font-family: verdana, helvetica, arial, sans-serif;
 	font-size: 1rem;
@@ -115,8 +115,9 @@ Developed by: Bruno Vieira
     color: black; /* #353535 */
     padding: 5px 0 5px 9px;
     font-family: arial;
-	font-size: 1rem; /* font-size: 10pt; */
-	padding: 12px 28px 10px 10px;
+	font-style: bold;
+	font-size: 0.8rem; /* font-size: 10pt; */
+	padding: 5px 19px 5px 19px;
 }
 
 .bv_ul_inner i {
@@ -172,7 +173,7 @@ Developed by: Bruno Vieira
 
 
 	.bv_ul_inner.bv_background {
-		margin-top: 70px; /* Needed to push colour list options below Change Colour Button, because of fixed (sticky) position
+		margin-top: 5px; /* Needed to push colour list options below Change Colour Button, because of fixed (sticky) position
 						  used to stop Navbar moving, being inherited. (Weird: Had to increase from 64px (i.e clear of navbar).
 						  Otherwise, gap increases after first colour change?) */
 	}

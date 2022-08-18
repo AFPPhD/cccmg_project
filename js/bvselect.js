@@ -11,7 +11,7 @@ class BVSelect {
 
     constructor({
         selector = 'defaultId',
-        width = "55%", // Was 100%
+        width = "45%", // Was 55%
         searchbox = false,
         search_autofocus = false,
         offset = true,
