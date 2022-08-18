@@ -25,7 +25,7 @@
 			border: 3px solid rgba(0,0,0,0); /* Removes black pixel in top left hand corner */
 		}
 
-		.topbar{
+		.topbar {
 			z-index: 1; /* So main content scrolls underneath */
 			top: 0;
 			position: fixed;	/* Fallback.  stickybits.js polyfill available */
