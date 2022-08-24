@@ -6,7 +6,7 @@ Developed by: Bruno Vieira
 **************************** */
 .bv_mainselect {
 	color: #FFD700; /* #fff */
-	padding: 4px 3px 4px 3px;
+	padding: 5px 3px 4px 3px;
 	border-radius: 6px;
 	font-family: verdana, helvetica, arial, sans-serif;
 	font-size: 1rem;
@@ -173,9 +173,8 @@ Developed by: Bruno Vieira
 
 
 	.bv_ul_inner.bv_background {
-		margin-top: 5px; /* Needed to push colour list options below Change Colour Button, because of fixed (sticky) position
-						  used to stop Navbar moving, being inherited. (Weird: Had to increase from 64px (i.e clear of navbar).
-						  Otherwise, gap increases after first colour change?) */
+		margin-top: -65px; /* Push colour options menu upwards to prevent scrollbar in .navigation, while ensuring the
+						   menu is not clipped */
 	}
 
 /* } */
