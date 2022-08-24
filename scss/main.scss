@@ -212,6 +212,7 @@ $colour-scheme-higher-contrast: (
 .topbar span {
 	//display: none;
 	position: relative;
+	font-size: 1.16em; // To level Shortcuts text with Hamburger Icon
 	//right: 50%;
 	//margin-left: 40%;
 	//padding-left: 64%;
@@ -233,7 +234,7 @@ input[type="checkbox"] {
 label.checkbtn {
 	//display: none;
 	//position: relative;
-	font-size: 1.5rem; // Made Hamburger icon same size as text and icon left
+	//font-size: 1.5rem; // Made Hamburger icon same size as text and icon left
 	cursor: pointer;
 	border: 3px solid transparent; // So 3px black border will just overlay this, with no element shift
 	//line-height: 1.5;
@@ -266,7 +267,7 @@ label.checkbtn {
 		//margin-left: 59.75%; //680px
 		//margin-left: 62.35%; //700px
 		position: fixed;
-		right: 6.5%;
+		right: 5.5%; // TODO: 700/720 px media tweak
 	}
 
 	// .topbar span, .checkbtn {
@@ -287,11 +288,20 @@ label.checkbtn {
 		//width: 98%;
 		// left: 50%;
 		// margin-left: -50%;
+		// width: 9.375rem;
+		height: 662px;
+		// padding-top: 6px;
+		// padding-right: 3px;
+		// padding-left: 3px;
+		padding: 6px 3px 0;
 		position: absolute; // Need to keep for background to remain blurred
 		//z-index: 2;
    		left: 50%;
    		transform: translate(-50%, 0);
-		min-width: 275px;
+		min-width: 360px;
+		//min-height: 320px;
+		//max-height: 380px;
+		//max-height: 15%;
 		display: none;
 	}
 
@@ -305,15 +315,16 @@ label.checkbtn {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		font-size: 0.45rem;
+		font-size: 1rem;
 		//column-gap: 10em;
 		//justify-content: space-between;
 		//max-height: 100%;
 	}
 
 	.navigation a:link, .navigation a:visited {
-		min-width: 275px; //Was 360px;
-		border: 4px solid white;
+		min-width: 360px; //Was 360px;
+		border: 2px solid white;
+		margin: 0.45% auto;
 	}
 
 	// .navigation:focus-within {
@@ -329,8 +340,8 @@ label.checkbtn {
 		content: "\2630"; // Hamburger Icon
 		//position: absolute;
 		display: inline-block;
-		height: 1em;//16px
-		width: 1em;//16px
+		height: 0.7em;
+		width: 0.9em;
 		//background: purple;
 	}
 
@@ -435,9 +446,9 @@ label.checkbtn {
 
 
 
-/*@media screen and (max-height: 930px) { // Was 795px. Stop Colour Change button and therefore menu not fitting on for limited vertical height
-	#main_CustomBuild, .bv_ul_inner.bv_background {
-		display: none !important; // !important needed to hide left over menu (.bv_ul_inner.bv_background) - Bolts and Braces!
+/*@media screen and (max-height: 807px) { // Was 795px. Stop Colour Change button and therefore menu not fitting on for limited vertical height
+	#main_CustomBuild, .bv_mainselect, .bv_ul_inner.bv_background {
+		display: none !important; // !important needed to hide left over menu (.bv_ul_inner.bv_background) - Belt and Braces!
 	}
 	.navigation {
 		height: 610px !important; // Was 536px // TODO: Cases for Cascade Layers!
@@ -448,7 +459,6 @@ label.checkbtn {
 	body {
 		// display: block;
 		// width: 100% !important;
-		// overflow-x: scroll;
 		white-space: nowrap; // Force overlap - but on single line!
 		// text-overflow: ellipsis;
 		// width: 275px;
@@ -502,7 +512,7 @@ label.checkbtn {
 		// width: fit-content;
 		overflow: hidden; // Need a non-visible option for resize to work
 		// white-space: nowrap;
-		resize: none; // Keeps container at 100% body width, for 200% solution,  while browser size decreases
+		resize: none; // Keeps container at 100% body width, for 200% solution, while browser size decreases
 		// overflow-x:scroll;
 		// text-overflow: ellipsis;
 
