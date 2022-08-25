@@ -8,17 +8,27 @@
     //     '(max-width: 1041px)'
     //     ).matches;
 
-        $(window).on('resize', function () {
-            // resize event fires when the document window is resized.
-            // Use the .resize(handler)(shorthand for .on('resize', handler)) to bind an event handler to the resize event
-            // The event listener fires when a change is detected
-            var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
+    function setNavigationMenuHeight() {
+        var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
             if (smallMenu) {
-                $('.navigation').height('717px'); // Was 605px. Extend navbar height to hold bvselect (or default menu 574px) Change Colour Button
+                $('.navigation').height('717px'); // Extend to underlay Custom Colour Button
             } else {
                 $('.navigation').height('670px');
             }
-        });
+    }
+
+    $(window).on('resize', function () {
+        // resize event fires when the document window is resized.
+        // Use the .resize(handler)(shorthand for .on('resize', handler)) to bind an event handler to the resize event
+        // The event listener fires when a change is detected
+        setNavigationMenuHeight();
+        // var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
+        // if (smallMenu) {
+        //     $('.navigation').height('717px'); // Was 605px. Extend navbar height to hold bvselect (or default menu 574px) Change Colour Button
+        // } else {
+        //     $('.navigation').height('670px');
+        // }
+    });
 
 
     document.addEventListener("DOMContentLoaded", function() { // bvselect dropdown
@@ -62,6 +72,8 @@
 
         // $("body").find('#main_CustomBuild').each(function(){
             // var $colourMenuButton = $(this);
+
+            setNavigationMenuHeight(); // For initial page load
             // var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
             // if (smallMenu) {
             //     $('.navigation').height('717px'); // Was 605px. Extend navbar height to hold bvselect (or default menu 574px) Change Colour Button
