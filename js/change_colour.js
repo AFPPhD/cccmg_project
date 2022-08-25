@@ -4,7 +4,7 @@
         '(prefers-contrast(no-preference))'
         ).matches;
 
-    // let smallMenu = window.matchMedia(
+    // const smallMenu = window.matchMedia(
     //     '(max-width: 1041px)'
     //     ).matches;
 
@@ -12,6 +12,12 @@
             // resize event fires when the document window is resized.
             // Use the .resize(handler)(shorthand for .on('resize', handler)) to bind an event handler to the resize event
             // The event listener fires when a change is detected
+            var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
+            if (smallMenu) {
+                $('.navigation').height('717px'); // Was 605px. Extend navbar height to hold bvselect (or default menu 574px) Change Colour Button
+            } else {
+                $('.navigation').height('670px');
+            }
         });
 
 
@@ -56,7 +62,12 @@
 
         // $("body").find('#main_CustomBuild').each(function(){
             // var $colourMenuButton = $(this);
-            $('.navigation').height('670px'); // Was 605px. Extend navbar height to hold bvselect (or default menu 574px) Change Colour Button
+            // var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
+            // if (smallMenu) {
+            //     $('.navigation').height('717px'); // Was 605px. Extend navbar height to hold bvselect (or default menu 574px) Change Colour Button
+            // } else {
+            //     $('.navigation').height('670px');
+            // }
             $('.select-option').css('display', 'block'); // Make visible colour change button. (Defaulted at no display so hidden from screen readers)
             //$('.topbar span', '.checkbtn').css('display', 'none');
             // $('.topbar span, .checkbtn').css('display', 'inline-block'); // Need Event Handler so this only happens at =<1041px
@@ -215,7 +226,7 @@
                 if (smallMenu) {
                     //$('.navigation').css('display', 'none'); // Remove small menu
                     if ($('#toggle').is(':checked')) {
-                        $("#toggle").prop("checked", false); // Uncheck checkbox
+                        $("#toggle").prop("checked", false); // Uncheck checkbox - remove small menu
                     }
                 }
                 if ($colourSelectionBox.css('display') == 'block') {
@@ -271,6 +282,7 @@
                     // $target.trigger(ourEvent);
                     // $.scrollTo('#top', 800, {easing:'easeOutCirc'});
                     ourEvent = $.Event('customFocusout');
+                    $tabbedChoice = $(document.activeElement); // Works without this - but should be here anyway i.e Belt and Braces
                     $tabbedChoice.trigger(ourEvent);
                     $(window).scrollTop(0); // If Esc pressed, jump (scroll) to top of page
                     $("#top").focus();
