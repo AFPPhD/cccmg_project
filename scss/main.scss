@@ -70,6 +70,7 @@ $colour-scheme-higher-contrast: (
 			--#{$colour}-fg: #{setcolour($colour-scheme-higher-contrast,$colour,PRIMARY-COLOUR)};
 			--#{$colour}-bg: #{setcolour($colour-scheme-higher-contrast,$colour,BACKGROUND-COLOUR)};
 		}
+		--menu-height: 536px; // Default non-js small devices navigation bar height
 	}
 
 	// Default High Contrast Blue needs implementing to override normal default Blue
@@ -186,7 +187,7 @@ $colour-scheme-higher-contrast: (
 
 
 
-// Menu styles
+// Menu for small devices styles
 
 // .topbar {
 // 	//text-align: unset; // Stop centre align span text for larger devices
@@ -226,7 +227,7 @@ input[type="checkbox"] {
 } 			    // since the checkbox cannot now receive focus
 
 
-/*Hide the checkmark by default*/
+// Hide the checkmark by default
 // .checkbox input[type="checkbox"] + label::after {
 //     content: none;
 // }
@@ -283,13 +284,28 @@ label.checkbtn {
 	}
 
 	.navigation {
+		//--menu-height: 590px;
+		// display: flex;
+		// align-items: center;
+		// display: grid;
+    	// place-items: center;
+		// margin: auto 0;
 		//top: 100px;
 		//float: none;
 		//width: 98%;
 		// left: 50%;
 		// margin-left: -50%;
 		// width: 9.375rem;
-		height: 662px;
+		//top: 65px;
+		// max-height: --menu-height;
+		//overflow-y: auto !important;
+		//overscroll-behavior-y: contain;
+		top: 42.5px;
+		//top: calc((100vh - var(--menu-height))/2 + 6px);
+		// top: 10vh;
+		// top: 50%;
+		// transform: translate(0, -50%);
+		height: 536px;
 		// padding-top: 6px;
 		// padding-right: 3px;
 		// padding-left: 3px;
@@ -297,12 +313,21 @@ label.checkbtn {
 		position: absolute; // Need to keep for background to remain blurred
 		//z-index: 2;
    		left: 50%;
+		//top: 50vh;
+		//vertical-align:middle;
    		transform: translate(-50%, 0);
 		min-width: 360px;
 		//min-height: 320px;
 		//max-height: 380px;
 		//max-height: 15%;
 		display: none;
+	}
+
+	@media screen and (min-height: 641px) {
+		.navigation {
+			//--menu-height: 590px;
+			top: calc((100vh - (var(--menu-height) + 6px))/2);
+		}
 	}
 
 	.navigation h3 {
@@ -315,7 +340,7 @@ label.checkbtn {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		font-size: 1rem;
+		font-size: 0.75rem;
 		//column-gap: 10em;
 		//justify-content: space-between;
 		//max-height: 100%;
@@ -325,6 +350,11 @@ label.checkbtn {
 		min-width: 360px; //Was 360px;
 		border: 2px solid white;
 		margin: 0.45% auto;
+	}
+
+	.bv_ul_inner.bv_background {
+		margin-top: -67px;
+		display: none; /* Colour Menu stays hidden on first main menu open */
 	}
 
 	// .navigation:focus-within {
@@ -367,6 +397,7 @@ label.checkbtn {
 		//position: relative;
 		//background-color: black;
 		//backdrop-filter: blur(10px);
+		//max-height: --menu-height;
 	}
 
 
@@ -387,7 +418,7 @@ label.checkbtn {
 				// background-position: center;
 				// background-repeat: no-repeat;
 				// background-size: cover;
-				height: 100vh;
+				height: 100vh; // TODO: Change this because of problems with mobiles?  e.g min-height: calc(100vh - 80px)
 				// width: 100%;
 				//backdrop-filter: blur(10px);
 			}
@@ -396,7 +427,7 @@ label.checkbtn {
 			.blur {
 				background: rgba(255, 255, 255, 0.2); // Make sure this color has an opacity of less than 1
 				backdrop-filter: blur(5px); // This be the blur
-				height: 100vh;
+				height: 100vh; // TODO: Change this because of problems with mobiles? e.g min-height: calc(100vh - 80px)
 				width: 100%;
 			}
 	//}
@@ -455,30 +486,30 @@ label.checkbtn {
 	}
 }*/
 
-@media only screen and (max-width: 275px) { // Trying to force horizontal scroll i.e Stop further shrinkage
-	body {
-		// display: block;
-		// width: 100% !important;
-		white-space: nowrap; // Force overlap - but on single line!
-		// text-overflow: ellipsis;
-		// width: 275px;
-		// width: 550px;
-		// width: 275px;
-		// height:13077px;
-	}
-	.container {
-		width: 550px;
-		.pngtitle img { 	// Stop Title shrinking
-			min-height: 118px;
-			min-width: 550px;
-		}
-		ul.accordion h4 {	// Stop bands shrinking
-			width:98%;
-		// overflow-wrap: break-word;
-		// text-overflow: ellipsis;
-		}
-	}
-}
+// @media only screen and (max-width: 275px) { // Trying to force horizontal scroll i.e Stop further shrinkage
+// 	body {
+// 		// display: block;
+// 		// width: 100% !important;
+// 		white-space: nowrap; // Force overlap - but on single line!
+// 		// text-overflow: ellipsis;
+// 		// width: 275px;
+// 		// width: 550px;
+// 		// width: 275px;
+// 		// height:13077px;
+// 	}
+// 	.container {
+// 		width: 550px;
+// 		.pngtitle img { 	// Stop Title shrinking
+// 			min-height: 118px;
+// 			min-width: 550px;
+// 		}
+// 		ul.accordion h4 {	// Stop bands shrinking
+// 			width:98%;
+// 		// overflow-wrap: break-word;
+// 		// text-overflow: ellipsis;
+// 		}
+// 	}
+// }
 
 
 
@@ -494,7 +525,7 @@ label.checkbtn {
 		// 	max-width: 100%;
 		// }
 		letter-spacing: 0.05em; // Make text more readable at lower font sizes
-		width: 200%;
+		//width: 200%;
 		// height: 5242px; // Maintains aspect ratio. Use instead of resize - makes text flow to next line as width decreases
 		// left: 0%;
 		// margin: auto;
@@ -505,14 +536,14 @@ label.checkbtn {
 		// word-wrap: break-word;
 		// overflow-wrap: break-word;
 		// text-overflow: ellipsis;
-		max-width: 680px;
+		//max-width: 680px; // min-width and width 100% to stop resize ?
 
 		// margin-left: -50%; ?
 
 		// width: fit-content;
-		overflow: hidden; // Need a non-visible option for resize to work
+		//overflow: hidden; // Need a non-visible option for resize to work
 		// white-space: nowrap;
-		resize: none; // Keeps container at 100% body width, for 200% solution, while browser size decreases
+		//resize: none; // Keeps container at 100% body width, for 200% solution, while browser size decreases
 		// overflow-x:scroll;
 		// text-overflow: ellipsis;
 
@@ -624,4 +655,8 @@ label.checkbtn {
 	// }
 
 	// @include MediaQueryStyle (true, false); Not needed, set at min-width: 1042px
+}
+
+* {
+	outline: 1px solid red;
 }
