@@ -185,6 +185,16 @@ class BVSelect {
             var element_bv = document.getElementById('bv_' + randomID);
 
             // Set Width of UL
+            // $itemClone = $('.navigation').clone().css({
+            //     'visibility': 'hidden',
+            //     'position': 'absolute'
+            //     }).appendTo('body');
+            // var widthMenu = $itemClone.width();
+            // $itemClone.remove();
+            // var parentWidth = parseInt(document.querySelector("select").offsetWidth);
+            // var percents = parseInt(document.getElementById("main_CustomBuild").style.width);
+            // var select_width = parentWidth*(percents/100);
+            //var select_width = widthMenu;
             var select_width = document.getElementById("main_" + randomID).offsetWidth;
             element_ul.style.width = select_width + "px";
 
@@ -242,6 +252,9 @@ class BVSelect {
                 }
 
                 // Correct the width of the UL when window is resized
+                // var parentWidth = parseInt(document.querySelector(".navigation").style.width);
+                // var percents = parseInt(document.getElementById("main_CustomBuild").style.width);
+                // var select_width = floor(parentWidth*(percents/100));
                 var select_width = document.getElementById("main_" + randomID).offsetWidth;
                 element_ul.style.width = select_width + "px";
 
