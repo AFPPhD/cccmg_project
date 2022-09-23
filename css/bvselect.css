@@ -100,7 +100,6 @@ Developed by: Bruno Vieira
 	position: absolute;
 	margin-top: 10px;
 	padding: 0;
-	display: none;
 	border: 2px solid #ffffff; /* #e1e1e1 */
 	border-radius: 8px;
 	display: none;
@@ -174,7 +173,7 @@ Developed by: Bruno Vieira
 
 	.bv_ul_inner.bv_background {
 		margin-top: -65px; /* Push colour options menu upwards to prevent scrollbar in .navigation, while ensuring the
-						   menu is not clipped */
+		                   menu is not clipped */
 	}
 
 /* } */
