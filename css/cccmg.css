@@ -4,7 +4,9 @@
 			text-size-adjust: none;
 			scroll-padding-top: 58px; /* To stop scrolled to Composer heading being obscured by sticky header */
 			/* scroll-behavior: smooth; Not good for people wanting to avoid quick animations */
-		}
+    		/* height: -webkit-fill-available; Part of mobile 100vh height problem fix, where bit of page missing (e.g footer) due to*/
+			/* height: fill-available;         possible address bar taking up space */
+		} /* The above  height: fill-available was updated to make sure the html element was being used, as Chrome is updating the behavior to match Firefox’s implementation */
 
 		body {
 			font-size: 24px;	/* Font size used in browsers that don’t support fluid units */
@@ -16,6 +18,9 @@
 			padding: 0;
 			-webkit-font-smoothing: antialiased; /* Chrome and Safari still use subpixel anti-aliasing by default. We need to explicitly turn it off */
 			/* overflow-x: hidden; */  /* To allow container to break out of constrained width */
+			/* min-height: 100vh; */
+			height: -webkit-fill-available; /* Part of mobile 100vh height problem fix, where bit of page missing (e.g footer) due to*/
+			height: fill-available;         /* possible address bar taking up space */
 		}
 
 		header {

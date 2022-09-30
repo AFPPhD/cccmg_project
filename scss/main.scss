@@ -267,7 +267,8 @@ label.checkbtn {
 		//left:62%;
 		//margin-left: 59.75%; //680px
 		//margin-left: 62.35%; //700px
-		position: fixed;
+		//position: fixed;
+		position: absolute; // Stop Shortcuts text moving around
 		right: 5.5%; // TODO: 700/720 px media tweak
 	}
 
@@ -279,7 +280,8 @@ label.checkbtn {
 		//left: 62.25%;
 		//margin-left: -3.85%; //680px
 		//margin-left: 0.4% //700px
-		position: fixed;
+		//position: fixed;
+		position: absolute; // Stop Hamburger Menu moving around
 		right: 1.15%;
 	}
 
@@ -310,7 +312,7 @@ label.checkbtn {
 		// padding-right: 3px;
 		// padding-left: 3px;
 		padding: 6px 3px 0;
-		position: absolute; // Need to keep for background to remain blurred
+		//position: absolute; // Need to keep for background to remain blurred (THIS AND/OR OTHER position: absolute #toggle:checked ~ .background) ???
 		//z-index: 2;
    		left: 50%;
 		//top: 50vh;
@@ -407,8 +409,8 @@ label.checkbtn {
 				//background: rgba(255,255,255,0.5);
 				//background-color: rgba(0,0,0,0.5);
 				display: block;
-				position: fixed;
-				// z-index: -1;
+				//position: fixed;
+				position: absolute; // Changed from fixed to absolute to stop inconsistent behaviour  of blur background
 				// filter: blur(15px);
   				// -webkit-filter: blur(15px);
 				/* Center and scale the image nicely */
@@ -418,7 +420,9 @@ label.checkbtn {
 				// background-position: center;
 				// background-repeat: no-repeat;
 				// background-size: cover;
-				height: 100vh; // TODO: Change this because of problems with mobiles?  e.g min-height: calc(100vh - 80px)
+				//height: 100%;
+				//height: 100vh; // TODO: Change this because of problems with mobiles?  e.g min-height: calc(100vh - 42px)
+				min-height: 100vh; // Part of mobile 100vh height problem fix
 				// width: 100%;
 				//backdrop-filter: blur(10px);
 			}
@@ -426,8 +430,11 @@ label.checkbtn {
 
 			.blur {
 				background: rgba(255, 255, 255, 0.2); // Make sure this color has an opacity of less than 1
+				-webkit-backdrop-filter: blur(5px);
 				backdrop-filter: blur(5px); // This be the blur
-				height: 100vh; // TODO: Change this because of problems with mobiles? e.g min-height: calc(100vh - 80px)
+				//height: 100%;
+				//height: 100vh; // TODO: Change this because of problems with mobiles? e.g min-height: calc(100vh - 80px)
+				min-height: 100vh; // Part of mobile 100vh height problem fix
 				width: 100%;
 			}
 	//}
