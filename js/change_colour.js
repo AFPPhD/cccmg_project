@@ -10,11 +10,16 @@
 
     function setNavigationMenuHeight() {
         var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
-            if (smallMenu) {
-                $('.navigation').height('717px'); // Extend to underlay Custom Colour Button
-            } else {
-                $('.navigation').height('670px');
-            }
+        var root = document.querySelector(':root');
+        if (smallMenu) {
+            $('.navigation').height('590px'); // Extend to underlay Custom Colour Button
+            //$(':root').css('--menu-height','590px');
+            root.style.setProperty('--menu-height', '590px');
+        } else {
+            $('.navigation').height('670px');
+            //$(':root').css('--menu-height','670px');
+            root.style.setProperty('--menu-height', '670px');
+        }
     }
 
     $(window).on('resize', function () {
@@ -134,10 +139,10 @@
         // You need something sitting at the document level which is aware of the event and the elements you want to apply it to, so that it can
         // watch for any new elements that match and apply that event to them as well
 
-        // Process enter key presses on change colour button
+        // Process key presses on change colour button
         $colourMenuButton.on("keydown", (function(event) {
             if ((event.which || event.keyCode) == '13') {
-                if ( $colourSelectionBox.css('display') === 'none') {  // Open menu options with enter
+                if ($colourSelectionBox.css('display') === 'none') {  // Open menu options with enter
                     ourEvent = $.Event('openEnterPress');
                     // $colourSelectionBox.trigger( "focus" );
                     $colourMenuButton.trigger(ourEvent);
@@ -151,7 +156,12 @@
                     // Closes menu options with Shift Tab (for situation where menu still open when shift tabbed from button to the menu)
                     // because it is tab opened and not tabbed into - i.e no focus is put on an element inside the menu, so that the shift tab
                     // will close it
-                    ourEvent = $.Event('closeEnterPress'); // TODO: Remove this by adding as a focusout event, and do same for entering option ?
+                    ourEvent = $.Event('closeEnterPress');
+                    $colourMenuButton.trigger(ourEvent);
+            }   else if ((event.which || event.keyCode) == '9' && $colourSelectionBox.css('display') === 'none') {
+                // If tab from Colour Menu button (and the menu options is closed !) will remove small menu for small devices,
+                // as well as unaltering functionality for larger devices
+                    ourEvent = $.Event('customFocusout');
                     $colourMenuButton.trigger(ourEvent);
             }
             // else if (event.which || event.keyCode == "Escape") {
@@ -168,9 +178,13 @@
         $(document).on('openEnterPress closeEnterPress', '#main_CustomBuild', function (ourEvent) {
             // $colourSelectionBox.attr('tabIndex', '0');
             if (ourEvent.type == 'openEnterPress') {
-                $colourSelectionBox.css('display', 'block');
+                //$colourSelectionBox.css('display', 'block');
+                $colourMenuButton.trigger('click'); // Simulate mouse click functionality with enter for third party menu
+                // $colourSelectionBox.css('position', 'absolute');
+                // $colourSelectionBox.css('bottom', '');
             } else {
                 $colourSelectionBox.css('display', 'none');
+                //$colourMenuButton.trigger('click');
             }
         });
 
@@ -205,8 +219,9 @@
                     // $selectedOption.attr('tabIndex', '0');
                     ourEvent = $.Event('customFocusout');
                     $tabbedChoice.trigger(ourEvent);
+
             } else {
-                if ((event.which || event.keyCode) == '13') { // Simulate mouse click functionality with enter
+                if ((event.which || event.keyCode) == '13') { // Simulate mouse click functionality with enter for third party menu
                     event.preventDefault();
                     // setTabIndexes();
                     // $selectedOption.attr('tabIndex', '0');
@@ -239,7 +254,8 @@
                     //$('.navigation').css('display', 'none'); // Remove small menu
                     if ($('#toggle').is(':checked')) {
                         $("#toggle").prop("checked", false); // Uncheck checkbox - remove small menu
-                    }
+                        $("#toggle").trigger('change'); // When focusout need to trigger $(document).on('change', ':checkbox', function() {}
+                    }                                   // to change overflow to visible for body
                 }
                 if ($colourSelectionBox.css('display') == 'block') {
                     $colourSelectionBox.css('display', 'none'); // When tab out of selection menu, also shift tab or enter option and clicking elsewhere on page
@@ -362,6 +378,23 @@
             //          });
             //          });
             // }
+        });
+
+        // $(document).on('keydown', 'main_CustomBuild', function(event) {
+        //     var $target = $(event.target);
+        //     if ((event.which || event.keyCode) == '9') {
+        //         ourEvent = $.Event('customFocusout');
+        //         $target.trigger(ourEvent);
+        // });
+
+        $(document).on('change', ':checkbox', function() { // Triggered if a change in checkbox status (small menu), to alter the overflow for the document
+            //var $checkbox = (document.activeElement);
+            //if ($checkbox.is(':checked'))  {
+            if ($('#toggle').is(':checked')) {
+                $('body').css('overflow', 'hidden');
+            } else {
+                $('body').css('overflow', 'visible');
+            }
         });
 
 
