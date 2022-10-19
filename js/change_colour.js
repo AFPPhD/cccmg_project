@@ -141,13 +141,15 @@
 
         // Process key presses on change colour button
         $colourMenuButton.on("keydown", (function(event) {
-            if ((event.which || event.keyCode) == '13') {
-                if ($colourSelectionBox.css('display') === 'none') {  // Open menu options with enter
+            if ((event.which || event.keyCode) == '13' || (event.which || event.keyCode) == '32') {
+                event.preventDefault(); // Stop default scrolling action of space bar
+                if ($colourSelectionBox.css('display') === 'none') {  // Open menu options with enter or space bar
+                   //
                     ourEvent = $.Event('openEnterPress');
                     // $colourSelectionBox.trigger( "focus" );
                     $colourMenuButton.trigger(ourEvent);
                 }
-                else { // Close menu options with enter
+                else { // Close menu options with enter or space bar
                     ourEvent = $.Event('closeEnterPress');
                     $colourMenuButton.trigger(ourEvent);
                 }
@@ -213,16 +215,18 @@
         // Process key presses on colour menu select
         $colourSelectionBox.on('keydown', '#ul_CustomBuild > li', function (event) {
             $tabbedChoice = $(document.activeElement); // Previously document.activeElement was this
-            if ((event.which || event.keyCode) == '9' || (event.shiftKey && (event.which || event.keyCode) == '9')) { // Leave menu if tab or shift tab pressed
-                    event.preventDefault();
+            event.preventDefault(); // Replaced multiple unnecessary event.preventDefault()s  with one
+            // if ((event.which || event.keyCode) == '9') {
+                    //event.preventDefault();
                     // setTabIndexes();
                     // $selectedOption.attr('tabIndex', '0');
-                    ourEvent = $.Event('customFocusout');
-                    $tabbedChoice.trigger(ourEvent);
+                    // ourEvent = $.Event('customFocusout');  // Commenting these last two lines stops problem when focus out
+                    // $tabbedChoice.trigger(ourEvent);       // from colour options, for small devices, with shift tab.
+                                                              // So, now just does nothing on tab and shift tab
 
-            } else {
-                if ((event.which || event.keyCode) == '13') { // Simulate mouse click functionality with enter for third party menu
-                    event.preventDefault();
+            // } else {
+                if ((event.which || event.keyCode) == '13' || (event.which || event.keyCode) == '32') { // Simulate mouse click functionality with enter or space bar for third party menu
+                    //event.preventDefault();
                     // setTabIndexes();
                     // $selectedOption.attr('tabIndex', '0');
                     $selectedOption = $tabbedChoice; // i.e pressing enter on already selected option
@@ -232,17 +236,17 @@
                     $selectedOption.trigger('click');
                 } else if ((event.which || event.keyCode) == '38') // Up arrow key
                     {
-                    event.preventDefault();
+                    //event.preventDefault();
                     ourEvent = $.Event('changeFocusUp');
                     // $selectedOption.trigger(ourEvent);
                     $tabbedChoice.trigger(ourEvent);
                 } else if ((event.which || event.keyCode) == '40') { // Down arrow key
-                    event.preventDefault();
+                    //event.preventDefault();
                     ourEvent = $.Event('changeFocusDown');
                     // $selectedOption.trigger(ourEvent);
                     $tabbedChoice.trigger(ourEvent);
                 }
-            }
+            // }
         });
 
         $(document).on('customFocusout', function () {
@@ -283,7 +287,7 @@
 
         $("a").click(function(event) { // For mouse/keyboard action on menu options
             var $target = $(event.target);
-            if ($target.is("a")) {
+            if ($target.is(".navigation > ul > li > a")) {  // Focus out just from navbar links
                 // $target.css( "background-color", "red"); // Highlight which links have been clicked
                 ourEvent = $.Event('customFocusout');
                 $target.trigger(ourEvent);
