@@ -73,11 +73,11 @@ $colour-scheme-higher-contrast: (
 		--menu-height: 536px; // Default non-js small devices navigation bar height
 	}
 
-	// Default High Contrast Blue needs implementing to override normal default Blue
+	// Default High Contrast Blue needs implementing to override normal default Blue ?
 
-	.navigation, .container, .topbar, .select-option {
-		background-color: #3279B3;
-	}
+	// .navigation, .container, .topbar, .select-option {
+	// 	background-color: #3279B3;
+	// }
 
 	h2, h3 {
 		border-bottom: 2px solid #ffffff;
@@ -103,7 +103,7 @@ $colour-scheme-higher-contrast: (
 			}
 		}
 
-		// Default High Contrast Blue needs implementing to override normal Blue.
+		// Default High Contrast Blue needs implementing.
 		// Have to re-apply normal Blue. Done this way so browsers/devices not understanding prefers-contrast
 		// will have colour schemes of high contrast as default
 
@@ -330,7 +330,7 @@ label.checkbtn {
 			//scrollbar-gutter: stable;
 			//max-height: var(--menu-height) +6px;
 			max-height: 84%; // In order to scroll to Colour menu needed to reduce this from 100%
-            overflow-y: auto;
+            overflow-y: scroll;
 		}
 	}
 
@@ -454,7 +454,7 @@ label.checkbtn {
 @media screen and (min-width: 1042px) and (max-height: 738px) {
 	.navigation {
 		max-height: 78.5%; // In order to scroll to Colour menu needed to reduce this from 100%
-		overflow-y: auto;
+		overflow-y: scroll;
 	}
 }
 
