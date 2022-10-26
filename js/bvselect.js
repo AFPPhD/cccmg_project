@@ -404,8 +404,8 @@ class BVSelect {
         }
         // ** CLICK OUTSIDE **
         document.addEventListener("click", function(e) {
-            if (!e.target.closest(".bv_ul_inner") || !event.target.classList.contains('bv_input')) {
-                if (!event.target.classList.contains('bv_input') && !event.target.classList.contains('bv_atual')) {
+            if (!e.target.closest(".bv_ul_inner") || !e.target.classList.contains('bv_input')) {
+                if (!e.target.classList.contains('bv_input') && !e.target.classList.contains('bv_atual')) {
 
                     if (event.target.nodeName != "LI") {
                         Array.from(document.querySelectorAll(".bv_ul_inner"))
