@@ -494,6 +494,9 @@
         document.querySelector('.topbar').style.backgroundColor = jsonObject[`${colour}fg`];
         document.querySelector('.select-option').style.backgroundColor = jsonObject[`${colour}fg`]; // Have to force colour change box to change colour. It will not inherit
         document.documentElement.style.setProperty("--highlight-color", jsonObject[`${colour}bg`]);
+        const root = document.querySelector(':root');
+        root.style.setProperty('--thumb', jsonObject[`${colour}fg`]); // Setting colours for custom scrollbars
+        root.style.setProperty('--scrollbar', jsonObject[`${colour}bg`]);
         var NodeList = document.querySelectorAll('hr');
         // Convert buttons NodeList to an array
         var Arr = Array.prototype.slice.call(NodeList); // This converts a NodeList to an array
