@@ -71,6 +71,8 @@ $colour-scheme-higher-contrast: (
 			--#{$colour}-bg: #{setcolour($colour-scheme-higher-contrast,$colour,BACKGROUND-COLOUR)};
 		}
 		--menu-height: 536px; // Default non-js small devices navigation bar height
+		--thumb: #3279B3; // Default thumb colour for Firefox custom scrollbar
+		--scrollbar: #204c75; // Default background colour for Firefox custom scrollbar
 	}
 
 	// Default High Contrast Blue needs implementing to override normal default Blue ?
@@ -101,6 +103,7 @@ $colour-scheme-higher-contrast: (
 				--#{$colour}-fg: #{setcolour($colour-scheme,$colour,PRIMARY-COLOUR)};
 				--#{$colour}-bg: #{setcolour($colour-scheme,$colour,BACKGROUND-COLOUR)};
 			}
+			--thumb: #4F94CD;
 		}
 
 		// Default High Contrast Blue needs implementing.
@@ -330,7 +333,8 @@ label.checkbtn {
 			//scrollbar-gutter: stable;
 			//max-height: var(--menu-height) +6px;
 			max-height: 84%; // In order to scroll to Colour menu needed to reduce this from 100%
-            overflow-y: scroll;
+            overflow-y: overlay;
+			overflow-x: hidden;
 		}
 	}
 
@@ -454,7 +458,8 @@ label.checkbtn {
 @media screen and (min-width: 1042px) and (max-height: 738px) {
 	.navigation {
 		max-height: 78.5%; // In order to scroll to Colour menu needed to reduce this from 100%
-		overflow-y: scroll;
+		overflow-y: overlay;
+		overflow-x: hidden;
 	}
 }
 
@@ -681,6 +686,6 @@ label.checkbtn {
 	// @include MediaQueryStyle (true, false); Not needed, set at min-width: 1042px
 }
 
-* {
-	outline: 1px solid red;
-}
+// * {
+// 	outline: 1px solid red;
+// }
