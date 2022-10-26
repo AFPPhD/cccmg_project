@@ -74,7 +74,7 @@
 			max-width: 96%;
 			padding: 3px 7px; /* Changed from 1% 10% because box height bigger in Firefox compared to Edge and Chrome */
 			border: 2px solid white;
-			/* background: #4F94CD;  Colour of box with text. Backup colour when javascript disabled */
+			/* background: #3279B3;  Colour of box with text. Backup colour when javascript disabled */
 			/* display: inline-block;  Disable this if highlight change does not work */
 		}
 
