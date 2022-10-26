@@ -12,6 +12,7 @@
 			width: 150px;		/* Needs to be absolute, otherwise change size on window resize */
 			height: 610px; 		/*Was 536px;*/ /* height value - Holds shape for just position: fixed working. Otherwise get menu extending to bottom with height: 100% */
 			border-radius: 9px;	/* Added rounded corners effect via css instead of javascript 130820 */
+			overscroll-behavior-y: contain; /* To avoid scrolling the main section when reaching the end boundary of the navbar */
 		}
 
 		.navigation h3 {
