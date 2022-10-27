@@ -1,62 +1,91 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>														<!-- Updated DOCTYPE, <html>, <head> and <script> from XHTML Strict to HTML5 compliant. Also removed trailing spaces 130820 -->
+<html lang="en">
+<?php
+// TODO: TEMPORARY - Remove and put directives in .htaccess
+header("Cache-Control: no-cache, must-revalidate");
+header("Pragma: no-cache");
+?>
 <head>
-<meta name="Keywords" content="Classical Music, Compilations, Recordings"/>
-<meta name="Description" content="Classical Music Advice"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet"  type="text/css" href="css/navigation.css"/>
-<link rel="stylesheet"  type="text/css" href="css/cccmg.css"/>
-<link rel="stylesheet"  type="text/css" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
-<link rel="stylesheet"  type="text/css" href="css/800.css"/>  <!-- No navigation bar for 800px or less -->
-<link rel="Shortcut Icon" href="http://cccmg.freehostingcloud.com/favicon.ico"/>
-
-
+	<meta charset="utf-8">
 	<title>Classical Collectors' Classical Music Guide</title>
-	
+	<meta name="Description" content="Classical Collectors' Classical Music Guide"/>
+	<meta name="Keywords" content="Classical Music Recommendations, Compilations, Recordings"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>		<!-- width=device-width allows the page to reflow content to match different screen widths, where device-width (screen resolution width) is the width of the screen in CSS pixels (logical pixels) set at a scale of 100% -->
+	<!-- Many high dpi mobile browsers can display their pages in a smaller physical size by translating multiple hardware pixels for each CSS "pixel" -->
+	<!-- Native Screen Resolution/Device Pixel Ratio (DPR) = Logical Pixels. i.e for most devices, screen resolution will be the default viewport width -->
+	<!-- But, for scaled resolutions, the viewport width will have a screen resolution not equal to Native Screen Resolution/Device Pixel Ratio (DPR) -->
+	<!-- initial-scale controls the zoom level when the page is first loaded i.e on high dpi screens, pages with initial-scale=1 will effectively be zoomed by browsers, preventing usability and readability problems on many touch-optimized web sites -->
+	<!-- iPhone exhibits zooming behaviour when rotating to landscape (but not when loading first in landscape). initial-scale stops that -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>  <!-- IE=edge: specifies that IE should run in the highest mode available to that version of IE as opposed to a compatibility mode; IE8 can support up to IE8 modes, IE9 can support up to IE9 modes, and so on -->
+	<!-- <link rel="stylesheet" href="/path/to/my.css" media="print" onload="this.media='all'"> Remaining CSS can load asynchronously so it doesn’t delay page rendering -->
+	<link rel="stylesheet" href="css/cccmg.css"/>
+	<link rel="stylesheet" href="css/material_icons.css"/>
+	<link rel="stylesheet" href="css/navigation.css"/>
+	<link rel="stylesheet" href="css/variables.css"/>	<!-- SASS created file using sass-json-export.scss -->
+	<link rel="stylesheet" href="css/bvselect.css"/> <!-- Style sheet for Custom dropdown menu using bvselect.js -->
+	<link rel="stylesheet" href="css/main.css"/>	<!-- SASS created file -->
+	<link rel="stylesheet" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
 </head>
 
 <body>
-
-<div id="navigation">
-
-		<h3 class="hidden">Shortcuts</h3>  <!-- Hide Navigation bar when javascript disabled 270511 -->
-        <ul class="hidden">
-          <li id="top"><a href="#">Top of Page</a></li>
-		  <li><a href="#introduction">Introduction</a></li>
-		  <li><a href="#keydesc">Key</a></li>
-		  <li><a href="#compilation">Compilations</a></li>
+<header><a class="skiplink" href="#intro">Skip to main content</a></header>
+<div class="topbar"><a href="#" id ="top">CCCMG</a><!-- href added to get rid of crawlable complaint in SEO check--><!-- Could use img type for logo -->
+<span>Shortcuts</span><!-- Text -->
+<input type="checkbox" aria-label="hidden" id="toggle"/><!-- Checkbox, which will not be displayed -->
+<label for="toggle" aria-label="Toggle menu" role="checkbox" class="checkbtn"></label><!-- Mobile Hamburger Menu Icon disabled aria-disabled="true" &#9776; -->
+<div class="background"><div class="blur"></div></div>
+<div class="navigation" role="navigation">
+		<h3>Shortcuts</h3>  <!-- TODO: Remove hidden class as this is removing one click jump to link functionality -->
+        <ul>
+          <li><a href="#">Top of Page</a></li>
+		  <li><a href="#intro">Introduction</a></li>
+		  <li><a href="#key">Key</a></li>
+		  <li><a href="#compilations">Compilations</a></li>
 		  <li><a href="#complete_pieces">Complete Pieces</a></li>  <!-- Add Complete Pieces to Navigation menu 071011 -->
-          <li><a href="#bach">J.S.Bach</a></li>
-          <li><a href="#beethoven">Beethoven</a></li>
-		  <li><a href="#brahms">Brahms</a></li>
-          <li><a href="#bruch">Bruch</a></li>
-		  <li><a href="#bruckner">Bruckner</a></li>
-		  <li><a href="#chopin">Chopin</a></li>
-		  <li><a href="#dvorak">Dvo&#x159;&aacute;k</a></li>
-		  <li><a href="#haydn">Haydn</a></li>
-		  <li><a href="#mendelssohn">Mendelssohn</a></li>
-		  <li><a href="#mozart">Mozart</a></li>
-		  <li><a href="#rachmaninov">Rachmaninov</a></li>
-		  <li><a href="#schubert">Schubert</a></li>
-		  <li><a href="#sibelius">Sibelius</a></li>
-		  <li><a href="#tchaikovsky">Tchaikovsky</a></li>
-		  <li><a href="#vivaldi">Vivaldi</a></li>
-		  <li><a href="#williams">Vaughan Williams</a></li>
-        </ul>
+          <li><a href="#JSB">J.S.Bach</a></li>
+          <li><a href="#LVB">Beethoven</a></li>
+		  <li><a href="#JB">Brahms</a></li>
+          <li><a href="#MB">Bruch</a></li>
+		  <li><a href="#AB">Bruckner</a></li>
+		  <li><a href="#FC">Chopin</a></li>
+		  <li><a href="#AD">Dvo&#x159;&aacute;k</a></li>
+		  <li><a href="#JH">Haydn</a></li>
+		  <li><a href="#FM">Mendelssohn</a></li>
+		  <li><a href="#WAM">Mozart</a></li>
+		  <li><a href="#SR">Rachmaninov</a></li>
+		  <li><a href="#FS">Schubert</a></li>
+		  <li><a href="#JS">Sibelius</a></li>
+		  <li><a href="#PIT">Tchaikovsky</a></li>
+		  <li><a href="#AV">Vivaldi</a></li>
+		  <li><a href="#VW">Vaughan Williams</a></li>
+		</ul>
+		  	<div class = "select-option"> <!-- id="selectbox" for bvselect.js -->
+		  		<select id="selectbox" autocomplete = "off" onchange = "changeColourScheme(this.options[this.selectedIndex].value)"> <!-- onchange event occurs when the value of an element has been changed -->
+				  <!-- <option hidden disabled selected>Change Colour</option> -->
+					<option value = "blue">Blue</option>	<!-- autocomplete="off" ensures default option appears in drop down menu by clearing cache of previously chosen value in firefox -->													 <!-- It allows you to make changes without reloading the page -->
+		  			<option value = "green">Green</option>
+		  			<option value = "red">Red</option>
+		  			<option value = "orange">Brown</option>
+		  		</select>
+		  	</div>
+</div>
 </div>
 
 
-<div id="container">
 
-<h1 id="flash_header">Casual Collectors' Classical Music Guide</h1>    <!-- Eras Bold ITC header shows if javascript enabled -->
+<div class="container" role="main">
+<!-- <h1 class="flash_header">Casual Collectors' Classical Music Guide</h1>     Eras Bold ITC header shows if javascript enabled -->
+<!-- <h1 class="pngtitle">Casual Collectors' Classical Music Guide</h1> -->
+<div class="pngtitle">
+	<h1><img src="images/Eras_Bold_ITC_transparent.png" alt="Casual Collectors' Classical Music Guide" width="700" height="151"/></h1>
+</div> <!-- Was width="488" height="105" loading="eager" - Any images within the viewport should be loaded eagerly using the browser's defaults -->
+
 <br/>
 
-
-<script 
-  type="text/JavaScript" 
+<script
+  type="text/JavaScript"
   language="JavaScript">
-<!-- 
 //
 // format date as dd-mmm-yy
 // example: 12-Jan-99
@@ -67,8 +96,8 @@ function date_ddmmmyy(date)
   var m = date.getMonth() + 1;
   var y = date.getYear();
 
-  // handle different year values 
-  // returned by IE and NS in 
+  // handle different year values
+  // returned by IE and NS in
   // the year 2000.
   if(y >= 2000)
   {
@@ -79,10 +108,10 @@ function date_ddmmmyy(date)
     y -= 100;
   }
 
-  // could use splitString() here 
-  // but the following method is 
+  // could use splitString() here
+  // but the following method is
   // more compatible
-  var mmm = 
+  var mmm =
     ( 1==m)?'Jan':( 2==m)?'Feb':(3==m)?'Mar':
     ( 4==m)?'Apr':( 5==m)?'May':(6==m)?'Jun':
     ( 7==m)?'Jul':( 8==m)?'Aug':(9==m)?'Sep':
@@ -96,7 +125,7 @@ function date_ddmmmyy(date)
 
 
 //
-// get last modified date of the 
+// get last modified date of the
 // current document.
 //
 function date_lastmodified()
@@ -119,83 +148,87 @@ function date_lastmodified()
 // finally display the last modified date
 // as DD-MMM-YY
 //
-document.write( 
-  "<div id=\"update\">Last Update on: " + 
-  date_lastmodified() + "</div><br/><br/>");
-// -->
+document.write(
+  "<div class=\"update\">Last Update on: " +
+  date_lastmodified() + "</div>");
+
 </script>
 
-
-<p id="nojavascript"><strong>This Web Site works better with Javascript enabled</strong></p>
+<p class="nojavascript"><strong>This Website works better with Javascript enabled</strong></p>
 
 <br/>
 <br/>
- 
+
 <h2 id ="intro">Introduction</h2>
-<p>This page is intended to help direct you to pieces and CD recordings you 
-might like if you are new to classical music up to and including the casual collector 
-like myself (People who want at most to find about 2 or 3 good recordings of a particular 
-piece). The OTHER RECORDINGS section includes recordings I have not heard in their entirety 
-or at all. Although I cannot recommend them whole heartedly myself, they come recommended 
-from plenty of credible sources. These recommendations along with my own should help guide 
+<p>This page is intended to help direct you to pieces and CD recordings you
+might like if you are new to classical music up to and including the casual collector
+like myself (People who want at most to find about 2 or 3 good recordings of a particular
+piece). The OTHER RECORDINGS section includes recordings I have not heard in their entirety
+or at all. Although I cannot endorse them whole heartedly myself, they come recommended
+from plenty of credible sources. These selections along with my own should help guide
 you to better informed and more detailed discussions on the internet.</p>
 
 <h3>BBC Radio 3</h3>
-<p>A good place to listen to mainly complete recordings of pieces that might interest you 
-is Essential Classics 9.00am - 12.00pm (All times mentioned UK) weekdays. The Building
-a Library section (approximately 9.30 - 10.30am) on CD review (usually 9.00am - 12.15pm)
-Saturday morning, involves an expert sifting through the available recordings of a particular
-piece to recommend their top recording. Through the Night, 1.00am - 7.00 am, mainly consists
-of complete pieces, taken from live performances. The play list schedules can be found at
-bbc.co.uk/radio3. You can also listen online.</p>
+<p>A good place to listen to mainly complete recordings of pieces that might interest you
+is Essential Classics 9.00am - 12.00pm weekdays. The Building a Library section (approximately
+9.30 - 10.30am) on Record Review (usually 9.00am - 11.45pm) Saturday morning, involves an expert
+sifting through the available recordings of a particular piece to recommend their top recording.
+Through the Night, mainly consists of complete pieces taken from live performances. The schedules
+can be found at bbc.co.uk/radio3. You can also listen online.</p>
 
 <h3>Classic FM</h3>
-<p>If you want to listen to slow/quiet movements of pieces try Smooth Classics 10.00pm - 
-1.00am weekdays and 10.00pm - 12.00am weekends, with 7.00pm - 9.00pm Sunday additionally. From 8.00 - 10.00pm Mon - Fri is The Full Works, 
-where recordings of pieces are mostly played in full. (Any particular movements are generally played 
-at any other time.)  You can listen online at their website classicfm.com. They also have a play list 
-of what has been played.</p>
+<p>If you want to listen to slow/quiet movements of pieces try Smooth Classics 7.00pm - 8.00pm, 10.00pm -
+1.00am weekdays and 10.00pm - 12.00am weekends, with 7.00pm - 10.00pm Sunday additionally. From 8.00pm
+ - 10.00pm Mon - Fri is The Full Works, where recordings of pieces are mostly played in full. (Any
+ particular movements are generally played at any other time.)  You can listen online at their website
+classicfm.com. They also have a play list of what has been played.</p>
+
+<!-- TODO: Scala Radio -->
 
 <h3>Radio Times Magazine (UK)</h3>
-<p>It includes schedule lists and approximate timings for Essential Classics and Through the
-Night, as well as telling you what the Building a Library featured work is. The schedule
-for the Classic FM Full Works programmes is also given.</p>
+<p>It includes the schedule and approximate timings for BBC Radio 3's
+ Through the Night, as well as telling you what the Building a Library
+featured work is. The schedule for the Classic FM Full Works programmes
+is also given.</p>
 
 <br/>
 
-<h2>Major Composer Anniversaries in 2020</h2>    
-
-<br/>
-<br/>
-
-<p id="Composers">Ludwig van Beethoven 250 years since his birth<br/><br/>
-Gabriel Faur&eacute; 175 years since his birth<br/><br/>
-Max Bruch 100 years since his death<br/><br/>
-John Rutter 75 years since his birth</p>
+<h2><span>Major Composer Anniversaries in 2022</span></h2> <!-- span used to help overwrite h2 default style -->
 
 <br/>
 
-<h3 id="key">KEY for common abbreviations:</h3>
+<p class="composers">Joseph Haydn 290 years since his birth<br/><br/>
+Franz Schubert 225 years since his birth<br/><br/>
+Claude Debussy 160 years since his birth<br/><br/>
+Ralph Vaughan Williams 150 years since his birth<br/><br/>
+Johannes Brahms 125 years since his death<br/><br/>
+John Williams 90 years since his birth</p>
+
 <br/>
 
-<table id="Key">
+<h3 id = "key" class="key">KEY for Common Abbreviations</h3>
+<br/>
+
+<!-- TODO: ERATO and APEX - WARNER LABELS -->
+<table class="tablekey" role="presentation">
 <tbody>
-<tr><td>DG</td><td>= DEUTSCHE GRAMMOPHON</td></tr>
-<tr><td>EMI</td><td>= WARNER/EMI CLASSICS (WARNER BECAME OWNERS OF EMI'S BACK CATALOGUE IN 2013)</td></tr>
-<tr><td>SONY</td><td>= SONY MUSIC ENTERTAINMENT (SONY ABSORBED BMG IN 2008. RCA IS A SONY SUBSIDIARY)</td></tr>
-<tr><td>B.P.O</td><td>= BERLIN PHILHARMONIC ORCHESTRA</td></tr>
-<tr><td>V.P.O</td><td>= VIENNA PHILHARMONIC ORCHESTRA</td></tr>
-<tr><td>L.S.O</td><td>= LONDON SYMPHONY ORCHESTRA</td></tr>
-<tr><td>C.O.E</td><td>= CHAMBER ORCHESTRA OF EUROPE</td></tr>
-<tr><td>L.P.O</td><td>= LONDON PHILHARMONIC ORCHESTRA</td></tr>
-<tr><td>C.O</td><td>= CONCERTGEBOUW ORCHESTRA (BECAME ROYAL CONCERTGEBOUW ORCHESTRA IN 1988)</td></tr>
-<tr><td>B.R.S.O</td><td>= BAVARIAN RADIO SYMPHONY ORCHESTRA</td></tr>
-<tr><td>P</td><td>= PERIOD INSTRUMENTS</td></tr>
-<tr><td>L.A</td><td>= LIMITED AVAILABILITY (TRY SECOND HAND. MAY STILL BE AVAILABLE AS PART OF BOX SET)</td></tr>
+<tr class="hideme"><th scope="col">Shorthand</th><th scope="col">Meaning</th></tr> <!-- Visibly hidden -->
+<tr><th scope="row">DG</th><td>DEUTSCHE GRAMMOPHON</td></tr>
+<tr><th scope="row">EMI</th><td>WARNER/EMI CLASSICS (WARNER BECAME OWNERS OF EMI'S BACK CATALOGUE IN 2013)</td></tr>
+<tr><th scope="row">SONY/BMG/RCA</th><td>SONY MUSIC ENTERTAINMENT (SONY ABSORBED BMG IN 2008. RCA IS A SONY SUBSIDIARY)</td></tr>
+<tr><th scope="row">B.P.O</th><td>BERLIN PHILHARMONIC ORCHESTRA</td></tr>
+<tr><th scope="row">V.P.O</th><td>VIENNA PHILHARMONIC ORCHESTRA</td></tr>
+<tr><th scope="row">L.S.O</th><td>LONDON SYMPHONY ORCHESTRA</td></tr>
+<tr><th scope="row">C.O.E</th><td>CHAMBER ORCHESTRA OF EUROPE</td></tr>
+<tr><th scope="row">L.P.O</th><td>LONDON PHILHARMONIC ORCHESTRA</td></tr>
+<tr><th scope="row">C.O</th><td>CONCERTGEBOUW ORCHESTRA (BECAME ROYAL CONCERTGEBOUW ORCHESTRA IN 1988)</td></tr>
+<tr><th scope="row">B.R.S.O</th><td>BAVARIAN RADIO SYMPHONY ORCHESTRA</td></tr>
+<tr><th scope="row">P</th><td>PERIOD INSTRUMENTS</td></tr>
+<tr><th scope="row">L.A</th><td>LIMITED AVAILABILITY (TRY SECOND HAND. MAY STILL BE AVAILABLE AS PART OF BOX SET)</td></tr>
 </tbody>
 </table>
 
-<!-- <pre id="Key2">    Used this method because screen readers appear to read down each column for a table layout. Here the key is read across
+<!-- <pre class="tablekey2">    Used this method because screen readers appear to read down each column for a table layout. Here the key is read across
 DG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = DEUTSCHE GRAMMOPHON
 EMI&nbsp;&nbsp;&nbsp;&nbsp; = EMI CLASSICS
 SONY&nbsp;&nbsp;&nbsp; = SONY CLASSICAL
@@ -216,12 +249,12 @@ L.A&nbsp;&nbsp;&nbsp;&nbsp; = LIMITED AVAILABILITY (TRY SECOND HAND. MAY STILL B
 
 <br/>
 
-<h2 id="comp">Compilations</h2>
-<p>I will restrict my selection here from within the UNIVERSAL CLASSICS labels (DECCA, 
-PHILIPS and DEUTSCHE GRAMMOPHON) and EMI (VIRGIN), since they generally provide good recordings 
+<h2 id="compilations" class="compilations">Compilations</h2>
+<p>I will restrict my selection here from within the UNIVERSAL CLASSICS labels (DECCA,
+PHILIPS (Retired) and DEUTSCHE GRAMMOPHON), VIRGIN CLASSICS/WARNER/ERATO and NAXOS, since they generally provide good recordings
 and sound quality of movement/extracts from complete pieces. Series worth examining are:</p>
 
-<p id="Complab">Essential.. (2cds) (DECCA)<br/><br/>
+<p class="complab">Essential.. (2cds) (DECCA)<br/><br/>
 
 Panorama (2cds) (Tend to have complete pieces) (DG)<br/><br/>
 
@@ -229,7 +262,7 @@ Discovering.. (CLASSIC FM, DECCA - Actually recordings from any Universal Classi
 
 The Best of.. (2cds) (PHILIPS)<br/><br/>
 
-The Very Best of.. (2cds) (VIRGIN CLASSICS (EMI))<br/><br/>
+The Very Best of.. (2cds) (VIRGIN CLASSICS/WARNER/ERATO)<br/><br/>
 
 Classics for Pleasure (EMI)<br/><br/>
 
@@ -245,36 +278,36 @@ The Essential Classics Collection (6cds) (DG)<br/>
 The Most Relaxing Classical Music in the World .. Ever (4cds) (VIRGIN TV)</p>
 
 <h3>J.S.Bach</h3>
-<p>Essential Bach (2cds) (DECCA) includes period performances and novel instrumental arrangements 
+<p>Essential Bach (2cds) (DECCA) includes period performances and novel instrumental arrangements
 of his works.</p>
 
 <h3>Beethoven</h3>
-<p>Essential Beethoven (2cds) (DECCA) is very good. The only reservation being the plus 2 minutes 
-from the final movement of the choral symphony. The time could have been better filled by 
+<p>Essential Beethoven (2cds) (DECCA) is very good. The only reservation being the plus 2 minutes
+from the final movement of the choral symphony. The time could have been better filled by
 a bagatelle for example.</p>
 
 <h3>Chopin</h3>
-<p>Essential Chopin (2cds) (DECCA) does not contain parts from his piano concertos but is a beautiful 
+<p>Essential Chopin (2cds) (DECCA) does not contain parts from his piano concertos but is a beautiful
 introduction to some of his solo piano works played expertly by Vladimir Ashkenazy.</p>
 
 <h3>Grieg</h3>
-<p>The Best of Grieg (2cds) (PHILIPS)  includes complete recordings of the two Peer Gynt Suites, 
+<p>The Best of Grieg (2cds) (PHILIPS)  includes complete recordings of the two Peer Gynt Suites,
 the Holberg Suite and a very good recording of the piano concerto.<br/><br/>
 
 OTHER RECORDINGS:<br/>
 Grieg (2cds) Panorama (DG)</p>
 
 <h3>Handel</h3>
-<p>Essential Handel (2cds) (DECCA) contains all the popular tunes, including the complete first two 
+<p>Essential Handel (2cds) (DECCA) contains all the popular tunes, including the complete first two
 Water Music Suites and less well known pieces such as Berenice.</p>
 
 <h3>Mozart</h3>
-<p>Although Mozart Adagios (2cds) (DECCA) only contains slow/quieter movements of pieces, 
+<p>Although Mozart Adagios (2cds) (DECCA) only contains slow/quieter movements of pieces,
 it contains plenty of good music including the piano concertos and symphonies.</p>
 
 <h3>Rachmaninov</h3>
-<p>Essential Rachmaninov (2cds) (DECCA) is definitely the best Rachmaninov compilation around. 
-It includes a complete recording of Rhapsody on a Theme of Paganini and a great one of the 2nd 
+<p>Essential Rachmaninov (2cds) (DECCA) is definitely the best Rachmaninov compilation around.
+It includes a complete recording of Rhapsody on a Theme of Paganini and a great one of the 2nd
 piano concerto.</p>
 
 <h3>Sibelius</h3>
@@ -305,23 +338,24 @@ The Essential Vaughan Williams (2cds) (EMI)</p>
 
 <br/>
 
-<h2 id="complete_pieces">Complete Pieces</h2>   <!-- Add Complete Pieces to Navigation menu 071011 -->
+<h2 id = "complete_pieces" class="complete_pieces">Complete Pieces</h2>   <!-- Add Complete Pieces to Navigation menu 071011 -->
 
 <p>Some recordings are given the label (MULTCOMB). This is because the
-recording is available in combination with different pieces on other CDs. 
+recording is available in combination with different pieces on other CDs.
 Another example being, it is available as a single CD release or part of
 a box set. A recording could also be found under more than one record label
 release or even CD format e.g SACD.</p>
 
 <p>Because this site is not aimed at serious collectors, the least recording
-quality I will recommend is good mono. All recordings are stereo, except where 
-mentioned i.e MONO. Any live recordings I have recommended will have at most minimal 
-background noises e.g coughs. Considering that studio recordings, including some 
-I have recommended, can be prone to the occasional unwanted noises, this should not 
+quality I will recommend is good mono. All recordings are stereo, except where
+mentioned i.e MONO. Any live recordings I have recommended will have at most minimal
+background noises e.g coughs. Considering that studio recordings, including some
+I have recommended, can be prone to the occasional unwanted noises, this should not
 be a problem.</p>
 
-<p id="clickbandtext">Just click on a band to reveal the relevant information. Click the band
-again to hide the information.</p>
+<p class="clickbandtext">Just click on a band to reveal the relevant information. Click the band
+again to hide the information.</br></br>
+Press Esc to jump to CCCMG in the header.</p>
 <br/>
 
 
@@ -358,10 +392,11 @@ Suzuki/Bach Collegium Japan (BIS)</p>
 Critics best all round cycle Harnoncourt/C.O.E (TELDEC)</p>
 
 <h5>Symphony No. 1</h5>
-<p>Rattle/V.P.O (EMI)<br/><br/>
+<p>Rattle/V.P.O (EMI)<br/>
+Paavo J&auml;rvi/Deutsche Kammerphilharmonie Bremen (RCA RED SEAL)<br/><br/>
 
 OTHER RECORDINGS:<br/>
-Paavo J&auml;rvi/Deutsche Kammerphilharmonie Bremen (RCA RED SEAL)</p>
+Szell/Cleveland (MULTCOMB) (SONY)</p>
 
 <h5>Symphony No. 2</h5>
 <p>Paavo J&auml;rvi/Deutsche Kammerphilharmonie Bremen (RCA RED SEAL)<br/>
@@ -392,12 +427,12 @@ Vanska/Minnesota (BIS)<br/></p>
 Wand/NDR (MULTCOMB) (RCA)<br/>
 Gardiner/Orchestre R&eacute;voltionnaire et Romantique (ARCHIV) (P)</p>
 
-<p>It is worth mentioning that the highly recommended B&ouml;hm/V.P.O (DG)  
-recording has a very slow second movement, lasting nearly a third 
-of the length of the whole recording (~45mins), an unpleasant 
-surprise on first hearing it as I was used to the movement lasting 
-only 11 - 12 minutes tops. I cannot complain about the other movements 
-and someone suggested after many listens you will consider this your 
+<p>It is worth mentioning that the highly recommended B&ouml;hm/V.P.O (DG)
+recording has a very slow second movement, lasting nearly a third
+of the length of the whole recording (~45mins), an unpleasant
+surprise on first hearing it as I was used to the movement lasting
+only 11 - 12 minutes tops. I cannot complain about the other movements
+and someone suggested after many listens you will consider this your
 favourite. Maybe, but this is probably not a first recording to get.</p>
 
 <h5>Symphony No. 7</h5>
@@ -418,9 +453,8 @@ OTHER RECORDINGS:<br/>
 Szell/Cleveland (SONY)<br/>
 Furtw&auml;ngler/Philharmonia (1951) (MONO) (ORFEO) - The actual Bayreuth recording. Not the Legge edit, where rehearsal material is mixed with the final performance like the Warner/Emi and Naxos issues!<br/>
 Furtw&auml;ngler/Philharmonia (1954) (MONO) (TAHRA)<br/>
-Solti/V.P.O (1971) (DECCA)<br/>
 Kubelik/B.R.S.O (DG)<br/></p>
-</li>   
+</li>
 
 <li id="beePC">
 <h4><a href="#beePC">Piano Concerti (5)</a></h4>
@@ -435,7 +469,8 @@ F.F-Guy/Jordan/Orchestre Philharmonique de Radio France (NA&Iuml;VE)<br/>
 Serkin/Ormandy/Philadelpia Rudolf Serkin Plays Beethoven Concertos, Sonatas and Variations (SONY)</p>
 
 <h5>Piano Concerto No. 2</h5>
-<p>Serkin/Ormandy/Philadelphia Rudolf Serkin Plays Beethoven Concertos, Sonatas and Variations (SONY)</p>
+<p>Argerich/Abbado/Mahler Chamber (DG)<br/>
+Serkin/Ormandy/Philadelphia Rudolf Serkin Plays Beethoven Concertos, Sonatas and Variations (SONY)</p>
 
 <h5>Piano Concerto No. 3</h5>
 <p>Michelangeli/Giulini/Vienna Symphony (DG)<br/>
@@ -445,11 +480,10 @@ Fleisher/Szell/Cleveland (MULTCOMB) (SONY) - Classical style but still exciting<
 <h5>Piano Concerto No. 5 "Emperor"</h5>
 <p>Pollini/B&ouml;hm/V.P.O (MULTCOMB) (DG) - Just the right amount of vigour<br/>
 Michelangeli/Celibidache/Paris Symphony (MUSIC AND ARTS)<br/>
-Zimerman/Bernstein/V.P.O (MULTCOMB) (DG) (L.A)<br/>
-Fellner/Nagano/Montr&eacute;al Symphony (ECM NEW SERIES) - Sounds fresh</p>
+Zimerman/Bernstein/V.P.O (MULTCOMB) (DG) (L.A)</p>
 </li>
 
-<li id="beePS">   
+<li id="beePS">
 <h4><a href="#beePS">Piano Sonatas (32)</a></h4>
 <p>Kovacevich Beethoven: The Complete Piano Sonatas, Bagatelles (EMI)<br/><br/>
 
@@ -465,12 +499,12 @@ Critics Best all round cycle Goode (NONESUCH)</p>
 <h5>Piano Sonata No. 8 "Path&eacute;tique"</h5>
 <p>Osborne Beethoven Piano Sonatas (HYPERION)<br/>
 Bavouzet Beethoven: Piano Sonatas Volume 1 (CHANDOS) - Sounds spontaneous (not micro-managed)<br/>
-Barenboim Beethoven: Piano Sonatas 8, 14 &amp; 23 (EMI)<br/>
 Serkin (1962) (MULTCOMB) (SONY)<br/>
+Barenboim Beethoven: Piano Sonatas 8, 14 &amp; 23 (EMI)<br/>
 Schiff The Piano Sonatas Vol 2 (ECM NEW SERIES)<br/>
 Kempff Piano Sonatas 8, 14, 21 &amp; 23 (DG)</p>
 
-<h5>Piano Sonata No. 11</h5> 
+<h5>Piano Sonata No. 11</h5>
 <p>Serkin (1970/73) (MULTCOMB) (SONY)</p>
 
 <h5>Piano Sonata No. 14 "Moonlight"</h5>
@@ -480,7 +514,7 @@ Kovacevich (MULTCOMB) (EMI) - Great driven energy in last movement</p>
 <h5>Piano Sonata No. 15 "Pastoral"</h5>
 <p>Brendel Favourite Piano Sonatas (1970s) (PHILIPS)</p>
 
-<h5>Piano Sonata No. 16</h5> 
+<h5>Piano Sonata No. 16</h5>
 <p>Serkin (1970) (MULTCOMB) (SONY)</p>
 
 <h5>Piano Sonata No. 17 "Tempest"</h5>
@@ -491,7 +525,7 @@ Kovacevich (MULTCOMB) (EMI) - Great driven energy in last movement</p>
 Gilels (DG)<br/>
 Brendel Favourite Piano Sonatas (1970s) (PHILIPS)</p>
 
-<h5>Piano Sonata No. 23 "Appassionata"</h5> 
+<h5>Piano Sonata No. 23 "Appassionata"</h5>
 <p>Pletnev (VIRGIN CLASSICS)<br/>
 Serkin (1962) (MULTCOMB) (SONY)<br/>
 Gilels (MULTCOMB) (DG)</p>
@@ -522,7 +556,6 @@ Anderszewski (VIRGIN CLASSICS/ERATO)</p>
 <h5>String Quartet No. 7 Op. 59 No. 1</h5>
 <p>Quatuor Sine Nomine (CLAVES)<br/>
 Talich Quartet (MULTCOMB) (CALLIOPE)<br/>
-Borodin Quartet (MULTCOMB) (CHANDOS)<br/>
 Vegh Quartet (MULTCOMB) (70s) (NA&Iuml;VE)</p>
 
 <h5>String Quartet No. 8 Op. 59 No. 2</h5>
@@ -559,7 +592,7 @@ Cleveland Quartet (MULTCOMB) (TELARC)</p>
 <h4><a href="#beeVC">Violin Concerto</a></h4>
 <p>Faust/Abbado/Orchestra Mozart (HARMONIA MUNDI)<br/>
 Grumiaux/Galliera/New Philharmonia(PHILIPS ELOQUENCE)<br/>
-Chung/Tennstedt/L.P.O (EMI)</p> 
+Chung/Tennstedt/L.P.O (EMI)</p>
 </li>
 
 <li id="braSy">
@@ -568,6 +601,7 @@ Chung/Tennstedt/L.P.O (EMI)</p>
 
 <h5>Symphony No. 1</h5>
 <p>Karajan/B.P.O (TESTAMENT) - Intense<br/>
+Nelsons/Boston Symphony (ORCHARD/RED) - Fresh sounding<br/>
 Steinberg/Pittsburgh Symphony (SERAPHIM) (L.A) - Light footed<br/><br/>
 
 OTHER RECORDINGS:<br/>
@@ -598,7 +632,7 @@ Chailly/Leipzig Gewandhaus (2013) (DECCA)</p>
 Chung/Tennstedt/L.P.O (EMI)<br/>
 Chung/Kempe/Royal Philharmonic (MULTCOMB)<br/>
 Heifetz/Sargent/New Symphony Orchestra of London (MULTCOMB)</p>
-</li>    
+</li>
 
 <li id="bruckSy">
 <h3 id="AB">Bruckner</h3>
@@ -608,17 +642,16 @@ See www.abruckner.com for more details</p>
 
 <h5>Symphony No. 3</h5>
 <p>Tennstedt/B.R.S.O (PROFIL) (1889)<br/>
-Knappertsbusch/V.P.O (TESTAMENT) (1890)<br/>
-Wand/N.D.R (1992) (MULTCOMB) (RCA) (1889) - Recorded sound recessed<br/><br/>
+Knappertsbusch/V.P.O (TESTAMENT) (1890)<br/><br/>
 
 OTHER RECORDINGS:<br/>
 Chailly/R.S.O Berlin (MULTCOMB) (DECCA) (1889)</p>
 
 <h5>Symphony No. 4</h5>
-<p>Haitink/C.O (MULTCOMB) (1881)<br/>
-Karajan/B.P.O (1975) (MULTCOMB) (DG) (1881)<br/>	
+<p>Kertesz/L.S.O (DECCA) (1881)<br/>
+Haitink/C.O (MULTCOMB) (1881)<br/>
 Klemperer/B.R.S.O (EMI) (1886)<br/>
-Kertesz/L.S.O (DECCA) (1881)</p>
+Karajan/B.P.O (1975) (MULTCOMB) (DG) (1881)</p>
 
 <h5>Symphony No. 6</h5>
 <p>Stein/V.P.O (DECCA) (1881)<br/>
@@ -637,7 +670,7 @@ Knappertsbusch/Munich Philharmonia (1963) (LIVING STAGE) (1892) (L.A) - The Livi
 <p>Schuricht/V.P.O (DECCA) (1894)<br/>
 Horenstein/BBC Symphony (1970) (MULTCOMB) (1894)<br/>
 Harnoncourt/V.P.O (RCA RED SEAL) (1894)</p>
-</li> 
+</li>
 
 <li id="choPC">
 <h3 id="FC">Chopin</h3>
@@ -645,8 +678,7 @@ Harnoncourt/V.P.O (RCA RED SEAL) (1894)</p>
 
 <h5>Piano Concerto No. 1</h5>
 <p>Zimerman/Giulini/Los Angeles Philharmonic (DG)<br/>
-Argerich/Abbado/L.S.O (MULTCOMB) (DG)<br/>
-Pollini/Keltzki/Philharmonia (EMI)<br/><br/>
+Argerich/Abbado/L.S.O (MULTCOMB) (DG)<br/><br/>
 
 OTHER RECORDINGS:<br/>
 Fliter/Markl/Scottish Chamber (LINN)</p>
@@ -664,7 +696,7 @@ Fliter/Markl/Scottish Chamber (LINN)</p>
 <h4><a href="#choN">Nocturnes (21)</a></h4>
 <p>OTHER RECORDINGS:<br/>Pires (DG) (21)<br/>
 Rubinstein (1930s) (MULTCOMB) (EMI) (19) </p>
-</li> 
+</li>
 
 <li id="dvoSy">
 <h3 id="AD">Dvo&#x159;&aacute;k</h3>
@@ -718,7 +750,7 @@ OTHER RECORDINGS:<br/>
 Ibragimova/Jurowski/Orchestra of the Age of Enlightenment (HYPERION)</p>
 </li>
 
-<li id="mozPC">   
+<li id="mozPC">
 <h3 id="WAM">Mozart</h3>
 <h4><a href="#mozPC">Piano Concerti (27)</a></h4>
 
@@ -733,9 +765,6 @@ Perahia/English Chamber (MULTCOMB) (SONY)</p>
 <h5>Piano Concerto No. 10</h5>
 <p>Emil &amp; Elena Gilels/B&ouml;hm/V.P.O (MULTCOMB) (DG)</p>
 
-<h5>Piano Concerto No. 13</h5>
-<p>Nagano/Cecilia String Quartet (ANALEKTA)</p>
-
 <h5>Piano Concerto No. 14</h5>
 <p>Pires/Guschlbauer/Gulbenkian Orchestra Lisbon (MULTCOMB) (APEX)</p>
 
@@ -747,9 +776,9 @@ Perahia/English Chamber (MULTCOMB) (SONY)</p>
 Uchida/Tate/English Chamber (MULTCOMB) (PHILIPS)</p>
 
 <h5>Piano Concerto No. 19</h5>
-<p>Pollini/V.P.O (MULTCOMB)<br/>
-Larrocha/Segal/Vienna Symphony (DECCA)<br/>
-Brendel/Marriner/A.S.M.F (PHILIPS)</p>
+<p>Larrocha/Segal/Vienna Symphony (DECCA)<br/>
+Brendel/Marriner/A.S.M.F (PHILIPS)<br/>
+Pollini/V.P.O (MULTCOMB)</p>
 
 <h5>Piano Concerto No. 20</h5>
 <p>Brendel/MacKerras/S.C.O (MULTCOMB) (PHILIPS)<br/>
@@ -769,14 +798,14 @@ Pires/Guschbauer/Gulbenkian Orchestra Lisbon (APEX)<br/>
 Curzon/Kert&eacute;sz/L.S.O (MULTCOMB) (DECCA)</p>
 
 <h5>Piano Concerto No. 24</h5>
-<p>Goode/Orpheus Chamber (NONESUCH) - Treble bit off<br/>
+<p>Goode/Orpheus Chamber (NONESUCH)<br/>
 C.Zacharias/Orchestre de Chambre de Lausanne (MDG)<br/>
 Pollini/V.P.O (DG)</p>
 
 <h5>Piano Concerto No. 25</h5>
 <p>Kovacevich/Davis/L.S.O (PHILIPS)<br/>
-Serkin/Szell/Columbia Symphony (1955) (MONO) (NAXOS) - Not Cleveland Orchestra as stated!<br/>
-Larrocha/Davis/L.P.O (MULTCOMB) (DECCA)<br/><br/>
+Larrocha/Davis/L.P.O (MULTCOMB) (DECCA)<br/>
+Serkin/Szell/Columbia Symphony (1955) (MONO) (NAXOS) - Not Cleveland Orchestra as stated!<br/><br/>
 
 OTHER RECORDINGS:<br/>
 Moravec/Vlach/Czech Philharmonic (SUPRAPHON)</p>
@@ -831,7 +860,7 @@ MacKerras/Prague Chamber (MULTCOMB) (TELARC) - Does all repeats!</p>
 <h5>Symphony No. 41 "Jupiter"</h5>
 <p>B&ouml;hm/B.P.O (MULTCOMB) (DG)<br/>
 Walter/Columbia Symphony (MULTCOMB) (CBS/SONY)</p>
-</li>  
+</li>
 
 <li id="mozPS">
 <h4><a href="#mozPS">Piano Sonatas (Solo) (18)</a></h4>
@@ -858,14 +887,14 @@ Brendel (PHILIPS)</p>
 
 <h5>Piano Sonata No. 12</h5>
 <p>Brendel (MULTCOMB) (PHILIPS)</p>
-</li> 
+</li>
 
 <li id="mozSQ">
 <h4><a href="#mozSQ">String Quartets (16)</a></h4>
 
 <h5>String Quartets 14-19 "Haydn"</h5>
 <p>Emerson String Quartet (DG) (L.A)<br/>
-Alban Berg Quartet (TELDEC)<br/><br/>
+Alban Berg Quartet (TELDEC) (L.A)<br/><br/>
 
 OTHER RECORDINGS:<br/>
 Suske Quartet (MULTCOMB) (BERLIN CLASSICS)</p>
@@ -875,10 +904,7 @@ Suske Quartet (MULTCOMB) (BERLIN CLASSICS)</p>
 Jerusalem Quartet (HARMONIA MUNDI)</p>
 
 <h5>String Quartet No. 19 "Dissonance"</h5>
-<p>Casals Quartet (HARMONIA MUNDI)<br/><br/>
-
-OTHER RECORDINGS:<br/>
-Emerson Quartet (MULTCOMB) (DG)</p>
+<p>Casals Quartet (HARMONIA MUNDI)</p>
 </li>
 
 <li id="mozCQ">
@@ -911,11 +937,6 @@ Ashkenazy/Previn/L.S.O (MULTCOMB) (DECCA)<br/><br/>
 OTHER RECORDINGS:<br/>
 Ashkenazy/Kondrashin/Moscow Philharmonic (DECCA)<br/>
 Ashkenazy/Haitink/C.O (DECCA)</p>
-
-<h5>Piano Concerto No. 3</h5>
-
-<p>OTHER RECORDINGS:<br/>
-Argerich/Chailly/Berlin Radio Symphony (MULTCOMB) (PHILIPS)</p>
 </li>
 
 <li id="schSy">
@@ -945,11 +966,7 @@ Boult/L.P.O (EMI)</p>
 
 <h5>Symphony No. 9 "Great"</h5>
 <p>Krips/L.S.O (DECCA ELOQUENCE)<br/>
-B&ouml;hm/B.P.O (MULTCOMB) (DG)<br/><br/>
-
-OTHER RECORDINGS:<br/>
-Kert&eacute;sz/V.P.O (MULTCOMB) (DECCA)<br/>
-Mehta/Israel Philharmonic (MULTCOMB)</p>
+B&ouml;hm/B.P.O (MULTCOMB) (DG)</p>
 </li>
 
 <li id="schuIm">
@@ -975,7 +992,7 @@ Chung/Dutoit/Montreal Symphony (MULTCOMB) (DECCA)<br/><br/>
 
 OTHER RECORDINGS:<br/>
 Oistrakh/Statskapelle Dresden/Konwitschny (MONO) (DG)</p>
-</li>    
+</li>
 
 <li id="tchSy">
 <h4><a href="#tchSy">Symphonies (6 + Manfred came between symphonies 4 and 5)</a></h4>
@@ -999,7 +1016,7 @@ Ormandy/Philadelphia Symphony (1959) (MULTCOMB) (SONY) (L.A)</p>
 
 OTHER RECORDINGS:<br/>
 Mravinsky/Leningrad Philharmonic (1982) (MULTCOMB)</p>
-</li>   
+</li>
 
 <li id="tchSer">
 <h4><a href="#tchSer">Serenade for Strings</a></h4>
@@ -1045,29 +1062,94 @@ Bean/Boult/New Philharmonic (EMI)</p>
 <br/>
 
 <p>
-    <a href="http://validator.w3.org/check?uri=referer"><img
-        src="http://www.w3.org/Icons/valid-xhtml10"
-        alt="Valid XHTML 1.0 Strict" height="31" width="88"/></a>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!"/>
+    </a>
 </p>
 
+</div>
 
-<script type="text/javascript" src="js/respond.min.js"></script>                 <!-- Polyfill for browsers not recognising min-width, max-width and media types -->
-<script type="text/javascript" src="js/core.js"></script>                        <!-- Needed for accordion_mod -->
-<script type="text/javascript" src="js/jquery-1.5.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui-1.8.10.custom.min.js"></script>  <!-- Allows animation of floating menu -->
-<script type="text/javascript" src="js/accordion_mod.js"></script>                        
-<!-- <script type="text/javascript" src="js/datemodified.js"></script>           Routine to format date document cccmg.html last modified if available and return -->
-<!-- <script type="text/javascript" src="js/safari_modified_date.js"></script> -->
-<!-- <script type="text/javascript" src="js/dateupdate.js"></script>                   Script for "Last Update on: " using datemodified.js -->
-<script type="text/javascript" src="js/jquery.corner.js"></script>               <!-- Script for applying corners -->
-<script type="text/javascript" src="js/pagecorners.js"></script>                 <!-- Applies corners to specified elements -->
-<script type="text/javascript" src="js/hide_no_javascript_mes.js"></script>
-<script type="text/javascript" src="js/floating_nav_menu.js"></script>
-<script type="text/javascript" src="js/jquery.scrollTo.js"></script>             <!-- Script for scrollTo() -->
-<script type="text/javascript" src="js/scroll_to_link.js"></script>
-<script type="text/javascript" src="js/jquery.swfobject.1-1-1.js"></script>
-<script type="text/javascript" src="js/flash_header.js"></script>                 <!-- Embeds Eras Bold ITC header swobject -->
-<script type="text/javascript" src="js/animatetext.js"></script>
+<!-- <script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"
+		integrity="sha512-pbfEkRtTC0tVCDj1DO2p2TgthqrXy0/xPIl8JpvH/zUMzwFIdTSILylHSbwZ8zmPCzOOHYsDrz26HvOCFo7Mng=="
+		crossorigin="anonymous">
+</script> -->
 
+<script
+		src="https://code.jquery.com/jquery-1.7.2.min.js"
+		integrity="sha256-R7aNzoy2gFrVs+pNJ6+SokH04ppcEqJ0yFLkNGoFALQ="
+		crossorigin="anonymous">
+</script>
+
+<script>
+		window.jQuery || document.write('<script src="./js/jquery-1.7.2.min.js"><\/script>');
+</script>
+
+<!-- <script
+	src="https://code.jquery.com/jquery-migrate-1.4.1.min.js">
+</script> -->
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"
+integrity="sha512-lzilC+JFd6YV8+vQRNRtU7DOqv5Sa9Ek53lXt/k91HZTJpytHS1L6l1mMKR9K6VVoDt4LiEXaa6XBrYk1YhGTQ=="
+crossorigin="anonymous" referrerpolicy="no-referrer">
+</script> -->
+
+<!-- <script
+	src="https://code.jquery.com/jquery-migrate-3.3.0.min.js">
+</script> -->
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+crossorigin="anonymous" referrerpolicy="no-referrer">
+</script> -->
+
+<!-- <script>
+		window.jQuery || document.write('<script src="./js/jquery-3.6.0.min.js"><\/script>');
+</script> -->
+
+
+
+<script
+		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"
+		integrity="sha512-P76gN7IRj67pGxPvgHAk33c/iiWfj1oXpAd/8Oz8KPq2+AvIjvJT3iIyuzk6Sk/PxSmR/y8XX78RzHX5G2NGDg=="
+		crossorigin="anonymous">
+		// Needed for animatetext.js
+</script>
+
+<!-- <script
+			  src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+			  integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
+			  crossorigin="anonymous">
+</script> -->
+
+<script>
+		window.jQuery.ui || document.write('<script src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
+</script>
+
+<!-- < src="js/newcore.js"></> -->
+<!-- < src="js/jquery-1.5.min.js"></> -->
+<!-- < src="js/jquery-ui-1.8.10.custom.min.js"></> Allows animation of floating menu and text scroll -->
+<script src="js/respond.min.js"></script>	<!-- TODO: Replace possibly -->	<!-- Polyfill for browsers not recognising min-width, max-width and media types -->
+<script src="js/core.js"></script>	<!-- Needed for accordion_mod -->
+<!-- <script src="js/show-dropdown.js"></script> Not working -->
+<script src="js/hide_no_javascript_mes.js"></script>
+<script src="js/bvselect.js"></script> <!-- Custom dropdown menu that allows for different highlight colours -->
+<script src="js/change_colour.js"></script>
+<script src="js/accordion_mod.js"></script>
+<!-- < src="js/floating_nav_menu.js"></> -->	<!-- Using position fixed/sticky better than this -->
+<!-- <script src="js/jquery.scrollTo.js"></script>             Script for scrollTo() -->
+<!-- <script src="js/scroll_to_link.js"></script> -->
+<!-- < src="js/jquery.swfobject.1-1-1.js"></> Was for incorporating flash header image, which is now a png -->
+<!-- < src="js/flash_header.js"></>                  Embeds Eras Bold ITC header swobject -->
+<script src="js/focus-visible.js"></script> <!-- Provides :focus-visible support for browsers that don't have it -->
+<!-- <script src="js/animatetext.js" defer></script> -->
+<script>
+	if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+	 	document.write('<script defer src="./js/animatetext.js"><\/script>');
+	}
+	// Optionally switch off, for motion reduce preference, text downword scroll animation when page loads
+</script>
 </body>
 </html>
