@@ -1,7 +1,8 @@
 @media print { /* media type moved here from cccmg.php file 300911 */
 
-		.navigation {
-			display: none;     /* Navigation menu no use for print out */
+		.navigation, .nojavascript, p a img, a#top, .skiplink, .topbar span {
+			display: none;     /* Navigation menu, Works better with javascript message and W3C CSS compliance logo hidden */
+							   /* Skip to Main Content removed (appears on chrome pdf each page), plus CCCMG and Shortcuts from the top bar */
 		}
 
 		body {
@@ -39,9 +40,9 @@
 			padding-left: 4pt; /*1%;*/
 		}
 
-		.nojavascript {
-			display: none;   /* Works better with javascript message. No use for print out */
-		}
+		/* .nojavascript {
+			display: none;   Works better with javascript message. No use for print out
+		} */
 
 		.update {
 			font-family: georgia, "Times New Roman", arial, helvetica, sans-serif;
@@ -83,7 +84,7 @@
 			border: 2pt solid #4B4B4B;
 		}
 
-		p a img {
-			display: none;                 /* Strict HTML compliance logo useless for printout */
-		}
+		/* p a img {
+			display: none;                 Strict HTML compliance logo useless for printout
+		} */
 }
