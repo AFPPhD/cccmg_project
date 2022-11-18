@@ -1,10 +1,5 @@
 <!DOCTYPE html>														<!-- Updated DOCTYPE, <html>, <head> and <script> from XHTML Strict to HTML5 compliant. Also removed trailing spaces 130820 -->
 <html lang="en">
-<?php
-// TODO: TEMPORARY - Remove and put directives in .htaccess
-header("Cache-Control: no-cache, must-revalidate");
-header("Pragma: no-cache");
-?>
 <head>
 	<meta charset="utf-8">
 	<title>Classical Collectors' Classical Music Guide</title>
@@ -30,7 +25,7 @@ header("Pragma: no-cache");
 
 <body>
 <header><a class="skiplink" href="#intro">Skip to main content</a></header>
-<div class="topbar"><a href="#" id ="top">CCCMG</a><!-- href added to get rid of crawlable complaint in SEO check--><!-- Could use img type for logo -->
+<div class="topbar"><a href="#" id ="top">CCCMG</a><!-- href added to get rid of crawlable complaint in SEO check (and to make focusable) --><!-- Could use img type for logo -->
 <span>Shortcuts</span><!-- Text -->
 <input type="checkbox" aria-label="hidden" id="toggle"/><!-- Checkbox, which will not be displayed -->
 <label for="toggle" aria-label="Toggle menu" role="checkbox" class="checkbtn"></label><!-- Mobile Hamburger Menu Icon disabled aria-disabled="true" &#9776; -->
@@ -78,8 +73,8 @@ header("Pragma: no-cache");
 <!-- <h1 class="flash_header">Casual Collectors' Classical Music Guide</h1>     Eras Bold ITC header shows if javascript enabled -->
 <!-- <h1 class="pngtitle">Casual Collectors' Classical Music Guide</h1> -->
 <div class="pngtitle">
-	<h1><img src="images/Eras_Bold_ITC_transparent.png" alt="Casual Collectors' Classical Music Guide" width="700" height="151"/></h1>
-</div> <!-- Was width="488" height="105" loading="eager" - Any images within the viewport should be loaded eagerly using the browser's defaults -->
+	<h1><img src="images/Eras_Bold_ITC_transparent.png" alt="Casual Collectors' Classical Music Guide" width="680" height="146"/></h1>
+</div> <!-- Was width="700" height="151" loading="eager" - Any images within the viewport should be loaded eagerly using the browser's defaults -->
 
 <br/>
 
