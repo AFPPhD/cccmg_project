@@ -3,7 +3,7 @@
 			-webkit-text-size-adjust: none; /* To stop this font-size inflation use the -webkit-text-size-adjust property */
 			text-size-adjust: none;
 			scroll-padding-top: 58px; /* To stop scrolled to Composer heading being obscured by sticky header */
-			scrollbar-width: normal; /* Scrollbar settings for Firefox */
+			/* scrollbar-width: normal; Scrollbar settings for Firefox */
 			/* scrollbar-color: var(--thumb, #204c75) var(--scrollbar,#3279B3); */
 			/* scroll-behavior: smooth; Not good for people wanting to avoid quick animations */
     		/* height: -webkit-fill-available; Part of mobile 100vh height problem fix, where bit of page missing (e.g footer) due to */
@@ -233,7 +233,7 @@
 		border: 0.15em solid var(--scrollbar);
 	}
 
-	@supports (scrollbar-color: var(--thumb,#3279B3) var(--scrollbar,#204c75)) {
+	@supports (scrollbar-color: var(--thumb,#3279B3) var(--scrollbar,#204c75)) { /* Scrollbar settings for Firefox */
 		* {
 			scrollbar-color: var(--thumb,#3279B3) var(--scrollbar,#204c75);
 			scrollbar-width: normal;
