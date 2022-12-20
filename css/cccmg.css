@@ -44,7 +44,7 @@
 			/* width: fit-content; */
 			max-width: 1900px; /* Need to put brakes on this for higher widths */
 			line-height: 1.5;
-			height: 42px; /* Was 36px. Changed to allow for transparent border on .topbar a */
+			height: 42px; /* Was 36px. Changed to hide transparent border under .topbar, when blur background displayed */
 			background-color: #3279B3;
 		}
 
