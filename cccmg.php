@@ -13,6 +13,9 @@
 	<!-- iPhone exhibits zooming behaviour when rotating to landscape (but not when loading first in landscape). initial-scale stops that -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>  <!-- IE=edge: specifies that IE should run in the highest mode available to that version of IE as opposed to a compatibility mode; IE8 can support up to IE8 modes, IE9 can support up to IE9 modes, and so on -->
 	<!-- <link rel="stylesheet" href="/path/to/my.css" media="print" onload="this.media='all'"> Remaining CSS can load asynchronously so it doesn’t delay page rendering -->
+	<!-- <link rel="preload" href="/my-font.woff2" crossorigin="anonymous" as="font" type="font/woff2"> -->
+	<!-- <link rel="preload" href="css/material_icons.css"/> -->
+	<!-- <link rel="preload" src="images/Eras_Bold_ITC_transparent.png" as="image"/> -->
 	<link rel="stylesheet" href="css/cccmg.css"/>
 	<link rel="stylesheet" href="css/material_icons.css"/>
 	<link rel="stylesheet" href="css/navigation.css"/>
@@ -993,7 +996,7 @@ Bean/Boult/New Philharmonic (EMI)</p>
 
 <p>
     <a href="http://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px"
+        <img loading="lazy" style="border:0;width:88px;height:31px"
             src="http://jigsaw.w3.org/css-validator/images/vcss"
             alt="Valid CSS!"/>
     </a>
@@ -1014,7 +1017,7 @@ Bean/Boult/New Philharmonic (EMI)</p>
 </script>
 
 <script>
-		window.jQuery || document.write('<script src="./js/jquery-1.7.2.min.js"><\/script>');
+		window.jQuery || document.write('<script defer src="./js/jquery-1.7.2.min.js"><\/script>');
 </script>
 
 <!-- <script
@@ -1055,19 +1058,19 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 </script> -->
 
 <script>
-		window.jQuery.ui || document.write('<script src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
+		window.jQuery.ui || document.write('<script defer src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
 </script>
 
 <!-- < src="js/newcore.js"></> -->
 <!-- < src="js/jquery-1.5.min.js"></> -->
 <!-- < src="js/jquery-ui-1.8.10.custom.min.js"></> Allows animation of floating menu and text scroll -->
-<script src="js/respond.min.js"></script>	<!-- TODO: Replace possibly -->	<!-- Polyfill for browsers not recognising min-width, max-width and media types -->
-<script src="js/core.js"></script>	<!-- Needed for accordion_mod -->
+<script defer src="js/respond.min.js"></script>	<!-- TODO: Replace possibly -->	<!-- Polyfill for browsers not recognising min-width, max-width and media types -->
+<script defer src="js/core.js"></script>	<!-- Needed for accordion_mod -->
 <!-- <script src="js/show-dropdown.js"></script> Not working -->
-<script src="js/hide_no_javascript_mes.js"></script>
-<script src="js/bvselect.js"></script> <!-- Custom dropdown menu that allows for different highlight colours -->
-<script src="js/change_colour.js"></script>
-<script src="js/accordion_mod.js"></script>
+<script defer src="js/hide_no_javascript_mes.js"></script>
+<script defer src="js/bvselect.js"></script> <!-- Custom dropdown menu that allows for different highlight colours -->
+<script defer src="js/change_colour.js"></script>
+<script defer src="js/accordion_mod.js"></script>
 <!-- < src="js/floating_nav_menu.js"></> -->	<!-- Using position fixed/sticky better than this -->
 <!-- <script src="js/jquery.scrollTo.js"></script>             Script for scrollTo() -->
 <!-- <script src="js/scroll_to_link.js"></script> -->
