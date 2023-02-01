@@ -126,16 +126,13 @@ is also given.</p>
 
 <br/>
 
-<h2><span>Major Composer Anniversaries in 2022</span></h2> <!-- span used to help overwrite h2 default style -->
+<h2><span>Major Composer Anniversaries in 2023</span></h2> <!-- span used to help overwrite h2 default style -->
 
 <br/>
 
-<p class="composers">Joseph Haydn 290 years since his birth<br/><br/>
-Franz Schubert 225 years since his birth<br/><br/>
-Claude Debussy 160 years since his birth<br/><br/>
-Ralph Vaughan Williams 150 years since his birth<br/><br/>
-Johannes Brahms 125 years since his death<br/><br/>
-John Williams 90 years since his birth</p>
+<p class="composers">
+Sergei Rachmaninov 150 years since his birth
+</p>
 
 <br/>
 
@@ -157,7 +154,7 @@ John Williams 90 years since his birth</p>
 <tr><th scope="row">C.O</th><td>CONCERTGEBOUW ORCHESTRA (BECAME ROYAL CONCERTGEBOUW ORCHESTRA IN 1988)</td></tr>
 <tr><th scope="row">B.R.S.O</th><td>BAVARIAN RADIO SYMPHONY ORCHESTRA</td></tr>
 <tr><th scope="row">P</th><td>PERIOD INSTRUMENTS</td></tr>
-<tr><th scope="row">L.A</th><td>LIMITED AVAILABILITY (TRY SECOND HAND. MAY STILL BE AVAILABLE AS PART OF BOX SET)</td></tr>
+<tr><th scope="row">L.A</th><td>LIMITED AVAILABILITY OF CD (TRY SECOND HAND. MAY STILL BE AVAILABLE AS PART OF BOX SET)</td></tr>
 </tbody>
 </table>
 
@@ -302,19 +299,21 @@ Press Esc to jump to CCCMG in the header.</p>
 
 <li id="bacBC">
 <h4><a href="#bacBC">Brandenburg Concertos</a></h4>
-<p>Alessandrini/Concerto Italiano (NA&Iuml;VE)<br/><br/>
+<p>Alessandrini/Concerto Italiano (NA&Iuml;VE) (P)<br/><br/>
 
 OTHER RECORDINGS:<br/>
-Pinnock/European Brandenburg Ensemble (AVIE)</p>
+Pinnock/European Brandenburg Ensemble (AVIE) (P)</p>
 </li>
 
 <li id="bacOS">
 <h4><a href="#bacOS">Orchestral Suites (4)</a></h4>
-<p>Egarr/Academy of Ancient Music (AAM)<br/><br/>
+<p>Egarr/Academy of Ancient Music (AAM) (P)<br/>
+Suzuki/Bach Collegium Japan (BIS) (P)<br/><br/>
 
 OTHER RECORDINGS:<br/>
-Yacobs/Freiburg Baroque (HARMONIA MUNDI)<br/>
-Suzuki/Bach Collegium Japan (BIS)</p>
+Yacobs/Freiburg Baroque (HARMONIA MUNDI) (P)<br/>
+Pearlman/Boston Baroque (TELARC) (P)<br/>
+Kuijken La Petite Bande (ACCENT) (P)</p>
 </li>
 
 <li id="beeSy">
@@ -326,19 +325,21 @@ Critics best all round cycle Harnoncourt/C.O.E (TELDEC)</p>
 
 <h5>Symphony No. 1</h5>
 <p>Rattle/V.P.O (EMI)<br/>
-Paavo J&auml;rvi/Deutsche Kammerphilharmonie Bremen (RCA RED SEAL)<br/><br/>
+Paavo J&auml;rvi/Deutsche Kammerphilharmonie Bremen (RCA RED SEAL) (P)<br/><br/>
 
 OTHER RECORDINGS:<br/>
 Szell/Cleveland (MULTCOMB) (SONY)</p>
 
 <h5>Symphony No. 2</h5>
-<p>Paavo J&auml;rvi/Deutsche Kammerphilharmonie Bremen (RCA RED SEAL)<br/>
+<p>Paavo J&auml;rvi/Deutsche Kammerphilharmonie Bremen (MULTCOMB) (RCA RED SEAL) (P)<br/>
 Zinman/Tonhalle (ARTE NOVA) (P) (L.A)</p>
 
 <h5>Symphony No. 3 "Eroica"</h5>
-<p>Rattle/V.P.O  (EMI)<br/>
+<p>Rattle/V.P.O  (MULTCOMB) (EMI)<br/>
 Klemperer/Philharmonia (1955) (MONO) (MULTCOMB)<br/>
-Scherchen/Vienna State Opera (DG - WESTMINSTER LEGACY) (L.A) - Very quick recording around (~43mins), but never sounds rushed (First movement has repeat)</p>
+Scherchen/Vienna State Opera (DG - WESTMINSTER LEGACY) (L.A) - Very quick recording around (~43mins), but never sounds rushed (First movement has repeat!)<br/>
+Bernstein/New York Philharmonic (MULTCOMB) (SONY)<br/>
+Szell/Cleveland (MULTCOMB) (SONY)</p>
 
 <h5>Symphony No. 4</h5>
 <p>Haitink/C.O (MULTCOMB) (PHILIPS)  (L.A)<br/>
@@ -349,6 +350,7 @@ Vanska/Minnesota (BIS)</p>
 
 <h5>Symphony No. 5 "Fate"</h5>
 <p>Kleiber/V.P.O (DG)<br/>
+Szell/C.O (PHILIPS)<br/>
 Karajan/B.P.O (1977) (MULTCOMB) (DG)<br/>
 Klemperer/Philharmonia (1955) (MONO) (MULTCOMB)<br/><br/>
 
@@ -358,7 +360,9 @@ Vanska/Minnesota (BIS)<br/></p>
 <h5>Symphony No. 6 "Pastoral"</h5>
 <p>The most popular symphony of Beethoven's and of all symphonies:<br/>
 Wand/NDR (MULTCOMB) (RCA)<br/>
-Gardiner/Orchestre R&eacute;voltionnaire et Romantique (ARCHIV) (P)</p>
+Gardiner/Orchestre R&eacute;voltionnaire et Romantique (ARCHIV) (P)<br/>
+Szell/Cleveland (MULTCOMB) (SONY)<br/>
+Tennstedt/L.P.O (EMI)</p>
 
 <p>It is worth mentioning that the highly recommended B&ouml;hm/V.P.O (DG)
 recording has a very slow second movement, lasting nearly a third
@@ -369,32 +373,36 @@ and someone suggested after many listens you will consider this your
 favourite. Maybe, but this is probably not a first recording to get.</p>
 
 <h5>Symphony No. 7</h5>
-<p>Kleiber/V.P.O (DG)<br/>
+<p>Honeck/Pittsburgh Symphony (REFERENCE RECORDINGS)<br/>
+Kleiber/V.P.O (DG)<br/>
 Klemperer/Philharmonia (1955) (MULTCOMB)<br/>
 Karajan/B.P.O (1977) (MULTCOMB) (DG)</p>
 
 <h5>Symphony No. 8</h5>
-<p>Haitink/C.O (MULTCOMB) (PHILIPS) (L.A)<br/>
+<p>Casals/Marlboro Festival (SONY)<br/>
+Haitink/C.O (MULTCOMB) (PHILIPS) (L.A)<br/>
 Norrington/London Classical Players (EMI) (P) - Exciting without going overboard<br/>
-Harnencourt/C.O.E (TELDEC)</p>
+Harnencourt/C.O.E (TELDEC)<br/>
+Kletzki/Czech Philharmanic (SUPRAPHON)</p>
 
 <h5>Symphony No. 9 "Choral"</h5>
 <p>Fricsay/B.P.O (DG) - Incidently, the first stereo recording of this work. Rousing!<br/>
+Szell/Cleveland (MULTCOMB) (SONY)<br/>
+Kubelik/B.R.S.O (1982) (ORFEO)<br/>
 Toscanini/NBC Symphony (1952) (MULTCOMB)<br/><br/>
 
 OTHER RECORDINGS:<br/>
-Szell/Cleveland (SONY)<br/>
-Furtw&auml;ngler/Philharmonia (1951) (MONO) (ORFEO) - The actual Bayreuth recording. Not the Legge edit, where rehearsal material is mixed with the final performance like the Warner/Emi and Naxos issues!<br/>
-Furtw&auml;ngler/Philharmonia (1954) (MONO) (TAHRA)<br/>
-Kubelik/B.R.S.O (DG)<br/></p>
+Furtw&auml;ngler/Philharmonia (1951) (MONO) (ORFEO) - The actual Bayreuth recording. Not the Legge edit, where rehearsal material is mixed with the final performance like the Warner/Emi and Naxos issues!<br/></p>
 </li>
 
 <li id="beePC">
 <h4><a href="#beePC">Piano Concerti (5)</a></h4>
 
 <p>OTHER RECORDINGS:<br/>
-Critics Best all round cycle Perahia/Haitink/C.O (SONY)<br/>
-Also Goode/Fischer/Budapest Festival (NONESUCH)</p>
+Critics Best all round cycles:<br/>
+Perahia/Haitink/C.O (SONY)<br/>
+Hough/Lintu/Finnish Radio Symphony (HYPERION)<br/>
+Serkin/Kubelik/Bavarion Radio Symphony (ORFEO)</p>
 
 <h5>Piano Concerto No. 1</h5>
 <p>Michelangeli/Giulini/Vienna Symphony (DG)<br/>
@@ -407,7 +415,7 @@ Serkin/Ormandy/Philadelphia Rudolf Serkin Plays Beethoven Concertos, Sonatas and
 
 <h5>Piano Concerto No. 3</h5>
 <p>Michelangeli/Giulini/Vienna Symphony (DG)<br/>
-Pollini/Abbado/B.P.O (DG) - Odd non-intrusive cough<br/>
+Pollini/Abbado/B.P.O (MULTCOMB) (DG) - Odd non-intrusive cough<br/>
 Fleisher/Szell/Cleveland (MULTCOMB) (SONY) - Classical style but still exciting</p>
 
 <h5>Piano Concerto No. 5 "Emperor"</h5>
@@ -418,10 +426,14 @@ Zimerman/Bernstein/V.P.O (MULTCOMB) (DG) (L.A)</p>
 
 <li id="beePS">
 <h4><a href="#beePS">Piano Sonatas (32)</a></h4>
-<p>Kovacevich Beethoven: The Complete Piano Sonatas, Bagatelles (EMI)<br/><br/>
 
-OTHER RECORDINGS:<br/>
-Critics Best all round cycle Goode (NONESUCH)</p>
+<p>OTHER RECORDINGS:<br/>
+Critics Best all round cycles:<br/>
+Biss (ORCHID CLASSICS)<br/>
+Kovacevich (EMI)<br/>
+Kempff (1951 - 56) (MONO) (MULTCOMB)<br/>
+Gulda (1953 - 54) (MONO) (ORFEO)<br/>
+Backhaus (1953 - 69) (DECCA)</p>
 
 <h5>Piano Sonata No. 1</h5>
 <p>Bavouzet Beethoven: Piano Sonatas Volume 1 (CHANDOS)</p>
@@ -435,7 +447,7 @@ Bavouzet Beethoven: Piano Sonatas Volume 1 (CHANDOS) - Sounds spontaneous (not m
 Serkin (1962) (MULTCOMB) (SONY)<br/>
 Barenboim Beethoven: Piano Sonatas 8, 14 &amp; 23 (EMI)<br/>
 Schiff The Piano Sonatas Vol 2 (ECM NEW SERIES)<br/>
-Kempff Piano Sonatas 8, 14, 21 &amp; 23 (DG)</p>
+Kempff Piano Sonatas 8, 14, 21 &amp; 23 (1964-65) (DG)</p>
 
 <h5>Piano Sonata No. 11</h5>
 <p>Serkin (1970/73) (MULTCOMB) (SONY)</p>
@@ -489,7 +501,7 @@ Anderszewski (VIRGIN CLASSICS/ERATO)</p>
 <h5>String Quartet No. 7 Op. 59 No. 1</h5>
 <p>Quatuor Sine Nomine (CLAVES)<br/>
 Talich Quartet (MULTCOMB) (CALLIOPE)<br/>
-Vegh Quartet (MULTCOMB) (70s) (NA&Iuml;VE)</p>
+Vegh Quartet (MULTCOMB) (1970s) (NA&Iuml;VE)</p>
 
 <h5>String Quartet No. 8 Op. 59 No. 2</h5>
 <p>Quatuor Sine Nomine (CLAVES)<br/>
@@ -504,21 +516,26 @@ Borodin Quartet (MULTCOMB) (CHANDOS)<br/>
 Talich Quartet (MULTCOMB)</p>
 
 <h5>String Quartet No. 11 Op. 95 "Serioso"</h5>
-<p>Vegh Quartet (MULTCOMB) (70s) (NA&Iuml;VE)</p>
+<p>Vegh Quartet (MULTCOMB) (1972 - 1974) (NA&Iuml;VE)<br/>
+Guarneri Quartet (1966 - 1969) (MULTCOMB) (RCA RED SEAL)</p>
 
 <h5>String Quartet No. 13 Op. 130</h5>
 <p>Borodin Quartet (MULTCOMB) (CHANDOS)<br/>
-Amadeus Quartet (MULTCOMB) (DG)</p>
+Amadeus Quartet (MULTCOMB) (DG)<br/>
+Emerson Quartet (MULTCOMB) (DG)</p>
 
 <h5>String Quartet No. 14 Op. 131</h5>
-<p>Quartetto Italiano (MULTCOMB) (PHILIPS)<br/>
-Cleveland Quartet (MULTCOMB) (TELARC)</p>
+<p>Budapest Quartet (1951 - 1952) (MONO) (MULTOCOMB)<br/>
+Quartetto Italiano (MULTCOMB) (PHILIPS)<br/>
+Cleveland Quartet (MULTCOMB) (TELARC)<br/>
+Emerson Quartet (MULTCOMB) (DG)</p>
 
 <h5>String Quartet No. 15 Op. 132</h5>
 <p>Alban Berg Quartet (1983) (EMI)</p>
 
 <h5>String Quartet No. 16 Op. 135</h5>
-<p>Lindsay Quartet (1st Cycle) (MULTCOMB)</p>
+<p>Lindsay Quartet (1970 - 1983) (MULTCOMB)<br/>
+Emerson Quartet (MULTCOMB) (DG)</p>
 </li>
 
 <li id="beeVC">
@@ -555,6 +572,7 @@ Karajan/B.P.O (1978) (MULTCOMB) (DG)</p>
 <p>Steinberg/Pittsburgh Symphony (EVEREST) (L.A)<br/>
 Sanderling/Staatskapelle Dresden (MULTCOMB) (RCA RED SEAL)<br/>
 Dorati/L.S.O (MERCURY LIVING PRESENCE)<br/>
+Berglund/C.O.E Brahms: The Symphonies (ONDINE)<br/>
 Chailly/Leipzig Gewandhaus (2013) (DECCA)</p>
 </li>
 
@@ -575,6 +593,7 @@ See www.abruckner.com for more details</p>
 
 <h5>Symphony No. 3</h5>
 <p>Tennstedt/B.R.S.O (PROFIL) (1889)<br/>
+Zweden/Netherlands Radio Philharmanic (CHALLENGE) (1877)<br/>
 Knappertsbusch/V.P.O (TESTAMENT) (1890)<br/><br/>
 
 OTHER RECORDINGS:<br/>
@@ -586,9 +605,16 @@ Haitink/C.O (MULTCOMB) (1881)<br/>
 Klemperer/B.R.S.O (EMI) (1886)<br/>
 Karajan/B.P.O (1975) (MULTCOMB) (DG) (1881)</p>
 
+<h5>Symphony No. 5</h5>
+<p>Wand/NDR Symphony (1989) (MULTCOMB) (RCA RED SEAL) (1878)<br/>
+Wand/B.P.O (RCA RED SEAL) (1878)<br/>
+Matacic/Czech Philharmanic (SUPRAPHON) (1878)<br/>
+Zweden/Netherlands Radio Philharmonic (MULTCOMB) (1878)</p>
+
 <h5>Symphony No. 6</h5>
 <p>Stein/V.P.O (DECCA) (1881)<br/>
-Sawallisch/Bavarian State (ORFEO) (1881)</p>
+Sawallisch/Bavarian State (ORFEO) (1881)<br/>
+Keilberth/B.P.O (MULTCOMB) (L.A) (1881)</p>
 
 <h5>Symphony No. 7</h5>
 <p>Karajan/V.P.O (DG) (1885)<br/>
@@ -597,12 +623,17 @@ Furtw&auml;ngler/B.P.O (1949) (MULTCOMB) (1885)</p>
 
 <h5>Symphony No. 8</h5>
 <p>Kubelik/B.R.S.O (BR KLASSIK) (1887/90) - Deals well with the last movement<br/>
-Knappertsbusch/Munich Philharmonia (1963) (LIVING STAGE) (1892) (L.A) - The Living Stage CD is actually the studio recording of 1963. See www.abruckner.com for track times</p>
+Knappertsbusch/Munich Philharmonia (1963) (LIVING STAGE) (1892) (L.A) - The Living Stage CD is actually the studio recording of 1963. See www.abruckner.com for track times<br/>
+Thielemann/Staatskapelle Dresden (PROFIL) (1887/90)<br/>
+Kegel/Leipzig Radio Symphony (13-19/3/75) (MULTCOMB) (L.A) (1887/90)</p>
 
 <h5>Symphony No. 9</h5>
 <p>Schuricht/V.P.O (DECCA) (1894)<br/>
 Horenstein/BBC Symphony (1970) (MULTCOMB) (1894)<br/>
-Harnoncourt/V.P.O (RCA RED SEAL) (1894)</p>
+Harnoncourt/V.P.O (RCA RED SEAL) (1894)<br/><br/>
+
+OTHER RECORDINGS:<br/>
+Skrowaczewski/Minnesota (REFERENCE RECORDINGS) (1894)</p>
 </li>
 
 <li id="choPC">
@@ -627,8 +658,11 @@ Fliter/Markl/Scottish Chamber (LINN)</p>
 
 <li id="choN">
 <h4><a href="#choN">Nocturnes (21)</a></h4>
-<p>OTHER RECORDINGS:<br/>Pires (DG) (21)<br/>
-Rubinstein (1930s) (MULTCOMB) (EMI) (19) </p>
+<p>OTHER RECORDINGS:<br/>
+Pires (DG) (21)<br/>
+Leonskaja (APEX) (21)<br/>
+Moravec (SUPRAPHON) (19)<br/>
+Goerner (ALPHA) (21)</p>
 </li>
 
 <li id="dvoSy">
@@ -810,10 +844,11 @@ Walter/Columbia Symphony (MULTCOMB) (CBS/SONY)</p>
 <p>Goode (NONESUCH)</p>
 
 <h5>Piano Sonata No. 9</h5>
-<p>Pires (3rd Recording) (MULTCOMB) (DG)<br/><br/>
+<p>Pires (MULTCOMB) (DG)<br/><br/>
 
 OTHER RECORDINGS:<br/>
-Brendel (PHILIPS)</p>
+Brendel (PHILIPS)<br/>
+Ashkenazy (DECCA)</p>
 
 <h5>Piano Sonata No. 11</h5>
 <p>Perahia (SONY) (L.A)</p>
@@ -969,10 +1004,11 @@ Carmignola/Marcon/Venice Baroque (SONY) (P) - Refined and energetic</p>
 <li id="vivGLM">
 <h4><a href="#vivGLM">Guitar/Lute/Mandolin</a></h4>
 
-<h5>Concerto in D (RV.93)</h5>
+<h5>Concerto in D (RV. 93)</h5>
 <p>Bream/Gardiner/Monteverdi (MULTCOMB)</p>
 <h5>Concerto in G (RV. 532)</h5>
-<p>Frati/Bianchi/Scimone/I Solisti Veneti (MULTCOMB) (ERATO)</p>
+<p>Frati/Bianchi/Scimone/I Solisti Veneti (MULTCOMB) (ERATO)<br/>
+Tyler/Jeffrey/Pinnock/English Concert (MULTCOMB) (DG)</p>
 </li>
 
 <li id="vauLA">
