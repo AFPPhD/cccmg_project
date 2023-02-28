@@ -252,7 +252,44 @@ label.checkbtn {
 	display:none;
 }
 
-@media screen and (max-width: 1041px) { // Menu Bar for small devices
+@media only screen and (max-width: 22.438em) {
+
+	.container {
+		// width: 319px; // min-width stops reflow
+		// min-width: 45ch;
+		// h4 {
+		// 	font-size: 1rem; // Stop band text leaking out. TODO: Change default?
+		// }
+		// table {
+		// 	max-width: 100%;
+		// }
+		letter-spacing: 0.05em; // Make text more readable at lower font sizes
+		//width: 200%;
+		// height: 5242px; // Maintains aspect ratio. Use instead of resize - makes text flow to next line as width decreases
+		// left: 0%;
+		// margin: auto;
+		// width: 100%;
+		// max-width: 100%; // Stops text shrink with fixed height 5242px - Flows to next line instead. Without or with min-width, no flow just shrinks
+		// height: 100%;
+		// min-width: 100vw;
+		// word-wrap: break-word;
+		// overflow-wrap: break-word;
+		// text-overflow: ellipsis;
+		//max-width: 680px; // min-width and width 100% to stop resize ?
+
+		// margin-left: -50%; ?
+
+		// width: fit-content;
+		//overflow: hidden; // Need a non-visible option for resize to work
+		// white-space: nowrap;
+		//resize: none; // Keeps container at 100% body width, for 200% solution, while browser size decreases
+		// overflow-x:scroll;
+		// text-overflow: ellipsis;
+
+	}
+}
+
+@media screen and (max-width: 65.063em) { // Menu Bar for small devices
 
 	.topbar {
 		//text-align: unset; // Stop centre align span text for larger devices
@@ -331,7 +368,7 @@ label.checkbtn {
 		display: none;
 	}
 
-	@media screen and (max-height: 639px) {
+	@media screen and (max-height: 39.938em) {
 		.navigation {
 			//scrollbar-gutter: stable;
 			//max-height: var(--menu-height) +6px;
@@ -341,7 +378,7 @@ label.checkbtn {
 		}
 	}
 
-	@media screen and (min-height: 641px) {
+	@media screen and (min-height: 40.063em) {
 		.navigation {
 			//--menu-height: 590px;
 			top: calc((100vh - (var(--menu-height) + 6px))/2);
@@ -463,7 +500,7 @@ label.checkbtn {
 
 }
 
-@media screen and (min-width: 1042px) and (max-height: 739px) { // Changed from 738px, due to offset change for .navigation from 68 to 69px
+@media screen and (min-width: 65.125em) and (max-height: 46.188em) { // Changed from 738px, due to offset change for .navigation from 68 to 69px
 	.navigation {
 		max-height: 78.5%; // In order to scroll to Colour menu needed to reduce this from 100%
 		overflow-y: overlay;
@@ -495,7 +532,7 @@ label.checkbtn {
 // 	}
 // }
 
-@media screen and (min-width: 1042px) {
+@media screen and (min-width: 65.125em) {
 
 	.topbar {
 		text-align:center; // Aligns span child
@@ -552,42 +589,42 @@ label.checkbtn {
 
 
 
-@media only screen and (max-width: 359px) {
+// @media only screen and (max-width: 359px) {
 
-	.container {
-		// width: 319px; // min-width stops reflow
-		// min-width: 45ch;
-		// h4 {
-		// 	font-size: 1rem; // Stop band text leaking out. TODO: Change default?
-		// }
-		// table {
-		// 	max-width: 100%;
-		// }
-		letter-spacing: 0.05em; // Make text more readable at lower font sizes
-		//width: 200%;
-		// height: 5242px; // Maintains aspect ratio. Use instead of resize - makes text flow to next line as width decreases
-		// left: 0%;
-		// margin: auto;
-		// width: 100%;
-		// max-width: 100%; // Stops text shrink with fixed height 5242px - Flows to next line instead. Without or with min-width, no flow just shrinks
-		// height: 100%;
-		// min-width: 100vw;
-		// word-wrap: break-word;
-		// overflow-wrap: break-word;
-		// text-overflow: ellipsis;
-		//max-width: 680px; // min-width and width 100% to stop resize ?
+// 	.container {
+// 		// width: 319px; // min-width stops reflow
+// 		// min-width: 45ch;
+// 		// h4 {
+// 		// 	font-size: 1rem; // Stop band text leaking out. TODO: Change default?
+// 		// }
+// 		// table {
+// 		// 	max-width: 100%;
+// 		// }
+// 		letter-spacing: 0.05em; // Make text more readable at lower font sizes
+// 		//width: 200%;
+// 		// height: 5242px; // Maintains aspect ratio. Use instead of resize - makes text flow to next line as width decreases
+// 		// left: 0%;
+// 		// margin: auto;
+// 		// width: 100%;
+// 		// max-width: 100%; // Stops text shrink with fixed height 5242px - Flows to next line instead. Without or with min-width, no flow just shrinks
+// 		// height: 100%;
+// 		// min-width: 100vw;
+// 		// word-wrap: break-word;
+// 		// overflow-wrap: break-word;
+// 		// text-overflow: ellipsis;
+// 		//max-width: 680px; // min-width and width 100% to stop resize ?
 
-		// margin-left: -50%; ?
+// 		// margin-left: -50%; ?
 
-		// width: fit-content;
-		//overflow: hidden; // Need a non-visible option for resize to work
-		// white-space: nowrap;
-		//resize: none; // Keeps container at 100% body width, for 200% solution, while browser size decreases
-		// overflow-x:scroll;
-		// text-overflow: ellipsis;
+// 		// width: fit-content;
+// 		//overflow: hidden; // Need a non-visible option for resize to work
+// 		// white-space: nowrap;
+// 		//resize: none; // Keeps container at 100% body width, for 200% solution, while browser size decreases
+// 		// overflow-x:scroll;
+// 		// text-overflow: ellipsis;
 
-	}
-}
+// 	}
+// }
 
 
 
@@ -661,7 +698,7 @@ label.checkbtn {
 // 	@include MediaQueryStyle (false, true);
 // }
 
-@media screen and (max-width: 1041px) {	// Don't use both min and max width media queries to avoid No Man's Land ?
+@media screen and (max-width: 65.063em) {	// Don't use both min and max width media queries to avoid No Man's Land ?
 
 	// .container {
 	// 	background: #328f1b; // green
@@ -678,7 +715,7 @@ label.checkbtn {
 	// }
 }
 
-@media screen and (min-width: 1042px) {
+@media screen and (min-width: 65.125em) {
 
 	// .container {
 	// 	background: #4F94CD; // light blue
@@ -687,11 +724,11 @@ label.checkbtn {
 	@include MediaQueryStyle (true, false);
 }
 
-@media screen and (min-width: 1921px) {
+// @media screen and (min-width: 1921px) {
 
-	// .container {
-	// 	background: #d43095; // pink
-	// }
+// 	// .container {
+// 	// 	background: #d43095; // pink
+// 	// }
 
-	// @include MediaQueryStyle (true, false); Not needed, set at min-width: 1042px
-}
+// 	// @include MediaQueryStyle (true, false); Not needed, set at min-width: 1042px
+// }
