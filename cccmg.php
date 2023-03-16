@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="css/bvselect.css"/> <!-- Style sheet for Custom dropdown menu using bvselect.js -->
 	<link rel="stylesheet" href="css/main.css"/>	<!-- SASS created file -->
 	<link rel="stylesheet" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
-	<link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+	<link fetchpriority="low" rel="icon" type="image/x-icon" href="images/favicon.ico"/>
 </head>
 
 <body>
@@ -76,7 +76,7 @@
 <!-- <h1 class="flash_header">Casual Collectors' Classical Music Guide</h1>     Eras Bold ITC header shows if javascript enabled -->
 <!-- <h1 class="pngtitle">Casual Collectors' Classical Music Guide</h1> -->
 <div class="pngtitle">
-	<h1><img src="images/Eras_Bold_ITC_transparent.png" alt="Casual Collectors' Classical Music Guide" width="680" height="146"/></h1>
+	<h1><img fetchpriority="high" src="images/Eras_Bold_ITC_transparent.png" alt="Casual Collectors' Classical Music Guide" width="680" height="146"/></h1>
 </div> <!-- Was width="700" height="151" loading="eager" - Any images within the viewport should be loaded eagerly using the browser's defaults -->
 
 <br/>
@@ -1080,12 +1080,12 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 
 
 
-<script
+<!-- <script
 		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"
 		integrity="sha512-P76gN7IRj67pGxPvgHAk33c/iiWfj1oXpAd/8Oz8KPq2+AvIjvJT3iIyuzk6Sk/PxSmR/y8XX78RzHX5G2NGDg=="
 		crossorigin="anonymous">
 		// Needed for animatetext.js
-</script>
+</script> -->
 
 <!-- <script
 			  src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
@@ -1093,9 +1093,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 			  crossorigin="anonymous">
 </script> -->
 
-<script>
+<!-- <script>
 		window.jQuery.ui || document.write('<script defer src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
-</script>
+</script> -->
 
 <!-- < src="js/newcore.js"></> -->
 <!-- < src="js/jquery-1.5.min.js"></> -->
@@ -1114,8 +1114,19 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 <!-- < src="js/flash_header.js"></>                  Embeds Eras Bold ITC header swobject -->
 <script src="js/focus-visible.js"></script> <!-- Provides :focus-visible support for browsers that don't have it -->
 <!-- <script src="js/animatetext.js" defer></script> -->
+<!-- <script
+		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"
+		integrity="sha512-P76gN7IRj67pGxPvgHAk33c/iiWfj1oXpAd/8Oz8KPq2+AvIjvJT3iIyuzk6Sk/PxSmR/y8XX78RzHX5G2NGDg=="
+		crossorigin="anonymous">
+		// Needed for animatetext.js
+</script> -->
 <script>
 	if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"
+		integrity="sha512-P76gN7IRj67pGxPvgHAk33c/iiWfj1oXpAd/8Oz8KPq2+AvIjvJT3iIyuzk6Sk/PxSmR/y8XX78RzHX5G2NGDg=="
+		crossorigin="anonymous">
+		// Needed for animatetext.js
+		window.jQuery.ui || document.write('<script defer src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
 	 	document.write('<script defer src="./js/animatetext.js"><\/script>');
 	}
 	// Optionally switch off, for motion reduce preference, text downword scroll animation when page loads
