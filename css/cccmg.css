@@ -75,6 +75,12 @@
 			height:auto; */
 		}
 
+		h1 > img {
+			aspect-ratio: 4.66;
+			object-fit: cover;  /* Stops stretching - maintains aspect ratio by cropping when image not correct aspect ratio */
+		} /* The following complaint is removed: Serves images with low resolution - Image natural dimensions should be proportional */
+		/* to the display size and the pixel ratio to maximize image clarity */
+
 		h1 {
 			font-size: 2.5rem;	/* Text in pixels doesn’t scale up (or down) when you resize it in Old Internet Explorer browsers */
 			text-align: center;	/* Using rem/em to size text, gets rids of this problem */
