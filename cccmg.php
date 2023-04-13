@@ -15,7 +15,9 @@
 	<!-- <link rel="stylesheet" href="/path/to/my.css" media="print" onload="this.media='all'"> Remaining CSS can load asynchronously so it doesn’t delay page rendering -->
 	<!-- <link rel="preload" href="/my-font.woff2" crossorigin="anonymous" as="font" type="font/woff2"> -->
 	<!-- <link rel="preload" href="css/material_icons.css"/> -->
-	<!-- <link rel="preload" src="images/Eras_Bold_ITC_transparent.png" as="image"/> -->
+	<!-- images/Eras_Bold_ITC_transparent-2x.png 976w"> -->
+		<!-- images/Eras_Bold_ITC_transparent-4x.png 1952w,
+        images/Eras_Bold_ITC_transparent-8x.png 3904w" -->
 	<link rel="stylesheet" href="css/cccmg.css"/>
 	<link rel="stylesheet" href="css/material_icons.css"/>
 	<link rel="stylesheet" href="css/navigation.css"/>
@@ -23,7 +25,8 @@
 	<link rel="stylesheet" href="css/bvselect.css"/> <!-- Style sheet for Custom dropdown menu using bvselect.js -->
 	<link rel="stylesheet" href="css/main.css"/>	<!-- SASS created file -->
 	<link rel="stylesheet" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
-	<link fetchpriority="low" rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+	<link rel="preload" as="image" imagesrcset="images/Eras_Bold_ITC_transparent.png 488w, images/Eras_Bold_ITC_transparent-2x.png 976w" fetchpriority="high"/>
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico" fetchpriority="low"/>
 </head>
 
 <body>
@@ -76,7 +79,11 @@
 <!-- <h1 class="flash_header">Casual Collectors' Classical Music Guide</h1>     Eras Bold ITC header shows if javascript enabled -->
 <!-- <h1 class="pngtitle">Casual Collectors' Classical Music Guide</h1> -->
 <div class="pngtitle">
-	<h1><img fetchpriority="high" src="images/Eras_Bold_ITC_transparent.png" alt="Casual Collectors' Classical Music Guide" width="680" height="146"/></h1>
+	<h1><img srcset="images/Eras_Bold_ITC_transparent.png 488w,
+	images/Eras_Bold_ITC_transparent-2x.png 976w"
+	sizes="(max-width: 488px) 488px, 976px"
+  	src="images/Eras_Bold_ITC_transparent.jpg"
+	alt="Casual Collectors' Classical Music Guide" width="680" height="146"/></h1>
 </div> <!-- Was width="700" height="151" loading="eager" - Any images within the viewport should be loaded eagerly using the browser's defaults -->
 
 <br/>
@@ -1052,9 +1059,32 @@ Bean/Boult/New Philharmonic (EMI)</p>
 		crossorigin="anonymous">
 </script>
 
+
 <script>
-		window.jQuery || document.write('<script defer src="./js/jquery-1.7.2.min.js"><\/script>');
+	window.jQuery || document.write('<script src="./js/jquery-1.7.2.min.js"><\/script>');
+	// if (!window.jQuery) {
+		// let sNew = document.createElement("script");
+		// const scriptParentNode = document.currentScript;
+		// let html = "<script> src=\"/js/jquery-1.7.2.min.js\"><\/script>";
+		// scriptParentNode.insertAdjacentHTML('afterbegin', html);
+			// let sNew = document.createElement("script");
+			// sNew.src = "/js/jquery-1.7.2.min.js";
+			// const scriptParentNode = document.currentScript;
+			//sNew.onload = function(e){};
+			//document.head.appendChild(sNew);
+			//scriptParentNode.append(sNew);
+			//scriptParentNode.appendChild(sNew);
+		// const loadScript = async (url) => {
+		// const response = await fetch (url);
+		// const script = await response.text();
+		// //eval(script);
+		// }
+		// const scriptUrl = "/js/jquery-1.7.2.min.js";
+		// loadScript(scriptUrl);
+
+	// }
 </script>
+
 
 <!-- <script
 	src="https://code.jquery.com/jquery-migrate-1.4.1.min.js">
@@ -1093,10 +1123,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 			  crossorigin="anonymous">
 </script> -->
 
-<!-- <script>
-		window.jQuery.ui || document.write('<script defer src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
-</script> -->
-
 <!-- < src="js/newcore.js"></> -->
 <!-- < src="js/jquery-1.5.min.js"></> -->
 <!-- < src="js/jquery-ui-1.8.10.custom.min.js"></> Allows animation of floating menu and text scroll -->
@@ -1114,22 +1140,89 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 <!-- < src="js/flash_header.js"></>                  Embeds Eras Bold ITC header swobject -->
 <script src="js/focus-visible.js"></script> <!-- Provides :focus-visible support for browsers that don't have it -->
 <!-- <script src="js/animatetext.js" defer></script> -->
+
 <!-- <script
 		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"
 		integrity="sha512-P76gN7IRj67pGxPvgHAk33c/iiWfj1oXpAd/8Oz8KPq2+AvIjvJT3iIyuzk6Sk/PxSmR/y8XX78RzHX5G2NGDg=="
 		crossorigin="anonymous">
+		//if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
 		// Needed for animatetext.js
 </script> -->
+
 <script>
-	if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"
-		integrity="sha512-P76gN7IRj67pGxPvgHAk33c/iiWfj1oXpAd/8Oz8KPq2+AvIjvJT3iIyuzk6Sk/PxSmR/y8XX78RzHX5G2NGDg=="
-		crossorigin="anonymous">
-		// Needed for animatetext.js
-		window.jQuery.ui || document.write('<script defer src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
-	 	document.write('<script defer src="./js/animatetext.js"><\/script>');
+	if (window.matchMedia('(min-width: 65.125em)').matches
+	&& window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+
+	const loadScript = async (url) => {
+		const response = await fetch (url);
+		const script = await response.text();
+		eval(script); // Needed to make animation work and not break display
 	}
-	// Optionally switch off, for motion reduce preference, text downword scroll animation when page loads
+	const scriptUrl = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js";
+	loadScript(scriptUrl);
+
+	//var s = document.getElementsByTagName('script');
+	//s = s[s.length - 1]; // Find last script
+	//var sLast = document.getElementById('myscript');
+	//let sLast = document.currentScript;
+   	//const sNew = document.createElement("script");
+	// let sNew2 = document.createElement("script");
+	//sNew.defer = true;
+	//sNew.id = "firstTry";
+	//sNew.src = "/js/jquery-ui-1.8.10.custom.min.js";
+	//sNew.src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js";
+	// sNew2.src = "/js/animatetext.js";
+
+	// let html = "<script> defer src=\"/js/jquery-ui-1.8.10.custom.min.js\"><\/script>";
+	// let html2 = "<script> defer src=\"/js/animatetext.js\"><\/script>";
+	//sLast.append(sNew);
+	//sLast.append(sNew2);
+
+	//    sLast.insertAdjacentHTML('afterbegin', html);
+	//    sLast.insertAdjacentHTML('beforeend', html2);
+
+		// sLast.appendChild(sNew);
+		// sLast.appendChild(sNew2);
+		//document.body.appendChild(sNew);
+		//document.body.appendChild(sNew2);
+
+		if (!window.jQuery.ui) {
+			//sNew.setAttribute("src", "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js");
+
+			const sNew2 = document.createElement("script");
+			sNew2.defer = true;
+			sNew2.id = "secondTry";
+			sNew2.src = "/js/jquery-ui-1.8.10.custom.min.js";
+			document.body.appendChild(sNew2);
+
+			//const scriptParent = document.currentScript;
+			//const scriptParent = document.getElementById("scriptParent");
+			//sNew.scriptParent.replaceChild(sNew2, sNew);
+			// eval(sNew2);
+
+			//document.getElementById("firstTry").replaceWith('#secondTry');
+			//eval('#secondTry');
+		}
+
+		// window.jQuery.ui || document.write('<script defer src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
+	 	//document.write('<script defer src="/js/animatetext.js"><\/script>');
+	// }
+	// Optionally switch off for non-mobile users, the  motion reduce preference, making text downword scroll animation when page loads
+
+	window.onload = function downloadJSAtOnload() {
+		var element = document.createElement("script");
+		element.src = "/js/animatetext.js";
+		document.body.appendChild(element);
+	} 	// Ensure full page load before animation
+
+	//window.onload = downloadJSAtOnload(); // with function definition not working
+
+	// if (window.addEventListener)
+	// window.addEventListener("load", downloadJSAtOnload, false);
+	// else if (window.attachEvent)
+	// window.attachEvent("onload", downloadJSAtOnload);
+	// else window.onload = downloadJSAtOnload;
+	}
 </script>
 </body>
 </html>
