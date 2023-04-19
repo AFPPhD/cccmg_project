@@ -25,7 +25,7 @@
 	<link rel="stylesheet" href="css/bvselect.css"/> <!-- Style sheet for Custom dropdown menu using bvselect.js -->
 	<link rel="stylesheet" href="css/main.css"/>	<!-- SASS created file -->
 	<link rel="stylesheet" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
-	<link rel="preload" as="image" imagesrcset="images/Eras_Bold_ITC_transparent.png 488w, images/Eras_Bold_ITC_transparent-2x.png 976w" fetchpriority="high"/>
+	<link rel="preload" as="image" imagesrcset="images/Eras_Bold_ITC_transparent.webp 488w, images/Eras_Bold_ITC_transparent-2x.webp 976w" fetchpriority="high"/>
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" fetchpriority="low"/>
 </head>
 
@@ -34,7 +34,7 @@
 <div class="topbar"><a href="#" id ="top">CCCMG</a><!-- href added to get rid of crawlable complaint in SEO check (and to make focusable) --><!-- Could use img type for logo -->
 <span>Shortcuts</span><!-- Text -->
 <input type="checkbox" aria-label="hidden" id="toggle"/><!-- Checkbox, which will not be displayed -->
-<label for="toggle" aria-label="Toggle menu" role="checkbox" class="checkbtn"></label><!-- Mobile Hamburger Menu Icon disabled aria-disabled="true" &#9776; -->
+<label for="toggle" aria-label="Toggle menu" type="checkbox" class="checkbtn"></label><!-- Mobile Hamburger Menu Icon disabled aria-disabled="true" &#9776; -->
 <div class="background"><div class="blur"></div></div>
 <div class="navigation" role="navigation">
 		<h3>Shortcuts</h3>  <!-- TODO: Remove hidden class as this is removing one click jump to link functionality -->
@@ -79,10 +79,10 @@
 <!-- <h1 class="flash_header">Casual Collectors' Classical Music Guide</h1>     Eras Bold ITC header shows if javascript enabled -->
 <!-- <h1 class="pngtitle">Casual Collectors' Classical Music Guide</h1> -->
 <div class="pngtitle">
-	<h1><img srcset="images/Eras_Bold_ITC_transparent.png 488w,
-	images/Eras_Bold_ITC_transparent-2x.png 976w"
+	<h1><img srcset="images/Eras_Bold_ITC_transparent.webp 488w,
+	images/Eras_Bold_ITC_transparent-2x.webp 976w"
 	sizes="(max-width: 488px) 488px, 976px"
-  	src="images/Eras_Bold_ITC_transparent.jpg"
+  	src="images/Eras_Bold_ITC_transparent.webp"
 	alt="Casual Collectors' Classical Music Guide" width="680" height="146"/></h1>
 </div> <!-- Was width="700" height="151" loading="eager" - Any images within the viewport should be loaded eagerly using the browser's defaults -->
 
