@@ -1059,25 +1059,33 @@ Bean/Boult/New Philharmonic (EMI)</p>
 		crossorigin="anonymous">
 </script>
 
+<!-- <script src = "./js/jquery-1.7.2.min.js"></script> -->
 
 <script>
 	window.jQuery || document.write('<script src="./js/jquery-1.7.2.min.js"><\/script>');
+	// var preload = document.createElement("link");
+	// preload.href = "./js/jquery-1.7.2.min.js";
+	// preload.rel = "preload";
+	// preload.as = "script";
+	// document.head.appendChild(preload);
 	// if (!window.jQuery) {
-		// let sNew = document.createElement("script");
+		// var sNew = document.createElement("script");
 		// const scriptParentNode = document.currentScript;
 		// let html = "<script> src=\"/js/jquery-1.7.2.min.js\"><\/script>";
 		// scriptParentNode.insertAdjacentHTML('afterbegin', html);
 			// let sNew = document.createElement("script");
-			// sNew.src = "/js/jquery-1.7.2.min.js";
+		// sNew.type = "text/javascript";
+		// sNew.src = "/js/jquery-1.7.2.min.js";
 			// const scriptParentNode = document.currentScript;
 			//sNew.onload = function(e){};
-			//document.head.appendChild(sNew);
+		// document.head.appendChild(sNew);
+
 			//scriptParentNode.append(sNew);
 			//scriptParentNode.appendChild(sNew);
 		// const loadScript = async (url) => {
 		// const response = await fetch (url);
 		// const script = await response.text();
-		// //eval(script);
+		// eval(sNew);
 		// }
 		// const scriptUrl = "/js/jquery-1.7.2.min.js";
 		// loadScript(scriptUrl);
@@ -1129,6 +1137,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 <script defer src="js/respond.min.js"></script>	<!-- TODO: Replace possibly -->	<!-- Polyfill for browsers not recognising min-width, max-width and media types -->
 <script defer src="js/core.js"></script>	<!-- Needed for accordion_mod -->
 <!-- <script src="js/show-dropdown.js"></script> Not working -->
+<!-- <script> var script = document.createElement("script");
+script.src = "./js/jquery-1.7.2.min.js";
+document.head.appendChild(script); </script> -->
 <script defer src="js/hide_no_javascript_mes.js"></script>
 <script defer src="js/bvselect.js"></script> <!-- Custom dropdown menu that allows for different highlight colours -->
 <script defer src="js/change_colour.js"></script>
@@ -1138,7 +1149,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 <!-- <script src="js/scroll_to_link.js"></script> -->
 <!-- < src="js/jquery.swfobject.1-1-1.js"></> Was for incorporating flash header image, which is now a png -->
 <!-- < src="js/flash_header.js"></>                  Embeds Eras Bold ITC header swobject -->
-<script src="js/focus-visible.js"></script> <!-- Provides :focus-visible support for browsers that don't have it -->
+<script defer src="js/focus-visible.js"></script> <!-- Provides :focus-visible support for browsers that don't have it -->
 <!-- <script src="js/animatetext.js" defer></script> -->
 
 <!-- <script
@@ -1149,7 +1160,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 		// Needed for animatetext.js
 </script> -->
 
-
-<script src="js/optional_animate.js"></script>
+<script defer src="js/optional_animate.js"></script>
 </body>
 </html>
