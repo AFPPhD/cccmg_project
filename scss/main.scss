@@ -73,6 +73,7 @@ $colour-scheme-higher-contrast: (
 		--menu-height: 536px; // Default non-js small devices navigation bar height
 		--thumb: #3279B3; // Default thumb colour for Firefox custom scrollbar
 		--scrollbar: #204c75; // Default background colour for Firefox custom scrollbar
+		--doc-height: 11250px; // Default non-js small devices hack for mobile 100vh not working
 	}
 
 	// Default High Contrast Blue needs implementing to override normal default Blue ?
@@ -284,7 +285,7 @@ label.checkbtn {
 // 	}
 // }
 
-@media screen and (min-width: 65.125em) {
+@media screen and (min-width: 65.125em) { // min-width: 1042px
 
 	.topbar {
 		text-align:center; // Aligns span child
@@ -302,7 +303,7 @@ label.checkbtn {
 		display: none;
 	}
 
-	@media screen and (max-height: 46.188em) { // Changed from 738px, due to offset change for .navigation from 68 to 69px
+	@media screen and (max-height: 46.188em) { // Changed from 738px to 739px (46.188em), due to offset change for .navigation from 68 to 69px
 		.navigation {
 			max-height: 78.5%; // In order to scroll to Colour menu needed to reduce this from 100%
 			overflow-y: overlay;
@@ -311,11 +312,11 @@ label.checkbtn {
 	}
 }
 
-@media screen and (max-width: 65.063em) { // Menu Bar for small devices
+@media screen and (max-width: 65.063em) { // Menu Bar for small devices max-width: 1041px
 
 	.topbar {
 		//text-align: unset; // Stop centre align span text for larger devices
-		width: auto;
+		//width: auto;
 		//width: 100%;
 		min-width: 680px;
 		// margin-left: 1%;
@@ -501,8 +502,7 @@ label.checkbtn {
 				// background-size: cover;
 				//height: 100%;
 				//height: 100vh; // TODO: Change this because of problems with mobiles?  e.g min-height: calc(100vh - 42px)
-				min-height: 100vh; // Part of mobile 100vh height problem fix
-				// width: 100%;
+				//min-height: 100vh; // Part of mobile 100vh height problem fix
 				//backdrop-filter: blur(10px);
 			}
 
@@ -516,11 +516,15 @@ label.checkbtn {
 				//height: 100%;
 				//height: 100vh; // TODO: Change this because of problems with mobiles? e.g min-height: calc(100vh - 80px)
 				min-height: 100vh; // Part of mobile 100vh height problem fix
+				//background-size:100% 100%;
 				width: 100%;
+				//width: 100dvw;
+				//height: 11250px; /* Calc this with javascript */
+				height: var(--doc-height);
 			}
 	//}
 
-	@media screen and (min-height: 40.063em) {
+	@media screen and (min-height: 40.063em) { // min-height: 641px
 		.navigation {
 			//--menu-height: 590px;
 			top: calc((100vh - (var(--menu-height) + 6px))/2);
@@ -528,7 +532,7 @@ label.checkbtn {
 	}
 
 
-	@media screen and (max-height: 39.938em) {
+	@media screen and (max-height: 39.938em) { // max-height: 639px
 		.navigation {
 			//scrollbar-gutter: stable;
 			//max-height: var(--menu-height) +6px;

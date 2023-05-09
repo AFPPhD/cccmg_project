@@ -22,17 +22,29 @@
         }
     }
 
-    $(window).on('resize', function () {
+    function calculateDocumentHeight() {
+        var root = document.querySelector(':root');
+        var vh = document.documentElement.scrollHeight
+        root.style.setProperty('--doc-height', vh + 'px');
+    }
+
+    $(window).on('resize', function() {
         // resize event fires when the document window is resized.
         // Use the .resize(handler)(shorthand for .on('resize', handler)) to bind an event handler to the resize event
         // The event listener fires when a change is detected
         setNavigationMenuHeight();
+        calculateDocumentHeight();
         // var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
         // if (smallMenu) {
         //     $('.navigation').height('717px'); // Was 605px. Extend navbar height to hold bvselect (or default menu 574px) Change Colour Button
         // } else {
         //     $('.navigation').height('670px');
         // }
+    });
+
+    $(window).on('orientationchange', function() {
+        setNavigationMenuHeight();
+        calculateDocumentHeight();
     });
 
 
@@ -79,6 +91,7 @@
             // var $colourMenuButton = $(this);
 
             setNavigationMenuHeight(); // For initial page load
+            calculateDocumentHeight();
             // var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
             // if (smallMenu) {
             //     $('.navigation').height('717px'); // Was 605px. Extend navbar height to hold bvselect (or default menu 574px) Change Colour Button
