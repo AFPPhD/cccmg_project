@@ -4,28 +4,32 @@
         '(prefers-contrast(no-preference))'
         ).matches;
 
-    // const smallMenu = window.matchMedia(
-    //     '(max-width: 1041px)'
-    //     ).matches;
 
     function setNavigationMenuHeight() {
         var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
+        var smallBiggerMenu = window.matchMedia('(min-height: 745px)').matches;
         var root = document.querySelector(':root');
-        if (smallMenu) {
+        if (smallMenu && !smallBiggerMenu) {
             $('.navigation').height('590px'); // Extend to underlay Custom Colour Button
             //$(':root').css('--menu-height','590px');
             root.style.setProperty('--menu-height', '590px');
+        } else if (smallMenu && smallBiggerMenu) {
+            $('.navigation').height('726px');
+            //$(':root').css('--menu-height','670px');
+            root.style.setProperty('--menu-height', '726px');
         } else {
             $('.navigation').height('670px');
-            //$(':root').css('--menu-height','670px');
             root.style.setProperty('--menu-height', '670px');
         }
     }
 
     function calculateDocumentHeight() {
-        var root = document.querySelector(':root');
-        var vh = document.documentElement.scrollHeight
-        root.style.setProperty('--doc-height', vh + 'px');
+            var root = document.querySelector(':root');
+            //var vh = document.documentElement.scrollHeight;
+            var vh = window.innerHeight;
+            root.style.setProperty('--doc-height', vh + 'px');
+            $('.blur').css('display','block'); // Hack until mobile 100vh fixed, switch on blur background with js only
+            $('.navigation').css('outline','none'); // Remove white outline for js small menu
     }
 
     $(window).on('resize', function() {

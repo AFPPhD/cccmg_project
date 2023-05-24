@@ -73,7 +73,7 @@ $colour-scheme-higher-contrast: (
 		--menu-height: 536px; // Default non-js small devices navigation bar height
 		--thumb: #3279B3; // Default thumb colour for Firefox custom scrollbar
 		--scrollbar: #204c75; // Default background colour for Firefox custom scrollbar
-		--doc-height: 11250px; // Default non-js small devices hack for mobile 100vh not working
+		--doc-height: 100vh; // Default fallback for non-js small devices. Javascript hack changes for mobile 100vh not working
 	}
 
 	// Default High Contrast Blue needs implementing to override normal default Blue ?
@@ -253,6 +253,7 @@ label.checkbtn {
 	display:none;
 }
 
+
 // @media screen and (min-width: 65.125em) and (max-height: 46.188em) { // Changed from 738px, due to offset change for .navigation from 68 to 69px
 // 	.navigation {
 // 		max-height: 78.5%; // In order to scroll to Colour menu needed to reduce this from 100%
@@ -368,12 +369,13 @@ label.checkbtn {
 		// max-height: --menu-height;
 		//overflow-y: auto !important;
 		//overscroll-behavior-y: contain;
-		top: 42.5px;
-		//top: calc((100vh - var(--menu-height))/2 + 6px);
+		//top: 44px; // Keeps default non-js small devices under the header  684px (42.75em) for js device when set to this
+		//top: auto; // 69px from desktop inherited without 42.5px
+		top: calc((var(--doc-height) - var(--menu-height))/2 + 6px);
 		// top: 10vh;
 		// top: 50%;
 		// transform: translate(0, -50%);
-		height: 536px;
+		height: 536px; // Set this so as to clear out 610px value for desktop menu
 		// padding-top: 6px;
 		// padding-right: 3px;
 		// padding-left: 3px;
@@ -389,6 +391,7 @@ label.checkbtn {
 		//max-height: 380px;
 		//max-height: 15%;
 		display: none;
+		outline: 2px white solid;
 	}
 
 	// @media screen and (max-height: 39.938em) {
@@ -426,15 +429,11 @@ label.checkbtn {
 	}
 
 	.navigation a:link, .navigation a:visited {
-		min-width: 360px; //Was 360px;
+		min-width: 360px;
 		border: 2px solid white;
 		margin: 0.45% auto;
 	}
 
-	.bv_ul_inner.bv_background {
-		margin-top: -67px;
-		display: none; /* Colour Menu stays hidden on first main menu open */
-	}
 
 	// .navigation:focus-within {
 	// 	display: block;
@@ -521,26 +520,48 @@ label.checkbtn {
 				//width: 100dvw;
 				//height: 11250px; /* Calc this with javascript */
 				height: var(--doc-height);
+				display: none; // Hack until mobile 100vh fixed, switch on blur background with js only
 			}
 	//}
 
-	@media screen and (min-height: 40.063em) { // min-height: 641px
+	@media screen and (min-height: 46.5625em) { // Was  min-height: 768px now 745px
 		.navigation {
-			//--menu-height: 590px;
-			top: calc((100vh - (var(--menu-height) + 6px))/2);
+			height: 673px; // Non js navigation height increase;
+			//height: calc(var(--menu-height) + 20px); // --menu-height + amount
+			//padding: 6px 3px 0;
+			min-width: 450px;
+			//overflow-y: overlay; // Puts vertical scrollbars on for 745px (48em) to 767px (47.9375em)
+			//overflow-x: hidden;	// Stops horizontal scrollbars consequence of above
+			//top: calc((var(--doc-height) - (var(--menu-height) + 6px))/2);
+			a:link, a:visited {
+				min-width: 450px;
+				border: 2.5px solid white;
+				margin: 0.55% auto;
+			}
+			ul {
+				font-size: 0.95rem;
+			}
 		}
 	}
 
 
-	@media screen and (max-height: 39.938em) { // max-height: 639px
+	// @media screen and (min-height: 40em) { // min-height: 640px
+	// 	.navigation {
+	// 		//top: calc((var(--doc-height) - (var(--menu-height) + 6px))/2);
+	// 	}
+	// }
+
+	@media screen and (max-height:  39.9375em) { //max-height: 639px
 		.navigation {
 			//scrollbar-gutter: stable;
 			//max-height: var(--menu-height) +6px;
 			max-height: 84%; // In order to scroll to Colour menu needed to reduce this from 100%
             overflow-y: overlay;
 			overflow-x: hidden;
+			top: 42px;
 		}
 	}
+
 }
 
 // @media screen and (min-width: 65.125em) and (max-height: 46.188em) { // Changed from 738px, due to offset change for .navigation from 68 to 69px
@@ -767,7 +788,7 @@ label.checkbtn {
 	@include MediaQueryStyle (true, false);
 }
 
-@media only screen and (max-width: 22.438em) {
+@media only screen and (max-width: 22.438em) { // max-width: 359px
 
 	.container {
 		// width: 319px; // min-width stops reflow
