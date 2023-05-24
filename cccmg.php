@@ -117,10 +117,8 @@ Through the Night, mainly consists of complete pieces taken from live performanc
 can be found at bbc.co.uk/radio3. You can also listen online.</p>
 
 <h3>Classic FM</h3>
-<p>If you want to listen to slow/quiet movements of pieces try Smooth Classics 7.00pm - 8.00pm, 10.00pm -
-1.00am weekdays and 10.00pm - 12.00am weekends, with 7.00pm - 10.00pm Sunday additionally. From 8.00pm
- - 10.00pm Mon - Fri is The Full Works, where recordings of pieces are mostly played in full. (Any
- particular movements are generally played at any other time.)  You can listen online at their website
+<p>If you want to listen to slow/quiet movements of pieces try Smooth Classics 7.00pm - 10.00pm, Calm Classics 10.00pm -
+1.00am weekdays and 10.00pm - 1.00am weekends, with 7.00pm - 10.00pm Sunday additionally. You can listen online at their website
 classicfm.com. They also have a play list of what has been played.</p>
 
 <!-- TODO: Scala Radio -->
@@ -128,8 +126,7 @@ classicfm.com. They also have a play list of what has been played.</p>
 <h3>Radio Times Magazine (UK)</h3>
 <p>It includes the schedule and approximate timings for BBC Radio 3's
  Through the Night, as well as telling you what the Building a Library
-featured work is. The schedule for the Classic FM Full Works programmes
-is also given.</p>
+featured work is.</p>
 
 <br/>
 
