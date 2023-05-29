@@ -172,7 +172,8 @@ Developed by: Bruno Vieira
 
 
 	.bv_ul_inner.bv_background {
-		margin-top: -65px; /* Push colour options menu upwards to prevent scrollbar in .navigation, while ensuring the
+		display: none; /* Colour Menu stays hidden on first main menu open */
+		margin-top: -73px; /* Push colour options menu upwards to prevent scrollbar in .navigation, while ensuring the
 		                   menu is not clipped */
 	}
 
