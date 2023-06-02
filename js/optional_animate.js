@@ -54,7 +54,6 @@ if (window.matchMedia('(min-width: 65.125em)').matches
 
 		// window.jQuery.ui || document.write('<script defer src="./js/jquery-ui-1.8.10.custom.min.js"><\/script>');
 	 	//document.write('<script defer src="/js/animatetext.js"><\/script>');
-	// }
 	// Optionally switch off for non-mobile users, the  motion reduce preference, making text downword scroll animation when page loads
 
 	window.onload = function downloadJSAtOnload() {
