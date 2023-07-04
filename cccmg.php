@@ -135,6 +135,7 @@ featured work is.</p>
 <br/>
 
 <p class="composers">
+William Byrd 400 years since his death<br/>
 Sergei Rachmaninov 150 years since his birth
 </p>
 
