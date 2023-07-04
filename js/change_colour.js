@@ -7,18 +7,33 @@
 
     function setNavigationMenuHeight() {
         var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
-        var smallBiggerMenu = window.matchMedia('(min-height: 745px)').matches;
+        var smallLongerMenu = window.matchMedia('(min-height: 745px)').matches;
+        var smallWiderMenu = window.matchMedia('(max-width: 359px)').matches;
         var root = document.querySelector(':root');
-        if (smallMenu && !smallBiggerMenu) {
-            $('.navigation').height('590px'); // Extend to underlay Custom Colour Button
-            //$(':root').css('--menu-height','590px');
-            root.style.setProperty('--menu-height', '590px');
-        } else if (smallMenu && smallBiggerMenu) {
-            $('.navigation').height('726px');
-            //$(':root').css('--menu-height','670px');
-            root.style.setProperty('--menu-height', '726px');
-        } else {
+        if (smallMenu) {
+            if  (!smallLongerMenu) {
+                $('.navigation').height('608px'); // Extend to underlay Custom Colour Button
+                //$(':root').css('--menu-height','608px');
+                root.style.setProperty('--menu-height', '608px');
+            } else {
+                $('.navigation').height('726px');
+                //$(':root').css('--menu-height','726px');
+                root.style.setProperty('--menu-height', '726px');
+            }
+            if (smallWiderMenu) {
+                if (!smallLongerMenu) {
+                    $('.navigation').height('644px');
+                    //$(':root').css('--menu-height','640px');
+                    root.style.setProperty('--menu-height', '644px');
+                } else {
+                    $('.navigation').height('766px');
+                    //$(':root').css('--menu-height','800px');
+                    root.style.setProperty('--menu-height', '766px');
+                }
+            }
+        } else {// Desktop menu
             $('.navigation').height('670px');
+            //$(':root').css('--menu-height','670px');
             root.style.setProperty('--menu-height', '670px');
         }
     }

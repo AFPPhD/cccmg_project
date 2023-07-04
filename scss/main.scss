@@ -70,7 +70,7 @@ $colour-scheme-higher-contrast: (
 			--#{$colour}-fg: #{setcolour($colour-scheme-higher-contrast,$colour,PRIMARY-COLOUR)};
 			--#{$colour}-bg: #{setcolour($colour-scheme-higher-contrast,$colour,BACKGROUND-COLOUR)};
 		}
-		--menu-height: 536px; // Default non-js small devices navigation bar height
+		--menu-height: 550px; // Default non-js small devices navigation bar height
 		--thumb: #3279B3; // Default thumb colour for Firefox custom scrollbar
 		--scrollbar: #204c75; // Default background colour for Firefox custom scrollbar
 		--doc-height: 100vh; // Default fallback for non-js small devices. Javascript hack changes for mobile 100vh not working
@@ -375,7 +375,7 @@ label.checkbtn {
 		// top: 10vh;
 		// top: 50%;
 		// transform: translate(0, -50%);
-		height: 536px; // Set this so as to clear out 610px value for desktop menu
+		height: 550px; // Set this so as to clear out 610px value for desktop menu
 		// padding-top: 6px;
 		// padding-right: 3px;
 		// padding-left: 3px;
@@ -386,7 +386,7 @@ label.checkbtn {
 		//top: 50vh;
 		//vertical-align:middle;
    		transform: translate(-50%, 0);
-		min-width: 360px;
+		min-width: 450px;
 		//min-height: 320px;
 		//max-height: 380px;
 		//max-height: 15%;
@@ -429,7 +429,7 @@ label.checkbtn {
 	}
 
 	.navigation a:link, .navigation a:visited {
-		min-width: 360px;
+		min-width: 450px;
 		border: 2px solid white;
 		margin: 0.45% auto;
 	}
@@ -526,15 +526,15 @@ label.checkbtn {
 
 	@media screen and (min-height: 46.5625em) { // Was  min-height: 768px now 745px
 		.navigation {
-			height: 673px; // Non js navigation height increase;
+			height: 672px; // Non js navigation height increase;
 			//height: calc(var(--menu-height) + 20px); // --menu-height + amount
 			//padding: 6px 3px 0;
-			min-width: 450px;
+			//min-width: 450px;
 			//overflow-y: overlay; // Puts vertical scrollbars on for 745px (48em) to 767px (47.9375em)
 			//overflow-x: hidden;	// Stops horizontal scrollbars consequence of above
 			//top: calc((var(--doc-height) - (var(--menu-height) + 6px))/2);
 			a:link, a:visited {
-				min-width: 450px;
+				//min-width: 450px;
 				border: 2.5px solid white;
 				margin: 0.55% auto;
 			}
@@ -822,6 +822,19 @@ label.checkbtn {
 		// overflow-x:scroll;
 		// text-overflow: ellipsis;
 
+	}
+
+	.navigation {
+		min-width: 94%;
+		margin: 0.8% auto;
+			// ul {
+			// 	font-size: 1.1rem;
+			// }
+			a:link, a:visited {
+				min-width: 639px;
+				letter-spacing: 0.15em;
+				//font-weight: 950;
+			}
 	}
 }
 
