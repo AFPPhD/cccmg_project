@@ -385,8 +385,7 @@ label.checkbtn {
    		left: 50%;
 		//top: 50vh;
 		//vertical-align:middle;
-   		-webkit-transform: translate(-50%, 0);
-   		        transform: translate(-50%, 0);
+   		transform: translate(-50%, 0);
 		min-width: 450px;
 		//min-height: 320px;
 		//max-height: 380px;
@@ -420,13 +419,9 @@ label.checkbtn {
 	.navigation ul {
 		//margin: 0;
 		//padding: 0;
-		display: -webkit-box;
 		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		        flex-direction: column;
-		-webkit-box-align: center;
-		        align-items: center;
+		flex-direction: column;
+		align-items: center;
 		font-size: 0.75rem;
 		//column-gap: 10em;
 		//justify-content: space-between;
