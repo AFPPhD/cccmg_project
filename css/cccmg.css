@@ -1,7 +1,8 @@
 		html{
 			-moz-text-size-adjust: none; 	/* Mobile Safari increases the default font-size when you switch a website from portrait to landscape */
 			-webkit-text-size-adjust: none; /* To stop this font-size inflation use the -webkit-text-size-adjust property */
-			text-size-adjust: none;
+			-ms-text-size-adjust: none;
+			    text-size-adjust: none;
 			scroll-padding-top: 58px; /* To stop scrolled to Composer heading being obscured by sticky header */
 			/* scrollbar-width: normal; Scrollbar settings for Firefox */
 			/* scrollbar-color: var(--thumb, #204c75) var(--scrollbar,#3279B3); */
@@ -22,6 +23,7 @@
 			/* overflow-x: hidden; */  /* To allow container to break out of constrained width */
 			/* min-height: 100vh; */
 			height: -webkit-fill-available; /* Part of mobile 100vh height problem fix, where bit of page missing (e.g footer) due to*/
+			height: -moz-available;
 			height: fill-available;         /* possible address bar taking up space */
 		}
 
@@ -36,6 +38,7 @@
 			z-index: 1; /* So main content scrolls underneath */
 			top: 0;
 			position: fixed;	/* Fallback.  stickybits.js polyfill available */
+			position: -webkit-sticky;
 			position: sticky; /* sticky and top fix the navbar in position. No jittery movement on page scrolling using jQuery anymore */
 			border-bottom-right-radius: 9px;
 			border-bottom-left-radius: 9px;
@@ -55,8 +58,12 @@
 			background: white;
 			color: #A22BE7;
 			/* left: -10000px; */
-			transform: translateY(-105%);
+			-webkit-transform: translateY(-105%);
+			        transform: translateY(-105%);
+			-webkit-transition: -webkit-transform 0.3s ease-in;
+			transition: -webkit-transform 0.3s ease-in;
 			transition: transform 0.3s ease-in;
+			transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
 
 			/*additional properties if absolute positioning is deactivated */
 			/* width:1px;
@@ -66,8 +73,10 @@
 
 		  .skiplink:focus {
 			/* left: 5%; */
-			transform: translateY(0%);
-			transform: translateX(7%);
+			-webkit-transform: translateY(0%);
+			        transform: translateY(0%);
+			-webkit-transform: translateX(7%);
+			        transform: translateX(7%);
 			/* left: 0; */
 
 			/*additional properties if absolute positioning is deactivated */
@@ -77,7 +86,8 @@
 
 		h1 > img {
 			aspect-ratio: 4.66;
-			object-fit: cover;  /* Stops stretching - maintains aspect ratio by cropping when image not correct aspect ratio */
+			-o-object-fit: cover;
+			   object-fit: cover;  /* Stops stretching - maintains aspect ratio by cropping when image not correct aspect ratio */
 		} /* The following complaint is removed: Serves images with low resolution - Image natural dimensions should be proportional */
 		/* to the display size and the pixel ratio to maximize image clarity */
 
@@ -204,6 +214,12 @@
 		}
 
 /*	Text highlight colour */
+
+		::-moz-selection { /* The selectors are not combined, even though the style blocks are doing the same thing. */
+					  /* It doesn’t work if you combine them because browsers ignore the entire selector if there */
+					  /* is a part of it they don’t understand or it is invalid */
+			background-color: var(--highlight-color, #204c75); /* #204c75 Fallback/Default value when javascript disabled */
+		}
 
 		::selection { /* The selectors are not combined, even though the style blocks are doing the same thing. */
 					  /* It doesn’t work if you combine them because browsers ignore the entire selector if there */
