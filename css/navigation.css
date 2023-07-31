@@ -122,6 +122,7 @@
 			background-color:#A22BE7;
 		} */
 
+
 		/*
   			Provide basic, default focus styles for fallback.
 		*/
@@ -129,6 +130,7 @@
 		a:focus {
 			outline: 3px solid black;
   		}
+
 
   		/*
 			Remove default focus styles for mouse users ONLY if
@@ -139,12 +141,13 @@
 			outline: 3px solid transparent;										/* i.e Just use polyfill until all browsers support :focus-visible */
 		} /* Remove focus indication when a mouse is used */
 
+
   		/*
 			Optionally: If :focus-visible is supported on this
 			platform, provide enhanced focus styles for keyboard
 			focus.
   		*/
 
-  		.js-focus-visible .focus-visible {
+  		.js-focus-visible .focus-visible { /* Tab style for keyboard users */
 			outline: 3px solid black;
 		}
