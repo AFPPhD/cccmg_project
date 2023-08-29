@@ -4,6 +4,7 @@ BVSelect - Vanilla Javascript Fully Customizable SelectBox v1.3
 https://github.com/BMSVieira/BVSelect-VanillaJS
 
 Made by: Bruno Vieira
+Modded by: Anthony Prime
 
 --------------------------- */
 
