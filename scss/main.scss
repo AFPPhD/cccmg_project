@@ -10,8 +10,8 @@ $colour-scheme: (
 	),
 
 	red: (
-		PRIMARY-COLOUR: #f02e2e,
-		BACKGROUND-COLOUR: #b03532
+		PRIMARY-COLOUR: #f02e2e, // Was #fc4040
+		BACKGROUND-COLOUR: #b03532, // Was #cf331e
 	),
 
 	orange: (
@@ -249,7 +249,7 @@ label.checkbtn {
 }
 
 .background {
-	display:none;
+	display: none;
 }
 
 
@@ -520,6 +520,7 @@ label.checkbtn {
 				//height: 11250px; /* Calc this with javascript */
 				height: var(--doc-height);
 				display: none; // Hack until mobile 100vh fixed, switch on blur background with js only
+				position: fixed; // Override position: sticky from topbar for z-index to be viable
 			}
 	//}
 
@@ -532,14 +533,15 @@ label.checkbtn {
 			//overflow-y: overlay; // Puts vertical scrollbars on for 745px (48em) to 767px (47.9375em)
 			//overflow-x: hidden;	// Stops horizontal scrollbars consequence of above
 			//top: calc((var(--doc-height) - (var(--menu-height) + 6px))/2);
-			a:link, a:visited {
-				//min-width: 450px;
-				border: 2.5px solid white;
-				margin: 0.55% auto;
-			}
 			ul {
 				font-size: 0.95rem;
 			}
+			// NO NAVIGATION TAB FOCUS AT HEIGHT 745PX AND ABOVE BECAUSE OF CODE BELOW!!
+			// a:link, a:visited {
+			// 	//min-width: 450px;
+			// 	border: 2.5px solid white;
+			// 	margin: 0.55% auto;
+			// }
 		}
 	}
 
