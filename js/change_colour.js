@@ -6,19 +6,19 @@
 
 
     function setNavigationMenuHeight() {
-        var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
-        var smallLongerMenu = window.matchMedia('(min-height: 745px)').matches;
-        var smallWiderMenu = window.matchMedia('(max-width: 359px)').matches;
-        var root = document.querySelector(':root');
+        let smallMenu = window.matchMedia('(max-width: 1041px)').matches;
+        let smallLongerMenu = window.matchMedia('(min-height: 745px)').matches;
+        let smallWiderMenu = window.matchMedia('(max-width: 359px)').matches;
+        let root = document.querySelector(':root');
         if (smallMenu) {
             if  (!smallLongerMenu) {
                 $('.navigation').height('608px'); // Extend to underlay Custom Colour Button
                 //$(':root').css('--menu-height','608px');
                 root.style.setProperty('--menu-height', '608px');
             } else {
-                $('.navigation').height('726px');
+                $('.navigation').height('707px');
                 //$(':root').css('--menu-height','726px');
-                root.style.setProperty('--menu-height', '726px');
+                root.style.setProperty('--menu-height', '707px');
             }
             if (smallWiderMenu) {
                 if (!smallLongerMenu) {
@@ -39,12 +39,19 @@
     }
 
     function calculateDocumentHeight() {
-            var root = document.querySelector(':root');
+            let root = document.querySelector(':root');
             //var vh = document.documentElement.scrollHeight;
-            var vh = window.innerHeight;
+            let vh = window.innerHeight;
             root.style.setProperty('--doc-height', vh + 'px');
             $('.blur').css('display','block'); // Hack until mobile 100vh fixed, switch on blur background with js only
             $('.navigation').css('outline','none'); // Remove white outline for js small menu
+    }
+
+    function storeColourTheme($a){ // Where $a will be a jQuery object
+        let storedChoice = $a.get(0).innerHTML; // Get Selected Colour
+        let storedIndex = $a.index(); // Get Index of Selected Colour
+        localStorage.setItem('selected-theme-colour', storedChoice); // Store Colour Theme
+        localStorage.setItem('selected-theme-index', storedIndex); // Store Colour Theme Index
     }
 
     $(window).on('resize', function() {
@@ -147,9 +154,24 @@
 
         // Given a jQuery object represents a set of DOM elements, the .first() method
         // constructs a new jQuery object from the first element in that set.
-        $('#ul_CustomBuild > li').first().attr('tabIndex', '0'); // Make Blue default for option box (i.e focusable)
-        $selectedOption = $('#ul_CustomBuild > li').first();
+
+        $('#ul_CustomBuild > li').first().attr('tabIndex', '0'); // Make blue default for option box (i.e focusable)
+        $selectedOption = $('#ul_CustomBuild > li').first(); // .replace(/ /g,''); would remove all spaces
         $tabbedChoice = $selectedOption;
+
+        // Check that localStorage is supported, and if so, restore the stored colour theme option if it is not the default
+        if (typeof(Storage) !== "undefined") {
+            const storedTheme = localStorage.getItem('selected-theme-colour'); // Get colour stored as string
+            const storedIndex = localStorage.getItem('selected-theme-index'); // Get index of colour stored as string
+            const defaultColour =$.trim($('#ul_CustomBuild > li').first().text()); // $.trim() removes leading and trailing spaces only
+            if (storedTheme != null && storedTheme !== defaultColour) { // Check storedTheme != null i.e not first time through
+                $selectedOption = $('#ul_CustomBuild > li').eq(storedIndex).attr('tabIndex', '0'); // Make focusable
+                $tabbedChoice = $selectedOption;
+                $selectedOption.trigger('click');  // Activates event listener in bvselect.js
+            }
+        }
+
+            // No web storage Support or previous colour theme was default.
 
         // window.addEventListener('resize', function showHamburgerMenu() {
             // function showHamburgerMenu() {
@@ -246,7 +268,7 @@
 
         // Process key presses on colour menu select
         $colourSelectionBox.on('keydown', '#ul_CustomBuild > li', function (event) {
-            $tabbedChoice = $(document.activeElement); // Previously document.activeElement was this
+            $tabbedChoice = $(document.activeElement); // Previously document.activeElement was "this"
             event.preventDefault(); // Replaced multiple unnecessary event.preventDefault()s  with one
             // if ((event.which || event.keyCode) == '9') {
                     //event.preventDefault();
@@ -265,7 +287,10 @@
                     // ourEvent = $.Event('customFocusout');
                     // $selectedOption.on('customFocusout click', '#ul_CustomBuild > li', false);
                     // $selectedOption.trigger(ourEvent);
-                    $selectedOption.trigger('click');
+                    if (typeof(Storage) !== "undefined") {
+                        storeColourTheme($selectedOption);
+                    }
+                    $selectedOption.trigger('click'); // Activates event listener in bvselect.js
                 } else if ((event.which || event.keyCode) == '38') // Up arrow key
                     {
                     //event.preventDefault();
@@ -399,7 +424,10 @@
                 $selectedOption = $target; // Need to use $target to correctly set chosen option
                 $tabbedChoice = $selectedOption; // Make sure update the tabbed option
                 $selectedOption.attr('tabIndex', '0');
-                $selectedOption.trigger('click');
+                if (typeof(Storage) !== "undefined") {
+                    storeColourTheme($target);
+                }
+                $selectedOption.trigger('click'); // Activates event listener in bvselect.js
             // }
             // } else if ($target.is('a')) {
                         //event.preventDefault();
