@@ -1,4 +1,8 @@
-<!DOCTYPE html>														<!-- Updated DOCTYPE, <html>, <head> and <script> from XHTML Strict to HTML5 compliant. Also removed trailing spaces 130820 -->
+<!DOCTYPE html>		<!--
+
+Written by: Anthony Prime
+
+-->											<!-- Updated DOCTYPE, <html>, <head> and <script> from XHTML Strict to HTML5 compliant. Also removed trailing spaces 130820 -->
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -18,13 +22,13 @@
 	<!-- images/Eras_Bold_ITC_transparent-2x.png 976w"> -->
 		<!-- images/Eras_Bold_ITC_transparent-4x.png 1952w,
         images/Eras_Bold_ITC_transparent-8x.png 3904w" -->
-	<link rel="stylesheet" href="css/cccmg.css"/>
-	<link rel="stylesheet" href="css/material_icons.css"/>
-	<link rel="stylesheet" href="css/navigation.css"/>
-	<link rel="stylesheet" href="css/variables.css"/>	<!-- SASS created file using sass-json-export.scss -->
-	<link rel="stylesheet" href="css/bvselect.css"/> <!-- Style sheet for Custom dropdown menu using bvselect.js -->
-	<link rel="stylesheet" href="css/main.css"/>	<!-- SASS created file -->
-	<link rel="stylesheet" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
+	<link rel="stylesheet" href="css/cccmg-min.css"/> <!-- Minified on minifer.org -->
+	<link rel="stylesheet" href="css/material_icons-min.css"/>
+	<link rel="stylesheet" href="css/navigation-min.css"/>
+	<link rel="stylesheet" href="css/variables-min.css"/>	<!-- SASS created file using sass-json-export.scss -->
+	<link rel="stylesheet" href="css/bvselect-min.css"/> <!-- Style sheet for Custom dropdown menu using bvselect.js -->
+	<link rel="stylesheet" href="css/main-min.css"/>	<!-- SASS created file --> <!-- Minified on minifer.org -->
+	<link rel="stylesheet" href="css/print-min.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
 	<link rel="preload" as="image" imagesrcset="images/Eras_Bold_ITC_transparent.webp 488w, images/Eras_Bold_ITC_transparent-2x.webp 976w" fetchpriority="high"/>
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" fetchpriority="low"/>
 </head>
@@ -288,7 +292,7 @@ background noises e.g coughs. Considering that studio recordings, including some
 I have recommended, can be prone to the occasional unwanted noises, this should not
 be a problem.</p>
 
-<p class="clickbandtext">Just click on a band to reveal the relevant information. Click the band
+<p class="clickbandtext">Just click or press enter on a band to reveal the relevant information. Click or press enter on the band
 again to hide the information.</br></br>
 Press Esc to jump to CCCMG in the header.</p>
 <br/>
@@ -1133,21 +1137,21 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 <!-- < src="js/jquery-1.5.min.js"></> -->
 <!-- < src="js/jquery-ui-1.8.10.custom.min.js"></> Allows animation of floating menu and text scroll -->
 <script defer src="js/respond.min.js"></script>	<!-- TODO: Replace possibly -->	<!-- Polyfill for browsers not recognising min-width, max-width and media types -->
-<script defer src="js/core.js"></script>	<!-- Needed for accordion_mod -->
+<script defer src="js/core-min.js"></script>	<!-- Needed for accordion_mod -->
 <!-- <script src="js/show-dropdown.js"></script> Not working -->
 <!-- <script> var script = document.createElement("script");
 script.src = "./js/jquery-1.7.2.min.js";
 document.head.appendChild(script); </script> -->
-<script defer src="js/hide_no_javascript_mes.js"></script>
-<script defer src="js/bvselect.js"></script> <!-- Custom dropdown menu that allows for different highlight colours -->
-<script defer src="js/change_colour.js"></script>
-<script defer src="js/accordion_mod.js"></script>
+<script defer src="js/hide_no_javascript_mes-min.js"></script>
+<script defer src="js/bvselect-min.js"></script> <!-- Custom dropdown menu that allows for different highlight colours -->
+<script defer src="js/change_colour-min.js"></script>
+<script defer src="js/accordion_mod-min.js"></script>
 <!-- < src="js/floating_nav_menu.js"></> -->	<!-- Using position fixed/sticky better than this -->
 <!-- <script src="js/jquery.scrollTo.js"></script>             Script for scrollTo() -->
 <!-- <script src="js/scroll_to_link.js"></script> -->
 <!-- < src="js/jquery.swfobject.1-1-1.js"></> Was for incorporating flash header image, which is now a png -->
 <!-- < src="js/flash_header.js"></>                  Embeds Eras Bold ITC header swobject -->
-<script defer src="js/focus-visible.js"></script> <!-- Provides :focus-visible support for browsers that don't have it -->
+<script defer src="js/focus-visible-min.js"></script> <!-- Provides :focus-visible support for browsers that don't have it -->
 <!-- <script src="js/animatetext.js" defer></script> -->
 
 <!-- <script
@@ -1158,6 +1162,6 @@ document.head.appendChild(script); </script> -->
 		// Needed for animatetext.js
 </script> -->
 
-<script defer src="js/optional_animate.js"></script>
+<script defer src="js/optional_animate-min.js"></script>
 </body>
 </html>
