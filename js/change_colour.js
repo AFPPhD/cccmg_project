@@ -156,14 +156,14 @@
         // constructs a new jQuery object from the first element in that set.
 
         $('#ul_CustomBuild > li').first().attr('tabIndex', '0'); // Make blue default for option box (i.e focusable)
-        $selectedOption = $('#ul_CustomBuild > li').first(); // .replace(/ /g,''); would remove all spaces
+        $selectedOption = $('#ul_CustomBuild > li').first();
         $tabbedChoice = $selectedOption;
 
         // Check that localStorage is supported, and if so, restore the stored colour theme option if it is not the default
         if (typeof(Storage) !== "undefined") {
             const storedTheme = localStorage.getItem('selected-theme-colour'); // Get colour stored as string
             const storedIndex = localStorage.getItem('selected-theme-index'); // Get index of colour stored as string
-            const defaultColour =$.trim($('#ul_CustomBuild > li').first().text()); // $.trim() removes leading and trailing spaces only
+            const defaultColour =$.trim($('#ul_CustomBuild > li').first().text()); // $.trim() removes leading and trailing spaces only. .replace(/ /g,''); would remove all spaces
             if (storedTheme != null && storedTheme !== defaultColour) { // Check storedTheme != null i.e not first time through
                 $selectedOption = $('#ul_CustomBuild > li').eq(storedIndex).attr('tabIndex', '0'); // Make focusable
                 $tabbedChoice = $selectedOption;
