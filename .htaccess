@@ -5,7 +5,7 @@ Header always set X-Frame-Options "SAMEORIGIN"
 Header set X-XSS-Protection "1; mode=block"
 Header set Referrer-Policy "same-origin"
 Header set Feature-Policy "microphone 'none'; camera 'none'; geolocation 'none';"
-Header set Content-Security-Policy "default-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'; img-src cccmg.epizy.com/images/favicon.ico cccmg.epizy.com/images/Eras_Bold_ITC_transparent.png http://jigsaw.w3.org/css-validator/images/vcss; script-src 'self' 'unsafe-inline' https://code.jquery.com/jquery-1.7.2.min.js https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js; style-src 'self'; report-uri /some-report-uri.json;"
+Content-Security-Policy-Report-Only "default-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'; img-src self http://jigsaw.w3.org/css-validator/images/vcss; script-src https://code.jquery.com/jquery-1.7.2.min.js self 'sha256-PrfFmUDkCCzBFkHUKiGa+ndMjkW+gYZbuPD4bX7HJuQ=' 'unsafe-inline'; style-src 'self'"
 
 # Disable all directory views (recommended for better security)
 Options -Indexes
@@ -19,18 +19,6 @@ ServerSignature Off
 FileETag none
 
 ExpiresActive On
-
-# Content-Security-Policy-Report-Only:
-# "default-src 'self';
-# img-src 'self';
-# base-uri 'self';
-# style-src 'self' 'unsafe-inline';
-# script-src 'self' 'unsafe-inline';
-# object-src 'none';
-# frame-ancestors 'none';
-# frame-src 'none';
-# report-uri /some-report-uri;
-# report-to /some-report-to;"
 
 # no caching
 <FilesMatch "\.(html|htm|php)$">
