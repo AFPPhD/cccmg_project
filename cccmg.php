@@ -134,14 +134,14 @@ featured work is.</p>
 
 <br/>
 
-<h2><span>Major Composer Anniversaries in 2023</span></h2> <!-- span used to help overwrite h2 default style -->
+<h2><span>Major Composer Anniversaries in 2024</span></h2> <!-- span used to help overwrite h2 default style -->
 
 <br/>
 
 <p class="composers">
-William Byrd 400 years since his death<br/>
-Sergei Rachmaninov 150 years since his birth
-</p>
+Anton Bruckner 200 years since his birth<br/>
+Gustav Holst 150 years since his birth<br/>
+Charles Villiers Stanford 100 years since his death</p>
 
 <br/>
 
@@ -602,8 +602,7 @@ See www.abruckner.com for more details</p>
 
 <h5>Symphony No. 3</h5>
 <p>Tennstedt/B.R.S.O (PROFIL) (1889)<br/>
-Zweden/Netherlands Radio Philharmanic (CHALLENGE) (1877)<br/>
-Knappertsbusch/V.P.O (TESTAMENT) (1890)<br/><br/>
+Zweden/Netherlands Radio Philharmanic (CHALLENGE) (1877)<br/><br/>
 
 OTHER RECORDINGS:<br/>
 Chailly/R.S.O Berlin (MULTCOMB) (DECCA) (1889)</p>
@@ -611,14 +610,10 @@ Chailly/R.S.O Berlin (MULTCOMB) (DECCA) (1889)</p>
 <h5>Symphony No. 4</h5>
 <p>Kertesz/L.S.O (DECCA) (1881)<br/>
 Haitink/C.O (MULTCOMB) (1881)<br/>
-Klemperer/B.R.S.O (EMI) (1886)<br/>
-Karajan/B.P.O (1975) (MULTCOMB) (DG) (1881)</p>
+Klemperer/B.R.S.O (EMI) (1886)</p>
 
 <h5>Symphony No. 5</h5>
-<p>Wand/NDR Symphony (1989) (MULTCOMB) (RCA RED SEAL) (1878)<br/>
-Wand/B.P.O (RCA RED SEAL) (1878)<br/>
-Matacic/Czech Philharmanic (SUPRAPHON) (1878)<br/>
-Zweden/Netherlands Radio Philharmonic (MULTCOMB) (1878)</p>
+<p>Zweden/Netherlands Radio Philharmonic (MULTCOMB) (1878)</p>
 
 <h5>Symphony No. 6</h5>
 <p>Stein/V.P.O (DECCA) (1881)<br/>
@@ -626,7 +621,9 @@ Sawallisch/Bavarian State (ORFEO) (1881)<br/>
 Keilberth/B.P.O (MULTCOMB) (L.A) (1881)</p>
 
 <h5>Symphony No. 7</h5>
-<p>Karajan/V.P.O (DG) (1885)<br/>
+<p>Rosbaud/Southwest German Radio Symphony (1959) (MULTCOMB) (1885)<br/>
+Matacic/Czech Philharmanic (24-30/3/67) (MULTCOMB)<br/>
+Karajan/V.P.O (DG) (1885)<br/>
 B&ouml;hm/B.R.S.O (AUDITE) (1885)<br/>
 Furtw&auml;ngler/B.P.O (1949) (MULTCOMB) (1885)</p>
 
