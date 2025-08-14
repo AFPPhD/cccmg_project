@@ -28,7 +28,7 @@ Written by: Anthony Prime
 	<link rel="stylesheet" href="css/variables-min.css"/>	<!-- SASS created file using sass-json-export.scss -->
 	<link rel="stylesheet" href="css/bvselect-min.css"/> <!-- Style sheet for Custom dropdown menu using bvselect.js -->
 	<link rel="stylesheet" href="css/main-min.css"/>	<!-- SASS created file --> <!-- Minified on minifer.org -->
-	<link rel="stylesheet" href="css/print-min.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
+	<link rel="stylesheet" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
 	<link rel="preload" as="image" imagesrcset="images/Eras_Bold_ITC_transparent.webp 488w, images/Eras_Bold_ITC_transparent-2x.webp 976w" fetchpriority="high"/>
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" fetchpriority="low"/>
 </head>
@@ -108,14 +108,14 @@ Written by: Anthony Prime
 might like if you are new to classical music up to and including the casual collector
 like myself (People who want at most to find about 2 or 3 good recordings of a particular
 piece). The OTHER RECORDINGS section includes recordings I have not heard in their entirety
-or at all. Although I cannot endorse them whole heartedly myself, they come recommended
+or at all. Although I cannot endorse them wholeheartedly myself, they come recommended
 from plenty of credible sources. These selections along with my own should help guide
 you to better informed and more detailed discussions on the internet.</p>
 
 <h3>BBC Radio 3</h3>
 <p>A good place to listen to mainly complete recordings of pieces that might interest you
 is Essential Classics 9.00am - 12.00pm weekdays. The Building a Library section (approximately
-9.30 - 10.30am) on Record Review (usually 9.00am - 11.45pm) Saturday morning, involves an expert
+3.00pm - 3.45pm) on Record Review (usually 2.00pm - 4.00pm) Saturday afternoon, involves an expert
 sifting through the available recordings of a particular piece to recommend their top recording.
 Through the Night, mainly consists of complete pieces taken from live performances. The schedules
 can be found at bbc.co.uk/radio3. You can also listen online.</p>
@@ -345,11 +345,11 @@ Szell/Cleveland (MULTCOMB) (SONY)</p>
 Zinman/Tonhalle (ARTE NOVA) (P) (L.A)</p>
 
 <h5>Symphony No. 3 "Eroica"</h5>
-<p>Rattle/V.P.O  (MULTCOMB) (EMI)<br/>
+<p>Szell/Cleveland (MULTCOMB) (SONY)<br/>
+Rattle/V.P.O  (MULTCOMB) (EMI)<br/>
 Klemperer/Philharmonia (1955) (MONO) (MULTCOMB)<br/>
 Scherchen/Vienna State Opera (DG - WESTMINSTER LEGACY) (L.A) - Very quick recording around (~43mins), but never sounds rushed (First movement has repeat!)<br/>
-Bernstein/New York Philharmonic (MULTCOMB) (SONY)<br/>
-Szell/Cleveland (MULTCOMB) (SONY)</p>
+Bernstein/New York Philharmonic (MULTCOMB) (SONY)</p>
 
 <h5>Symphony No. 4</h5>
 <p>Haitink/C.O (MULTCOMB) (PHILIPS)  (L.A)<br/>
@@ -512,7 +512,8 @@ Vegh Quartet (MULTCOMB) (1970s) (NA&Iuml;VE)</p>
 Artemis Quartet (MULTCOMB) (VIRGIN CLASSICS)</p>
 
 <h5>String Quartet No. 9 Op. 59 No. 3</h5>
-<p>Quatuor Sine Nomine (CLAVES)</p>
+<p>Guarneri Quartet (1966 - 1969) (MULTCOMB) (RCA RED SEAL)<Br/>
+Quatuor Sine Nomine (CLAVES)</p>
 
 <h5>String Quartet No. 10 Op. 74 "Harp"</h5>
 <p>Quatuor Sine Nomine (CLAVES)<br/>
@@ -528,15 +529,15 @@ Guarneri Quartet (1966 - 1969) (MULTCOMB) (RCA RED SEAL)</p>
 Amadeus Quartet (MULTCOMB) (DG)</p>
 
 <h5>String Quartet No. 14 Op. 131</h5>
-<p>Budapest Quartet (1951 - 1952) (MONO) (MULTOCOMB)<br/>
-Quartetto Italiano (MULTCOMB) (PHILIPS)<br/>
+<p>Budapest Quartet (1951 - 1952) (MONO) (MULTCOMB)<br/>
 Cleveland Quartet (MULTCOMB) (TELARC)</p>
 
 <h5>String Quartet No. 15 Op. 132</h5>
 <p>Alban Berg Quartet (1983) (EMI)</p>
 
 <h5>String Quartet No. 16 Op. 135</h5>
-<p>Lindsay Quartet (1970 - 1983) (MULTCOMB)</p>
+<p>Lindsay Quartet (1970 - 1983) (MULTCOMB)<br/>
+Emerson Quartet Beethoven: Late String Quartets (DG)</p>
 </li>
 
 <li id="beeVC">
@@ -572,6 +573,7 @@ Karajan/B.P.O (1978) (MULTCOMB) (DG)</p>
 <h5>Symphony No. 4</h5>
 <p>Steinberg/Pittsburgh Symphony (EVEREST) (L.A)<br/>
 Sanderling/Staatskapelle Dresden (MULTCOMB) (RCA RED SEAL)<br/>
+Stokowski/New Philharmonia (BBC LEGENDS)<br/>
 Dorati/L.S.O (MERCURY LIVING PRESENCE)<br/>
 Berglund/C.O.E Brahms: The Symphonies (ONDINE)<br/>
 Chailly/Leipzig Gewandhaus (2013) (DECCA)</p>
@@ -647,7 +649,6 @@ Fliter/Markl/Scottish Chamber (LINN)</p>
 
 <h5>Piano Concerto No. 2</h5>
 <p>Berezovsky/Nelson/Ensemble Orchestral de Paris (MIRARE)<br/>
-Zimerman/Giulini/Los Angeles Philharmonic (DG)<br/>
 Ashkenazy/Zinman/L.S.O (MULTCOMB)<br/><br/>
 
 OTHER RECORDINGS:<br/>
@@ -842,8 +843,7 @@ Walter/Columbia Symphony (MULTCOMB) (CBS/SONY)</p>
 <p>Pires (MULTCOMB) (DG)<br/><br/>
 
 OTHER RECORDINGS:<br/>
-Brendel (PHILIPS)<br/>
-Ashkenazy (DECCA)</p>
+Brendel (PHILIPS)</p>
 
 <h5>Piano Sonata No. 11</h5>
 <p>Perahia (SONY) (L.A)</p>
