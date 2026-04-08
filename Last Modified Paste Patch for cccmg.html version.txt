@@ -1,7 +1,7 @@
 <script
   type="text/JavaScript"
   language="JavaScript">
-//
+// Downloaded from Chami.com Tips
 // format date as dd-mmm-yy
 // example: 12-Jan-99
 //
