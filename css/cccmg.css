@@ -22,9 +22,9 @@
 			-webkit-font-smoothing: antialiased; /* Chrome and Safari still use subpixel anti-aliasing by default. We need to explicitly turn it off */
 			/* overflow-x: hidden; */  /* To allow container to break out of constrained width */
 			/* min-height: 100vh; */
-			height: -webkit-fill-available; /* Part of mobile 100vh height problem fix, where bit of page missing (e.g footer) due to*/
-			height: -moz-available;
-			height: stretch;         /* possible address bar taking up space */
+			height: -webkit-fill-available; /* Part of mobile 100vh height problem fix, where bit of page missing (e.g footer) due to */
+			height: -moz-available; /* possible address bar */
+			height: stretch; /* taking up space */
 		}
 
 		header {
@@ -133,6 +133,7 @@
 		p  {
 			line-height: 1.5;	/* 150% line height usually best */
 			text-align: justify;
+			/*max-inline-size: 35ch; max-width: 65ch;*/
 			padding: 0 1%;
 			/* color: #ffffff; */
 		}
