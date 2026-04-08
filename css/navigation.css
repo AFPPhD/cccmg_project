@@ -83,8 +83,10 @@
 			display: none;
 		}
 
-		.select-option {
-			display: none; /* Want colour change button hidden from screen readers if javascript disabled (Not just navbar shorter) */
+		.select-option, .select-option > select, .select-option:after {
+			display: none; /*.select-option - Want colour change button hidden from screen readers if javascript disabled (Not just navbar shorter) */
+			/* Disabled default dropdown */
+			/*.select-option > select, .select-option:after - Disabled to utilise third party dropdown bvselect. When default dropdown displayed navigation container height 574px at least needed */
 			/* border-radius: 9px; */
 		}
 
@@ -98,10 +100,6 @@
 			pointer-events: none; /* The element does not react to pointer events, such as :hover and click */
 		}
 
-		/* Disabled default dropdown */
-		.select-option > select, .select-option:after {
-			display: none /* Disabled to utilise third party dropdown bvselect. When default dropdown displayed navigation container height 574px at least needed */
-		}
 
 
 
