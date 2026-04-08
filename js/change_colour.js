@@ -1,9 +1,7 @@
 'use strict';
 
-    const isSupported = window.matchMedia(
-        '(prefers-contrast(no-preference))'
-        ).matches;
-
+   const moreContrast = (window.matchMedia('(prefers-contrast: more)').matches);
+   const noforcedColors = (window.matchMedia('(forced-colors: none)').matches);
 
     function setNavigationMenuHeight() {
         let smallMenu = window.matchMedia('(max-width: 1041px)').matches;
@@ -77,9 +75,9 @@
     document.addEventListener("DOMContentLoaded", function() { // bvselect dropdown
         // const query = window.matchMedia('(prefers-contrast: no-preference)').matches;
 
-        if (isSupported) {
+        if (!moreContrast) {
             var selected = document.getElementById('selectbox');// If want to change option for normal colour scheme, need to do
-            selected.options[3].innerHTML = "Orange";           // before third party menu takes info for options, after the DOM is loaded.
+            selected.options[3].innerHTML = "Peach";           // before third party menu takes info for options, after the DOM is loaded.
         }                                                       // window load event (below) is too late!
 
         var demo1 = new BVSelect({  // document.addEventListener("DOMContentLoaded", function() {... - Handler when the DOM is fully loaded, not the whole page !
@@ -94,7 +92,7 @@
     // The following routine allows keyboard only access for bvselect dropdown
     $(window).load(function() { // $(window).load - Make sure entire page content loaded (Plain Javascript: window.onload = function(event) {...)
        // Best to use load event methods for jQuery and Pure JS, as this will work in any browser
-       // jQuery event aliases like .load(), .unload() or .resize() that all are deprecated since
+       // jQuery event aliases like .load(), .unload() or .resize(), are all deprecated since
        // jQuery 1.8. Lookup for these aliases in your code and replace them with the .on() method instead
 
             // function getPrefersReducedMotion() {
@@ -124,7 +122,9 @@
             // } else {
             //     $('.navigation').height('670px');
             // }
-            $('.select-option').css('display', 'block'); // Make visible colour change button. (Defaulted at no display so hidden from screen readers)
+            if (!window.matchMedia('(forced-colors: active)').matches) {
+                $('.select-option').css('display', 'block'); // Make visible colour change button. (Defaulted at no display so hidden from screen readers)
+            }
             //$('.topbar span', '.checkbtn').css('display', 'none');
             // $('.topbar span, .checkbtn').css('display', 'inline-block'); // Need Event Handler so this only happens at =<1041px
             let $colourMenuButton = $('#main_CustomBuild');
@@ -527,7 +527,7 @@
         // const query = window.matchMedia('(prefers-contrast: no-preference)').matches;
 
 
-        if (!isSupported) {
+        if (moreContrast && noforcedColors) {
             var coloursdata = window.getComputedStyle(
                 document.querySelector('body'), ':after'
             ).getPropertyValue('content'); // Gets values of content from pseudo element body:after
@@ -569,4 +569,4 @@
         }
         // var sheet = document.styleSheets[0];
         // sheet.addRule('::extension', `background-color: ${background};`, 1); Change text selection colour
-    };
+    }

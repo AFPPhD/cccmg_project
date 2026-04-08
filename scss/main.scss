@@ -73,6 +73,7 @@ $colour-scheme-higher-contrast: (
 		--thumb: #3279B3; // Default thumb colour for Firefox custom scrollbar
 		--scrollbar: #204c75; // Default background colour for Firefox custom scrollbar
 		--doc-height: 100vh; // Default fallback for non-js small devices. Javascript hack changes for mobile 100vh not working
+		color-scheme: light dark; // Need this or meta tag in <head> to get Black Title Text on intial page load with no Forced Colours selected
 	}
 
 	// Default High Contrast Blue needs implementing to override normal default Blue ?
@@ -93,7 +94,8 @@ $colour-scheme-higher-contrast: (
 
 
 
-		@supports (prefers-contrast(no-preference)) {
+
+		@media (prefers-contrast: no-preference) and (forced-colors: none) {
 
 		:root {
 
@@ -123,7 +125,6 @@ $colour-scheme-higher-contrast: (
 		.complab, .update, .composers {
 			color: #FFD700;
 		}
-
 	}
 
 
@@ -325,9 +326,9 @@ label.checkbtn {
 		//width: 100%;
 	}
 
-	.topbar a {
+	//.topbar a {
 		//margin-left: 1%;
-	}
+	//}
 
 	.topbar span {
 		//left:62%;
@@ -721,10 +722,10 @@ label.checkbtn {
 
 	// TODO: Max chars per line ? Below 170px need to create overflow
 
-	h5 {
+	//h5 {
 		// font-size: 1.4rem; Change until =<420px
 		// font-size: calc(1rem + (1.1 - 1.4) * (100vw - 320px) / (420 - 320));
-	}
+	//}
 
 	// ul.accordion p {
 		// line-height: 1.7;

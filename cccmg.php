@@ -22,12 +22,13 @@ Written by: Anthony Prime
 	<!-- images/Eras_Bold_ITC_transparent-2x.png 976w"> -->
 		<!-- images/Eras_Bold_ITC_transparent-4x.png 1952w,
         images/Eras_Bold_ITC_transparent-8x.png 3904w" -->
+	<meta name="color-scheme" content="light dark"> <!--This  will prevent the page flashing after the styles have been loaded in and the colour scheme information is selected -->
 	<link rel="stylesheet" href="css/cccmg-min.css"/> <!-- Minified on minifer.org -->
 	<link rel="stylesheet" href="css/material_icons-min.css"/>
-	<link rel="stylesheet" href="css/navigation-min.css"/>
+	<link rel="stylesheet" href="css/navigation.css"/>
 	<link rel="stylesheet" href="css/variables-min.css"/>	<!-- SASS created file using sass-json-export.scss -->
 	<link rel="stylesheet" href="css/bvselect-min.css"/> <!-- Style sheet for Custom dropdown menu using bvselect.js -->
-	<link rel="stylesheet" href="css/main-min.css"/>	<!-- SASS created file --> <!-- Minified on minifer.org -->
+	<link rel="stylesheet" href="css/main.css"/>	<!-- SASS created file --> <!-- Minified on minifer.org -->
 	<link rel="stylesheet" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
 	<link rel="preload" as="image" imagesrcset="images/Eras_Bold_ITC_transparent.webp 488w, images/Eras_Bold_ITC_transparent-2x.webp 976w" fetchpriority="high"/>
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" fetchpriority="low"/>
@@ -83,11 +84,19 @@ Written by: Anthony Prime
 <!-- <h1 class="flash_header">Casual Collectors' Classical Music Guide</h1>     Eras Bold ITC header shows if javascript enabled -->
 <!-- <h1 class="pngtitle">Casual Collectors' Classical Music Guide</h1> -->
 <div class="pngtitle">
-	<h1><img srcset="images/Eras_Bold_ITC_transparent.webp 488w,
+	<h1><picture>
+	<source srcset="images/Eras_Bold_ITC_transparent(W).webp 488w,
+	images/Eras_Bold_ITC_transparent-2x(W).webp 976w"
+	sizes="(max-width: 488px) 488px, 976px"
+  	src="images/Eras_Bold_ITC_transparent(W).webp"
+	media="(prefers-color-scheme: dark) and (forced-colors: active)"
+	width="680" height="146"/>
+	<img srcset="images/Eras_Bold_ITC_transparent.webp 488w,
 	images/Eras_Bold_ITC_transparent-2x.webp 976w"
 	sizes="(max-width: 488px) 488px, 976px"
   	src="images/Eras_Bold_ITC_transparent.webp"
-	alt="Casual Collectors' Classical Music Guide" width="680" height="146"/></h1>
+	alt="Casual Collectors' Classical Music Guide" width="680" height="146"/>
+	</picture></h1>
 </div> <!-- Was width="700" height="151" loading="eager" - Any images within the viewport should be loaded eagerly using the browser's defaults -->
 
 <br/>
@@ -134,15 +143,15 @@ featured work is.</p>
 
 <br/>
 
-<h2><span>Major Composer Anniversaries in 2025</span></h2> <!-- span used to help overwrite h2 default style -->
+<h2><span>Major Composer Anniversaries in 2026</span></h2> <!-- span used to help overwrite h2 default style -->
 
 <br/>
 
 <p class="composers">
-Johann Strauss II 200 years since his birth<br/>
-Maurice Ravel 150 years since his birth<br/>
-Georges Bizet 150 years since his death<br/>
-Erik Satie 100 years since his death</p>
+Aaron Copland 125 years since his birth<br/>
+Giuseppe Verdi 125 years since his birth<br/>
+Dmitri Shostakovich 50 years since his death<br/>
+Benjamin Britten 50 years since his death</p>
 
 <br/>
 
@@ -486,7 +495,8 @@ Arrau (MULTCOMB) (PHILIPS) (L.A) - Sound Issues - Clicks</p>
 
 <h5>Piano Sonata No. 29 "Hammerklavier"</h5>
 <p>Richter 2/6/1975 (PRAGA)<br/>
-Serkin (1969/70) (MULTCOMB) (SONY)</p>
+Serkin (1969/70) (MULTCOMB) (SONY)<br/>
+Perahia Beethoven: Piano Sonatas (DG)</p>
 
 <h5>Piano Sonata No. 31</h5>
 <p>Serkin (1971) (MULTCOMB) (SONY)<br/>
@@ -771,7 +781,7 @@ C.Zacharias/Orchestre de Chambre de Lausanne (MDG)</p>
 
 <h5>Piano Concerto No. 25</h5>
 <p>Kovacevich/Davis/L.S.O (PHILIPS)<br/>
-Larrocha/Davis/L.P.O (MULTCOMB) (DECCA)<br/>
+Larrocha/Solti/L.P.O (MULTCOMB) (DECCA)<br/>
 Serkin/Szell/Columbia Symphony (1955) (MONO) (NAXOS) - Not Cleveland Orchestra as stated!<br/><br/>
 
 OTHER RECORDINGS:<br/>
@@ -1031,9 +1041,9 @@ Bean/Boult/New Philharmonic (EMI)</p>
 <br/>
 
 <p>
-    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
         <img loading="lazy" style="border:0;width:88px;height:31px"
-            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            src="https://jigsaw.w3.org/css-validator/images/vcss"
             alt="Valid CSS!"/>
     </a>
 </p>
@@ -1135,7 +1145,7 @@ script.src = "./js/jquery-1.7.2.min.js";
 document.head.appendChild(script); </script> -->
 <script defer src="js/hide_no_javascript_mes-min.js"></script>
 <script defer src="js/bvselect-min.js"></script> <!-- Custom dropdown menu that allows for different highlight colours -->
-<script defer src="js/change_colour-min.js"></script>
+<script defer src="js/change_colour.js"></script>
 <script defer src="js/accordion_mod-min.js"></script>
 <!-- < src="js/floating_nav_menu.js"></> -->	<!-- Using position fixed/sticky better than this -->
 <!-- <script src="js/jquery.scrollTo.js"></script>             Script for scrollTo() -->
