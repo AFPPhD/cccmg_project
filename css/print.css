@@ -1,13 +1,14 @@
 @media print { /* media type moved here from cccmg.php file 300911 */
 
 		.navigation, .nojavascript, p a img, a#top, .skiplink, .topbar span {
-			display: none;     /* Navigation menu, Works better with javascript message and W3C CSS compliance logo hidden */
+			display: none;     /* Navigation menu, works better with javascript message and W3C CSS compliance logo hidden */
 							   /* Skip to Main Content removed (appears on chrome pdf each page), plus CCCMG and Shortcuts from the top bar */
 		}
 
 		body {
 			font: 100% verdana, arial, helvetica, sans-serif;
 			margin: 0;
+			max-width: 680px; /* Needed for Firefox and other browsers, so text does not cut off */
 		}
 
 		h1 {
