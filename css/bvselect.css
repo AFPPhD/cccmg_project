@@ -51,15 +51,15 @@ Modded by: Anthony Prime
 	pointer-events: none;
 }
 .up {
-	transform: rotate(-135deg);
 	-webkit-transform: rotate(-135deg);
+			transform: rotate(-135deg);
 	margin-top: 5px;
 	transition: all .2s ease
 }
 .down {
 	transition: all .2s ease;
-	transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
 	margin-top: 2px
 }
 
