@@ -12,7 +12,7 @@ class BVSelect {
 
     constructor({
         selector = 'defaultId',
-        width = "45%", // Was 55%
+        width = "47%", // Was 55% originally. Changed from 45 to 47%, so that arrow is not pushed down when Orange is used !
         searchbox = false,
         search_autofocus = false,
         offset = true,
