@@ -542,8 +542,8 @@ label.checkbtn {
 				//height: 11250px; /* Calc this with javascript */
 				height: var(--doc-height);
 				display: none; // Hack until mobile 100vh fixed, switch on blur background with js only
-				position: fixed; // Override position: sticky from topbar for z-index to be viable
-				// position: absolute; // Changed from fixed to absolute to stop inconsistent behaviour of blur background
+				// position: fixed; // Override position: sticky from topbar for z-index to be viable
+				position: absolute; // Changed from fixed to absolute to stop inconsistent behaviour of blur background
 			}
 	//}
 
