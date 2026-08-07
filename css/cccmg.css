@@ -50,7 +50,7 @@
 			line-height: 1.5;
 			height: 42px; /* Was 36px. Changed to hide transparent border under .topbar, when blur background displayed */
 			background-color: #3279B3;
-			box-shadow: 0 1px 4px; /* Puts a line at the bottom of topbar */
+			box-shadow: 0 1px 4px; /* Puts a shadow at the bottom of topbar, to make clearer and more attractive, content scrolling under and behind it */
 
 		}
 
