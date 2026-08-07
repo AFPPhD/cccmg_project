@@ -1,5 +1,7 @@
 'use strict';
 
+    //document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
    const moreContrast = (window.matchMedia('(prefers-contrast: more)').matches);
    const noforcedColors = (window.matchMedia('(forced-colors: none)').matches);
 
@@ -77,7 +79,7 @@
 
         if (!moreContrast) {
             var selected = document.getElementById('selectbox');// If want to change option for normal colour scheme, need to do
-            selected.options[3].innerHTML = "Peach";           // before third party menu takes info for options, after the DOM is loaded.
+            selected.options[3].innerHTML = "Orange";           // before third party menu takes info for options, after the DOM is loaded.
         }                                                       // window load event (below) is too late!
 
         var demo1 = new BVSelect({  // document.addEventListener("DOMContentLoaded", function() {... - Handler when the DOM is fully loaded, not the whole page !
@@ -312,7 +314,6 @@
             // if (($target != '#main_CustomBuild')) {
                 var smallMenu = window.matchMedia('(max-width: 1041px)').matches;
                 if (smallMenu) {
-                    //$('.navigation').css('display', 'none'); // Remove small menu
                     if ($('#toggle').is(':checked')) {
                         $("#toggle").prop("checked", false); // Uncheck checkbox - remove small menu
                         $("#toggle").trigger('change'); // When focusout need to trigger $(document).on('change', ':checkbox', function() {}
@@ -360,7 +361,7 @@
         //  && !((event.which || event.keyCode) == '40')
         //  && !((event.which || event.keyCode) == '9')
         //  && !(event.shiftKey))
-         if ((event.which || event.keyCode) == "27")
+         if ((event.which || event.keyCode) == "27") // Esc key
         {
                     event.preventDefault();
                     //let $target = $('#intro');
@@ -408,8 +409,10 @@
             if (($target.get(0).id != 'main_CustomBuild')
             && ($target.parent().get(0).id != 'ul_CustomBuild')
             &&  !($('.navigation').has($target).length !== 0)
-            && !($('.navigation').is($target))
-            && !($target.is('.checkbtn'))) {
+            //&& !($('.navigation').is($target)) Do not need this as well to prevent mouse click focusout instead of closing menu
+            && !($target.is('.checkbtn'))
+          //&& !($target.is('label.checkbtn::before')) Do not need this as well to prevent mouse click focusout instead of closing menu
+        ) {
             //if (!($target.is('.checkbtn')) && ($target.find('.navigation').length === 0) && !($target.is('.navigation'))) {
                 //     // $('.navigation').css('display', 'none'); // Remove small menu
                 //     $("#toggle").prop("checked", false); // Uncheck checkbox
@@ -456,8 +459,10 @@
             //if ($checkbox.is(':checked'))  {
             if ($('#toggle').is(':checked')) {
                 $('body').css('overflow', 'hidden');
+                $('header').css('display', 'none'); // Prevent access to document behind small menu via skiplink
             } else {
                 $('body').css('overflow', 'visible');
+                $('header').css('display', 'block'); // Allow skiplink
             }
         });
 
