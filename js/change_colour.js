@@ -1,6 +1,6 @@
 'use strict';
 
-    //document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
    const moreContrast = (window.matchMedia('(prefers-contrast: more)').matches);
    const noforcedColors = (window.matchMedia('(forced-colors: none)').matches);

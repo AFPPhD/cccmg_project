@@ -449,8 +449,25 @@ label.checkbtn {
 	// 	display: none;
 	// }
 
+	// Javascript disabled, remove shortcuts option and centralise CCCMG
+
+		// .no-js .topbar span, .no-js label.checkbtn, .no-js a#top {
+		// 	display: none; // Removes Shortcuts text, Hamburger icon and CCCMG, from topbar
+		// }
+
+		// .no-js:where(.topbar span, label.checkbtn, a#top) { // Remove shortcuts option and CCCMG, but not working as of writiing this!
+		// 	display: none;
+		// }
+
+	// Javscript disabled, remove topbar
+
+		.no-js .topbar  {
+			display: none;
+		}
+
 	label.checkbtn::before {
 		content: "\2630"; // Hamburger Icon
+		content: "\2630"/ ""; // Hide from VoiceOver
 		//position: absolute;
 		display: inline-block;
 		height: 0.7em;
@@ -459,7 +476,7 @@ label.checkbtn {
 	}
 
 	input[type="checkbox"]:focus + label.checkbtn { // Had to remove #toggle off front of selector, so that Hamburger menu highlighted
-		border: 3px solid black; // outline results in top line disappearing
+		border: 3px solid black; // outline results in top line disappearing so use border
 	}
 
 	.topbar a:focus {
@@ -467,7 +484,7 @@ label.checkbtn {
 		outline: 0; // Remove outline style set in navigation.css because overriding with border
 		// outline: transparent; // Set the outline color to be transparent, so that the outline is invisible when not in high
 									// contrast mode, but overridden correctly in high contrast mode
-		border: 3px solid black; // outline results in top line disappearing so use border
+		border: 3px solid black; // Use border instead of outline as explained above
 	}
 
 	// #toggle.input[type="checkbox"]:checked + label::after {
@@ -493,8 +510,7 @@ label.checkbtn {
 				//background: rgba(255,255,255,0.5);
 				//background-color: rgba(0,0,0,0.5);
 				display: block;
-				//position: fixed;
-				position: absolute; // Changed from fixed to absolute to stop inconsistent behaviour  of blur background
+				position: absolute; // Changed from fixed to absolute to stop inconsistent behaviour of blur background
 				// filter: blur(15px);
   				// -webkit-filter: blur(15px);
 				/* Center and scale the image nicely */
@@ -511,7 +527,7 @@ label.checkbtn {
 			}
 
 
-			div.topbar:has(#toggle:checked) { border-radius: 0; } // Remove wrong colour .topbar edges when there is blurred  background
+			div.topbar:has(#toggle:checked) { border-radius: 0; } // Remove wrong colour .topbar edges when there is blurred background
 
 			.blur {
 				background: rgba(255, 255, 255, 0.2); // Make sure this color has an opacity of less than 1
@@ -527,6 +543,7 @@ label.checkbtn {
 				height: var(--doc-height);
 				display: none; // Hack until mobile 100vh fixed, switch on blur background with js only
 				position: fixed; // Override position: sticky from topbar for z-index to be viable
+				// position: absolute; // Changed from fixed to absolute to stop inconsistent behaviour of blur background
 			}
 	//}
 
@@ -777,9 +794,9 @@ label.checkbtn {
 
 	@include MediaQueryStyle (false, false);
 
-	#toggle:checked ~ .navigation {
-		display: block; // Undo removal by MediaQueryStyle, meant for just .navigation as sidebar
-	}
+	// #toggle:checked ~ .navigation {
+	// 	display: block; // Undo removal by MediaQueryStyle, meant for just .navigation as sidebar
+	// } // Superfluous, media queries deal with this
 	// body {
 	// 	font-size: 24px;
 	// 	font-size: 150%;

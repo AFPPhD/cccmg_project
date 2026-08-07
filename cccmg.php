@@ -3,7 +3,7 @@
 Written by: Anthony Prime
 
 -->											<!-- Updated DOCTYPE, <html>, <head> and <script> from XHTML Strict to HTML5 compliant. Also removed trailing spaces 130820 -->
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>Classical Collectors' Classical Music Guide</title>
@@ -22,14 +22,14 @@ Written by: Anthony Prime
 	<!-- images/Eras_Bold_ITC_transparent-2x.png 976w"> -->
 		<!-- images/Eras_Bold_ITC_transparent-4x.png 1952w,
         images/Eras_Bold_ITC_transparent-8x.png 3904w" -->
-	<meta name="color-scheme" content="light dark"> <!--This  will prevent the page flashing after the styles have been loaded in and the colour scheme information is selected -->
-	<link rel="stylesheet" href="css/cccmg-min.css"/> <!-- Minified on minifer.org -->
+	<meta name="color-scheme" content="light dark"> <!--This will prevent the page flashing after the styles have been loaded in and the colour scheme information is selected -->
+	<link rel="stylesheet" href="css/cccmg.css"/> <!-- Minified on minifer.org -->
 	<link rel="stylesheet" href="css/material_icons-min.css"/>
 	<link rel="stylesheet" href="css/navigation.css"/>
 	<link rel="stylesheet" href="css/variables-min.css"/>	<!-- SASS created file using sass-json-export.scss -->
-	<link rel="stylesheet" href="css/bvselect-min.css"/> <!-- Style sheet for Custom dropdown menu using bvselect.js -->
+	<link rel="stylesheet" href="css/bvselect.css"/> <!-- Style sheet for Custom dropdown menu using bvselect.js -->
 	<link rel="stylesheet" href="css/main.css"/>	<!-- SASS created file --> <!-- Minified on minifer.org -->
-	<link rel="stylesheet" href="css/print.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
+	<link rel="stylesheet" href="css/print-min.css"/>  <!-- Creates print version of website --> <!-- media types moved into print and 800 css files 300911 -->
 	<link rel="preload" as="image" imagesrcset="images/Eras_Bold_ITC_transparent.webp 488w, images/Eras_Bold_ITC_transparent-2x.webp 976w" fetchpriority="high"/>
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico" fetchpriority="low"/>
 </head>
@@ -107,7 +107,10 @@ Written by: Anthony Prime
 	echo "<div class=\"update\">Last Update on: ".$lastmodified."</div>\n";
 ?>
 
-<p class="nojavascript"><strong>This Website works better with Javascript enabled</strong></p>
+<!-- <p class="nojavascript">This Website works better with Javascript enabled</strong></p> -->
+
+<br/>
+<noscript><p style = "text-align:center;font-size:2rem";>This Website works better with Javascript enabled</p></noscript>
 
 <br/>
 <br/>
@@ -934,7 +937,7 @@ Marriner/A.S.M.F (PHILIPS)</p>
 
 <h5>Symphony No. 8 "Unfinished"</h5>
 <p>Harnencourt/C.O (MULTCOMB) (WARNER/EMI)<br/>
-B&ouml;hm/B.P.O (MULTCOMB) (DG)<br/>
+<!-- B&ouml;hm/B.P.O (MULTCOMB) (DG)<br/> -->
 Mehta/Israel Philharmonic (MULTCOMB) (DECCA ELOQUENCE)<br/><br/>
 
 OTHER RECORDINGS:<br/>
@@ -1144,7 +1147,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 script.src = "./js/jquery-1.7.2.min.js";
 document.head.appendChild(script); </script> -->
 <script defer src="js/hide_no_javascript_mes-min.js"></script>
-<script defer src="js/bvselect-min.js"></script> <!-- Custom dropdown menu that allows for different highlight colours -->
+<script defer src="js/bvselect.js"></script> <!-- Custom dropdown menu that allows for different highlight colours -->
 <script defer src="js/change_colour.js"></script>
 <script defer src="js/accordion_mod-min.js"></script>
 <!-- < src="js/floating_nav_menu.js"></> -->	<!-- Using position fixed/sticky better than this -->

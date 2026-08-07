@@ -32,6 +32,7 @@
 			position: fixed;
 			outline: 0;
 			border: 3px solid rgba(0,0,0,0); /* Removes black pixel in top left hand corner */
+			display: none; /* Needs to be hidden, unless javascript functionality is present, to prevent skiplink option */
 		}
 
 		.topbar {
@@ -45,13 +46,15 @@
 			/*text-align: center;*/
 			/* min-width: 680px; */
 			/* width: fit-content; */
-			max-width: 1900px; /* Need to put brakes on this for higher widths */
+			max-width: 1900px; /* Need to put the brakes on this for higher widths */
 			line-height: 1.5;
 			height: 42px; /* Was 36px. Changed to hide transparent border under .topbar, when blur background displayed */
 			background-color: #3279B3;
+			box-shadow: 0 1px 4px; /* Puts a line at the bottom of topbar */
+
 		}
 
-		.skiplink {
+		.skiplink { /* :not(:focus) causes ugly Skip to main content text to appear in left side of topbar */
 			position: absolute;
 			/* top: 0;
 			left: 0; */
@@ -173,11 +176,10 @@
 			text-align: center;
 		}
 
-		.nojavascript {
+		/* .nojavascript {
 			text-align: center;
 			font-size: 2rem;
-			/* color: #000000; */
-		}
+		} */
 
 		.composers {
 			font-family: arial, helvetica, sans-serif;
