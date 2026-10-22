@@ -307,7 +307,7 @@ label.checkbtn {
 	@media screen and (max-height: 46.188em) { // Changed from 738px to 739px (46.188em), due to offset change for .navigation from 68 to 69px
 		.navigation {
 			max-height: 78.5%; // In order to scroll to Colour menu needed to reduce this from 100%
-			overflow-y: overlay;
+			overflow-y: auto; // overlay doesn't work in Safari, so use auto instead
 			overflow-x: hidden;
 		}
 	}
@@ -434,7 +434,7 @@ label.checkbtn {
 	}
 
 	.navigation a:link, .navigation a:visited {
-		min-width: 450px;
+		min-width: 450px; // Inherited from .navigation ? No, needed
 		border: 2px solid white;
 		margin: 0.45% auto;
 	}
