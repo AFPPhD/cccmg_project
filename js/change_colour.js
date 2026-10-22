@@ -92,10 +92,13 @@
 
 
     // The following routine allows keyboard only access for bvselect dropdown
-    $(window).load(function() { // $(window).load - Make sure entire page content loaded (Plain Javascript: window.onload = function(event) {...)
+    $(window).on("load", function() { // $(window).load - Make sure entire page content loaded (Plain Javascript: window.onload = function(event) {...)
        // Best to use load event methods for jQuery and Pure JS, as this will work in any browser
        // jQuery event aliases like .load(), .unload() or .resize(), are all deprecated since
        // jQuery 1.8. Lookup for these aliases in your code and replace them with the .on() method instead
+       //  A page can't be manipulated safely until the document is "ready." jQuery detects this state of readiness for you.
+       //  Code included inside $( document ).ready() will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute.
+       //  Code included inside $( window ).on( "load", function() { ... }) will run once the entire page (images or iframes), not just the DOM, is ready.
 
             // function getPrefersReducedMotion() {
             //     const QUERY = '(prefers-reduced-motion: no-preference)'; // Double-negatives (no-preference and !mediaQueryList.matches)
@@ -126,7 +129,45 @@
             // }
             if (!window.matchMedia('(forced-colors: active)').matches) {
                 $('.select-option').css('display', 'block'); // Make visible colour change button. (Defaulted at no display so hidden from screen readers)
+            } else {
+                   let root = document.querySelector(':root');
+                    $('.navigation').height('550px');
+                    root.style.setProperty('--menu-height', '550px');
             }
+
+            // Thanks to Richard Neil Ilagan on Stack Overflow for inspiring the following code to detect if an element has focus or not
+            var isFocused = false;
+    
+            $(document)
+            .bind('click', function() { isFocused = false; })
+            .bind('keydown', function() { isFocused = true; })
+            ;
+    
+            function handler() 
+            { 
+                const darkModeMql = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const forcedColoursActive = window.matchMedia && window.matchMedia('(forced-colors: active)').matches;
+                if (forcedColoursActive) {
+                    if (darkModeMql) {
+                        document.querySelector("header").style.borderColor = "black";
+                    } else {
+                        document.querySelector("header").style.borderColor = "white";
+                    }
+                }   
+                if (isFocused && !($('#toggle').is(':checked'))) {
+                    $('header').css('display', 'block');
+                } else {
+                    if (isFocused && ($('#toggle').is(':checked'))) {
+                        $('header').css('display', 'none');   
+                        isFocused = false;
+                    }
+                }
+            }
+    
+            $('a#top').focus(function() { 
+                setTimeout(handler,100);
+            });
+    
             //$('.topbar span', '.checkbtn').css('display', 'none');
             // $('.topbar span, .checkbtn').css('display', 'inline-block'); // Need Event Handler so this only happens at =<1041px
             let $colourMenuButton = $('#main_CustomBuild');
@@ -409,9 +450,9 @@
             if (($target.get(0).id != 'main_CustomBuild')
             && ($target.parent().get(0).id != 'ul_CustomBuild')
             &&  !($('.navigation').has($target).length !== 0)
-            //&& !($('.navigation').is($target)) Do not need this as well to prevent mouse click focusout instead of closing menu
+         // && !($('.navigation').is($target)) Do not need this as well to prevent mouse click focusout instead of closing menu
             && !($target.is('.checkbtn'))
-          //&& !($target.is('label.checkbtn::before')) Do not need this as well to prevent mouse click focusout instead of closing menu
+         // && !($target.is('label.checkbtn::before')) Do not need this as well to prevent mouse click focusout instead of closing menu
         ) {
             //if (!($target.is('.checkbtn')) && ($target.find('.navigation').length === 0) && !($target.is('.navigation'))) {
                 //     // $('.navigation').css('display', 'none'); // Remove small menu
@@ -459,11 +500,11 @@
             //if ($checkbox.is(':checked'))  {
             if ($('#toggle').is(':checked')) {
                 $('body').css('overflow', 'hidden');
-                $('header').css('display', 'none'); // Prevent access to document behind small menu via skiplink
+                //$('header').css('display', 'none'); // Prevent access to document behind small menu via skiplink
             } else {
                 $('body').css('overflow', 'visible');
-                $('header').css('display', 'block'); // Allow skiplink
-            }
+                //$('header').css('display', 'block'); // Allow skiplink
+            } 
         });
 
 

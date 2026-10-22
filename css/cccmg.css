@@ -21,37 +21,38 @@
 			padding: 0;
 			-webkit-font-smoothing: antialiased; /* Chrome and Safari still use subpixel anti-aliasing by default. We need to explicitly turn it off */
 			/* overflow-x: hidden; */  /* To allow container to break out of constrained width */
-			/* min-height: 100vh; */
 			height: -webkit-fill-available; /* Part of mobile 100vh height problem fix, where bit of page missing (e.g footer) due to */
 			height: -moz-available; /* possible address bar */
-			height: stretch; /* taking up space */
+			/*height: fit-content; /*  Firefox fix, where scrolling up, results in topbar not "sticking" to the top */
+			height: stretch; /* like height: 100% but it makes the element take up the remaining space after margins, padding, and borders, resulting in no overflow */
 		}
 
 		header {
 			z-index: 2; /* To put Skip to Main Content above small devices menu background blur */
 			position: fixed;
-			outline: 0;
-			border: 3px solid rgba(0,0,0,0); /* Removes black pixel in top left hand corner */
+			outline: 0; /* Removes browser's default focus style */
+			border: 3px solid rgba(0,0,0,0); /* Causes black pixel in top left hand corner for forced colours, which comes from
+			displaying the header, and ensures border all around Skip to main content drop down */
 			display: none; /* Needs to be hidden, unless javascript functionality is present, to prevent skiplink option */
+			forced-color-adjust: none;
 		}
 
 		.topbar {
 			z-index: 1; /* So main content scrolls underneath */
 			top: 0;
-			position: fixed;	/* Fallback.  stickybits.js polyfill available */
+			position: fixed;	/* Fallback. stickybits.js polyfill available */
 			position: -webkit-sticky;
 			position: sticky; /* sticky and top fix the navbar in position. No jittery movement on page scrolling using jQuery anymore */
 			border-bottom-right-radius: 9px;
 			border-bottom-left-radius: 9px;
 			/*text-align: center;*/
-			/* min-width: 680px; */
-			/* width: fit-content; */
+			max-width: 100%;
+			/* width: -moz-fit-content; */
 			max-width: 1900px; /* Need to put the brakes on this for higher widths */
 			line-height: 1.5;
 			height: 42px; /* Was 36px. Changed to hide transparent border under .topbar, when blur background displayed */
 			background-color: #3279B3;
 			box-shadow: 0 1px 4px; /* Puts a shadow at the bottom of topbar, to make clearer and more attractive, content scrolling under and behind it */
-
 		}
 
 		.skiplink { /* :not(:focus) causes ugly Skip to main content text to appear in left side of topbar */
