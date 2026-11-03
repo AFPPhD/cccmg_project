@@ -309,6 +309,7 @@ label.checkbtn {
 			max-height: 78.5%; // In order to scroll to Colour menu needed to reduce this from 100%
 			overflow-y: auto; // overlay doesn't work in Safari, so use auto instead
 			overflow-x: hidden;
+			scrollbar-width: thin; // Narrower scrollbar, so menu options in forced colours not stretched
 		}
 	}
 }
@@ -582,8 +583,8 @@ label.checkbtn {
 			max-height: 84%; // In order to scroll to Colour menu needed to reduce this from 100%
             overflow-y: overlay;
 			overflow-x: hidden;
-			top: 42px;
-		}
+			top: 42px; // Makes sure that the whole of the menu is still scrollable,
+		}              // even when the height of the browser window is reduced to 639px (39.9375em) or lower
 	}
 
 }
