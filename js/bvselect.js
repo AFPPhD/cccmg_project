@@ -149,7 +149,7 @@ class BVSelect {
                             // Updates main div
                             document.getElementById("main_" + randomID).innerHTML = item.textContent + "<i id='arrow_" + randomID + "' class='arrows_bv arrow down'></i>";
                             document.getElementById("ul_" + randomID).style.display = "none";
-                            document.getElementById("main_" + randomID).focus(); // Put focus back on Colour button after chosen colour
+                            document.getElementById("main_" + randomID).focus(); // Put focus back on Colour button after chosen colour with keyboard
                             // This helps ensure there is a customFocusout, for small devices, after tabbing off navigation menu (bvselect.js did put
                             // focus on body after colour select)
                             // const choices = document.querySelectorAll('#ul_CustomBuild > li'); // On closing menu all tabIndexes correctly reset
@@ -408,7 +408,7 @@ class BVSelect {
             if (!e.target.closest(".bv_ul_inner") || !e.target.classList.contains('bv_input')) {
                 if (!e.target.classList.contains('bv_input') && !e.target.classList.contains('bv_atual')) {
 
-                    if (event.target.nodeName != "LI") {
+                    if (e.target.nodeName != "LI") {
                         Array.from(document.querySelectorAll(".bv_ul_inner"))
                             .forEach(function(val) {
                                 val.style.display = 'none';
