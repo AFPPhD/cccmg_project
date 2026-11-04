@@ -26,10 +26,17 @@
                     //$(':root').css('--menu-height','640px');
                     root.style.setProperty('--menu-height', '644px');
                 } else {
-                    $('.navigation').height('766px');
+                    $('.navigation').height('743px'); // Was 766px, now more ascetic to have a bit of space at bottom of menu
                     //$(':root').css('--menu-height','800px');
-                    root.style.setProperty('--menu-height', '766px');
+                    root.style.setProperty('--menu-height', '743px');
                 }
+            }
+            if (window.matchMedia('(forced-colors: active)').matches) {
+                let height = root.style.getPropertyValue('--menu-height').trim();
+                height = parseInt(height) - 57 + 'px'; // Reduce menu height to allow for no colour change button
+                //root.style.setProperty('--menu-height', parseInt(root.style.getPropertyValue('--menu-height')) - 57 + 'px');
+                 $('.navigation').height(height);
+                 root.style.setProperty('--menu-height', height);
             }
         } else {// Desktop menu
             $('.navigation').height('670px');
@@ -128,12 +135,14 @@
             //     $('.navigation').height('670px');
             // }
             if (!window.matchMedia('(forced-colors: active)').matches) {
-                $('.select-option').css('display', 'block'); // Make visible colour change button. (Defaulted at no display so hidden from screen readers)
-            } else {
-                   let root = document.querySelector(':root');
-                    $('.navigation').height('550px');
-                    root.style.setProperty('--menu-height', '550px');
+               $('.select-option').css('display', 'block'); // Make visible colour change button. (Defaulted at no display so hidden from screen readers)
             }
+
+            // document
+            // .getElementById("#ul_CustomBuild > li")
+            // .addEventListener("click", () => {
+            // document.getElementById("div#main_CustomBuild.bv_atual.bv_background").focus({ focusVisible: true });
+            // });
 
             // Thanks to Richard Neil Ilagan on Stack Overflow for inspiring the following code to detect if an element has focus or not
             var isFocused = false;
@@ -333,6 +342,7 @@
                     if (typeof(Storage) !== "undefined") {
                         storeColourTheme($selectedOption);
                     }
+                    //document.getElementById("main_CustomBuild.bv_atual.bv_background").focus(); // Put focus back on Colour button after chosen colour with keyboard
                     $selectedOption.trigger('click'); // Activates event listener in bvselect.js
                 } else if ((event.which || event.keyCode) == '38') // Up arrow key
                     {
@@ -450,9 +460,9 @@
             if (($target.get(0).id != 'main_CustomBuild')
             && ($target.parent().get(0).id != 'ul_CustomBuild')
             &&  !($('.navigation').has($target).length !== 0)
-         // && !($('.navigation').is($target)) Do not need this as well to prevent mouse click focusout instead of closing menu
+         //&& !($('.navigation').is($target)) // Do not need this as well to prevent mouse click focusout instead of closing menu
             && !($target.is('.checkbtn'))
-         // && !($target.is('label.checkbtn::before')) Do not need this as well to prevent mouse click focusout instead of closing menu
+         //&& !($target.is('label.checkbtn::before')) // Do not need this as well to prevent mouse click focusout instead of closing menu
         ) {
             //if (!($target.is('.checkbtn')) && ($target.find('.navigation').length === 0) && !($target.is('.navigation'))) {
                 //     // $('.navigation').css('display', 'none'); // Remove small menu
@@ -471,7 +481,11 @@
                 if (typeof(Storage) !== "undefined") {
                     storeColourTheme($target);
                 }
+                //document.getElementById('main_CustomBuild.bv_atual.bv_background').focus(); // After selecting colour option, with pointer click, put focus back on colour menu button, so tab to next item in the main document
                 $selectedOption.trigger('click'); // Activates event listener in bvselect.js
+                //document.getElementById("div#main_CustomBuild.bv_atual.bv_background").focus({ focusVisible: true });
+                //document.getElementById("div#main_CustomBuild.bv_atual.bv_background").focus();
+                //$("div#main_CustomBuild.bv_atual.bv_background").focus({ focusVisible: true });
             // }
             // } else if ($target.is('a')) {
                         //event.preventDefault();
